@@ -8,8 +8,7 @@ import {
   CheckCircle2, 
   Zap, 
   AlertTriangle,
-  Send,
-  Shuffle
+  Send
 } from 'lucide-react';
 import { WordItem, WordProgress, UserSettings } from '@/types/vocab';
 import { soundFx } from '@/lib/soundFx';
@@ -147,16 +146,6 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
     if (toSpeak) {
       speechService.speak(toSpeak, settings.voiceSpeed);
     }
-  };
-
-  // Re-shuffle remaining items in the queue
-  const handleShuffleRemaining = () => {
-    if (queue.length <= currentIndex + 1) return;
-    const completed = queue.slice(0, currentIndex + 1);
-    const remaining = queue.slice(currentIndex + 1);
-    const shuffledRemaining = shuffleArray(remaining);
-    setQueue([...completed, ...shuffledRemaining]);
-    soundFx.triggerHaptic('light');
   };
 
   // Submit answer
@@ -359,16 +348,6 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
           </button>
 
           <div className="flex items-center gap-2">
-            {/* Shuffle Button / Badge */}
-            <button
-              onClick={handleShuffleRemaining}
-              title="Перемешать оставшиеся слова в случайном порядке"
-              className="flex items-center gap-1 px-2.5 py-1 rounded-xl bg-indigo-500/10 hover:bg-indigo-500/20 border border-indigo-500/20 text-indigo-300 text-xs font-medium transition-colors"
-            >
-              <Shuffle className="w-3.5 h-3.5" />
-              <span>Рандом</span>
-            </button>
-
             {combo > 1 && (
               <div className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-gradient-to-r from-amber-500/20 to-rose-500/20 border border-amber-500/30 text-amber-300 text-xs font-bold animate-pulse">
                 <Zap className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
@@ -562,7 +541,7 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
       {/* Bottom Hint / Info Bar */}
       <div className="mt-6 text-center text-xs text-slate-500">
         <p>
-          🔀 Слова перемешаны случайно. Знаки препинания (запятые, дефисы, слэши) не влияют на проверку.
+          💡 Слова автоматически перемешаны. Знаки препинания не влияют на проверку.
         </p>
       </div>
     </div>
