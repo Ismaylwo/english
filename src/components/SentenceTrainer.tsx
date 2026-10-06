@@ -30,7 +30,6 @@ interface SentenceTrainerProps {
   onFinishSentences: (stats: { totalTested: number; mistakes: number }) => void;
 }
 
-// Fisher-Yates shuffle
 function shuffleArray<T>(array: T[]): T[] {
   const arr = [...array];
   for (let i = arr.length - 1; i > 0; i--) {
@@ -48,7 +47,6 @@ export const SentenceTrainer: React.FC<SentenceTrainerProps> = ({
   onBackToDashboard,
   onFinishSentences,
 }) => {
-  // Filter words that have valid examples
   const wordsWithExamples = words.filter(w => w.example && w.example.en);
 
   const [queue, setQueue] = useState<SentenceQueueItem[]>(() => {
@@ -111,7 +109,6 @@ export const SentenceTrainer: React.FC<SentenceTrainerProps> = ({
       setCombo(prev => prev + 1);
       setMasteredCount(prev => prev + 1);
 
-      // Pronounce whole sentence!
       if (settings.autoPronounce) {
         speakFullSentence();
       }
@@ -140,7 +137,6 @@ export const SentenceTrainer: React.FC<SentenceTrainerProps> = ({
       speakFullSentence();
       setInputStatus('correction');
 
-      // Re-queue 2-4 cards ahead
       const updatedQueue = [...queue];
       const remainingCount = updatedQueue.length - (currentIndex + 1);
       const offset = Math.min(
@@ -215,12 +211,12 @@ export const SentenceTrainer: React.FC<SentenceTrainerProps> = ({
   if (!currentWord || !example) {
     return (
       <div className="flex flex-col items-center justify-center p-8 text-center min-h-[60vh]">
-        <CheckCircle2 className="w-16 h-16 text-emerald-400 mb-4 animate-bounce" />
-        <h2 className="text-2xl font-bold text-white mb-2">Предложения освоены!</h2>
-        <p className="text-slate-400 mb-6">Все предложения этого блока успешно закреплены.</p>
+        <CheckCircle2 className="w-12 h-12 text-emerald-400 mb-3" />
+        <h2 className="text-xl font-bold text-white mb-2">Предложения освоены</h2>
+        <p className="text-slate-400 mb-6 text-sm">Все предложения этого блока успешно закреплены.</p>
         <button
           onClick={onBackToDashboard}
-          className="px-6 py-3 rounded-2xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold transition-transform active:scale-95"
+          className="px-5 py-2.5 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold text-sm transition-colors"
         >
           Вернуться в меню
         </button>
@@ -232,118 +228,117 @@ export const SentenceTrainer: React.FC<SentenceTrainerProps> = ({
   const progressPercent = Math.min(100, Math.round((masteredCount / totalSentences) * 100));
 
   return (
-    <div className="w-full max-w-xl mx-auto px-4 py-4 flex flex-col min-h-[calc(100vh-65px)] justify-between">
+    <div className="w-full max-w-xl mx-auto px-4 py-6 flex flex-col min-h-[calc(100vh-65px)] justify-between">
       <div>
         {/* Navigation Bar */}
-        <div className="flex items-center justify-between gap-2 mb-3">
+        <div className="flex items-center justify-between gap-2 mb-4">
           <button
             onClick={onBackToDashboard}
-            className="flex items-center gap-1.5 text-xs font-medium text-slate-400 hover:text-white px-2.5 py-1.5 rounded-xl bg-slate-900/60 border border-slate-800 transition-colors"
+            className="flex items-center gap-1.5 text-xs font-medium text-slate-400 hover:text-white px-2.5 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.08] transition-colors"
           >
-            <ArrowLeft className="w-4 h-4" />
+            <ArrowLeft className="w-3.5 h-3.5" />
             <span>В меню</span>
           </button>
 
           <div className="flex items-center gap-2">
             {combo > 1 && (
-              <div className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-gradient-to-r from-amber-500/20 to-rose-500/20 border border-amber-500/30 text-amber-300 text-xs font-bold animate-pulse">
-                <Zap className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
-                <span>{combo}X КОМБО</span>
+              <div className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-300 text-xs font-medium">
+                <Zap className="w-3 h-3 fill-amber-400 text-amber-400" />
+                <span>{combo} подряд</span>
               </div>
             )}
-            <div className="flex items-center gap-1.5 text-xs font-medium text-indigo-300 px-2.5 py-1 rounded-xl bg-indigo-950/60 border border-indigo-800/80">
+            <div className="flex items-center gap-1.5 text-xs font-medium text-indigo-300 px-2.5 py-1 rounded-lg bg-indigo-500/10 border border-indigo-500/20">
               <MessageSquareText className="w-3.5 h-3.5" />
               <span>Предложения • Блок {batch}</span>
             </div>
           </div>
         </div>
 
-        {/* Progress Bar */}
+        {/* Minimal Progress Bar */}
         <div className="mb-6">
           <div className="flex justify-between items-center text-xs text-slate-400 mb-1.5">
-            <span className="font-medium">
-              Предложений: <strong className="text-cyan-400 font-bold">{masteredCount}</strong> / {totalSentences}
+            <span>
+              Предложений: <strong className="text-white font-medium">{masteredCount}</strong> из {totalSentences}
             </span>
-            <span className="font-mono text-cyan-400">{progressPercent}%</span>
+            <span className="font-mono text-slate-400">{progressPercent}%</span>
           </div>
-          <div className="w-full h-2.5 bg-slate-900/90 rounded-full overflow-hidden p-0.5 border border-slate-800">
+          <div className="w-full h-1 bg-white/[0.08] rounded-full overflow-hidden">
             <div
-              className="h-full bg-gradient-to-r from-indigo-500 via-cyan-400 to-emerald-400 rounded-full transition-all duration-300 shadow-sm shadow-indigo-500/50"
+              className="h-full bg-indigo-400 rounded-full transition-all duration-300"
               style={{ width: `${progressPercent}%` }}
             />
           </div>
         </div>
 
-        {/* Context Challenge Card */}
+        {/* Sentence Challenge Card */}
         <div 
-          className={`glass-panel rounded-3xl p-6 sm:p-8 relative transition-all duration-300 shadow-2xl ${
+          className={`studio-surface rounded-2xl p-6 sm:p-8 relative transition-colors ${
             inputStatus === 'error' || inputStatus === 'correction'
-              ? 'border-rose-500/60 glow-rose animate-shake'
+              ? 'border-rose-500/50 animate-micro-shake'
               : inputStatus === 'success'
-              ? 'border-emerald-500/60 glow-emerald animate-pulse-glow'
-              : 'border-slate-800 glow-cyan'
+              ? 'border-emerald-500/50'
+              : 'border-white/[0.08]'
           }`}
         >
-          {/* Header row in card */}
+          {/* Top meta */}
           <div className="flex items-center justify-between mb-4">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-indigo-400 px-2.5 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20">
+            <span className="text-[11px] font-medium text-slate-400">
               Вставьте пропущенное слово
             </span>
 
             <button
               onClick={speakFullSentence}
               title="Прослушать предложение"
-              className="p-2 rounded-2xl bg-slate-800/80 hover:bg-slate-700 text-cyan-400 border border-slate-700/80 transition-transform active:scale-90"
+              className="p-1.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] text-slate-300 hover:text-white transition-colors"
             >
               <Volume2 className="w-4 h-4" />
             </button>
           </div>
 
-          {/* Sentence Display with Blank Slot */}
-          <div className="text-center py-4">
-            <div className="text-xl sm:text-2xl font-bold text-white leading-relaxed mb-4">
+          {/* Focal Sentence Display */}
+          <div className="text-center py-6">
+            <div className="text-xl sm:text-2xl font-medium text-white leading-relaxed mb-4 max-w-lg mx-auto">
               <span>{example.prefix}</span>
-              <span className={`inline-block mx-1.5 px-3 py-0.5 rounded-lg border-b-2 font-mono transition-all ${
+              <span className={`inline-block mx-1.5 px-3 py-0.5 rounded font-mono transition-colors border-b-2 ${
                 inputStatus === 'success'
-                  ? 'border-emerald-400 bg-emerald-500/20 text-emerald-300 shadow-sm shadow-emerald-400/30'
+                  ? 'border-emerald-400 bg-emerald-500/15 text-emerald-300'
                   : inputStatus === 'correction'
-                  ? 'border-rose-400 bg-rose-500/20 text-rose-300'
-                  : 'border-cyan-400 bg-cyan-500/10 text-cyan-300 min-w-[70px]'
+                  ? 'border-rose-400 bg-rose-500/15 text-rose-300'
+                  : 'border-sky-400 bg-sky-500/10 text-sky-300 min-w-[60px]'
               }`}>
-                {inputStatus === 'success' ? (example.target || currentWord.en) : '_______'}
+                {inputStatus === 'success' ? (example.target || currentWord.en) : '_____'}
               </span>
               <span>{example.suffix}</span>
             </div>
 
-            {/* Translation of Sentence */}
+            {/* Sentence Translation */}
             {(settings.language === 'ru' || settings.language === 'both') && (
-              <p className="text-sm sm:text-base text-slate-300 font-medium mb-1">
+              <p className="text-sm text-slate-300 font-normal mb-1">
                 {example.ru}
               </p>
             )}
 
             {(settings.language === 'tj' || settings.language === 'both') && example.tj && (
-              <p className="text-xs sm:text-sm text-cyan-300/80 font-medium">
+              <p className="text-xs text-sky-300/80 font-normal">
                 {example.tj}
               </p>
             )}
 
-            {/* Hint pill with target word translation & letter count */}
-            <div className="inline-flex items-center gap-2 mt-4 px-3 py-1 rounded-xl bg-slate-900/90 border border-slate-800 text-xs text-slate-400">
-              <span>Слово: <strong className="text-white font-semibold">{currentWord.ru}</strong></span>
+            <div className="inline-flex items-center gap-2 mt-4 px-2.5 py-1 rounded bg-white/[0.04] border border-white/[0.06] text-xs text-slate-400">
+              <span>Слово: <strong className="text-white font-medium">{currentWord.ru}</strong></span>
               <span className="text-slate-600">•</span>
-              <span className="font-mono text-cyan-400 font-medium">{currentWord.cleanEn.length} букв</span>
+              <span className="font-mono text-slate-300">{currentWord.cleanEn.length} букв</span>
             </div>
           </div>
 
-          {/* Correction Mode Box */}
+          {/* Correction guidance */}
           {inputStatus === 'correction' && (
-            <div className="mb-4 p-4 rounded-2xl bg-rose-500/10 border border-rose-500/30 text-center animate-fade-in">
-              <div className="flex items-center justify-center gap-1.5 text-rose-400 font-bold text-xs uppercase tracking-wider mb-1">
-                <AlertTriangle className="w-4 h-4" />
+            <div className="mb-5 p-3.5 rounded-xl bg-rose-500/10 border border-rose-500/20 text-center animate-fade-in">
+              <div className="flex items-center justify-center gap-1.5 text-rose-300 font-medium text-xs mb-1">
+                <AlertTriangle className="w-3.5 h-3.5" />
                 <span>Правильный ответ:</span>
               </div>
-              <div className="text-2xl font-mono font-bold text-rose-300 tracking-wider my-1">
+              <div className="text-xl font-mono font-bold text-white tracking-wide my-1">
                 {example.target || currentWord.en}
               </div>
               <p className="text-xs text-rose-300/80 mt-1">
@@ -352,8 +347,8 @@ export const SentenceTrainer: React.FC<SentenceTrainerProps> = ({
             </div>
           )}
 
-          {/* Form Input */}
-          <form onSubmit={handleSubmit} className="mt-4">
+          {/* Input Form */}
+          <form onSubmit={handleSubmit} className="mt-2">
             <div className="relative">
               <input
                 ref={inputRef}
@@ -363,26 +358,26 @@ export const SentenceTrainer: React.FC<SentenceTrainerProps> = ({
                 placeholder={
                   inputStatus === 'correction' 
                     ? `Наберите "${example.target || currentWord.en}"` 
-                    : 'Вставьте слово...'
+                    : 'Вставьте английское слово'
                 }
                 autoComplete="off"
                 autoCorrect="off"
                 autoCapitalize="none"
                 spellCheck={false}
                 disabled={inputStatus === 'success'}
-                className={`w-full py-4 px-5 text-center text-xl sm:text-2xl font-bold tracking-wide rounded-2xl bg-slate-950/80 border transition-all outline-none ${
+                className={`w-full py-3.5 px-4 text-center text-xl sm:text-2xl font-semibold tracking-normal rounded-xl studio-input transition-all ${
                   inputStatus === 'correction'
-                    ? 'border-rose-500 text-rose-200 placeholder:text-rose-500/40 focus:ring-2 focus:ring-rose-500/50'
+                    ? 'border-rose-500 text-rose-200'
                     : inputStatus === 'success'
-                    ? 'border-emerald-500 text-emerald-300 focus:ring-2 focus:ring-emerald-500/50'
-                    : 'border-slate-700 text-white placeholder:text-slate-600 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/30'
+                    ? 'border-emerald-500 text-emerald-300'
+                    : ''
                 }`}
               />
               {userInput && inputStatus !== 'success' && (
                 <button
                   type="button"
                   onClick={() => setUserInput('')}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300 p-1"
+                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300 p-1"
                 >
                   ✕
                 </button>
@@ -390,14 +385,14 @@ export const SentenceTrainer: React.FC<SentenceTrainerProps> = ({
             </div>
 
             {/* Bottom buttons */}
-            <div className="flex items-center gap-3 mt-4">
+            <div className="flex items-center gap-2.5 mt-4">
               {inputStatus !== 'correction' && (
                 <button
                   type="button"
                   onClick={handleGiveUp}
-                  className="flex-1 py-3.5 px-4 rounded-2xl bg-slate-900/90 hover:bg-slate-800 text-slate-400 hover:text-slate-200 text-xs font-semibold border border-slate-800 transition-colors active:scale-95 flex items-center justify-center gap-1.5"
+                  className="flex-1 py-3 px-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] text-slate-400 hover:text-slate-200 text-xs font-medium border border-white/[0.08] transition-colors flex items-center justify-center gap-1.5"
                 >
-                  <HelpCircle className="w-4 h-4 text-slate-500" />
+                  <HelpCircle className="w-3.5 h-3.5" />
                   <span>Показать</span>
                 </button>
               )}
@@ -405,16 +400,16 @@ export const SentenceTrainer: React.FC<SentenceTrainerProps> = ({
               <button
                 type="submit"
                 disabled={!userInput.trim() || inputStatus === 'success'}
-                className={`flex-1 py-3.5 px-4 rounded-2xl font-bold text-sm tracking-wide transition-all active:scale-95 flex items-center justify-center gap-2 shadow-lg ${
+                className={`flex-1 py-3 px-4 rounded-xl font-medium text-sm transition-colors flex items-center justify-center gap-2 ${
                   inputStatus === 'correction'
-                    ? 'bg-rose-500 hover:bg-rose-400 text-white shadow-rose-500/30'
+                    ? 'bg-rose-500 hover:bg-rose-400 text-white'
                     : userInput.trim()
-                    ? 'bg-gradient-to-r from-indigo-500 via-cyan-500 to-emerald-500 hover:opacity-90 text-white shadow-indigo-500/30'
-                    : 'bg-slate-800 text-slate-500 cursor-not-allowed border border-slate-700/60'
+                    ? 'bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold'
+                    : 'bg-white/[0.04] text-slate-500 cursor-not-allowed border border-white/[0.06]'
                 }`}
               >
-                <span>{inputStatus === 'correction' ? 'Подтвердить' : 'Проверить'}</span>
-                <Send className="w-4 h-4" />
+                <span>{inputStatus === 'correction' ? 'Подтвердить ввод' : 'Проверить ответ'}</span>
+                <Send className="w-3.5 h-3.5" />
               </button>
             </div>
           </form>
@@ -423,7 +418,7 @@ export const SentenceTrainer: React.FC<SentenceTrainerProps> = ({
 
       <div className="mt-6 text-center text-xs text-slate-500">
         <p>
-          💬 После каждого правильного ответа предложение озвучивается целиком.
+          После правильного ответа предложение полностью зачитывается вслух.
         </p>
       </div>
     </div>

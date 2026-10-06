@@ -30,7 +30,6 @@ interface HardcoreTrainerProps {
   onFinishBatch: (stats: { totalTested: number; mistakes: number; masteredWords: number }) => void;
 }
 
-// Fisher-Yates shuffle helper
 function shuffleArray<T>(array: T[]): T[] {
   const arr = [...array];
   for (let i = arr.length - 1; i > 0; i--) {
@@ -40,7 +39,6 @@ function shuffleArray<T>(array: T[]): T[] {
   return arr;
 }
 
-// Robust text normalizers
 export function normalizeAnswer(text: string): string {
   if (!text) return '';
   return text
@@ -65,24 +63,15 @@ export function isAnswerCorrect(input: string, word: WordItem): boolean {
   const normCleanEn = normalizeAnswer(word.cleanEn);
   const cleanCleanEn = cleanAlphanumeric(word.cleanEn);
 
-  // 1. Direct alphanumeric match (e.g. "a, an" -> "aan" === "a an" -> "aan", "t-shirt" -> "tshirt")
-  if (cleanInput === cleanEn || cleanInput === cleanCleanEn) {
-    return true;
-  }
+  if (cleanInput === cleanEn || cleanInput === cleanCleanEn) return true;
+  if (normInput === normEn || normInput === normCleanEn) return true;
 
-  // 2. Normalized match (punctuation stripped)
-  if (normInput === normEn || normInput === normCleanEn) {
-    return true;
-  }
-
-  // 3. Accepted variations from dataset
   for (const acc of (word.accepted || [])) {
     if (cleanInput === cleanAlphanumeric(acc) || normInput === normalizeAnswer(acc)) {
       return true;
     }
   }
 
-  // 4. Multi-word alternative tokens (e.g. "a an" -> user entered single "a" or single "an")
   const tokens = normEn.split(' ').filter(t => t.length > 0);
   if (tokens.length > 1) {
     if (tokens.includes(normInput) || tokens.some(t => cleanAlphanumeric(t) === cleanInput)) {
@@ -105,7 +94,6 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
 }) => {
   const strictTarget = settings.strictLevel || 2;
 
-  // Initialize with SHUFFLED words!
   const [queue, setQueue] = useState<TrainerQueueItem[]>(() => {
     const shuffled = shuffleArray(words);
     return shuffled.map(w => {
@@ -133,14 +121,12 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
   const currentItem = queue[currentIndex] || null;
   const currentWord = currentItem?.word || null;
 
-  // Auto-focus input on change
   useEffect(() => {
     if (inputRef.current) {
       inputRef.current.focus();
     }
   }, [currentIndex, inputStatus]);
 
-  // Handle pronouncing word
   const speakCurrent = (text?: string) => {
     const toSpeak = text || currentWord?.en;
     if (toSpeak) {
@@ -148,12 +134,10 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
     }
   };
 
-  // Submit answer
   const handleSubmit = (e?: React.FormEvent) => {
     if (e) e.preventDefault();
     if (!currentWord || !userInput.trim()) return;
 
-    // In correction mode, user must type the correct answer to advance
     if (inputStatus === 'correction') {
       if (isAnswerCorrect(userInput, currentWord)) {
         soundFx.playSuccess();
@@ -171,11 +155,9 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
     const correct = isAnswerCorrect(userInput, currentWord);
 
     if (correct) {
-      // SUCCESS!
       soundFx.playSuccess();
       soundFx.triggerHaptic('success');
-      const newCombo = combo + 1;
-      setCombo(newCombo);
+      setCombo(prev => prev + 1);
 
       if (settings.autoPronounce) {
         speakCurrent();
@@ -191,7 +173,6 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
 
       setInputStatus('success');
 
-      // Update current item in queue
       const updatedQueue = [...queue];
       updatedQueue[currentIndex] = {
         ...updatedQueue[currentIndex],
@@ -206,7 +187,6 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
       }, 500);
 
     } else {
-      // MISTAKE / HARDCORE RESET!
       soundFx.playError();
       soundFx.triggerHaptic('error');
       setCombo(0);
@@ -215,7 +195,6 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
       onRecordResult(currentWord.id, false);
       speakCurrent();
 
-      // Enter correction mode & re-queue the word randomly ahead
       setInputStatus('correction');
 
       const updatedQueue = [...queue];
@@ -224,7 +203,6 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
         currentLevel: 0,
       };
 
-      // Spaced repetition: insert word 2 to 5 cards ahead randomly (or at end if fewer)
       const remainingCount = updatedQueue.length - (currentIndex + 1);
       const offset = Math.min(
         remainingCount,
@@ -240,7 +218,6 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
     }
   };
 
-  // Give up / reveal answer
   const handleGiveUp = () => {
     if (!currentWord || inputStatus === 'correction') return;
     soundFx.playError();
@@ -253,7 +230,6 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
     setInputStatus('correction');
     setUserInput('');
 
-    // Re-queue
     const updatedQueue = [...queue];
     updatedQueue[currentIndex] = {
       ...updatedQueue[currentIndex],
@@ -272,13 +248,10 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
     setQueue(updatedQueue);
   };
 
-  // Advance queue
   const advanceToNext = (latestQueue = queue) => {
-    // Check if all words in this batch have reached mastery level
     const remainingUnmastered = latestQueue.filter(item => item.currentLevel < strictTarget);
 
     if (remainingUnmastered.length === 0) {
-      // Batch finished!
       onFinishBatch({
         totalTested: sessionTotalAnswers + 1,
         mistakes: sessionMistakes,
@@ -287,14 +260,12 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
       return;
     }
 
-    // Move to next unmastered word in queue
     let nextIdx = currentIndex + 1;
     while (nextIdx < latestQueue.length && latestQueue[nextIdx].currentLevel >= strictTarget) {
       nextIdx++;
     }
 
     if (nextIdx >= latestQueue.length) {
-      // Loop back to first remaining unmastered
       const firstUnmastered = latestQueue.findIndex(item => item.currentLevel < strictTarget);
       if (firstUnmastered !== -1) {
         setCurrentIndex(firstUnmastered);
@@ -313,12 +284,12 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
   if (!currentWord) {
     return (
       <div className="flex flex-col items-center justify-center p-8 text-center min-h-[60vh]">
-        <CheckCircle2 className="w-16 h-16 text-emerald-400 mb-4 animate-bounce" />
-        <h2 className="text-2xl font-bold text-white mb-2">Блок завершен!</h2>
-        <p className="text-slate-400 mb-6">Все слова в этом блоке успешно выучены.</p>
+        <CheckCircle2 className="w-12 h-12 text-emerald-400 mb-3" />
+        <h2 className="text-xl font-bold text-white mb-2">Блок завершен</h2>
+        <p className="text-slate-400 mb-6 text-sm">Все слова в этом блоке успешно выучены.</p>
         <button
           onClick={onBackToDashboard}
-          className="px-6 py-3 rounded-2xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold transition-transform active:scale-95"
+          className="px-5 py-2.5 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold text-sm transition-colors"
         >
           Вернуться в меню
         </button>
@@ -326,7 +297,6 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
     );
   }
 
-  // Calculate completion percentage for this batch
   const totalInBatch = words.length;
   const masteredInBatch = words.filter(w => {
     const qItem = queue.find(q => q.word.id === w.id);
@@ -335,108 +305,104 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
   const progressPercent = Math.round((masteredInBatch / totalInBatch) * 100);
 
   return (
-    <div className="w-full max-w-xl mx-auto px-4 py-4 flex flex-col min-h-[calc(100vh-65px)] justify-between">
-      {/* Top Header Navigation & Stats */}
+    <div className="w-full max-w-xl mx-auto px-4 py-6 flex flex-col min-h-[calc(100vh-65px)] justify-between">
       <div>
-        <div className="flex items-center justify-between gap-2 mb-3">
+        {/* Navigation Bar */}
+        <div className="flex items-center justify-between gap-2 mb-4">
           <button
             onClick={onBackToDashboard}
-            className="flex items-center gap-1.5 text-xs font-medium text-slate-400 hover:text-white px-2.5 py-1.5 rounded-xl bg-slate-900/60 border border-slate-800 transition-colors"
+            className="flex items-center gap-1.5 text-xs font-medium text-slate-400 hover:text-white px-2.5 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.08] transition-colors"
           >
-            <ArrowLeft className="w-4 h-4" />
+            <ArrowLeft className="w-3.5 h-3.5" />
             <span>В меню</span>
           </button>
 
           <div className="flex items-center gap-2">
             {combo > 1 && (
-              <div className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-gradient-to-r from-amber-500/20 to-rose-500/20 border border-amber-500/30 text-amber-300 text-xs font-bold animate-pulse">
-                <Zap className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
-                <span>{combo}X КОМБО</span>
+              <div className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-300 text-xs font-medium">
+                <Zap className="w-3 h-3 fill-amber-400 text-amber-400" />
+                <span>{combo} подряд</span>
               </div>
             )}
-            <div className="text-xs font-medium text-slate-400 px-2.5 py-1 rounded-xl bg-slate-900/60 border border-slate-800">
+            <div className="text-xs font-medium text-slate-400 px-2.5 py-1 rounded-lg bg-white/[0.04] border border-white/[0.08]">
               {day > 0 ? `День ${day} • Блок ${batch}` : 'Повторение ошибок'}
             </div>
           </div>
         </div>
 
-        {/* Progress Bar */}
+        {/* Minimal Progress Bar */}
         <div className="mb-6">
           <div className="flex justify-between items-center text-xs text-slate-400 mb-1.5">
-            <span className="font-medium">
-              Освоено: <strong className="text-cyan-400 font-bold">{masteredInBatch}</strong> / {totalInBatch}
+            <span>
+              Освоено: <strong className="text-white font-medium">{masteredInBatch}</strong> из {totalInBatch}
             </span>
-            <span className="font-mono text-cyan-400">{progressPercent}%</span>
+            <span className="font-mono text-slate-400">{progressPercent}%</span>
           </div>
-          <div className="w-full h-2.5 bg-slate-900/90 rounded-full overflow-hidden p-0.5 border border-slate-800">
+          <div className="w-full h-1 bg-white/[0.08] rounded-full overflow-hidden">
             <div
-              className="h-full bg-gradient-to-r from-cyan-500 via-indigo-500 to-emerald-400 rounded-full transition-all duration-300 shadow-sm shadow-cyan-500/50"
+              className="h-full bg-sky-400 rounded-full transition-all duration-300"
               style={{ width: `${progressPercent}%` }}
             />
           </div>
         </div>
 
-        {/* Word Challenge Card */}
+        {/* Focal Word Card */}
         <div 
-          className={`glass-panel rounded-3xl p-6 sm:p-8 relative transition-all duration-300 shadow-2xl ${
+          className={`studio-surface rounded-2xl p-6 sm:p-8 relative transition-colors ${
             inputStatus === 'error' || inputStatus === 'correction'
-              ? 'border-rose-500/60 glow-rose animate-shake'
+              ? 'border-rose-500/50 animate-micro-shake'
               : inputStatus === 'success'
-              ? 'border-emerald-500/60 glow-emerald animate-pulse-glow'
-              : 'border-slate-800 glow-cyan'
+              ? 'border-emerald-500/50'
+              : 'border-white/[0.08]'
           }`}
         >
-          {/* Mastery Level Indicators (Pills) */}
+          {/* Card Meta Row */}
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-1.5">
-              <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mr-1">
-                Закрепление:
+              <span className="text-[11px] font-medium text-slate-400 mr-1">
+                Уровень:
               </span>
               {[...Array(strictTarget)].map((_, i) => (
                 <div
                   key={i}
-                  className={`w-3.5 h-3.5 rounded-full transition-all duration-300 ${
+                  className={`w-2.5 h-2.5 rounded-full transition-colors ${
                     i < (currentItem?.currentLevel || 0)
-                      ? 'bg-emerald-400 ring-2 ring-emerald-500/40 shadow-sm shadow-emerald-400'
-                      : 'bg-slate-800 border border-slate-700'
+                      ? 'bg-emerald-400'
+                      : 'bg-white/[0.12]'
                   }`}
                 />
               ))}
             </div>
 
-            {/* Audio Button */}
             <button
               onClick={() => speakCurrent()}
-              title="Послушать произношение"
-              className="p-2 rounded-2xl bg-slate-800/80 hover:bg-slate-700 text-cyan-400 border border-slate-700/80 transition-transform active:scale-90"
+              title="Прослушать произношение"
+              className="p-1.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] text-slate-300 hover:text-white transition-colors"
             >
               <Volume2 className="w-4 h-4" />
             </button>
           </div>
 
-          {/* Prompt Translations */}
-          <div className="text-center py-4 sm:py-6">
-            {/* Russian Translation */}
+          {/* Focal Subject: Target Word Prompt */}
+          <div className="text-center py-6 sm:py-8">
             {(settings.language === 'ru' || settings.language === 'both') && (
-              <div className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-2">
+              <div className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-2">
                 {currentWord.ru}
               </div>
             )}
 
-            {/* Tajik Translation */}
             {(settings.language === 'tj' || settings.language === 'both') && (
-              <div className="text-lg sm:text-xl font-bold text-cyan-300/90 tracking-wide mb-1">
+              <div className="text-base sm:text-lg text-sky-300/80 font-normal">
                 {currentWord.tj}
               </div>
             )}
 
-            {/* Context Note / CEFR Level / Letter count */}
-            <div className="flex items-center justify-center gap-2 mt-3 text-xs text-slate-400">
-              <span className="px-2 py-0.5 rounded-md bg-slate-800/80 border border-slate-700/60 font-mono">
+            <div className="flex items-center justify-center gap-2 mt-4 text-xs text-slate-400">
+              <span className="px-2 py-0.5 rounded bg-white/[0.04] border border-white/[0.06] font-mono">
                 {currentWord.cleanEn.length} букв
               </span>
               {currentWord.level && (
-                <span className="px-2 py-0.5 rounded-md bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 font-semibold">
+                <span className="px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 font-medium">
                   {currentWord.level}
                 </span>
               )}
@@ -448,29 +414,29 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
             </div>
           </div>
 
-          {/* Correction Mode Message */}
+          {/* Direct, calm correction guidance */}
           {inputStatus === 'correction' && (
-            <div className="mb-4 p-4 rounded-2xl bg-rose-500/10 border border-rose-500/30 text-center animate-fade-in">
-              <div className="flex items-center justify-center gap-1.5 text-rose-400 font-bold text-xs uppercase tracking-wider mb-1">
-                <AlertTriangle className="w-4 h-4" />
-                <span>Сброс на 0! Правильный ответ:</span>
+            <div className="mb-5 p-3.5 rounded-xl bg-rose-500/10 border border-rose-500/20 text-center animate-fade-in">
+              <div className="flex items-center justify-center gap-1.5 text-rose-300 font-medium text-xs mb-1">
+                <AlertTriangle className="w-3.5 h-3.5" />
+                <span>Правильный ответ:</span>
               </div>
-              <div className="text-2xl font-mono font-bold text-rose-300 tracking-wider my-1">
+              <div className="text-xl font-mono font-bold text-white tracking-wide my-1">
                 {currentWord.en}
               </div>
               {currentWord.accepted && currentWord.accepted.length > 1 && (
-                <p className="text-[11px] text-rose-300/80 mb-1">
-                  (также принимается: {currentWord.accepted.slice(0, 4).join(', ')})
+                <p className="text-[11px] text-slate-400 mb-1">
+                  (допускается: {currentWord.accepted.slice(0, 3).join(', ')})
                 </p>
               )}
               <p className="text-xs text-rose-300/80 mt-1">
-                Наберите слово в поле ниже, чтобы продолжить:
+                Наберите слово ниже, чтобы закрепить его:
               </p>
             </div>
           )}
 
-          {/* Active Recall Input Field */}
-          <form onSubmit={handleSubmit} className="mt-4">
+          {/* Precise Input Form */}
+          <form onSubmit={handleSubmit} className="mt-2">
             <div className="relative">
               <input
                 ref={inputRef}
@@ -480,68 +446,67 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
                 placeholder={
                   inputStatus === 'correction' 
                     ? `Наберите "${currentWord.en}"` 
-                    : 'Введите английское слово...'
+                    : 'Введите английское слово'
                 }
                 autoComplete="off"
                 autoCorrect="off"
                 autoCapitalize="none"
                 spellCheck={false}
                 disabled={inputStatus === 'success'}
-                className={`w-full py-4 px-5 text-center text-xl sm:text-2xl font-bold tracking-wide rounded-2xl bg-slate-950/80 border transition-all outline-none ${
+                className={`w-full py-3.5 px-4 text-center text-xl sm:text-2xl font-semibold tracking-normal rounded-xl studio-input transition-all ${
                   inputStatus === 'correction'
-                    ? 'border-rose-500 text-rose-200 placeholder:text-rose-500/40 focus:ring-2 focus:ring-rose-500/50'
+                    ? 'border-rose-500 text-rose-200'
                     : inputStatus === 'success'
-                    ? 'border-emerald-500 text-emerald-300 focus:ring-2 focus:ring-emerald-500/50'
-                    : 'border-slate-700 text-white placeholder:text-slate-600 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/30'
+                    ? 'border-emerald-500 text-emerald-300'
+                    : ''
                 }`}
               />
               {userInput && inputStatus !== 'success' && (
                 <button
                   type="button"
                   onClick={() => setUserInput('')}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300 p-1"
+                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300 p-1"
                 >
                   ✕
                 </button>
               )}
             </div>
 
-            {/* Bottom Action Controls */}
-            <div className="flex items-center gap-3 mt-4">
+            {/* Action Buttons */}
+            <div className="flex items-center gap-2.5 mt-4">
               {inputStatus !== 'correction' && (
                 <button
                   type="button"
                   onClick={handleGiveUp}
-                  className="flex-1 py-3.5 px-4 rounded-2xl bg-slate-900/90 hover:bg-slate-800 text-slate-400 hover:text-slate-200 text-xs font-semibold border border-slate-800 transition-colors active:scale-95 flex items-center justify-center gap-1.5"
+                  className="flex-1 py-3 px-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] text-slate-400 hover:text-slate-200 text-xs font-medium border border-white/[0.08] transition-colors flex items-center justify-center gap-1.5"
                 >
-                  <HelpCircle className="w-4 h-4 text-slate-500" />
-                  <span>Сдаюсь</span>
+                  <HelpCircle className="w-3.5 h-3.5" />
+                  <span>Показать ответ</span>
                 </button>
               )}
 
               <button
                 type="submit"
                 disabled={!userInput.trim() || inputStatus === 'success'}
-                className={`flex-1 py-3.5 px-4 rounded-2xl font-bold text-sm tracking-wide transition-all active:scale-95 flex items-center justify-center gap-2 shadow-lg ${
+                className={`flex-1 py-3 px-4 rounded-xl font-medium text-sm transition-colors flex items-center justify-center gap-2 ${
                   inputStatus === 'correction'
-                    ? 'bg-rose-500 hover:bg-rose-400 text-white shadow-rose-500/30'
+                    ? 'bg-rose-500 hover:bg-rose-400 text-white'
                     : userInput.trim()
-                    ? 'bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white shadow-cyan-500/30'
-                    : 'bg-slate-800 text-slate-500 cursor-not-allowed border border-slate-700/60'
+                    ? 'bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold'
+                    : 'bg-white/[0.04] text-slate-500 cursor-not-allowed border border-white/[0.06]'
                 }`}
               >
-                <span>{inputStatus === 'correction' ? 'Подтвердить ввод' : 'Проверить'}</span>
-                <Send className="w-4 h-4" />
+                <span>{inputStatus === 'correction' ? 'Подтвердить ввод' : 'Проверить ответ'}</span>
+                <Send className="w-3.5 h-3.5" />
               </button>
             </div>
           </form>
         </div>
       </div>
 
-      {/* Bottom Hint / Info Bar */}
       <div className="mt-6 text-center text-xs text-slate-500">
         <p>
-          💡 Слова автоматически перемешаны. Знаки препинания не влияют на проверку.
+          Любая опечатка возвращает слово в очередь. Нажмите Enter для отправки.
         </p>
       </div>
     </div>

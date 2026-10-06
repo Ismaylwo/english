@@ -2,7 +2,7 @@
 
 import React, { useEffect } from 'react';
 import confetti from 'canvas-confetti';
-import { Trophy, RotateCcw, ArrowRight, Home, Sparkles, MessageSquareText } from 'lucide-react';
+import { Trophy, RotateCcw, ArrowRight, Home, CheckCircle2, MessageSquareText } from 'lucide-react';
 
 interface BatchSummaryModalProps {
   stats: {
@@ -30,40 +30,14 @@ export const BatchSummaryModal: React.FC<BatchSummaryModalProps> = ({
   onHome,
 }) => {
   useEffect(() => {
-    // Fire celebratory confetti!
-    const count = 200;
-    const defaults = {
-      origin: { y: 0.7 },
-      zIndex: 9999,
-    };
-
-    function fire(particleRatio: number, opts: confetti.Options) {
-      confetti({
-        ...defaults,
-        ...opts,
-        particleCount: Math.floor(count * particleRatio),
-      });
-    }
-
-    fire(0.25, {
-      spread: 26,
-      startVelocity: 55,
-      colors: ['#06b6d4', '#6366f1', '#10b981'],
-    });
-    fire(0.2, {
-      spread: 60,
-      colors: ['#f59e0b', '#ec4899', '#3b82f6'],
-    });
-    fire(0.35, {
-      spread: 100,
-      decay: 0.91,
-      scalar: 0.8,
-    });
-    fire(0.1, {
-      spread: 120,
-      startVelocity: 25,
-      decay: 0.92,
-      colors: ['#a855f7', '#06b6d4'],
+    // Discrete celebration confetti
+    const count = 120;
+    confetti({
+      origin: { y: 0.65 },
+      particleCount: count,
+      spread: 70,
+      colors: ['#38bdf8', '#34d399', '#818cf8'],
+      disableForReducedMotion: true,
     });
   }, []);
 
@@ -72,65 +46,59 @@ export const BatchSummaryModal: React.FC<BatchSummaryModalProps> = ({
     : 100;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/85 backdrop-blur-md animate-fade-in">
-      <div className="glass-panel w-full max-w-sm rounded-3xl p-6 sm:p-8 text-center border border-cyan-500/40 glow-cyan relative shadow-2xl">
-        {/* Trophy icon */}
-        <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-tr from-cyan-500 via-indigo-500 to-emerald-400 p-0.5 shadow-lg shadow-cyan-500/30">
-          <div className="w-full h-full bg-slate-950 rounded-[14px] flex items-center justify-center">
-            <Trophy className="w-8 h-8 text-amber-400 animate-bounce" />
-          </div>
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-fade-in">
+      <div className="studio-surface w-full max-w-sm rounded-2xl p-6 sm:p-7 text-center border border-white/[0.12] shadow-2xl">
+        {/* Subtle trophy icon */}
+        <div className="w-12 h-12 mx-auto mb-3 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-amber-400">
+          <Trophy className="w-6 h-6" />
         </div>
 
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold mb-2">
-          <Sparkles className="w-3.5 h-3.5" />
-          <span>
-            {isSentencesMode ? 'Предложения освоены!' : 'Слова блока выучены!'}
-          </span>
-        </div>
+        <span className="inline-block text-xs font-medium text-emerald-400 px-2.5 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20 mb-2">
+          {isSentencesMode ? 'Предложения освоены' : 'Слова выучены'}
+        </span>
 
-        <h3 className="text-2xl font-black text-white tracking-tight">
+        <h3 className="text-xl font-bold text-white tracking-tight">
           День {day} • Блок {batch}
         </h3>
         <p className="text-xs text-slate-400 mt-1">
           {isSentencesMode 
-            ? 'Вы успешно закрепили все слова блока в контексте живой речи.' 
-            : 'Отличный результат! Теперь пора закрепить эти слова в реальных фразах.'}
+            ? 'Все слова блока закреплены в контексте живой речи.' 
+            : 'Слова освоены. Теперь закрепите их в реальных фразах.'}
         </p>
 
-        {/* Stats card */}
-        <div className="grid grid-cols-3 gap-2 my-6 p-3.5 rounded-2xl bg-slate-900/80 border border-slate-800">
+        {/* Stats row */}
+        <div className="grid grid-cols-3 gap-2 my-5 p-3 rounded-xl bg-white/[0.03] border border-white/[0.06]">
           <div>
-            <span className="text-[10px] uppercase font-bold text-slate-400">
+            <span className="text-[10px] text-slate-400 font-medium">
               {isSentencesMode ? 'Фраз' : 'Слов'}
             </span>
-            <p className="text-lg font-black text-cyan-400 mt-0.5">{stats.masteredWords || stats.totalTested}</p>
+            <p className="text-base font-semibold text-white mt-0.5">{stats.masteredWords || stats.totalTested}</p>
           </div>
-          <div className="border-x border-slate-800">
-            <span className="text-[10px] uppercase font-bold text-slate-400">Ошибок</span>
-            <p className="text-lg font-black text-rose-400 mt-0.5">{stats.mistakes}</p>
+          <div className="border-x border-white/[0.08]">
+            <span className="text-[10px] text-slate-400 font-medium">Ошибок</span>
+            <p className="text-base font-semibold text-rose-400 mt-0.5">{stats.mistakes}</p>
           </div>
           <div>
-            <span className="text-[10px] uppercase font-bold text-slate-400">Точность</span>
-            <p className="text-lg font-black text-emerald-400 mt-0.5">{accuracy}%</p>
+            <span className="text-[10px] text-slate-400 font-medium">Точность</span>
+            <p className="text-base font-semibold text-emerald-400 mt-0.5">{accuracy}%</p>
           </div>
         </div>
 
-        {/* Action buttons */}
-        <div className="space-y-2.5">
+        {/* Action Controls */}
+        <div className="space-y-2">
           {!isSentencesMode && onStartSentences ? (
             <>
-              {/* Primary: Go to Sentences! */}
               <button
                 onClick={onStartSentences}
-                className="w-full py-3.5 px-4 rounded-2xl bg-gradient-to-r from-indigo-500 via-cyan-500 to-emerald-400 hover:opacity-95 text-slate-950 font-black text-sm shadow-xl shadow-cyan-500/30 transition-transform active:scale-95 flex items-center justify-center gap-2"
+                className="w-full py-3 px-4 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold text-sm transition-colors flex items-center justify-center gap-2"
               >
-                <MessageSquareText className="w-4 h-4 text-slate-950" />
-                <span>Закрепить в предложениях ▶</span>
+                <MessageSquareText className="w-4 h-4" />
+                <span>Закрепить в предложениях</span>
               </button>
 
               <button
                 onClick={onNextBatch}
-                className="w-full py-2.5 px-3 rounded-2xl bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-slate-200 text-xs font-semibold border border-slate-800 transition-colors"
+                className="w-full py-2.5 px-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] text-slate-400 hover:text-slate-200 text-xs font-medium border border-white/[0.08] transition-colors"
               >
                 Пропустить к следующему блоку
               </button>
@@ -138,17 +106,17 @@ export const BatchSummaryModal: React.FC<BatchSummaryModalProps> = ({
           ) : (
             <button
               onClick={onNextBatch}
-              className="w-full py-3.5 px-4 rounded-2xl bg-gradient-to-r from-cyan-500 via-indigo-600 to-fuchsia-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-extrabold text-sm shadow-lg shadow-cyan-500/30 transition-transform active:scale-95 flex items-center justify-center gap-2"
+              className="w-full py-3 px-4 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold text-sm transition-colors flex items-center justify-center gap-2"
             >
               <span>Следующий блок слов</span>
               <ArrowRight className="w-4 h-4" />
             </button>
           )}
 
-          <div className="flex gap-2">
+          <div className="flex gap-2 pt-1">
             <button
               onClick={onRepeatBatch}
-              className="flex-1 py-3 px-3 rounded-2xl bg-slate-900 hover:bg-slate-800 text-slate-300 text-xs font-semibold border border-slate-800 transition-colors active:scale-95 flex items-center justify-center gap-1.5"
+              className="flex-1 py-2.5 px-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] text-slate-300 text-xs font-medium border border-white/[0.08] transition-colors flex items-center justify-center gap-1.5"
             >
               <RotateCcw className="w-3.5 h-3.5 text-slate-400" />
               <span>Повторить</span>
@@ -156,7 +124,7 @@ export const BatchSummaryModal: React.FC<BatchSummaryModalProps> = ({
 
             <button
               onClick={onHome}
-              className="flex-1 py-3 px-3 rounded-2xl bg-slate-900 hover:bg-slate-800 text-slate-300 text-xs font-semibold border border-slate-800 transition-colors active:scale-95 flex items-center justify-center gap-1.5"
+              className="flex-1 py-2.5 px-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] text-slate-300 text-xs font-medium border border-white/[0.08] transition-colors flex items-center justify-center gap-1.5"
             >
               <Home className="w-3.5 h-3.5 text-slate-400" />
               <span>В меню</span>
