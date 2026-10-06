@@ -11,7 +11,8 @@ import {
   ChevronRight, 
   Layers,
   Sparkles,
-  BookOpen
+  BookOpen,
+  MessageSquareText
 } from 'lucide-react';
 import { DaySummary, WordItem, WordProgress, UserStats } from '@/types/vocab';
 
@@ -21,6 +22,7 @@ interface DashboardProps {
   progressMap: Record<number, WordProgress>;
   stats: UserStats;
   onStartSession: (day: number, batch: number) => void;
+  onStartSentencesSession: (day: number, batch: number) => void;
   onStartMistakesReview: () => void;
   onOpenDictionary: () => void;
 }
@@ -31,6 +33,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
   progressMap,
   stats,
   onStartSession,
+  onStartSentencesSession,
   onStartMistakesReview,
   onOpenDictionary,
 }) => {
@@ -57,7 +60,6 @@ export const Dashboard: React.FC<DashboardProps> = ({
     const dayMastered = dayWords.filter(w => progressMap[w.id]?.isMastered).length;
     if (dayMastered < dayWords.length) {
       activeDay = d.day;
-      // find first unfinished batch
       for (const b of d.batches) {
         const bWords = dayWords.filter(w => w.batch === b.batch);
         const bMastered = bWords.filter(w => progressMap[w.id]?.isMastered).length;
@@ -175,7 +177,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
       <div className="flex items-center justify-between mb-4">
         <div>
           <h2 className="text-lg font-bold text-white tracking-tight">Программа на 30 дней</h2>
-          <p className="text-xs text-slate-400">166 слов в день • разбито на короткие блоки по ~28 слов</p>
+          <p className="text-xs text-slate-400">Слова + закрепление в предложениях</p>
         </div>
         <button
           onClick={onOpenDictionary}
@@ -276,14 +278,14 @@ export const Dashboard: React.FC<DashboardProps> = ({
                 ДЕНЬ {selectedDayModal.day} ИЗ 30
               </span>
               <h3 className="text-xl font-bold text-white mt-1">
-                Выберите блок слов
+                Выберите блок для изучения
               </h3>
               <p className="text-xs text-slate-400">
-                Всего {selectedDayModal.totalWords} слов: {selectedDayModal.firstWord} ... {selectedDayModal.lastWord}
+                {selectedDayModal.totalWords} слов ({selectedDayModal.firstWord} ... {selectedDayModal.lastWord})
               </p>
             </div>
 
-            <div className="space-y-2.5 max-h-[60vh] overflow-y-auto pr-1">
+            <div className="space-y-3 max-h-[60vh] overflow-y-auto pr-1">
               {selectedDayModal.batches.map((b) => {
                 const dayWords = allWords.filter(w => w.day === selectedDayModal.day);
                 const bWords = dayWords.filter(w => w.batch === b.batch);
@@ -291,40 +293,58 @@ export const Dashboard: React.FC<DashboardProps> = ({
                 const bDone = bMastered === bWords.length;
 
                 return (
-                  <button
+                  <div
                     key={b.batch}
-                    onClick={() => {
-                      const d = selectedDayModal.day;
-                      const batchNum = b.batch;
-                      setSelectedDayModal(null);
-                      onStartSession(d, batchNum);
-                    }}
-                    className={`w-full text-left p-3.5 rounded-2xl border transition-all flex items-center justify-between group active:scale-98 ${
+                    className={`p-3.5 rounded-2xl border transition-all ${
                       bDone
                         ? 'bg-emerald-950/20 border-emerald-500/40 text-emerald-200'
-                        : 'bg-slate-900/80 hover:bg-slate-800/80 border-slate-800 hover:border-slate-700 text-white'
+                        : 'bg-slate-900/80 border-slate-800 text-white'
                     }`}
                   >
-                    <div>
+                    <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center gap-2">
                         <span className="font-bold text-sm">Блок {b.batch}</span>
                         <span className="text-xs text-slate-400">({b.count} слов)</span>
                         {bDone && <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />}
                       </div>
-                      <p className="text-xs text-slate-400 mt-0.5 truncate max-w-[240px]">
-                        {b.sample.join(', ')}...
-                      </p>
-                    </div>
-
-                    <div className="flex items-center gap-2">
                       <span className="text-xs font-mono font-bold text-slate-400">
                         {bMastered}/{b.count}
                       </span>
-                      <div className="p-2 rounded-xl bg-cyan-500/10 text-cyan-400 group-hover:bg-cyan-500 group-hover:text-slate-950 transition-colors">
-                        <Play className="w-3.5 h-3.5 fill-current" />
-                      </div>
                     </div>
-                  </button>
+
+                    <p className="text-xs text-slate-400 mb-3 truncate">
+                      {b.sample.join(', ')}...
+                    </p>
+
+                    {/* Dual Action: Words OR Sentences */}
+                    <div className="grid grid-cols-2 gap-2">
+                      <button
+                        onClick={() => {
+                          const d = selectedDayModal.day;
+                          const batchNum = b.batch;
+                          setSelectedDayModal(null);
+                          onStartSession(d, batchNum);
+                        }}
+                        className="py-2 px-3 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 text-cyan-300 text-xs font-bold flex items-center justify-center gap-1.5 transition-colors"
+                      >
+                        <Play className="w-3 h-3 fill-current" />
+                        <span>1. Слова</span>
+                      </button>
+
+                      <button
+                        onClick={() => {
+                          const d = selectedDayModal.day;
+                          const batchNum = b.batch;
+                          setSelectedDayModal(null);
+                          onStartSentencesSession(d, batchNum);
+                        }}
+                        className="py-2 px-3 rounded-xl bg-indigo-500/10 hover:bg-indigo-500/20 border border-indigo-500/30 text-indigo-300 text-xs font-bold flex items-center justify-center gap-1.5 transition-colors"
+                      >
+                        <MessageSquareText className="w-3 h-3" />
+                        <span>2. Предложения</span>
+                      </button>
+                    </div>
+                  </div>
                 );
               })}
             </div>

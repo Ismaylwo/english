@@ -2,16 +2,18 @@
 
 import React, { useEffect } from 'react';
 import confetti from 'canvas-confetti';
-import { Trophy, CheckCircle2, RotateCcw, ArrowRight, Home, Sparkles } from 'lucide-react';
+import { Trophy, RotateCcw, ArrowRight, Home, Sparkles, MessageSquareText } from 'lucide-react';
 
 interface BatchSummaryModalProps {
   stats: {
     totalTested: number;
     mistakes: number;
-    masteredWords: number;
+    masteredWords?: number;
   };
   day: number;
   batch: number;
+  isSentencesMode?: boolean;
+  onStartSentences?: () => void;
   onNextBatch: () => void;
   onRepeatBatch: () => void;
   onHome: () => void;
@@ -21,6 +23,8 @@ export const BatchSummaryModal: React.FC<BatchSummaryModalProps> = ({
   stats,
   day,
   batch,
+  isSentencesMode = false,
+  onStartSentences,
   onNextBatch,
   onRepeatBatch,
   onHome,
@@ -79,21 +83,27 @@ export const BatchSummaryModal: React.FC<BatchSummaryModalProps> = ({
 
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold mb-2">
           <Sparkles className="w-3.5 h-3.5" />
-          <span>Блок успешно завершен!</span>
+          <span>
+            {isSentencesMode ? 'Предложения освоены!' : 'Слова блока выучены!'}
+          </span>
         </div>
 
         <h3 className="text-2xl font-black text-white tracking-tight">
           День {day} • Блок {batch}
         </h3>
         <p className="text-xs text-slate-400 mt-1">
-          Все слова в блоке проверены и закреплены в памяти.
+          {isSentencesMode 
+            ? 'Вы успешно закрепили все слова блока в контексте живой речи.' 
+            : 'Отличный результат! Теперь пора закрепить эти слова в реальных фразах.'}
         </p>
 
         {/* Stats card */}
         <div className="grid grid-cols-3 gap-2 my-6 p-3.5 rounded-2xl bg-slate-900/80 border border-slate-800">
           <div>
-            <span className="text-[10px] uppercase font-bold text-slate-400">Слов</span>
-            <p className="text-lg font-black text-cyan-400 mt-0.5">{stats.masteredWords}</p>
+            <span className="text-[10px] uppercase font-bold text-slate-400">
+              {isSentencesMode ? 'Фраз' : 'Слов'}
+            </span>
+            <p className="text-lg font-black text-cyan-400 mt-0.5">{stats.masteredWords || stats.totalTested}</p>
           </div>
           <div className="border-x border-slate-800">
             <span className="text-[10px] uppercase font-bold text-slate-400">Ошибок</span>
@@ -107,13 +117,33 @@ export const BatchSummaryModal: React.FC<BatchSummaryModalProps> = ({
 
         {/* Action buttons */}
         <div className="space-y-2.5">
-          <button
-            onClick={onNextBatch}
-            className="w-full py-3.5 px-4 rounded-2xl bg-gradient-to-r from-cyan-500 via-indigo-600 to-fuchsia-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-extrabold text-sm shadow-lg shadow-cyan-500/30 transition-transform active:scale-95 flex items-center justify-center gap-2"
-          >
-            <span>Следующий блок</span>
-            <ArrowRight className="w-4 h-4" />
-          </button>
+          {!isSentencesMode && onStartSentences ? (
+            <>
+              {/* Primary: Go to Sentences! */}
+              <button
+                onClick={onStartSentences}
+                className="w-full py-3.5 px-4 rounded-2xl bg-gradient-to-r from-indigo-500 via-cyan-500 to-emerald-400 hover:opacity-95 text-slate-950 font-black text-sm shadow-xl shadow-cyan-500/30 transition-transform active:scale-95 flex items-center justify-center gap-2"
+              >
+                <MessageSquareText className="w-4 h-4 text-slate-950" />
+                <span>Закрепить в предложениях ▶</span>
+              </button>
+
+              <button
+                onClick={onNextBatch}
+                className="w-full py-2.5 px-3 rounded-2xl bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-slate-200 text-xs font-semibold border border-slate-800 transition-colors"
+              >
+                Пропустить к следующему блоку
+              </button>
+            </>
+          ) : (
+            <button
+              onClick={onNextBatch}
+              className="w-full py-3.5 px-4 rounded-2xl bg-gradient-to-r from-cyan-500 via-indigo-600 to-fuchsia-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-extrabold text-sm shadow-lg shadow-cyan-500/30 transition-transform active:scale-95 flex items-center justify-center gap-2"
+            >
+              <span>Следующий блок слов</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          )}
 
           <div className="flex gap-2">
             <button

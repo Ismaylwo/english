@@ -9,6 +9,7 @@ import { soundFx } from '@/lib/soundFx';
 import { Header } from '@/components/Header';
 import { Dashboard } from '@/components/Dashboard';
 import { HardcoreTrainer } from '@/components/HardcoreTrainer';
+import { SentenceTrainer } from '@/components/SentenceTrainer';
 import { BatchSummaryModal } from '@/components/BatchSummaryModal';
 import { SettingsModal } from '@/components/SettingsModal';
 import { DictionaryModal } from '@/components/DictionaryModal';
@@ -19,7 +20,7 @@ const daysSummary = daysSummaryData as unknown as DaySummary[];
 export default function Home() {
   const [isMounted, setIsMounted] = useState(false);
   const [appState, setAppState] = useState<AppStateData | null>(null);
-  const [activeView, setActiveView] = useState<'dashboard' | 'trainer'>('dashboard');
+  const [activeView, setActiveView] = useState<'dashboard' | 'trainer' | 'sentences'>('dashboard');
   
   // Trainer session parameters
   const [currentSession, setCurrentSession] = useState<{
@@ -37,7 +38,8 @@ export default function Home() {
     batch: number;
     totalTested: number;
     mistakes: number;
-    masteredWords: number;
+    masteredWords?: number;
+    isSentencesMode?: boolean;
   } | null>(null);
 
   // Initialize storage on client mount
@@ -70,7 +72,7 @@ export default function Home() {
     return res;
   };
 
-  // Start training a specific day and batch
+  // Start words session for a day and batch
   const handleStartSession = (day: number, batch: number) => {
     const sessionWords = allWords.filter(w => w.day === day && w.batch === batch);
     if (sessionWords.length === 0) return;
@@ -82,6 +84,21 @@ export default function Home() {
       isMistakesMode: false,
     });
     setActiveView('trainer');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Start sentences session for a day and batch
+  const handleStartSentencesSession = (day: number, batch: number) => {
+    const sessionWords = allWords.filter(w => w.day === day && w.batch === batch);
+    if (sessionWords.length === 0) return;
+
+    setCurrentSession({
+      day,
+      batch,
+      words: sessionWords,
+      isMistakesMode: false,
+    });
+    setActiveView('sentences');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -98,24 +115,48 @@ export default function Home() {
     setCurrentSession({
       day: 0,
       batch: 0,
-      words: mistakeWords.slice(0, 30), // review up to 30 mistake words per sprint
+      words: mistakeWords.slice(0, 30),
       isMistakesMode: true,
     });
     setActiveView('trainer');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Batch completion handler
-  const handleFinishBatch = (stats: { totalTested: number; mistakes: number; masteredWords: number }) => {
+  // Words batch completion handler -> prompts transition to sentences!
+  const handleFinishWordsBatch = (stats: { totalTested: number; mistakes: number; masteredWords: number }) => {
     if (!currentSession) return;
     setCompletedBatchStats({
       day: currentSession.day,
       batch: currentSession.batch,
-      ...stats,
+      totalTested: stats.totalTested,
+      mistakes: stats.mistakes,
+      masteredWords: stats.masteredWords,
+      isSentencesMode: false,
     });
   };
 
-  // Advance to next batch
+  // Sentences completion handler
+  const handleFinishSentences = (stats: { totalTested: number; mistakes: number }) => {
+    if (!currentSession) return;
+    setCompletedBatchStats({
+      day: currentSession.day,
+      batch: currentSession.batch,
+      totalTested: stats.totalTested,
+      mistakes: stats.mistakes,
+      masteredWords: currentSession.words.length,
+      isSentencesMode: true,
+    });
+  };
+
+  // Advance to sentences of the current batch
+  const handleTransitionToSentences = () => {
+    if (!completedBatchStats) return;
+    const { day, batch } = completedBatchStats;
+    setCompletedBatchStats(null);
+    handleStartSentencesSession(day, batch);
+  };
+
+  // Advance to next batch of words
   const handleNextBatch = () => {
     if (!completedBatchStats) return;
     const { day, batch } = completedBatchStats;
@@ -134,12 +175,16 @@ export default function Home() {
     }
   };
 
-  // Repeat current batch
-  const handleRepeatBatch = () => {
+  // Repeat current session (words or sentences)
+  const handleRepeatCurrent = () => {
     if (!completedBatchStats) return;
-    const { day, batch } = completedBatchStats;
+    const { day, batch, isSentencesMode } = completedBatchStats;
     setCompletedBatchStats(null);
-    handleStartSession(day, batch);
+    if (isSentencesMode) {
+      handleStartSentencesSession(day, batch);
+    } else {
+      handleStartSession(day, batch);
+    }
   };
 
   // Settings update handlers
@@ -193,10 +238,11 @@ export default function Home() {
             progressMap={appState.progress}
             stats={appState.stats}
             onStartSession={handleStartSession}
+            onStartSentencesSession={handleStartSentencesSession}
             onStartMistakesReview={handleStartMistakesReview}
             onOpenDictionary={() => setShowDictionary(true)}
           />
-        ) : currentSession ? (
+        ) : activeView === 'trainer' && currentSession ? (
           <HardcoreTrainer
             day={currentSession.day}
             batch={currentSession.batch}
@@ -205,7 +251,16 @@ export default function Home() {
             settings={appState.settings}
             onRecordResult={handleRecordResult}
             onBackToDashboard={() => setActiveView('dashboard')}
-            onFinishBatch={handleFinishBatch}
+            onFinishBatch={handleFinishWordsBatch}
+          />
+        ) : activeView === 'sentences' && currentSession ? (
+          <SentenceTrainer
+            day={currentSession.day}
+            batch={currentSession.batch}
+            words={currentSession.words}
+            settings={appState.settings}
+            onBackToDashboard={() => setActiveView('dashboard')}
+            onFinishSentences={handleFinishSentences}
           />
         ) : null}
       </main>
@@ -216,8 +271,10 @@ export default function Home() {
           stats={completedBatchStats}
           day={completedBatchStats.day}
           batch={completedBatchStats.batch}
+          isSentencesMode={completedBatchStats.isSentencesMode}
+          onStartSentences={handleTransitionToSentences}
           onNextBatch={handleNextBatch}
-          onRepeatBatch={handleRepeatBatch}
+          onRepeatBatch={handleRepeatCurrent}
           onHome={() => {
             setCompletedBatchStats(null);
             setActiveView('dashboard');

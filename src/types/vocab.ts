@@ -1,3 +1,12 @@
+export interface ExampleSentence {
+  en: string;
+  ru: string;
+  tj?: string;
+  prefix: string;
+  suffix: string;
+  target: string;
+}
+
 export interface WordItem {
   id: number;
   en: string;
@@ -10,6 +19,7 @@ export interface WordItem {
   day: number;
   batch: number;
   dayIndex: number;
+  example?: ExampleSentence;
 }
 
 export interface DaySummary {
