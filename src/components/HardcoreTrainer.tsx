@@ -4,14 +4,12 @@ import React, { useState, useEffect, useRef } from 'react';
 import { 
   ArrowLeft, 
   Volume2, 
-  Sparkles, 
   HelpCircle, 
   CheckCircle2, 
-  XCircle, 
   Zap, 
-  RotateCcw,
   AlertTriangle,
-  Send
+  Send,
+  Shuffle
 } from 'lucide-react';
 import { WordItem, WordProgress, UserSettings } from '@/types/vocab';
 import { soundFx } from '@/lib/soundFx';
@@ -33,6 +31,69 @@ interface HardcoreTrainerProps {
   onFinishBatch: (stats: { totalTested: number; mistakes: number; masteredWords: number }) => void;
 }
 
+// Fisher-Yates shuffle helper
+function shuffleArray<T>(array: T[]): T[] {
+  const arr = [...array];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+// Robust text normalizers
+export function normalizeAnswer(text: string): string {
+  if (!text) return '';
+  return text
+    .toLowerCase()
+    .replace(/[,\/#!$%\^&\*;:{}=\-_`~()]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+export function cleanAlphanumeric(text: string): string {
+  if (!text) return '';
+  return text.toLowerCase().replace(/[^a-z0-9]/g, '');
+}
+
+export function isAnswerCorrect(input: string, word: WordItem): boolean {
+  const normInput = normalizeAnswer(input);
+  const cleanInput = cleanAlphanumeric(input);
+  if (!cleanInput) return false;
+
+  const normEn = normalizeAnswer(word.en);
+  const cleanEn = cleanAlphanumeric(word.en);
+  const normCleanEn = normalizeAnswer(word.cleanEn);
+  const cleanCleanEn = cleanAlphanumeric(word.cleanEn);
+
+  // 1. Direct alphanumeric match (e.g. "a, an" -> "aan" === "a an" -> "aan", "t-shirt" -> "tshirt")
+  if (cleanInput === cleanEn || cleanInput === cleanCleanEn) {
+    return true;
+  }
+
+  // 2. Normalized match (punctuation stripped)
+  if (normInput === normEn || normInput === normCleanEn) {
+    return true;
+  }
+
+  // 3. Accepted variations from dataset
+  for (const acc of (word.accepted || [])) {
+    if (cleanInput === cleanAlphanumeric(acc) || normInput === normalizeAnswer(acc)) {
+      return true;
+    }
+  }
+
+  // 4. Multi-word alternative tokens (e.g. "a an" -> user entered single "a" or single "an")
+  const tokens = normEn.split(' ').filter(t => t.length > 0);
+  if (tokens.length > 1) {
+    if (tokens.includes(normInput) || tokens.some(t => cleanAlphanumeric(t) === cleanInput)) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
 export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
   day,
   batch,
@@ -43,11 +104,12 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
   onBackToDashboard,
   onFinishBatch,
 }) => {
-  // Build initial queue of words that are not yet mastered in this batch
   const strictTarget = settings.strictLevel || 2;
 
+  // Initialize with SHUFFLED words!
   const [queue, setQueue] = useState<TrainerQueueItem[]>(() => {
-    return words.map(w => {
+    const shuffled = shuffleArray(words);
+    return shuffled.map(w => {
       const prog = progressMap[w.id];
       const lvl = prog ? prog.masteryLevel : 0;
       return {
@@ -87,18 +149,14 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
     }
   };
 
-  const isAnswerCorrect = (input: string, word: WordItem): boolean => {
-    const clean = input.trim().toLowerCase();
-    if (!clean) return false;
-    // Check against accepted array or base cleanEn
-    if (word.accepted.includes(clean)) return true;
-    if (word.cleanEn === clean) return true;
-    // Strip hyphens/spaces check
-    const normalizedInput = clean.replace(/[- ]/g, '');
-    const normalizedCleanEn = word.cleanEn.replace(/[- ]/g, '');
-    if (normalizedInput === normalizedCleanEn) return true;
-
-    return false;
+  // Re-shuffle remaining items in the queue
+  const handleShuffleRemaining = () => {
+    if (queue.length <= currentIndex + 1) return;
+    const completed = queue.slice(0, currentIndex + 1);
+    const remaining = queue.slice(currentIndex + 1);
+    const shuffledRemaining = shuffleArray(remaining);
+    setQueue([...completed, ...shuffledRemaining]);
+    soundFx.triggerHaptic('light');
   };
 
   // Submit answer
@@ -168,20 +226,27 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
       onRecordResult(currentWord.id, false);
       speakCurrent();
 
-      // Enter correction mode & re-queue the word
+      // Enter correction mode & re-queue the word randomly ahead
       setInputStatus('correction');
 
-      // Reset level in queue and append copy of word to queue
       const updatedQueue = [...queue];
       updatedQueue[currentIndex] = {
         ...updatedQueue[currentIndex],
         currentLevel: 0,
       };
-      // Re-queue so it repeats later in the batch!
-      updatedQueue.push({
+
+      // Spaced repetition: insert word 2 to 5 cards ahead randomly (or at end if fewer)
+      const remainingCount = updatedQueue.length - (currentIndex + 1);
+      const offset = Math.min(
+        remainingCount,
+        Math.max(2, Math.floor(Math.random() * 4) + 2)
+      );
+      const insertIndex = currentIndex + 1 + offset;
+      updatedQueue.splice(insertIndex, 0, {
         word: currentWord,
         currentLevel: 0,
       });
+
       setQueue(updatedQueue);
     }
   };
@@ -205,7 +270,13 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
       ...updatedQueue[currentIndex],
       currentLevel: 0,
     };
-    updatedQueue.push({
+    const remainingCount = updatedQueue.length - (currentIndex + 1);
+    const offset = Math.min(
+      remainingCount,
+      Math.max(2, Math.floor(Math.random() * 4) + 2)
+    );
+    const insertIndex = currentIndex + 1 + offset;
+    updatedQueue.splice(insertIndex, 0, {
       word: currentWord,
       currentLevel: 0,
     });
@@ -288,6 +359,16 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
           </button>
 
           <div className="flex items-center gap-2">
+            {/* Shuffle Button / Badge */}
+            <button
+              onClick={handleShuffleRemaining}
+              title="Перемешать оставшиеся слова в случайном порядке"
+              className="flex items-center gap-1 px-2.5 py-1 rounded-xl bg-indigo-500/10 hover:bg-indigo-500/20 border border-indigo-500/20 text-indigo-300 text-xs font-medium transition-colors"
+            >
+              <Shuffle className="w-3.5 h-3.5" />
+              <span>Рандом</span>
+            </button>
+
             {combo > 1 && (
               <div className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-gradient-to-r from-amber-500/20 to-rose-500/20 border border-amber-500/30 text-amber-300 text-xs font-bold animate-pulse">
                 <Zap className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
@@ -295,7 +376,7 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
               </div>
             )}
             <div className="text-xs font-medium text-slate-400 px-2.5 py-1 rounded-xl bg-slate-900/60 border border-slate-800">
-              День {day} • Блок {batch}
+              {day > 0 ? `День ${day} • Блок ${batch}` : 'Повторение ошибок'}
             </div>
           </div>
         </div>
@@ -393,13 +474,18 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
             <div className="mb-4 p-4 rounded-2xl bg-rose-500/10 border border-rose-500/30 text-center animate-fade-in">
               <div className="flex items-center justify-center gap-1.5 text-rose-400 font-bold text-xs uppercase tracking-wider mb-1">
                 <AlertTriangle className="w-4 h-4" />
-                <span>Сброс на 0! Запомните написание:</span>
+                <span>Сброс на 0! Правильный ответ:</span>
               </div>
-              <div className="text-2xl font-mono font-black text-rose-300 tracking-widest my-1 uppercase">
+              <div className="text-2xl font-mono font-bold text-rose-300 tracking-wider my-1">
                 {currentWord.en}
               </div>
+              {currentWord.accepted && currentWord.accepted.length > 1 && (
+                <p className="text-[11px] text-rose-300/80 mb-1">
+                  (также принимается: {currentWord.accepted.slice(0, 4).join(', ')})
+                </p>
+              )}
               <p className="text-xs text-rose-300/80 mt-1">
-                Наберите слово правильно в поле ниже, чтобы продолжить:
+                Наберите слово в поле ниже, чтобы продолжить:
               </p>
             </div>
           )}
@@ -414,7 +500,7 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
                 onChange={(e) => setUserInput(e.target.value)}
                 placeholder={
                   inputStatus === 'correction' 
-                    ? `Наберите "${currentWord.cleanEn}"` 
+                    ? `Наберите "${currentWord.en}"` 
                     : 'Введите английское слово...'
                 }
                 autoComplete="off"
@@ -476,7 +562,7 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
       {/* Bottom Hint / Info Bar */}
       <div className="mt-6 text-center text-xs text-slate-500">
         <p>
-          💡 Хардкорный режим: любая опечатка сбрасывает уровень слова до 0. Нажмите Enter для отправки.
+          🔀 Слова перемешаны случайно. Знаки препинания (запятые, дефисы, слэши) не влияют на проверку.
         </p>
       </div>
     </div>
