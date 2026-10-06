@@ -2,7 +2,7 @@
 
 import React, { useEffect } from 'react';
 import confetti from 'canvas-confetti';
-import { Trophy, RotateCcw, ArrowRight, Home, CheckCircle2, MessageSquareText } from 'lucide-react';
+import { Trophy, RotateCcw, ArrowRight, Home, CheckCircle2, MessageSquareText, Sparkles } from 'lucide-react';
 
 interface BatchSummaryModalProps {
   stats: {
@@ -12,8 +12,11 @@ interface BatchSummaryModalProps {
   };
   day: number;
   batch: number;
+  categoryTitle?: string;
+  isLastBatchOfCategory?: boolean;
   isSentencesMode?: boolean;
   onStartSentences?: () => void;
+  onStartMonologue?: () => void;
   onNextBatch: () => void;
   onRepeatBatch: () => void;
   onHome: () => void;
@@ -23,8 +26,11 @@ export const BatchSummaryModal: React.FC<BatchSummaryModalProps> = ({
   stats,
   day,
   batch,
+  categoryTitle,
+  isLastBatchOfCategory = false,
   isSentencesMode = false,
   onStartSentences,
+  onStartMonologue,
   onNextBatch,
   onRepeatBatch,
   onHome,
@@ -58,11 +64,13 @@ export const BatchSummaryModal: React.FC<BatchSummaryModalProps> = ({
         </span>
 
         <h3 className="text-xl font-bold text-white tracking-tight">
-          День {day} • Блок {batch}
+          {categoryTitle ? `${categoryTitle} • Блок ${batch}` : `День ${day} • Блок ${batch}`}
         </h3>
         <p className="text-xs text-slate-400 mt-1">
           {isSentencesMode 
-            ? 'Все слова блока закреплены в контексте живой речи.' 
+            ? (isLastBatchOfCategory 
+                ? 'Все слова темы освоены! Готовы послушать и разобрать связный монолог?' 
+                : 'Все слова блока закреплены в контексте живой речи.')
             : 'Слова освоены. Теперь закрепите их в реальных фразах.'}
         </p>
 
@@ -100,7 +108,24 @@ export const BatchSummaryModal: React.FC<BatchSummaryModalProps> = ({
                 onClick={onNextBatch}
                 className="w-full py-2.5 px-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] text-slate-400 hover:text-slate-200 text-xs font-medium border border-white/[0.08] transition-colors"
               >
-                Пропустить к следующему блоку
+                Пропустить к следующему шагу
+              </button>
+            </>
+          ) : isLastBatchOfCategory && onStartMonologue ? (
+            <>
+              <button
+                onClick={onStartMonologue}
+                className="w-full py-3 px-4 rounded-xl bg-sky-400 hover:bg-sky-300 text-slate-950 font-semibold text-sm transition-colors flex items-center justify-center gap-2 shadow-lg shadow-sky-500/20"
+              >
+                <Sparkles className="w-4 h-4 text-slate-950" />
+                <span>Слушать монолог темы</span>
+              </button>
+
+              <button
+                onClick={onNextBatch}
+                className="w-full py-2.5 px-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] text-slate-400 hover:text-slate-200 text-xs font-medium border border-white/[0.08] transition-colors"
+              >
+                Следующая тема
               </button>
             </>
           ) : (

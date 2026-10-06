@@ -24,6 +24,7 @@ interface SentenceQueueItem {
 interface SentenceTrainerProps {
   day: number;
   batch: number;
+  categoryTitle?: string;
   words: WordItem[];
   settings: UserSettings;
   onBackToDashboard: () => void;
@@ -42,6 +43,7 @@ function shuffleArray<T>(array: T[]): T[] {
 export const SentenceTrainer: React.FC<SentenceTrainerProps> = ({
   day,
   batch,
+  categoryTitle,
   words,
   settings,
   onBackToDashboard,
@@ -249,7 +251,7 @@ export const SentenceTrainer: React.FC<SentenceTrainerProps> = ({
             )}
             <div className="flex items-center gap-1.5 text-xs font-medium text-indigo-300 px-2.5 py-1 rounded-lg bg-indigo-500/10 border border-indigo-500/20">
               <MessageSquareText className="w-3.5 h-3.5" />
-              <span>Предложения • Блок {batch}</span>
+              <span>{categoryTitle ? `${categoryTitle} • Фразы ${batch}` : `Предложения • Блок ${batch}`}</span>
             </div>
           </div>
         </div>

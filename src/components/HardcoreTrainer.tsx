@@ -22,6 +22,7 @@ interface TrainerQueueItem {
 interface HardcoreTrainerProps {
   day: number;
   batch: number;
+  categoryTitle?: string;
   words: WordItem[];
   progressMap: Record<number, WordProgress>;
   settings: UserSettings;
@@ -85,6 +86,7 @@ export function isAnswerCorrect(input: string, word: WordItem): boolean {
 export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
   day,
   batch,
+  categoryTitle,
   words,
   progressMap,
   settings,
@@ -325,7 +327,7 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
               </div>
             )}
             <div className="text-xs font-medium text-slate-400 px-2.5 py-1 rounded-lg bg-white/[0.04] border border-white/[0.08]">
-              {day > 0 ? `День ${day} • Блок ${batch}` : 'Повторение ошибок'}
+              {categoryTitle ? `${categoryTitle} • Блок ${batch}` : day > 0 ? `День ${day} • Блок ${batch}` : 'Повторение ошибок'}
             </div>
           </div>
         </div>

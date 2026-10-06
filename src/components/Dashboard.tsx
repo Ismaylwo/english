@@ -9,34 +9,47 @@ import {
   Target, 
   Award, 
   ChevronRight, 
-  Layers,
-  BookOpen,
-  MessageSquareText
+  Layers, 
+  BookOpen, 
+  MessageSquareText,
+  Volume2,
+  Users,
+  Plane,
+  ShoppingBag,
+  Home as HomeIcon,
+  Briefcase,
+  Heart,
+  Trophy,
+  Smartphone,
+  Sparkles,
+  Globe
 } from 'lucide-react';
-import { DaySummary, WordItem, WordProgress, UserStats } from '@/types/vocab';
+import { CategorySummary, WordItem, WordProgress, UserStats } from '@/types/vocab';
 
 interface DashboardProps {
-  daysSummary: DaySummary[];
+  categories: CategorySummary[];
   allWords: WordItem[];
   progressMap: Record<number, WordProgress>;
   stats: UserStats;
-  onStartSession: (day: number, batch: number) => void;
-  onStartSentencesSession: (day: number, batch: number) => void;
+  onStartSession: (categoryId: string, batch: number) => void;
+  onStartSentencesSession: (categoryId: string, batch: number) => void;
+  onOpenMonologue: (category: CategorySummary) => void;
   onStartMistakesReview: () => void;
   onOpenDictionary: () => void;
 }
 
 export const Dashboard: React.FC<DashboardProps> = ({
-  daysSummary,
+  categories,
   allWords,
   progressMap,
   stats,
   onStartSession,
   onStartSentencesSession,
+  onOpenMonologue,
   onStartMistakesReview,
   onOpenDictionary,
 }) => {
-  const [selectedDayModal, setSelectedDayModal] = useState<DaySummary | null>(null);
+  const [selectedCategoryModal, setSelectedCategoryModal] = useState<CategorySummary | null>(null);
 
   const totalWords = allWords.length || 4991;
   const masteredCount = Object.values(progressMap).filter(p => p.isMastered).length;
@@ -48,16 +61,17 @@ export const Dashboard: React.FC<DashboardProps> = ({
     return p && p.mistakesCount > 0 && !p.isMastered;
   });
 
-  let activeDay = 1;
+  // Find active category and batch
+  let activeCat = categories[0] || null;
   let activeBatch = 1;
 
-  for (const d of daysSummary) {
-    const dayWords = allWords.filter(w => w.day === d.day);
-    const dayMastered = dayWords.filter(w => progressMap[w.id]?.isMastered).length;
-    if (dayMastered < dayWords.length) {
-      activeDay = d.day;
-      for (const b of d.batches) {
-        const bWords = dayWords.filter(w => w.batch === b.batch);
+  for (const cat of categories) {
+    const catWords = allWords.filter(w => w.categoryId === cat.id);
+    const catMastered = catWords.filter(w => progressMap[w.id]?.isMastered).length;
+    if (catMastered < catWords.length) {
+      activeCat = cat;
+      for (const b of cat.batches) {
+        const bWords = catWords.filter(w => w.categoryBatch === b.batch);
         const bMastered = bWords.filter(w => progressMap[w.id]?.isMastered).length;
         if (bMastered < bWords.length) {
           activeBatch = b.batch;
@@ -67,6 +81,22 @@ export const Dashboard: React.FC<DashboardProps> = ({
       break;
     }
   }
+
+  const getCategoryIcon = (iconName: string) => {
+    switch (iconName) {
+      case 'Users': return <Users className="w-5 h-5 text-sky-400" />;
+      case 'Plane': return <Plane className="w-5 h-5 text-indigo-400" />;
+      case 'ShoppingBag': return <ShoppingBag className="w-5 h-5 text-emerald-400" />;
+      case 'Home': return <HomeIcon className="w-5 h-5 text-amber-400" />;
+      case 'Briefcase': return <Briefcase className="w-5 h-5 text-blue-400" />;
+      case 'Heart': return <Heart className="w-5 h-5 text-rose-400" />;
+      case 'Trophy': return <Trophy className="w-5 h-5 text-yellow-400" />;
+      case 'Smartphone': return <Smartphone className="w-5 h-5 text-cyan-400" />;
+      case 'Sparkles': return <Sparkles className="w-5 h-5 text-purple-400" />;
+      case 'Globe': return <Globe className="w-5 h-5 text-teal-400" />;
+      default: return <BookOpen className="w-5 h-5 text-sky-400" />;
+    }
+  };
 
   return (
     <div className="w-full max-w-4xl mx-auto px-4 py-8">
@@ -107,7 +137,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
 
             <div>
               <span className="text-xs font-medium text-sky-400 mb-1 block">
-                Спринт на 1 месяц • 5000 слов
+                10 жизненных сфер • 5000 слов
               </span>
               <h1 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
                 {masteredCount} <span className="text-slate-400 font-normal text-lg">из {totalWords} слов</span>
@@ -130,13 +160,15 @@ export const Dashboard: React.FC<DashboardProps> = ({
               </button>
             )}
 
-            <button
-              onClick={() => onStartSession(activeDay, activeBatch)}
-              className="py-3 px-5 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold text-sm transition-colors flex items-center justify-center gap-2"
-            >
-              <Play className="w-4 h-4 fill-current" />
-              <span>День {activeDay} • Блок {activeBatch}</span>
-            </button>
+            {activeCat && (
+              <button
+                onClick={() => onStartSession(activeCat.id, activeBatch)}
+                className="py-3 px-5 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold text-sm transition-colors flex items-center justify-center gap-2"
+              >
+                <Play className="w-4 h-4 fill-current" />
+                <span>Тема {activeCat.index} • Блок {activeBatch}</span>
+              </button>
+            )}
           </div>
         </div>
 
@@ -165,35 +197,35 @@ export const Dashboard: React.FC<DashboardProps> = ({
         </div>
       </div>
 
-      {/* 30-Day Grid Section */}
+      {/* 10 Thematic Categories Header */}
       <div className="flex items-center justify-between mb-4">
         <div>
-          <h2 className="text-base font-semibold text-white tracking-tight">Программа на 30 дней</h2>
-          <p className="text-xs text-slate-400">166 слов в день • слова и закрепление в предложениях</p>
+          <h2 className="text-base font-semibold text-white tracking-tight">Путь изучения: 10 сфер жизни</h2>
+          <p className="text-xs text-slate-400">Слова по темам + связный финальный монолог в конце каждой сферы</p>
         </div>
         <button
           onClick={onOpenDictionary}
           className="text-xs font-medium text-slate-300 hover:text-white flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] transition-colors"
         >
           <BookOpen className="w-3.5 h-3.5 text-slate-400" />
-          <span>Все слова</span>
+          <span>Словарь</span>
         </button>
       </div>
 
-      {/* Grid of Days */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
-        {daysSummary.map((d) => {
-          const dayWords = allWords.filter(w => w.day === d.day);
-          const masteredInDay = dayWords.filter(w => progressMap[w.id]?.isMastered).length;
-          const dayPct = Math.round((masteredInDay / dayWords.length) * 100);
-          const isCompleted = dayPct === 100;
-          const isCurrent = d.day === activeDay;
+      {/* Categories Roadmap List */}
+      <div className="space-y-3">
+        {categories.map((cat) => {
+          const catWords = allWords.filter(w => w.categoryId === cat.id);
+          const catMastered = catWords.filter(w => progressMap[w.id]?.isMastered).length;
+          const catPct = catWords.length > 0 ? Math.round((catMastered / catWords.length) * 100) : 0;
+          const isCompleted = catPct === 100;
+          const isCurrent = activeCat && activeCat.id === cat.id;
 
           return (
             <div
-              key={d.day}
-              onClick={() => setSelectedDayModal(d)}
-              className={`studio-surface rounded-xl p-4 cursor-pointer transition-colors border group ${
+              key={cat.id}
+              onClick={() => setSelectedCategoryModal(cat)}
+              className={`studio-surface rounded-xl p-4 sm:p-5 cursor-pointer transition-colors border group ${
                 isCompleted
                   ? 'border-emerald-500/30 bg-emerald-950/10'
                   : isCurrent
@@ -201,65 +233,68 @@ export const Dashboard: React.FC<DashboardProps> = ({
                   : 'border-white/[0.08] hover:border-white/[0.16]'
               }`}
             >
-              <div className="flex items-center justify-between mb-2">
-                <div className="flex items-center gap-2">
-                  <span className={`text-xs font-semibold px-2 py-0.5 rounded ${
-                    isCompleted
-                      ? 'bg-emerald-500/15 text-emerald-300'
-                      : isCurrent
-                      ? 'bg-sky-500/15 text-sky-300'
-                      : 'bg-white/[0.06] text-slate-300'
-                  }`}>
-                    День {d.day}
-                  </span>
-                  {isCompleted && (
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-                  )}
+              <div className="flex items-start justify-between gap-4">
+                <div className="flex items-start gap-3.5">
+                  <div className="p-2 rounded-xl bg-white/[0.04] border border-white/[0.08] flex-shrink-0 mt-0.5">
+                    {getCategoryIcon(cat.icon)}
+                  </div>
+
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs font-semibold text-slate-400">
+                        Тема {cat.index}
+                      </span>
+                      <h3 className="text-base font-semibold text-white tracking-tight group-hover:text-sky-300 transition-colors">
+                        {cat.titleRu}
+                      </h3>
+                      {isCompleted && (
+                        <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                      )}
+                    </div>
+                    <p className="text-xs text-slate-400 mt-1 max-w-xl">
+                      {cat.descriptionRu}
+                    </p>
+                    <div className="flex items-center gap-3 mt-2 text-xs text-slate-500">
+                      <span>{cat.totalWords} слов</span>
+                      <span>•</span>
+                      <span>{cat.totalBatches} блоков</span>
+                      {cat.monologue && (
+                        <>
+                          <span>•</span>
+                          <span className="text-sky-400 font-medium flex items-center gap-1">
+                            <Volume2 className="w-3 h-3" /> Финальный монолог
+                          </span>
+                        </>
+                      )}
+                    </div>
+                  </div>
                 </div>
-                <span className="text-xs font-mono text-slate-400">
-                  {masteredInDay}/{d.totalWords}
-                </span>
-              </div>
 
-              {/* Sample word range */}
-              <div className="text-xs text-slate-300 truncate mb-3">
-                <span className="text-white font-medium">{d.firstWord}</span>
-                <span className="text-slate-500 mx-1.5">→</span>
-                <span className="text-slate-400">{d.lastWord}</span>
-              </div>
-
-              {/* Minimal progress bar */}
-              <div className="w-full h-1 bg-white/[0.08] rounded-full overflow-hidden">
-                <div
-                  className={`h-full rounded-full transition-all duration-300 ${
-                    isCompleted
-                      ? 'bg-emerald-400'
-                      : 'bg-sky-400'
-                  }`}
-                  style={{ width: `${dayPct}%` }}
-                />
-              </div>
-
-              {/* Footer info */}
-              <div className="flex items-center justify-between mt-3 text-[11px] text-slate-400">
-                <span className="flex items-center gap-1 text-slate-500">
-                  <Layers className="w-3 h-3" /> {d.batches.length} блоков
-                </span>
-                <span className="group-hover:text-sky-300 flex items-center gap-0.5 font-medium transition-colors">
-                  Открыть <ChevronRight className="w-3 h-3" />
-                </span>
+                <div className="text-right flex-shrink-0">
+                  <span className="text-xs font-mono font-medium text-slate-400">
+                    {catMastered}/{cat.totalWords}
+                  </span>
+                  <div className="w-20 sm:w-24 h-1 bg-white/[0.08] rounded-full overflow-hidden mt-2">
+                    <div
+                      className={`h-full rounded-full transition-all duration-300 ${
+                        isCompleted ? 'bg-emerald-400' : 'bg-sky-400'
+                      }`}
+                      style={{ width: `${catPct}%` }}
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           );
         })}
       </div>
 
-      {/* Day Batch Selection Modal */}
-      {selectedDayModal && (
+      {/* Category Detail Modal */}
+      {selectedCategoryModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm animate-fade-in">
-          <div className="studio-surface w-full max-w-md rounded-2xl p-6 border border-white/[0.12] shadow-2xl relative">
+          <div className="studio-surface w-full max-w-md rounded-2xl p-6 border border-white/[0.12] shadow-2xl relative max-h-[85vh] flex flex-col">
             <button
-              onClick={() => setSelectedDayModal(null)}
+              onClick={() => setSelectedCategoryModal(null)}
               className="absolute right-4 top-4 text-slate-400 hover:text-white p-1 rounded-lg hover:bg-white/[0.06]"
             >
               ✕
@@ -267,22 +302,48 @@ export const Dashboard: React.FC<DashboardProps> = ({
 
             <div className="mb-4">
               <span className="text-xs font-medium text-sky-400">
-                День {selectedDayModal.day} из 30
+                Тема {selectedCategoryModal.index} из 10
               </span>
               <h3 className="text-lg font-bold text-white mt-0.5">
-                Выберите блок для тренировки
+                {selectedCategoryModal.titleRu}
               </h3>
               <p className="text-xs text-slate-400 mt-1">
-                {selectedDayModal.totalWords} слов ({selectedDayModal.firstWord} … {selectedDayModal.lastWord})
+                {selectedCategoryModal.totalWords} слов • {selectedCategoryModal.totalBatches} блоков
               </p>
             </div>
 
-            <div className="space-y-2.5 max-h-[60vh] overflow-y-auto pr-1">
-              {selectedDayModal.batches.map((b) => {
-                const dayWords = allWords.filter(w => w.day === selectedDayModal.day);
-                const bWords = dayWords.filter(w => w.batch === b.batch);
+            {/* Monologue Shortcut Button */}
+            {selectedCategoryModal.monologue && (
+              <div className="mb-4 p-3 rounded-xl bg-sky-500/10 border border-sky-500/25 flex items-center justify-between gap-3">
+                <div>
+                  <span className="text-[11px] font-semibold text-sky-300 block">
+                    Финальный монолог темы
+                  </span>
+                  <p className="text-xs text-white font-medium truncate max-w-[210px]">
+                    {selectedCategoryModal.monologue.titleEn}
+                  </p>
+                </div>
+                <button
+                  onClick={() => {
+                    const cat = selectedCategoryModal;
+                    setSelectedCategoryModal(null);
+                    onOpenMonologue(cat);
+                  }}
+                  className="py-1.5 px-3 rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold text-xs flex items-center gap-1.5 transition-colors"
+                >
+                  <Volume2 className="w-3.5 h-3.5" />
+                  <span>Открыть</span>
+                </button>
+              </div>
+            )}
+
+            {/* Batches List */}
+            <div className="space-y-2.5 overflow-y-auto flex-1 pr-1">
+              {selectedCategoryModal.batches.map((b) => {
+                const catWords = allWords.filter(w => w.categoryId === selectedCategoryModal.id);
+                const bWords = catWords.filter(w => w.categoryBatch === b.batch);
                 const bMastered = bWords.filter(w => progressMap[w.id]?.isMastered).length;
-                const bDone = bMastered === bWords.length;
+                const bDone = bMastered === bWords.length && bWords.length > 0;
 
                 return (
                   <div
@@ -308,14 +369,13 @@ export const Dashboard: React.FC<DashboardProps> = ({
                       {b.sample.join(', ')}...
                     </p>
 
-                    {/* Dual Action: Words OR Sentences */}
                     <div className="grid grid-cols-2 gap-2">
                       <button
                         onClick={() => {
-                          const d = selectedDayModal.day;
+                          const catId = selectedCategoryModal.id;
                           const batchNum = b.batch;
-                          setSelectedDayModal(null);
-                          onStartSession(d, batchNum);
+                          setSelectedCategoryModal(null);
+                          onStartSession(catId, batchNum);
                         }}
                         className="py-2 px-3 rounded-lg bg-sky-500/10 hover:bg-sky-500/15 border border-sky-500/25 text-sky-300 text-xs font-medium flex items-center justify-center gap-1.5 transition-colors"
                       >
@@ -325,10 +385,10 @@ export const Dashboard: React.FC<DashboardProps> = ({
 
                       <button
                         onClick={() => {
-                          const d = selectedDayModal.day;
+                          const catId = selectedCategoryModal.id;
                           const batchNum = b.batch;
-                          setSelectedDayModal(null);
-                          onStartSentencesSession(d, batchNum);
+                          setSelectedCategoryModal(null);
+                          onStartSentencesSession(catId, batchNum);
                         }}
                         className="py-2 px-3 rounded-lg bg-indigo-500/10 hover:bg-indigo-500/15 border border-indigo-500/25 text-indigo-300 text-xs font-medium flex items-center justify-center gap-1.5 transition-colors"
                       >

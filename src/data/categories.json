@@ -1,0 +1,2950 @@
+[
+  {
+    "id": "meeting",
+    "index": 1,
+    "titleRu": "Знакомство, люди и о себе",
+    "titleTj": "Шиносоӣ, одамон ва нақл дар бораи худ",
+    "titleEn": "Meeting People & Self",
+    "icon": "Users",
+    "descriptionRu": "Приветствия, имя, возраст, внешность, характер, чувства и базовые глаголы общения",
+    "descriptionTj": "Салом додан, ном, синну сол, намуди зоҳирӣ, хислат ва феълҳои асосии муошират",
+    "keywords": [
+      "like",
+      "outside",
+      "second",
+      "about",
+      "action",
+      "actor",
+      "actress",
+      "advice",
+      "afraid",
+      "afternoon",
+      "agree",
+      "angry",
+      "boy",
+      "girl",
+      "man",
+      "woman",
+      "friend",
+      "name",
+      "call",
+      "meet",
+      "speak",
+      "talk",
+      "tell",
+      "listen",
+      "hear",
+      "look",
+      "see",
+      "person",
+      "people",
+      "family",
+      "mother",
+      "father",
+      "brother",
+      "sister",
+      "child",
+      "children",
+      "young",
+      "old",
+      "nice",
+      "happy",
+      "sad",
+      "smile",
+      "laugh",
+      "love",
+      "live",
+      "life",
+      "hello",
+      "good",
+      "bad"
+    ],
+    "totalWords": 551,
+    "totalBatches": 23,
+    "batches": [
+      {
+        "batch": 1,
+        "count": 25,
+        "sample": [
+          "a an",
+          "like",
+          "outside"
+        ]
+      },
+      {
+        "batch": 2,
+        "count": 25,
+        "sample": [
+          "child",
+          "compare",
+          "course"
+        ]
+      },
+      {
+        "batch": 3,
+        "count": 25,
+        "sample": [
+          "hello",
+          "help",
+          "horse"
+        ]
+      },
+      {
+        "batch": 4,
+        "count": 25,
+        "sample": [
+          "often",
+          "old",
+          "people"
+        ]
+      },
+      {
+        "batch": 5,
+        "count": 25,
+        "sample": [
+          "true",
+          "uncle",
+          "watch"
+        ]
+      },
+      {
+        "batch": 6,
+        "count": 25,
+        "sample": [
+          "designer",
+          "disagree",
+          "downstairs"
+        ]
+      },
+      {
+        "batch": 7,
+        "count": 25,
+        "sample": [
+          "look",
+          "lorry",
+          "lovely"
+        ]
+      },
+      {
+        "batch": 8,
+        "count": 25,
+        "sample": [
+          "smile",
+          "soap",
+          "source"
+        ]
+      },
+      {
+        "batch": 9,
+        "count": 25,
+        "sample": [
+          "clause",
+          "coin",
+          "competitor"
+        ]
+      },
+      {
+        "batch": 10,
+        "count": 25,
+        "sample": [
+          "innocent",
+          "judge",
+          "laboratory"
+        ]
+      },
+      {
+        "batch": 11,
+        "count": 25,
+        "sample": [
+          "rise",
+          "secondary",
+          "security"
+        ]
+      },
+      {
+        "batch": 12,
+        "count": 25,
+        "sample": [
+          "beg",
+          "border",
+          "but"
+        ]
+      },
+      {
+        "batch": 13,
+        "count": 25,
+        "sample": [
+          "hell",
+          "imagination",
+          "industrial"
+        ]
+      },
+      {
+        "batch": 14,
+        "count": 25,
+        "sample": [
+          "rush",
+          "seek",
+          "sensitive"
+        ]
+      },
+      {
+        "batch": 15,
+        "count": 25,
+        "sample": [
+          "chase",
+          "cliff",
+          "completion"
+        ]
+      },
+      {
+        "batch": 16,
+        "count": 25,
+        "sample": [
+          "info",
+          "installation",
+          "investor"
+        ]
+      },
+      {
+        "batch": 17,
+        "count": 25,
+        "sample": [
+          "scholarship",
+          "seeker",
+          "shortage"
+        ]
+      },
+      {
+        "batch": 18,
+        "count": 25,
+        "sample": [
+          "bizarre",
+          "bounce",
+          "buck"
+        ]
+      },
+      {
+        "batch": 19,
+        "count": 25,
+        "sample": [
+          "discharge",
+          "dispute",
+          "divine"
+        ]
+      },
+      {
+        "batch": 20,
+        "count": 25,
+        "sample": [
+          "intake",
+          "interactive",
+          "intriguing"
+        ]
+      },
+      {
+        "batch": 21,
+        "count": 25,
+        "sample": [
+          "novel",
+          "offspring",
+          "outing"
+        ]
+      },
+      {
+        "batch": 22,
+        "count": 25,
+        "sample": [
+          "seemingly",
+          "sensitivity",
+          "shipping"
+        ]
+      },
+      {
+        "batch": 23,
+        "count": 1,
+        "sample": [
+          "sin"
+        ]
+      }
+    ],
+    "monologue": {
+      "titleEn": "Introducing Myself to a New Friend",
+      "titleRu": "Рассказ о себе новому знакомому",
+      "titleTj": "Шиносоӣ ва нақл дар бораи худ ба дӯсти нав",
+      "sentences": [
+        {
+          "en": "Hello! Let me introduce myself.",
+          "ru": "Привет! Позволь мне представиться.",
+          "tj": "Салом! Иҷозат деҳ худро муаррифӣ кунам.",
+          "highlightWords": [
+            "hello"
+          ]
+        },
+        {
+          "en": "My name is Alex, and I am very happy to meet you today.",
+          "ru": "Меня зовут Алекс, и я очень рад познакомиться с тобой сегодня.",
+          "tj": "Номи ман Алекс аст ва ман хеле шодам, ки имрӯз бо ту шинос шудам.",
+          "highlightWords": [
+            "name",
+            "happy",
+            "meet"
+          ]
+        },
+        {
+          "en": "I live outside the noisy center in a quiet green neighborhood.",
+          "ru": "Я живу за пределами шумного центра в тихом зеленом районе.",
+          "tj": "Ман берун аз маркази пурғавғо дар як маҳаллаи ором ва сабз зиндагӣ мекунам.",
+          "highlightWords": [
+            "outside",
+            "live"
+          ]
+        },
+        {
+          "en": "In the afternoon, I usually study English and practice speaking.",
+          "ru": "После полудня я обычно учу английский и практикую разговорную речь.",
+          "tj": "Баъд аз нисфирӯзӣ ман одатан забони англисиро меомӯзам ва суханрониро тамрин мекунам.",
+          "highlightWords": [
+            "afternoon",
+            "study",
+            "speak"
+          ]
+        },
+        {
+          "en": "I really like meeting honest people and making good friends.",
+          "ru": "Мне очень нравится знакомиться с честными людьми и заводить хороших друзей.",
+          "tj": "Ба ман шиносоӣ бо одамони ростқавл ва дӯст шудан хеле писанд аст.",
+          "highlightWords": [
+            "like",
+            "people",
+            "friend",
+            "good"
+          ]
+        },
+        {
+          "en": "If you ever need any advice, feel free to talk to me.",
+          "ru": "Если тебе когда-нибудь понадобится совет, не стесняйся поговорить со мной.",
+          "tj": "Агар ба ту ягон вақт маслиҳат лозим шавад, бе малол бо ман сӯҳбат кун.",
+          "highlightWords": [
+            "advice",
+            "talk"
+          ]
+        },
+        {
+          "en": "Don’t be afraid to ask questions — learning together is amazing!",
+          "ru": "Не бойся задавать вопросы — учиться вместе удивительно здорово!",
+          "tj": "Аз додани саволҳо натарс — якҷоя омӯхтан хеле аҷоиб аст!",
+          "highlightWords": [
+            "afraid",
+            "amazing"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "travel",
+    "index": 2,
+    "titleRu": "Путешествия, город и транспорт",
+    "titleTj": "Сафар, шаҳр ва нақлиёт",
+    "titleEn": "Travel, City & Transport",
+    "icon": "Plane",
+    "descriptionRu": "Аэропорт, билеты, отель, направления («где находится...»), такси, улицы и ориентирование",
+    "descriptionTj": "Фурудгоҳ, чиптаҳо, меҳмонхона, самтҳо, таксӣ, кӯчаҳо ва пайдо кардани роҳ",
+    "keywords": [
+      "airport",
+      "across",
+      "air",
+      "arrive",
+      "arrival",
+      "depart",
+      "departure",
+      "flight",
+      "plane",
+      "ticket",
+      "passport",
+      "visa",
+      "hotel",
+      "room",
+      "street",
+      "city",
+      "town",
+      "road",
+      "way",
+      "direction",
+      "left",
+      "right",
+      "straight",
+      "near",
+      "far",
+      "car",
+      "bus",
+      "train",
+      "taxi",
+      "station",
+      "stop",
+      "map",
+      "travel",
+      "trip",
+      "journey",
+      "visit",
+      "tourist",
+      "country",
+      "world"
+    ],
+    "totalWords": 513,
+    "totalBatches": 21,
+    "batches": [
+      {
+        "batch": 1,
+        "count": 25,
+        "sample": [
+          "across",
+          "air",
+          "airport"
+        ]
+      },
+      {
+        "batch": 2,
+        "count": 25,
+        "sample": [
+          "dialogue",
+          "dish",
+          "driver"
+        ]
+      },
+      {
+        "batch": 3,
+        "count": 25,
+        "sample": [
+          "next",
+          "not",
+          "oh"
+        ]
+      },
+      {
+        "batch": 4,
+        "count": 25,
+        "sample": [
+          "terrible",
+          "there",
+          "Thursday"
+        ]
+      },
+      {
+        "batch": 5,
+        "count": 25,
+        "sample": [
+          "bone",
+          "broken",
+          "businessman"
+        ]
+      },
+      {
+        "batch": 6,
+        "count": 25,
+        "sample": [
+          "farming",
+          "finally",
+          "fly"
+        ]
+      },
+      {
+        "batch": 7,
+        "count": 25,
+        "sample": [
+          "sign",
+          "skin",
+          "soccer"
+        ]
+      },
+      {
+        "batch": 8,
+        "count": 25,
+        "sample": [
+          "breathing",
+          "captain",
+          "careless"
+        ]
+      },
+      {
+        "batch": 9,
+        "count": 25,
+        "sample": [
+          "happiness",
+          "historic",
+          "imaginary"
+        ]
+      },
+      {
+        "batch": 10,
+        "count": 25,
+        "sample": [
+          "risk",
+          "safety",
+          "share"
+        ]
+      },
+      {
+        "batch": 11,
+        "count": 25,
+        "sample": [
+          "bush",
+          "cable",
+          "chain"
+        ]
+      },
+      {
+        "batch": 12,
+        "count": 25,
+        "sample": [
+          "housing",
+          "impatient",
+          "infection"
+        ]
+      },
+      {
+        "batch": 13,
+        "count": 25,
+        "sample": [
+          "sentence",
+          "shelter",
+          "silk"
+        ]
+      },
+      {
+        "batch": 14,
+        "count": 25,
+        "sample": [
+          "clinic",
+          "compose",
+          "conservation"
+        ]
+      },
+      {
+        "batch": 15,
+        "count": 25,
+        "sample": [
+          "instant",
+          "isolate",
+          "lane"
+        ]
+      },
+      {
+        "batch": 16,
+        "count": 25,
+        "sample": [
+          "steam",
+          "suffering",
+          "sympathetic"
+        ]
+      },
+      {
+        "batch": 17,
+        "count": 25,
+        "sample": [
+          "buddy",
+          "capability",
+          "cargo"
+        ]
+      },
+      {
+        "batch": 18,
+        "count": 25,
+        "sample": [
+          "dilemma",
+          "disclose",
+          "disrupt"
+        ]
+      },
+      {
+        "batch": 19,
+        "count": 25,
+        "sample": [
+          "inherent",
+          "inspection",
+          "integral"
+        ]
+      },
+      {
+        "batch": 20,
+        "count": 25,
+        "sample": [
+          "privatization",
+          "productivity",
+          "prosecutor"
+        ]
+      },
+      {
+        "batch": 21,
+        "count": 13,
+        "sample": [
+          "surveillance",
+          "systematic",
+          "terminate"
+        ]
+      }
+    ],
+    "monologue": {
+      "titleEn": "Arriving at the Airport & Finding My Hotel",
+      "titleRu": "Прибытие в аэропорт и заселение в отель",
+      "titleTj": "Расидан ба фурудгоҳ ва ёфтани меҳмонхона",
+      "sentences": [
+        {
+          "en": "Finally, our airplane arrived safely at the international airport.",
+          "ru": "Наконец наш самолёт благополучно прибыл в международный аэропорт.",
+          "tj": "Ниҳоят, ҳавопаймои мо ба фурудгоҳи байналмилалӣ бехатар расид.",
+          "highlightWords": [
+            "arrive",
+            "airport",
+            "plane"
+          ]
+        },
+        {
+          "en": "I showed my passport and visa at the border control.",
+          "ru": "Я показал свой паспорт и визу на пограничном контроле.",
+          "tj": "Ман шиноснома ва раводиди худро дар назорати сарҳадӣ нишон додам.",
+          "highlightWords": [
+            "passport",
+            "visa"
+          ]
+        },
+        {
+          "en": "Then I took my heavy bag and walked across the arrival hall.",
+          "ru": "Затем я взял свою тяжелую сумку и перешел через зал прибытия.",
+          "tj": "Сипас ман бори вазнини худро гирифтам ва аз толори пешвоз гузаштам.",
+          "highlightWords": [
+            "across",
+            "bag"
+          ]
+        },
+        {
+          "en": "Excuse me, where can I find a taxi or a direct bus to the city center?",
+          "ru": "Простите, где я могу найти такси или прямой автобус до центра города?",
+          "tj": "Бубахшед, аз куҷо метавонам таксӣ ё автобуси ростро ба маркази шаҳр пайдо кунам?",
+          "highlightWords": [
+            "taxi",
+            "bus",
+            "city"
+          ]
+        },
+        {
+          "en": "The driver drove straight down the main street to my hotel.",
+          "ru": "Водитель поехал прямо по главной улице к моему отелю.",
+          "tj": "Ронанда рост аз кӯчаи асосӣ ба самти меҳмонхонаи ман рафт.",
+          "highlightWords": [
+            "street",
+            "hotel",
+            "road"
+          ]
+        },
+        {
+          "en": "Now I have a comfortable room, and my exciting journey begins!",
+          "ru": "Теперь у меня комфортная комната, и моё захватывающее путешествие начинается!",
+          "tj": "Ҳоло ман як ҳуҷраи бароҳат дорам ва сафари ҷолиби ман оғоз меёбад!",
+          "highlightWords": [
+            "room",
+            "journey",
+            "travel"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "food",
+    "index": 3,
+    "titleRu": "Еда, супермаркет и кафе",
+    "titleTj": "Ғизо, супермаркет ва қаҳвахона",
+    "titleEn": "Food, Shopping & Cafe",
+    "icon": "ShoppingBag",
+    "descriptionRu": "Супермаркет, покупка продуктов, заказ еды, меню, цены, оплата картой и наличными",
+    "descriptionTj": "Супермаркет, хариди маҳсулот, фармоиши хӯрок, меню, нархҳо ва пардохт",
+    "keywords": [
+      "add",
+      "bread",
+      "water",
+      "tea",
+      "coffee",
+      "milk",
+      "sugar",
+      "salt",
+      "meat",
+      "fish",
+      "fruit",
+      "apple",
+      "vegetable",
+      "food",
+      "eat",
+      "drink",
+      "cook",
+      "kitchen",
+      "restaurant",
+      "cafe",
+      "menu",
+      "order",
+      "bill",
+      "check",
+      "pay",
+      "price",
+      "cost",
+      "buy",
+      "shop",
+      "store",
+      "market",
+      "supermarket",
+      "bag",
+      "card",
+      "cash",
+      "money",
+      "cheap",
+      "expensive",
+      "fresh",
+      "delicious"
+    ],
+    "totalWords": 492,
+    "totalBatches": 20,
+    "batches": [
+      {
+        "batch": 1,
+        "count": 25,
+        "sample": [
+          "add",
+          "amazing",
+          "apple"
+        ]
+      },
+      {
+        "batch": 2,
+        "count": 25,
+        "sample": [
+          "eat",
+          "eighteen",
+          "exciting"
+        ]
+      },
+      {
+        "batch": 3,
+        "count": 25,
+        "sample": [
+          "pair",
+          "pencil",
+          "piano"
+        ]
+      },
+      {
+        "batch": 4,
+        "count": 25,
+        "sample": [
+          "tooth",
+          "Tuesday",
+          "understand"
+        ]
+      },
+      {
+        "batch": 5,
+        "count": 25,
+        "sample": [
+          "cook",
+          "cooker",
+          "cross"
+        ]
+      },
+      {
+        "batch": 6,
+        "count": 25,
+        "sample": [
+          "lift",
+          "loud",
+          "memory"
+        ]
+      },
+      {
+        "batch": 7,
+        "count": 25,
+        "sample": [
+          "teenage",
+          "throw",
+          "tradition"
+        ]
+      },
+      {
+        "batch": 8,
+        "count": 25,
+        "sample": [
+          "determine",
+          "disappointed",
+          "due"
+        ]
+      },
+      {
+        "batch": 9,
+        "count": 25,
+        "sample": [
+          "normal",
+          "outdoors",
+          "payment"
+        ]
+      },
+      {
+        "batch": 10,
+        "count": 25,
+        "sample": [
+          "type",
+          "union",
+          "used"
+        ]
+      },
+      {
+        "batch": 11,
+        "count": 25,
+        "sample": [
+          "dramatic",
+          "emphasize",
+          "entirely"
+        ]
+      },
+      {
+        "batch": 12,
+        "count": 25,
+        "sample": [
+          "participant",
+          "philosophy",
+          "pose"
+        ]
+      },
+      {
+        "batch": 13,
+        "count": 25,
+        "sample": [
+          "wage",
+          "wildlife",
+          "wrap"
+        ]
+      },
+      {
+        "batch": 14,
+        "count": 25,
+        "sample": [
+          "exposure",
+          "forbid",
+          "fraction"
+        ]
+      },
+      {
+        "batch": 15,
+        "count": 25,
+        "sample": [
+          "relieved",
+          "retirement",
+          "rose"
+        ]
+      },
+      {
+        "batch": 16,
+        "count": 25,
+        "sample": [
+          "auto",
+          "bare",
+          "bench"
+        ]
+      },
+      {
+        "batch": 17,
+        "count": 25,
+        "sample": [
+          "denounce",
+          "descend",
+          "devastate"
+        ]
+      },
+      {
+        "batch": 18,
+        "count": 25,
+        "sample": [
+          "imprisonment",
+          "indigenous",
+          "inhibit"
+        ]
+      },
+      {
+        "batch": 19,
+        "count": 25,
+        "sample": [
+          "petition",
+          "pledge",
+          "preliminary"
+        ]
+      },
+      {
+        "batch": 20,
+        "count": 17,
+        "sample": [
+          "strategic",
+          "subsidy",
+          "suck"
+        ]
+      }
+    ],
+    "monologue": {
+      "titleEn": "Shopping for Groceries & Ordering Lunch",
+      "titleRu": "Покупка продуктов в магазине и заказ обеда",
+      "titleTj": "Хариди маҳсулот ва фармоиши хӯроки нисфирӯзӣ",
+      "sentences": [
+        {
+          "en": "Every weekend, I go to the supermarket to buy fresh food.",
+          "ru": "Каждые выходные я хожу в супермаркет покупать свежую еду.",
+          "tj": "Ҳар рӯзи истироҳат ман ба супермаркет барои харидани ғизои тоза меравам.",
+          "highlightWords": [
+            "supermarket",
+            "buy",
+            "food",
+            "fresh"
+          ]
+        },
+        {
+          "en": "I usually pick fresh bread, milk, apples, and some meat.",
+          "ru": "Обычно я беру свежий хлеб, молоко, яблоки и немного мяса.",
+          "tj": "Ман одатан нони гарм, шир, себ ва каме гӯшт мегирам.",
+          "highlightWords": [
+            "bread",
+            "milk",
+            "apple",
+            "meat"
+          ]
+        },
+        {
+          "en": "At the cashier, I ask: \"Can you please add one paper bag?\"",
+          "ru": "На кассе я спрашиваю: \"Пожалуйста, добавьте один бумажный пакет?\"",
+          "tj": "Дар назди хазинадор мепурсам: \"Лутфан як халтаи коғазӣ илова мекунед?\"",
+          "highlightWords": [
+            "add",
+            "bag"
+          ]
+        },
+        {
+          "en": "I prefer to pay by card because it is fast and convenient.",
+          "ru": "Я предпочитаю платить картой, потому что это быстро и удобно.",
+          "tj": "Ман бо корт пардохт карданро афзал медонам, чунки ин тез ва қулай аст.",
+          "highlightWords": [
+            "pay",
+            "card"
+          ]
+        },
+        {
+          "en": "After shopping, I visit a cozy cafe to order hot coffee and water.",
+          "ru": "После покупок я захожу в уютное кафе заказать горячий кофе и воду.",
+          "tj": "Баъд аз харид, ман ба қаҳвахонаи ором даромада, қаҳваи гарм ва об фармоиш медиҳам.",
+          "highlightWords": [
+            "cafe",
+            "order",
+            "coffee",
+            "water"
+          ]
+        },
+        {
+          "en": "The meal is delicious, and the price is very reasonable.",
+          "ru": "Еда очень вкусная, а цена вполне разумная.",
+          "tj": "Хӯрок хеле лазиз аст ва нархаш ҳам хеле мувофиқ аст.",
+          "highlightWords": [
+            "delicious",
+            "price"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "daily_life",
+    "index": 4,
+    "titleRu": "Дом, быт и распорядок дня",
+    "titleTj": "Хона, рӯзгор ва реҷаи рӯз",
+    "titleEn": "Home & Daily Routine",
+    "icon": "Home",
+    "descriptionRu": "Утро, вечер, квартира, уборка, одежда, распорядок дня и домашние дела",
+    "descriptionTj": "Субҳ, шом, хона, либосҳо, реҷаи рӯз ва корҳои хона",
+    "keywords": [
+      "home",
+      "house",
+      "apartment",
+      "flat",
+      "room",
+      "bed",
+      "sleep",
+      "wake",
+      "morning",
+      "night",
+      "evening",
+      "clock",
+      "time",
+      "hour",
+      "minute",
+      "day",
+      "week",
+      "month",
+      "year",
+      "wash",
+      "clean",
+      "door",
+      "window",
+      "table",
+      "chair",
+      "clothes",
+      "wear",
+      "shirt",
+      "dress",
+      "shoes"
+    ],
+    "totalWords": 478,
+    "totalBatches": 20,
+    "batches": [
+      {
+        "batch": 1,
+        "count": 25,
+        "sample": [
+          "and",
+          "apartment",
+          "area"
+        ]
+      },
+      {
+        "batch": 2,
+        "count": 25,
+        "sample": [
+          "event",
+          "exercise",
+          "fast"
+        ]
+      },
+      {
+        "batch": 3,
+        "count": 25,
+        "sample": [
+          "reason",
+          "seventeen",
+          "shirt"
+        ]
+      },
+      {
+        "batch": 4,
+        "count": 25,
+        "sample": [
+          "as",
+          "available",
+          "beef"
+        ]
+      },
+      {
+        "batch": 5,
+        "count": 25,
+        "sample": [
+          "height",
+          "hockey",
+          "home"
+        ]
+      },
+      {
+        "batch": 6,
+        "count": 25,
+        "sample": [
+          "score",
+          "service",
+          "simple"
+        ]
+      },
+      {
+        "batch": 7,
+        "count": 25,
+        "sample": [
+          "combine",
+          "conclude",
+          "consumer"
+        ]
+      },
+      {
+        "batch": 8,
+        "count": 25,
+        "sample": [
+          "lip",
+          "loss",
+          "meanwhile"
+        ]
+      },
+      {
+        "batch": 9,
+        "count": 25,
+        "sample": [
+          "spring",
+          "stranger",
+          "suitable"
+        ]
+      },
+      {
+        "batch": 10,
+        "count": 25,
+        "sample": [
+          "contest",
+          "courage",
+          "criticism"
+        ]
+      },
+      {
+        "batch": 11,
+        "count": 25,
+        "sample": [
+          "leadership",
+          "loan",
+          "make"
+        ]
+      },
+      {
+        "batch": 12,
+        "count": 25,
+        "sample": [
+          "status",
+          "strict",
+          "surrounding"
+        ]
+      },
+      {
+        "batch": 13,
+        "count": 25,
+        "sample": [
+          "disappoint",
+          "diverse",
+          "dump"
+        ]
+      },
+      {
+        "batch": 14,
+        "count": 25,
+        "sample": [
+          "monument",
+          "nasty",
+          "novelist"
+        ]
+      },
+      {
+        "batch": 15,
+        "count": 25,
+        "sample": [
+          "usage",
+          "wander",
+          "weekly"
+        ]
+      },
+      {
+        "batch": 16,
+        "count": 25,
+        "sample": [
+          "conceive",
+          "confrontation",
+          "conserve"
+        ]
+      },
+      {
+        "batch": 17,
+        "count": 25,
+        "sample": [
+          "faculty",
+          "flesh",
+          "forthcoming"
+        ]
+      },
+      {
+        "batch": 18,
+        "count": 25,
+        "sample": [
+          "misleading",
+          "morality",
+          "nest"
+        ]
+      },
+      {
+        "batch": 19,
+        "count": 25,
+        "sample": [
+          "ritual",
+          "v.",
+          "serial"
+        ]
+      },
+      {
+        "batch": 20,
+        "count": 3,
+        "sample": [
+          "violation",
+          "wholly",
+          "worthwhile"
+        ]
+      }
+    ],
+    "monologue": {
+      "titleEn": "My Daily Routine from Morning to Night",
+      "titleRu": "Мой распорядок дня с утра до вечера",
+      "titleTj": "Реҷаи ҳаррӯзаи ман аз субҳ то шом",
+      "sentences": [
+        {
+          "en": "My alarm rings early in the morning, and I wake up with energy.",
+          "ru": "Мой будильник звенит рано утром, и я просыпаюсь с энергией.",
+          "tj": "Соати зангдор субҳи барвақт садо медиҳад ва ман бо неру бедор мешавам.",
+          "highlightWords": [
+            "morning",
+            "wake",
+            "early"
+          ]
+        },
+        {
+          "en": "I wash my face, brush my teeth, and put on clean clothes.",
+          "ru": "Я умываю лицо, чищу зубы и надеваю чистую одежду.",
+          "tj": "Рӯямро мешӯям, дандонҳоямро тоза мекунам ва либоси тоза мепӯшам.",
+          "highlightWords": [
+            "wash",
+            "clothes",
+            "clean"
+          ]
+        },
+        {
+          "en": "I spend thirty minutes cleaning my room and opening the window.",
+          "ru": "Я трачу тридцать минут на уборку комнаты и открываю окно.",
+          "tj": "Ман сӣ дақиқаро барои тоза кардани ҳуҷра ва кушодани тиреза сарф мекунам.",
+          "highlightWords": [
+            "room",
+            "window",
+            "minute"
+          ]
+        },
+        {
+          "en": "Time flies quickly, so I always plan each hour carefully.",
+          "ru": "Время летит быстро, поэтому я всегда тщательно планирую каждый час.",
+          "tj": "Вақт тез мегузарад, бинобар ин ман ҳамеша ҳар як соатро бодиққат нақша мекашам.",
+          "highlightWords": [
+            "time",
+            "hour",
+            "always",
+            "plan"
+          ]
+        },
+        {
+          "en": "In the evening, I return home, relax on the sofa, and read a book.",
+          "ru": "Вечером я возвращаюсь домой, отдыхаю на диване и читаю книгу.",
+          "tj": "Бегоҳӣ ба хона бармегардам, дар диван истироҳат мекунам ва китоб мехонам.",
+          "highlightWords": [
+            "evening",
+            "home",
+            "book"
+          ]
+        },
+        {
+          "en": "Before midnight, I turn off the lights and go to sleep peacefully.",
+          "ru": "Перед полуночью я выключаю свет и спокойно ложусь спать.",
+          "tj": "Пеш аз нисфи шаб чароғҳоро хомӯш мекунам ва ором ба хоб меравам.",
+          "highlightWords": [
+            "night",
+            "sleep"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "work",
+    "index": 5,
+    "titleRu": "Работа, карьера и бизнес",
+    "titleTj": "Кор, касб ва тиҷорат",
+    "titleEn": "Work, Career & Business",
+    "icon": "Briefcase",
+    "descriptionRu": "Офис, профессия, деловые встречи, звонки, проекты, зарплата и карьерные цели",
+    "descriptionTj": "Дафтар, касб, вохӯриҳо, зангҳо, лоиҳаҳо, маош ва ҳадафҳои корӣ",
+    "keywords": [
+      "work",
+      "job",
+      "boss",
+      "worker",
+      "office",
+      "company",
+      "business",
+      "manager",
+      "meeting",
+      "project",
+      "career",
+      "salary",
+      "contract",
+      "deal",
+      "client",
+      "customer",
+      "plan",
+      "task",
+      "team",
+      "professional",
+      "duty",
+      "skill",
+      "goal",
+      "success",
+      "problem",
+      "solve",
+      "decision"
+    ],
+    "totalWords": 468,
+    "totalBatches": 19,
+    "batches": [
+      {
+        "batch": 1,
+        "count": 25,
+        "sample": [
+          "autumn",
+          "bathroom",
+          "beginning"
+        ]
+      },
+      {
+        "batch": 2,
+        "count": 25,
+        "sample": [
+          "join",
+          "know",
+          "letter"
+        ]
+      },
+      {
+        "batch": 3,
+        "count": 25,
+        "sample": [
+          "sixty",
+          "skill",
+          "something"
+        ]
+      },
+      {
+        "batch": 4,
+        "count": 25,
+        "sample": [
+          "decision",
+          "discovery",
+          "drive"
+        ]
+      },
+      {
+        "batch": 5,
+        "count": 25,
+        "sample": [
+          "officer",
+          "organize",
+          "particular"
+        ]
+      },
+      {
+        "batch": 6,
+        "count": 25,
+        "sample": [
+          "tie",
+          "unhappy",
+          "valley"
+        ]
+      },
+      {
+        "batch": 7,
+        "count": 25,
+        "sample": [
+          "development",
+          "dislike",
+          "duty"
+        ]
+      },
+      {
+        "batch": 8,
+        "count": 25,
+        "sample": [
+          "operation",
+          "percentage",
+          "planning"
+        ]
+      },
+      {
+        "batch": 9,
+        "count": 25,
+        "sample": [
+          "tyre",
+          "unlike",
+          "various"
+        ]
+      },
+      {
+        "batch": 10,
+        "count": 25,
+        "sample": [
+          "edition",
+          "encounter",
+          "establish"
+        ]
+      },
+      {
+        "batch": 11,
+        "count": 25,
+        "sample": [
+          "prime",
+          "professional",
+          "project"
+        ]
+      },
+      {
+        "batch": 12,
+        "count": 25,
+        "sample": [
+          "balanced",
+          "bias",
+          "brick"
+        ]
+      },
+      {
+        "batch": 13,
+        "count": 25,
+        "sample": [
+          "identical",
+          "index",
+          "ink"
+        ]
+      },
+      {
+        "batch": 14,
+        "count": 25,
+        "sample": [
+          "skilled",
+          "spectacular",
+          "spokeswoman"
+        ]
+      },
+      {
+        "batch": 15,
+        "count": 25,
+        "sample": [
+          "beneath",
+          "blend",
+          "breakdown"
+        ]
+      },
+      {
+        "batch": 16,
+        "count": 25,
+        "sample": [
+          "dip",
+          "discretion",
+          "distinction"
+        ]
+      },
+      {
+        "batch": 17,
+        "count": 25,
+        "sample": [
+          "institutional",
+          "integrity",
+          "interim"
+        ]
+      },
+      {
+        "batch": 18,
+        "count": 25,
+        "sample": [
+          "problematic",
+          "projection",
+          "protective"
+        ]
+      },
+      {
+        "batch": 19,
+        "count": 18,
+        "sample": [
+          "successor",
+          "suicide",
+          "supposedly"
+        ]
+      }
+    ],
+    "monologue": {
+      "titleEn": "A Productive Day at Work",
+      "titleRu": "Продуктивный рабочий день и карьера",
+      "titleTj": "Рӯзи пурсамари корӣ ва касб",
+      "sentences": [
+        {
+          "en": "I work as a dedicated professional in a modern company.",
+          "ru": "Я работаю преданным специалистом в современной компании.",
+          "tj": "Ман ҳамчун мутахассиси кордон дар як ширкати муосир кор мекунам.",
+          "highlightWords": [
+            "work",
+            "company",
+            "professional"
+          ]
+        },
+        {
+          "en": "Every morning, our team has a quick meeting to discuss key tasks.",
+          "ru": "Каждое утро наша команда проводит короткую встречу для обсуждения задач.",
+          "tj": "Ҳар субҳ дастаи мо вохӯрии кӯтоҳ баргузор мекунад, то вазифаҳои муҳимро муҳокима кунем.",
+          "highlightWords": [
+            "team",
+            "meeting",
+            "task"
+          ]
+        },
+        {
+          "en": "My manager gives clear advice when we solve difficult problems.",
+          "ru": "Мой руководитель дает четкий совет, когда мы решаем сложные проблемы.",
+          "tj": "Роҳбари ман маслиҳати дақиқ медиҳад, вақте ки мо мушкилоти душворро ҳал мекунем.",
+          "highlightWords": [
+            "manager",
+            "advice",
+            "problem",
+            "solve"
+          ]
+        },
+        {
+          "en": "Making the right decision takes focus and good communication.",
+          "ru": "Принятие правильного решения требует фокуса и хорошей коммуникации.",
+          "tj": "Қабули қарори дуруст тамаркуз ва муоширати хубро талаб мекунад.",
+          "highlightWords": [
+            "decision",
+            "good"
+          ]
+        },
+        {
+          "en": "We always deliver projects on time to keep our clients satisfied.",
+          "ru": "Мы всегда сдаем проекты вовремя, чтобы клиенты оставались довольны.",
+          "tj": "Мо ҳамеша лоиҳаҳоро сари вақт месупорем, то мизоҷон розӣ монанд.",
+          "highlightWords": [
+            "project",
+            "client",
+            "time"
+          ]
+        },
+        {
+          "en": "Hard work brings great career growth and financial stability.",
+          "ru": "Усердный труд приносит отличный карьерный рост и финансовую стабильность.",
+          "tj": "Меҳнати содиқона рушди бузурги касбӣ ва устувории молиявиро меорад.",
+          "highlightWords": [
+            "career",
+            "money"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "health",
+    "index": 6,
+    "titleRu": "Здоровье, тело и самочувствие",
+    "titleTj": "Саломатӣ, бадан ва вазъи ҷисмонӣ",
+    "titleEn": "Health, Body & Wellness",
+    "icon": "Heart",
+    "descriptionRu": "Части тела, симптомы, самочувствие, аптека, визит к врачу и здоровый образ жизни",
+    "descriptionTj": "Узвҳои бадан, аломатҳо, дорухона, муроҷиат ба табиб ва тарзи ҳаёти солим",
+    "keywords": [
+      "health",
+      "healthy",
+      "body",
+      "head",
+      "eye",
+      "hand",
+      "foot",
+      "leg",
+      "arm",
+      "heart",
+      "pain",
+      "hurt",
+      "sick",
+      "ill",
+      "doctor",
+      "hospital",
+      "medicine",
+      "drug",
+      "pharmacy",
+      "pill",
+      "fever",
+      "cold",
+      "cough",
+      "feel",
+      "tired",
+      "energy",
+      "rest",
+      "sleep",
+      "fit",
+      "care"
+    ],
+    "totalWords": 519,
+    "totalBatches": 21,
+    "batches": [
+      {
+        "batch": 1,
+        "count": 25,
+        "sample": [
+          "above",
+          "again",
+          "animal"
+        ]
+      },
+      {
+        "batch": 2,
+        "count": 25,
+        "sample": [
+          "favourite",
+          "feeling",
+          "fine"
+        ]
+      },
+      {
+        "batch": 3,
+        "count": 25,
+        "sample": [
+          "o’clock",
+          "one",
+          "other"
+        ]
+      },
+      {
+        "batch": 4,
+        "count": 25,
+        "sample": [
+          "word",
+          "yellow",
+          "ability"
+        ]
+      },
+      {
+        "batch": 5,
+        "count": 25,
+        "sample": [
+          "enormous",
+          "exact",
+          "factor"
+        ]
+      },
+      {
+        "batch": 6,
+        "count": 25,
+        "sample": [
+          "ocean",
+          "ourselves",
+          "pain"
+        ]
+      },
+      {
+        "batch": 7,
+        "count": 25,
+        "sample": [
+          "web",
+          "winner",
+          "access"
+        ]
+      },
+      {
+        "batch": 8,
+        "count": 25,
+        "sample": [
+          "equally",
+          "expected",
+          "face"
+        ]
+      },
+      {
+        "batch": 9,
+        "count": 25,
+        "sample": [
+          "now",
+          "organized",
+          "painful"
+        ]
+      },
+      {
+        "batch": 10,
+        "count": 25,
+        "sample": [
+          "tip",
+          "transport",
+          "ugly"
+        ]
+      },
+      {
+        "batch": 11,
+        "count": 25,
+        "sample": [
+          "deliberate",
+          "depth",
+          "discipline"
+        ]
+      },
+      {
+        "batch": 12,
+        "count": 25,
+        "sample": [
+          "lean",
+          "long-term",
+          "mass"
+        ]
+      },
+      {
+        "batch": 13,
+        "count": 25,
+        "sample": [
+          "steel",
+          "structure",
+          "suspect"
+        ]
+      },
+      {
+        "batch": 14,
+        "count": 25,
+        "sample": [
+          "discourage",
+          "divorce",
+          "economics"
+        ]
+      },
+      {
+        "batch": 15,
+        "count": 25,
+        "sample": [
+          "memorable",
+          "mortgage",
+          "nursing"
+        ]
+      },
+      {
+        "batch": 16,
+        "count": 25,
+        "sample": [
+          "terrorism",
+          "timing",
+          "transportation"
+        ]
+      },
+      {
+        "batch": 17,
+        "count": 25,
+        "sample": [
+          "combat",
+          "compassion",
+          "compliance"
+        ]
+      },
+      {
+        "batch": 18,
+        "count": 25,
+        "sample": [
+          "enterprise",
+          "establishment",
+          "exclusive"
+        ]
+      },
+      {
+        "batch": 19,
+        "count": 25,
+        "sample": [
+          "ironic",
+          "kidnap",
+          "legacy"
+        ]
+      },
+      {
+        "batch": 20,
+        "count": 25,
+        "sample": [
+          "premium",
+          "presume",
+          "proceedings"
+        ]
+      },
+      {
+        "batch": 21,
+        "count": 19,
+        "sample": [
+          "strive",
+          "substitute",
+          "suite"
+        ]
+      }
+    ],
+    "monologue": {
+      "titleEn": "Taking Care of My Health & Body",
+      "titleRu": "Забота о здоровье и теле",
+      "titleTj": "Нигоҳубини саломатӣ ва ҷисм",
+      "sentences": [
+        {
+          "en": "Good health is the most valuable treasure in our life.",
+          "ru": "Крепкое здоровье — самое ценное сокровище в нашей жизни.",
+          "tj": "Саломатии бардавом арзишмандтарин ганҷ дар ҳаёти мост.",
+          "highlightWords": [
+            "health",
+            "life",
+            "good"
+          ]
+        },
+        {
+          "en": "When I feel tired or catch a cold, I immediately drink warm tea.",
+          "ru": "Когда я чувствую усталость или простужаюсь, я сразу пью теплый чай.",
+          "tj": "Вақте ки худро хаста ҳис мекунам ё шамол мехӯрам, фавран чойи гарм менӯшам.",
+          "highlightWords": [
+            "feel",
+            "tired",
+            "cold",
+            "tea"
+          ]
+        },
+        {
+          "en": "If the pain does not stop, I visit a doctor at the clinic.",
+          "ru": "Если боль не утихает, я иду к врачу в клинику.",
+          "tj": "Агар дард бас нашавад, ман ба назди табиб ба бемористон меравам.",
+          "highlightWords": [
+            "pain",
+            "doctor",
+            "hospital"
+          ]
+        },
+        {
+          "en": "The doctor gives helpful advice and writes a prescription for medicine.",
+          "ru": "Врач дает полезный совет и выписывает рецепт на лекарства.",
+          "tj": "Табиб маслиҳати муфид медиҳад ва барои доруҳо нусха менависад.",
+          "highlightWords": [
+            "advice",
+            "medicine"
+          ]
+        },
+        {
+          "en": "I go to the nearest pharmacy to pick up vitamins and pills.",
+          "ru": "Я иду в ближайшую аптеку, чтобы забрать витамины и таблетки.",
+          "tj": "Ман ба наздиктарин дорухона барои гирифтани витаминҳо ва доруҳо меравам.",
+          "highlightWords": [
+            "pharmacy",
+            "near"
+          ]
+        },
+        {
+          "en": "Daily exercise and proper sleep keep my body strong and energetic.",
+          "ru": "Ежедневные упражнения и правильный сон держат тело сильным и бодрым.",
+          "tj": "Варзиши ҳаррӯза ва хоби дуруст бадани маро қавӣ ва пурқувват нигоҳ медоранд.",
+          "highlightWords": [
+            "body",
+            "sleep"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "leisure",
+    "index": 7,
+    "titleRu": "Хобби, спорт и отдых",
+    "titleTj": "Маҳфилҳо, варзиш ва истироҳат",
+    "titleEn": "Hobbies, Sport & Leisure",
+    "icon": "Trophy",
+    "descriptionRu": "Спортзал, футбол, музыка, кино, природа, погода, выходные и путешествия на природу",
+    "descriptionTj": "Толори варзишӣ, футбол, мусиқӣ, синамо, табиат, боду ҳаво ва истироҳат",
+    "keywords": [
+      "sport",
+      "play",
+      "game",
+      "ball",
+      "football",
+      "gym",
+      "run",
+      "walk",
+      "swim",
+      "music",
+      "song",
+      "sing",
+      "movie",
+      "film",
+      "cinema",
+      "book",
+      "hobby",
+      "holiday",
+      "weekend",
+      "relax",
+      "nature",
+      "sun",
+      "rain",
+      "snow",
+      "wind",
+      "weather",
+      "park",
+      "tree",
+      "mountain",
+      "sea",
+      "summer"
+    ],
+    "totalWords": 491,
+    "totalBatches": 20,
+    "batches": [
+      {
+        "batch": 1,
+        "count": 25,
+        "sample": [
+          "ago",
+          "another",
+          "baby"
+        ]
+      },
+      {
+        "batch": 2,
+        "count": 25,
+        "sample": [
+          "however",
+          "improve",
+          "introduce"
+        ]
+      },
+      {
+        "batch": 3,
+        "count": 25,
+        "sample": [
+          "sea",
+          "sheep",
+          "similar"
+        ]
+      },
+      {
+        "batch": 4,
+        "count": 25,
+        "sample": [
+          "why",
+          "yes",
+          "able"
+        ]
+      },
+      {
+        "batch": 5,
+        "count": 25,
+        "sample": [
+          "exactly",
+          "factory",
+          "fiction"
+        ]
+      },
+      {
+        "batch": 6,
+        "count": 25,
+        "sample": [
+          "platform",
+          "promise",
+          "queen"
+        ]
+      },
+      {
+        "batch": 7,
+        "count": 25,
+        "sample": [
+          "wind",
+          "accommodation",
+          "age"
+        ]
+      },
+      {
+        "batch": 8,
+        "count": 25,
+        "sample": [
+          "fighting",
+          "force",
+          "fry"
+        ]
+      },
+      {
+        "batch": 9,
+        "count": 25,
+        "sample": [
+          "prove",
+          "quotation",
+          "reference"
+        ]
+      },
+      {
+        "batch": 10,
+        "count": 25,
+        "sample": [
+          "will",
+          "accuse",
+          "affair"
+        ]
+      },
+      {
+        "batch": 11,
+        "count": 25,
+        "sample": [
+          "faith",
+          "file",
+          "folding"
+        ]
+      },
+      {
+        "batch": 12,
+        "count": 25,
+        "sample": [
+          "pursue",
+          "recall",
+          "relief"
+        ]
+      },
+      {
+        "batch": 13,
+        "count": 25,
+        "sample": [
+          "attachment",
+          "ballet",
+          "balloon"
+        ]
+      },
+      {
+        "batch": 14,
+        "count": 25,
+        "sample": [
+          "gorgeous",
+          "historian",
+          "immigration"
+        ]
+      },
+      {
+        "batch": 15,
+        "count": 25,
+        "sample": [
+          "sexy",
+          "speculate",
+          "sporting"
+        ]
+      },
+      {
+        "batch": 16,
+        "count": 25,
+        "sample": [
+          "battlefield",
+          "betray",
+          "blessing"
+        ]
+      },
+      {
+        "batch": 17,
+        "count": 25,
+        "sample": [
+          "diplomatic",
+          "dismissal",
+          "distort"
+        ]
+      },
+      {
+        "batch": 18,
+        "count": 25,
+        "sample": [
+          "injustice",
+          "instrumental",
+          "intensify"
+        ]
+      },
+      {
+        "batch": 19,
+        "count": 25,
+        "sample": [
+          "prescribe",
+          "prevail",
+          "proceeds"
+        ]
+      },
+      {
+        "batch": 20,
+        "count": 16,
+        "sample": [
+          "supreme",
+          "swing",
+          "tempt"
+        ]
+      }
+    ],
+    "monologue": {
+      "titleEn": "Enjoying Weekends, Sports & Hobbies",
+      "titleRu": "Отдых на выходных, спорт и увлечения",
+      "titleTj": "Истироҳати рӯзҳои таътил, варзиш ва маҳфилҳо",
+      "sentences": [
+        {
+          "en": "On Saturdays, I love going outside to breathe fresh mountain air.",
+          "ru": "По субботам я люблю выходить на улицу, чтобы подышать свежим горным воздухом.",
+          "tj": "Рӯзҳои шанбе ман ба берун баромаданро дӯст медорам, то аз ҳавои тозаи кӯҳистон нафас кашам.",
+          "highlightWords": [
+            "outside",
+            "air"
+          ]
+        },
+        {
+          "en": "My friends and I often play football at the local sports field.",
+          "ru": "Мы с друзьями часто играем в футбол на местной спортивной площадке.",
+          "tj": "Ман ва дӯстонам зуд-зуд дар майдони варзишӣ футбол бозӣ мекунем.",
+          "highlightWords": [
+            "friend",
+            "play",
+            "football",
+            "sport"
+          ]
+        },
+        {
+          "en": "Listening to inspiring music always lifts my mood after a long week.",
+          "ru": "Прослушивание вдохновляющей музыки всегда поднимает настроение после долгой недели.",
+          "tj": "Гӯш кардани мусиқии илҳомбахш ҳамеша кайфияти маро баъд аз ҳафтаи корӣ мебардорад.",
+          "highlightWords": [
+            "music",
+            "listen",
+            "week"
+          ]
+        },
+        {
+          "en": "Sometimes we watch an exciting movie at the cinema with popcorn.",
+          "ru": "Иногда мы смотрим захватывающий фильм в кинотеатре с попкорном.",
+          "tj": "Баъзан мо дар кинотеатр як филми ҷолибро тамошо мекунем.",
+          "highlightWords": [
+            "movie",
+            "film",
+            "cinema"
+          ]
+        },
+        {
+          "en": "Active hobbies help us recharge our energy and stay optimistic.",
+          "ru": "Активные хобби помогают нам зарядиться энергией и оставаться оптимистами.",
+          "tj": "Маҳфилҳои фаъол ба мо кӯмак мекунанд, ки неруи худро барқарор кунем ва хушбин бимонем.",
+          "highlightWords": [
+            "hobby",
+            "energy"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "communication",
+    "index": 8,
+    "titleRu": "Технологии, связь и интернет",
+    "titleTj": "Технологияҳо, алоқа ва интернет",
+    "titleEn": "Tech & Digital Life",
+    "icon": "Smartphone",
+    "descriptionRu": "Смартфон, интернет, социальные сети, сообщения, звонки и цифровая жизнь",
+    "descriptionTj": "Смартфон, интернет, шабакаҳои иҷтимоӣ, паёмҳо ва ҳаёти рақамӣ",
+    "keywords": [
+      "phone",
+      "mobile",
+      "call",
+      "message",
+      "text",
+      "email",
+      "internet",
+      "online",
+      "website",
+      "app",
+      "computer",
+      "screen",
+      "send",
+      "receive",
+      "photo",
+      "video",
+      "post",
+      "social",
+      "media",
+      "connect",
+      "wifi",
+      "data",
+      "download",
+      "upload",
+      "digital",
+      "device",
+      "battery"
+    ],
+    "totalWords": 512,
+    "totalBatches": 21,
+    "batches": [
+      {
+        "batch": 1,
+        "count": 25,
+        "sample": [
+          "answer",
+          "art",
+          "beautiful"
+        ]
+      },
+      {
+        "batch": 2,
+        "count": 25,
+        "sample": [
+          "July",
+          "late",
+          "lunch"
+        ]
+      },
+      {
+        "batch": 3,
+        "count": 25,
+        "sample": [
+          "thirty",
+          "toilet",
+          "twice"
+        ]
+      },
+      {
+        "batch": 4,
+        "count": 25,
+        "sample": [
+          "communicate",
+          "connect",
+          "connected"
+        ]
+      },
+      {
+        "batch": 5,
+        "count": 25,
+        "sample": [
+          "instruction",
+          "involve",
+          "kill"
+        ]
+      },
+      {
+        "batch": 6,
+        "count": 25,
+        "sample": [
+          "route",
+          "sale",
+          "secret"
+        ]
+      },
+      {
+        "batch": 7,
+        "count": 25,
+        "sample": [
+          "attach",
+          "balance",
+          "battery"
+        ]
+      },
+      {
+        "batch": 8,
+        "count": 25,
+        "sample": [
+          "forever",
+          "fur",
+          "giant"
+        ]
+      },
+      {
+        "batch": 9,
+        "count": 25,
+        "sample": [
+          "pull",
+          "quote",
+          "reflect"
+        ]
+      },
+      {
+        "batch": 10,
+        "count": 25,
+        "sample": [
+          "acknowledge",
+          "afterwards",
+          "angle"
+        ]
+      },
+      {
+        "batch": 11,
+        "count": 25,
+        "sample": [
+          "dishonest",
+          "dominate",
+          "elect"
+        ]
+      },
+      {
+        "batch": 12,
+        "count": 25,
+        "sample": [
+          "permanent",
+          "plain",
+          "power"
+        ]
+      },
+      {
+        "batch": 13,
+        "count": 25,
+        "sample": [
+          "whereas",
+          "witness",
+          "abstract"
+        ]
+      },
+      {
+        "batch": 14,
+        "count": 25,
+        "sample": [
+          "ethic",
+          "exhibit",
+          "fabulous"
+        ]
+      },
+      {
+        "batch": 15,
+        "count": 25,
+        "sample": [
+          "primarily",
+          "prompt",
+          "puzzle"
+        ]
+      },
+      {
+        "batch": 16,
+        "count": 25,
+        "sample": [
+          "academy",
+          "accumulation",
+          "adhere"
+        ]
+      },
+      {
+        "batch": 17,
+        "count": 25,
+        "sample": [
+          "clarity",
+          "cognitive",
+          "commentary"
+        ]
+      },
+      {
+        "batch": 18,
+        "count": 25,
+        "sample": [
+          "empower",
+          "enforce",
+          "entitle"
+        ]
+      },
+      {
+        "batch": 19,
+        "count": 25,
+        "sample": [
+          "limb",
+          "long-standing",
+          "mainland"
+        ]
+      },
+      {
+        "batch": 20,
+        "count": 25,
+        "sample": [
+          "provincial",
+          "radar",
+          "readily"
+        ]
+      },
+      {
+        "batch": 21,
+        "count": 12,
+        "sample": [
+          "texture",
+          "thrilled",
+          "top"
+        ]
+      }
+    ],
+    "monologue": {
+      "titleEn": "Staying Connected in the Digital World",
+      "titleRu": "Связь и общение в цифровом мире",
+      "titleTj": "Алоқа ва муошират дар ҷаҳони рақамӣ",
+      "sentences": [
+        {
+          "en": "Modern smartphones make communication instant across the whole world.",
+          "ru": "Современные смартфоны делают общение мгновенным по всему миру.",
+          "tj": "Смартфонҳои муосир муоширатро дар саросари ҷаҳон фаврӣ мегардонанд.",
+          "highlightWords": [
+            "phone",
+            "world"
+          ]
+        },
+        {
+          "en": "I send daily text messages and photos to my family and friends.",
+          "ru": "Я каждый день отправляю текстовые сообщения и фотографии родным и друзьям.",
+          "tj": "Ман ҳар рӯз ба оила ва дӯстонам паёмҳои матнӣ ва аксҳо мефиристам.",
+          "highlightWords": [
+            "send",
+            "message",
+            "family",
+            "friend"
+          ]
+        },
+        {
+          "en": "If an urgent issue appears, I make a direct phone call immediately.",
+          "ru": "Если появляется срочный вопрос, я сразу звоню напрямую.",
+          "tj": "Агар масъалаи фаврӣ пеш ояд, ман фавран занги мустақим мезанам.",
+          "highlightWords": [
+            "call",
+            "phone"
+          ]
+        },
+        {
+          "en": "The internet provides unlimited access to knowledge and online education.",
+          "ru": "Интернет даёт неограниченный доступ к знаниям и онлайн-образованию.",
+          "tj": "Интернет дастрасии бемаҳдудро ба дониш ва таҳсили онлайн фароҳам меорад.",
+          "highlightWords": [
+            "internet",
+            "online"
+          ]
+        },
+        {
+          "en": "Technology connects people, but real face-to-face talks are still precious.",
+          "ru": "Технологии объединяют людей, но живое живое общение по-прежнему бесценно.",
+          "tj": "Технологияҳо одамонро мепайванданд, аммо сӯҳбатҳои рӯ ба рӯ то ҳол бебаҳоянд.",
+          "highlightWords": [
+            "people",
+            "talk"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "emotions",
+    "index": 9,
+    "titleRu": "Эмоции, характер и отношения",
+    "titleTj": "Эҳсосот, хислат ва муносибатҳо",
+    "titleEn": "Emotions & Relationships",
+    "icon": "Sparkles",
+    "descriptionRu": "Настроение, выражение согласия и несогласия, черты характера, дружба и чувства",
+    "descriptionTj": "Кайфият, розӣ шудан ва рад кардан, хислатҳои инсонӣ, дӯстӣ ва муносибатҳо",
+    "keywords": [
+      "feel",
+      "feeling",
+      "emotion",
+      "happy",
+      "sad",
+      "angry",
+      "afraid",
+      "fear",
+      "proud",
+      "calm",
+      "nervous",
+      "honest",
+      "kind",
+      "polite",
+      "rude",
+      "funny",
+      "serious",
+      "friendship",
+      "trust",
+      "respect",
+      "opinion",
+      "believe",
+      "think",
+      "hope",
+      "wish",
+      "dream",
+      "sorry",
+      "please",
+      "thank"
+    ],
+    "totalWords": 489,
+    "totalBatches": 20,
+    "batches": [
+      {
+        "batch": 1,
+        "count": 25,
+        "sample": [
+          "activity",
+          "anyone",
+          "article"
+        ]
+      },
+      {
+        "batch": 2,
+        "count": 25,
+        "sample": [
+          "it",
+          "June",
+          "kind"
+        ]
+      },
+      {
+        "batch": 3,
+        "count": 25,
+        "sample": [
+          "take",
+          "thank",
+          "thanks"
+        ]
+      },
+      {
+        "batch": 4,
+        "count": 25,
+        "sample": [
+          "community",
+          "contain",
+          "couple"
+        ]
+      },
+      {
+        "batch": 5,
+        "count": 25,
+        "sample": [
+          "lock",
+          "major",
+          "may"
+        ]
+      },
+      {
+        "batch": 6,
+        "count": 25,
+        "sample": [
+          "strategy",
+          "suppose",
+          "thin"
+        ]
+      },
+      {
+        "batch": 7,
+        "count": 25,
+        "sample": [
+          "cover",
+          "cut",
+          "deliver"
+        ]
+      },
+      {
+        "batch": 8,
+        "count": 25,
+        "sample": [
+          "local",
+          "mall",
+          "mild"
+        ]
+      },
+      {
+        "batch": 9,
+        "count": 25,
+        "sample": [
+          "sex",
+          "shy",
+          "slice"
+        ]
+      },
+      {
+        "batch": 10,
+        "count": 25,
+        "sample": [
+          "cast",
+          "circumstance",
+          "command"
+        ]
+      },
+      {
+        "batch": 11,
+        "count": 25,
+        "sample": [
+          "income",
+          "insist",
+          "interpret"
+        ]
+      },
+      {
+        "batch": 12,
+        "count": 25,
+        "sample": [
+          "shallow",
+          "significant",
+          "solar"
+        ]
+      },
+      {
+        "batch": 13,
+        "count": 25,
+        "sample": [
+          "commander",
+          "confess",
+          "consumption"
+        ]
+      },
+      {
+        "batch": 14,
+        "count": 25,
+        "sample": [
+          "invade",
+          "kit",
+          "magnificent"
+        ]
+      },
+      {
+        "batch": 15,
+        "count": 25,
+        "sample": [
+          "tendency",
+          "tonne",
+          "tribe"
+        ]
+      },
+      {
+        "batch": 16,
+        "count": 25,
+        "sample": [
+          "coincide",
+          "commentator",
+          "compensate"
+        ]
+      },
+      {
+        "batch": 17,
+        "count": 25,
+        "sample": [
+          "enforcement",
+          "entity",
+          "evoke"
+        ]
+      },
+      {
+        "batch": 18,
+        "count": 25,
+        "sample": [
+          "leak",
+          "lesser",
+          "linear"
+        ]
+      },
+      {
+        "batch": 19,
+        "count": 25,
+        "sample": [
+          "realization",
+          "referendum",
+          "rehabilitation"
+        ]
+      },
+      {
+        "batch": 20,
+        "count": 14,
+        "sample": [
+          "theatrical",
+          "thrive",
+          "torture"
+        ]
+      }
+    ],
+    "monologue": {
+      "titleEn": "Expressing Feelings, Character & True Friendship",
+      "titleRu": "Чувства, характер и настоящая дружба",
+      "titleTj": "Эҳсосот, хислат ва дӯстии ҳақиқӣ",
+      "sentences": [
+        {
+          "en": "It is important to understand your emotions and express them calmly.",
+          "ru": "Важно понимать свои эмоции и выражать их спокойно.",
+          "tj": "Муҳим аст, ки эҳсосоти худро дарк кунем ва онҳоро оромона баён намоем.",
+          "highlightWords": [
+            "emotion",
+            "calm"
+          ]
+        },
+        {
+          "en": "True friends always support each other in difficult moments.",
+          "ru": "Настоящие друзья всегда поддерживают друг друга в трудные моменты.",
+          "tj": "Дӯстони ҳақиқӣ ҳамеша дар лаҳзаҳои душвор якдигарро дастгирӣ мекунанд.",
+          "highlightWords": [
+            "friend",
+            "always"
+          ]
+        },
+        {
+          "en": "Honesty and kindness build deep trust in every relationship.",
+          "ru": "Честность и доброта создают глубокое доверие в любых отношениях.",
+          "tj": "Ростқавлӣ ва меҳрубонӣ дар ҳар як муносибат боварии амиқ меоранд.",
+          "highlightWords": [
+            "trust",
+            "honest",
+            "kind"
+          ]
+        },
+        {
+          "en": "I agree that staying positive helps us overcome any struggle.",
+          "ru": "Я согласен, что позитивный настрой помогает преодолеть любые трудности.",
+          "tj": "Ман розӣ ҳастам, ки рӯҳияи мусбат барои паси сар кардани ҳама мушкилиҳо кӯмак мекунад.",
+          "highlightWords": [
+            "agree"
+          ]
+        },
+        {
+          "en": "Never be afraid of speaking your mind with respect and dignity.",
+          "ru": "Никогда не бойся высказывать свое мнение с уважением и достоинством.",
+          "tj": "Ҳеҷ гоҳ натарс, ки андешаи худро бо эҳтиром ва шарофат баён кунӣ.",
+          "highlightWords": [
+            "afraid",
+            "speak"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "society",
+    "index": 10,
+    "titleRu": "Общество, образование и мир",
+    "titleTj": "Ҷомеа, маориф ва ҷаҳон",
+    "titleEn": "Society, Education & World",
+    "icon": "Globe",
+    "descriptionRu": "Образование, университет, правила, закон, культура, история и глобальные идеи",
+    "descriptionTj": "Таҳсил, донишгоҳ, қоидаҳо, қонун, фарҳанг ва андешаҳои ҷаҳонӣ",
+    "keywords": [
+      "school",
+      "study",
+      "learn",
+      "student",
+      "teacher",
+      "university",
+      "college",
+      "knowledge",
+      "science",
+      "history",
+      "culture",
+      "law",
+      "rule",
+      "government",
+      "society",
+      "public",
+      "country",
+      "nation",
+      "world",
+      "peace",
+      "war",
+      "future",
+      "past",
+      "present",
+      "idea",
+      "truth"
+    ],
+    "totalWords": 478,
+    "totalBatches": 20,
+    "batches": [
+      {
+        "batch": 1,
+        "count": 25,
+        "sample": [
+          "anything",
+          "artist",
+          "become"
+        ]
+      },
+      {
+        "batch": 2,
+        "count": 25,
+        "sample": [
+          "just",
+          "learn",
+          "lion"
+        ]
+      },
+      {
+        "batch": 3,
+        "count": 25,
+        "sample": [
+          "them",
+          "three",
+          "tomorrow"
+        ]
+      },
+      {
+        "batch": 4,
+        "count": 25,
+        "sample": [
+          "compete",
+          "context",
+          "crazy"
+        ]
+      },
+      {
+        "batch": 5,
+        "count": 25,
+        "sample": [
+          "learning",
+          "lend",
+          "male"
+        ]
+      },
+      {
+        "batch": 6,
+        "count": 25,
+        "sample": [
+          "star",
+          "stress",
+          "sure"
+        ]
+      },
+      {
+        "batch": 7,
+        "count": 25,
+        "sample": [
+          "drop",
+          "edge",
+          "embarrassed"
+        ]
+      },
+      {
+        "batch": 8,
+        "count": 25,
+        "sample": [
+          "poet",
+          "port",
+          "prayer"
+        ]
+      },
+      {
+        "batch": 9,
+        "count": 25,
+        "sample": [
+          "unemployed",
+          "upon",
+          "violent"
+        ]
+      },
+      {
+        "batch": 10,
+        "count": 25,
+        "sample": [
+          "desperate",
+          "display",
+          "dozen"
+        ]
+      },
+      {
+        "batch": 11,
+        "count": 25,
+        "sample": [
+          "opposition",
+          "package",
+          "perspective"
+        ]
+      },
+      {
+        "batch": 12,
+        "count": 25,
+        "sample": [
+          "vary",
+          "vital",
+          "whisper"
+        ]
+      },
+      {
+        "batch": 13,
+        "count": 25,
+        "sample": [
+          "evaluation",
+          "expansion",
+          "fake"
+        ]
+      },
+      {
+        "batch": 14,
+        "count": 25,
+        "sample": [
+          "probability",
+          "protein",
+          "publicity"
+        ]
+      },
+      {
+        "batch": 15,
+        "count": 25,
+        "sample": [
+          "alike",
+          "amateur",
+          "arguably"
+        ]
+      },
+      {
+        "batch": 16,
+        "count": 25,
+        "sample": [
+          "dam",
+          "deed",
+          "delicate"
+        ]
+      },
+      {
+        "batch": 17,
+        "count": 25,
+        "sample": [
+          "harmony",
+          "hint",
+          "humanity"
+        ]
+      },
+      {
+        "batch": 18,
+        "count": 25,
+        "sample": [
+          "notorious",
+          "offering",
+          "outbreak"
+        ]
+      },
+      {
+        "batch": 19,
+        "count": 25,
+        "sample": [
+          "sensation",
+          "sheer",
+          "sketch"
+        ]
+      },
+      {
+        "batch": 20,
+        "count": 3,
+        "sample": [
+          "warrior",
+          "whatsoever",
+          "wit"
+        ]
+      }
+    ],
+    "monologue": {
+      "titleEn": "Education, Culture & Our Common Future",
+      "titleRu": "Образование, культура и наше общее будущее",
+      "titleTj": "Таҳсил, фарҳанг ва ояндаи муштараки мо",
+      "sentences": [
+        {
+          "en": "Education is the most powerful tool to change society for the better.",
+          "ru": "Образование — самый мощный инструмент для изменения общества к лучшему.",
+          "tj": "Маориф ва таҳсил пурқувваттарин абзор барои беҳтар кардани ҷомеа аст.",
+          "highlightWords": [
+            "society",
+            "better"
+          ]
+        },
+        {
+          "en": "Learning languages bridges different cultures and nations.",
+          "ru": "Изучение языков сближает различные культуры и народы.",
+          "tj": "Омӯзиши забонҳо фарҳангҳо ва миллатҳои гуногунро ба ҳам наздик мекунад.",
+          "highlightWords": [
+            "learn",
+            "culture"
+          ]
+        },
+        {
+          "en": "Every person has the potential to contribute something great to the world.",
+          "ru": "Каждый человек имеет потенциал внести что-то великое в этот мир.",
+          "tj": "Ҳар як инсон имконият дорад, ки ба ин ҷаҳон чизи бузурге эҳдо кунад.",
+          "highlightWords": [
+            "person",
+            "world",
+            "great"
+          ]
+        },
+        {
+          "en": "Respecting the rules and helping others creates peace and harmony.",
+          "ru": "Соблюдение правил и помощь другим людям создают мир и гармонию.",
+          "tj": "Риояи қоидаҳо ва кӯмак ба дигарон сулҳ ва оромӣ меофаранд.",
+          "highlightWords": [
+            "rule",
+            "peace"
+          ]
+        },
+        {
+          "en": "With continuous dedication, our future will be bright and inspiring.",
+          "ru": "С постоянным упорством наше будущее будет светлым и вдохновляющим.",
+          "tj": "Бо кӯшишу ғайрати доимӣ ояндаи мо дурахшон ва умедбахш хоҳад буд.",
+          "highlightWords": [
+            "future"
+          ]
+        }
+      ]
+    }
+  }
+]

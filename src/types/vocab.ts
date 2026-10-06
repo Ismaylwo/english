@@ -20,6 +20,44 @@ export interface WordItem {
   batch: number;
   dayIndex: number;
   example?: ExampleSentence;
+  categoryId?: string;
+  categoryIndex?: number;
+  categoryTitleRu?: string;
+  categoryBatch?: number;
+  categoryWordIndex?: number;
+}
+
+export interface MonologueSentence {
+  en: string;
+  ru: string;
+  tj: string;
+  highlightWords: string[];
+}
+
+export interface CategoryMonologue {
+  titleEn: string;
+  titleRu: string;
+  titleTj: string;
+  sentences: MonologueSentence[];
+}
+
+export interface CategorySummary {
+  id: string;
+  index: number;
+  titleRu: string;
+  titleTj: string;
+  titleEn: string;
+  icon: string;
+  descriptionRu: string;
+  descriptionTj: string;
+  totalWords: number;
+  totalBatches: number;
+  batches: {
+    batch: number;
+    count: number;
+    sample: string[];
+  }[];
+  monologue: CategoryMonologue;
 }
 
 export interface DaySummary {
