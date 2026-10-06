@@ -1,0 +1,16 @@
+{
+  "name": "VOCAB 5000 Hardcore",
+  "short_name": "Vocab5K",
+  "description": "5000 английских слов за 30 дней",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#090d16",
+  "theme_color": "#090d16",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

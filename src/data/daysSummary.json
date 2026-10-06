@@ -1,0 +1,1862 @@
+[
+  {
+    "day": 1,
+    "totalWords": 166,
+    "firstWord": "a an",
+    "lastWord": "decide",
+    "batches": [
+      {
+        "batch": 1,
+        "count": 28,
+        "sample": [
+          "a an",
+          "like",
+          "outside"
+        ]
+      },
+      {
+        "batch": 2,
+        "count": 28,
+        "sample": [
+          "anyone",
+          "anything",
+          "apartment"
+        ]
+      },
+      {
+        "batch": 3,
+        "count": 28,
+        "sample": [
+          "beach",
+          "beautiful",
+          "because"
+        ]
+      },
+      {
+        "batch": 4,
+        "count": 28,
+        "sample": [
+          "bottle",
+          "box",
+          "boy"
+        ]
+      },
+      {
+        "batch": 5,
+        "count": 28,
+        "sample": [
+          "carrot",
+          "carry",
+          "cat"
+        ]
+      },
+      {
+        "batch": 6,
+        "count": 26,
+        "sample": [
+          "compare",
+          "complete",
+          "computer"
+        ]
+      }
+    ]
+  },
+  {
+    "day": 2,
+    "totalWords": 166,
+    "firstWord": "delicious",
+    "lastWord": "interested",
+    "batches": [
+      {
+        "batch": 1,
+        "count": 28,
+        "sample": [
+          "delicious",
+          "describe",
+          "description"
+        ]
+      },
+      {
+        "batch": 2,
+        "count": 28,
+        "sample": [
+          "each",
+          "ear",
+          "early"
+        ]
+      },
+      {
+        "batch": 3,
+        "count": 28,
+        "sample": [
+          "exciting",
+          "exercise",
+          "expensive"
+        ]
+      },
+      {
+        "batch": 4,
+        "count": 28,
+        "sample": [
+          "follow",
+          "food",
+          "foot"
+        ]
+      },
+      {
+        "batch": 5,
+        "count": 28,
+        "sample": [
+          "grandfather",
+          "grandmother",
+          "grandparent"
+        ]
+      },
+      {
+        "batch": 6,
+        "count": 26,
+        "sample": [
+          "history",
+          "hobby",
+          "holiday"
+        ]
+      }
+    ]
+  },
+  {
+    "day": 3,
+    "totalWords": 166,
+    "firstWord": "interesting",
+    "lastWord": "plane",
+    "batches": [
+      {
+        "batch": 1,
+        "count": 28,
+        "sample": [
+          "interesting",
+          "internet",
+          "interview"
+        ]
+      },
+      {
+        "batch": 2,
+        "count": 28,
+        "sample": [
+          "left",
+          "leg",
+          "lesson"
+        ]
+      },
+      {
+        "batch": 3,
+        "count": 28,
+        "sample": [
+          "meal",
+          "mean",
+          "meaning"
+        ]
+      },
+      {
+        "batch": 4,
+        "count": 28,
+        "sample": [
+          "movie",
+          "much",
+          "mum"
+        ]
+      },
+      {
+        "batch": 5,
+        "count": 28,
+        "sample": [
+          "nurse",
+          "o’clock",
+          "October"
+        ]
+      },
+      {
+        "batch": 6,
+        "count": 26,
+        "sample": [
+          "pair",
+          "paper",
+          "paragraph"
+        ]
+      }
+    ]
+  },
+  {
+    "day": 4,
+    "totalWords": 166,
+    "firstWord": "play",
+    "lastWord": "tired",
+    "batches": [
+      {
+        "batch": 1,
+        "count": 28,
+        "sample": [
+          "play",
+          "player",
+          "police"
+        ]
+      },
+      {
+        "batch": 2,
+        "count": 28,
+        "sample": [
+          "rain",
+          "read",
+          "reader"
+        ]
+      },
+      {
+        "batch": 3,
+        "count": 28,
+        "sample": [
+          "scientist",
+          "sea",
+          "second"
+        ]
+      },
+      {
+        "batch": 4,
+        "count": 28,
+        "sample": [
+          "six",
+          "sixteen",
+          "sixty"
+        ]
+      },
+      {
+        "batch": 5,
+        "count": 28,
+        "sample": [
+          "statement",
+          "station",
+          "stop"
+        ]
+      },
+      {
+        "batch": 6,
+        "count": 26,
+        "sample": [
+          "tell",
+          "ten",
+          "tennis"
+        ]
+      }
+    ]
+  },
+  {
+    "day": 5,
+    "totalWords": 166,
+    "firstWord": "to",
+    "lastWord": "best",
+    "batches": [
+      {
+        "batch": 1,
+        "count": 28,
+        "sample": [
+          "to",
+          "today",
+          "together"
+        ]
+      },
+      {
+        "batch": 2,
+        "count": 28,
+        "sample": [
+          "understand",
+          "university",
+          "until"
+        ]
+      },
+      {
+        "batch": 3,
+        "count": 28,
+        "sample": [
+          "what",
+          "when",
+          "where"
+        ]
+      },
+      {
+        "batch": 4,
+        "count": 28,
+        "sample": [
+          "you",
+          "your",
+          "yourself"
+        ]
+      },
+      {
+        "batch": 5,
+        "count": 28,
+        "sample": [
+          "all",
+          "all",
+          "allow"
+        ]
+      },
+      {
+        "batch": 6,
+        "count": 26,
+        "sample": [
+          "asleep",
+          "assistant",
+          "athlete"
+        ]
+      }
+    ]
+  },
+  {
+    "day": 6,
+    "totalWords": 166,
+    "firstWord": "between",
+    "lastWord": "exact",
+    "batches": [
+      {
+        "batch": 1,
+        "count": 28,
+        "sample": [
+          "between",
+          "billion",
+          "bin"
+        ]
+      },
+      {
+        "batch": 2,
+        "count": 28,
+        "sample": [
+          "care",
+          "careful",
+          "carefully"
+        ]
+      },
+      {
+        "batch": 3,
+        "count": 28,
+        "sample": [
+          "climate",
+          "closed",
+          "clothing"
+        ]
+      },
+      {
+        "batch": 4,
+        "count": 28,
+        "sample": [
+          "cooker",
+          "copy",
+          "corner"
+        ]
+      },
+      {
+        "batch": 5,
+        "count": 28,
+        "sample": [
+          "detective",
+          "develop",
+          "device"
+        ]
+      },
+      {
+        "batch": 6,
+        "count": 26,
+        "sample": [
+          "easily",
+          "education",
+          "effect"
+        ]
+      }
+    ]
+  },
+  {
+    "day": 7,
+    "totalWords": 166,
+    "firstWord": "exactly",
+    "lastWord": "lost",
+    "batches": [
+      {
+        "batch": 1,
+        "count": 28,
+        "sample": [
+          "exactly",
+          "excellent",
+          "exist"
+        ]
+      },
+      {
+        "batch": 2,
+        "count": 28,
+        "sample": [
+          "first",
+          "firstly",
+          "fish"
+        ]
+      },
+      {
+        "batch": 3,
+        "count": 28,
+        "sample": [
+          "god",
+          "gold",
+          "golf"
+        ]
+      },
+      {
+        "batch": 4,
+        "count": 28,
+        "sample": [
+          "himself",
+          "his",
+          "hit"
+        ]
+      },
+      {
+        "batch": 5,
+        "count": 28,
+        "sample": [
+          "instructor",
+          "instrument",
+          "intelligent"
+        ]
+      },
+      {
+        "batch": 6,
+        "count": 26,
+        "sample": [
+          "land",
+          "laptop",
+          "last"
+        ]
+      }
+    ]
+  },
+  {
+    "day": 8,
+    "totalWords": 166,
+    "firstWord": "loud",
+    "lastWord": "route",
+    "batches": [
+      {
+        "batch": 1,
+        "count": 28,
+        "sample": [
+          "loud",
+          "loudly",
+          "lovely"
+        ]
+      },
+      {
+        "batch": 2,
+        "count": 28,
+        "sample": [
+          "missing",
+          "mobile",
+          "monkey"
+        ]
+      },
+      {
+        "batch": 3,
+        "count": 28,
+        "sample": [
+          "oil",
+          "onto",
+          "opportunity"
+        ]
+      },
+      {
+        "batch": 4,
+        "count": 28,
+        "sample": [
+          "pet",
+          "petrol",
+          "photograph"
+        ]
+      },
+      {
+        "batch": 5,
+        "count": 28,
+        "sample": [
+          "professor",
+          "profile",
+          "promise"
+        ]
+      },
+      {
+        "batch": 6,
+        "count": 26,
+        "sample": [
+          "record",
+          "recording",
+          "recycle"
+        ]
+      }
+    ]
+  },
+  {
+    "day": 9,
+    "totalWords": 166,
+    "firstWord": "rubbish",
+    "lastWord": "wild",
+    "batches": [
+      {
+        "batch": 1,
+        "count": 28,
+        "sample": [
+          "rubbish",
+          "rude",
+          "run"
+        ]
+      },
+      {
+        "batch": 2,
+        "count": 28,
+        "sample": [
+          "sheet",
+          "shoulder",
+          "shout"
+        ]
+      },
+      {
+        "batch": 3,
+        "count": 28,
+        "sample": [
+          "sock",
+          "soft",
+          "soldier"
+        ]
+      },
+      {
+        "batch": 4,
+        "count": 28,
+        "sample": [
+          "successful",
+          "such",
+          "suddenly"
+        ]
+      },
+      {
+        "batch": 5,
+        "count": 28,
+        "sample": [
+          "third",
+          "thought",
+          "throw"
+        ]
+      },
+      {
+        "batch": 6,
+        "count": 26,
+        "sample": [
+          "unusual",
+          "upstairs",
+          "use"
+        ]
+      }
+    ]
+  },
+  {
+    "day": 10,
+    "totalWords": 166,
+    "firstWord": "wind",
+    "lastWord": "covered",
+    "batches": [
+      {
+        "batch": 1,
+        "count": 28,
+        "sample": [
+          "wind",
+          "winner",
+          "wish"
+        ]
+      },
+      {
+        "batch": 2,
+        "count": 28,
+        "sample": [
+          "album",
+          "alcohol",
+          "alcoholic"
+        ]
+      },
+      {
+        "batch": 3,
+        "count": 28,
+        "sample": [
+          "attraction",
+          "authority",
+          "average"
+        ]
+      },
+      {
+        "batch": 4,
+        "count": 28,
+        "sample": [
+          "brave",
+          "breath",
+          "breathe"
+        ]
+      },
+      {
+        "batch": 5,
+        "count": 28,
+        "sample": [
+          "chemical",
+          "chest",
+          "childhood"
+        ]
+      },
+      {
+        "batch": 6,
+        "count": 26,
+        "sample": [
+          "conclusion",
+          "confident",
+          "confirm"
+        ]
+      }
+    ]
+  },
+  {
+    "day": 11,
+    "totalWords": 166,
+    "firstWord": "cream",
+    "lastWord": "horror",
+    "batches": [
+      {
+        "batch": 1,
+        "count": 28,
+        "sample": [
+          "cream",
+          "criminal",
+          "cruel"
+        ]
+      },
+      {
+        "batch": 2,
+        "count": 28,
+        "sample": [
+          "direct",
+          "directly",
+          "dirt"
+        ]
+      },
+      {
+        "batch": 3,
+        "count": 28,
+        "sample": [
+          "effort",
+          "election",
+          "element"
+        ]
+      },
+      {
+        "batch": 4,
+        "count": 28,
+        "sample": [
+          "expand",
+          "expected",
+          "expedition"
+        ]
+      },
+      {
+        "batch": 5,
+        "count": 28,
+        "sample": [
+          "flood",
+          "flour",
+          "flow"
+        ]
+      },
+      {
+        "batch": 6,
+        "count": 26,
+        "sample": [
+          "glove",
+          "go",
+          "goods"
+        ]
+      }
+    ]
+  },
+  {
+    "day": 12,
+    "totalWords": 166,
+    "firstWord": "hurricane",
+    "lastWord": "possibly",
+    "batches": [
+      {
+        "batch": 1,
+        "count": 28,
+        "sample": [
+          "hurricane",
+          "hurry",
+          "identity"
+        ]
+      },
+      {
+        "batch": 2,
+        "count": 28,
+        "sample": [
+          "invest",
+          "investigate",
+          "involved"
+        ]
+      },
+      {
+        "batch": 3,
+        "count": 28,
+        "sample": [
+          "limit",
+          "lip",
+          "liquid"
+        ]
+      },
+      {
+        "batch": 4,
+        "count": 28,
+        "sample": [
+          "mix",
+          "mixture",
+          "mood"
+        ]
+      },
+      {
+        "batch": 5,
+        "count": 28,
+        "sample": [
+          "obviously",
+          "occasion",
+          "occur"
+        ]
+      },
+      {
+        "batch": 6,
+        "count": 26,
+        "sample": [
+          "performance",
+          "personally",
+          "persuade"
+        ]
+      }
+    ]
+  },
+  {
+    "day": 13,
+    "totalWords": 166,
+    "firstWord": "pot",
+    "lastWord": "studio",
+    "batches": [
+      {
+        "batch": 1,
+        "count": 28,
+        "sample": [
+          "pot",
+          "pour",
+          "poverty"
+        ]
+      },
+      {
+        "batch": 2,
+        "count": 28,
+        "sample": [
+          "promote",
+          "proper",
+          "properly"
+        ]
+      },
+      {
+        "batch": 3,
+        "count": 28,
+        "sample": [
+          "regularly",
+          "reject",
+          "relate"
+        ]
+      },
+      {
+        "batch": 4,
+        "count": 28,
+        "sample": [
+          "retire",
+          "retired",
+          "revise"
+        ]
+      },
+      {
+        "batch": 5,
+        "count": 28,
+        "sample": [
+          "seriously",
+          "servant",
+          "set"
+        ]
+      },
+      {
+        "batch": 6,
+        "count": 26,
+        "sample": [
+          "smooth",
+          "software",
+          "soil"
+        ]
+      }
+    ]
+  },
+  {
+    "day": 14,
+    "totalWords": 166,
+    "firstWord": "substance",
+    "lastWord": "bacteria",
+    "batches": [
+      {
+        "batch": 1,
+        "count": 28,
+        "sample": [
+          "substance",
+          "successfully",
+          "sudden"
+        ]
+      },
+      {
+        "batch": 2,
+        "count": 28,
+        "sample": [
+          "therefore",
+          "this",
+          "though"
+        ]
+      },
+      {
+        "batch": 3,
+        "count": 28,
+        "sample": [
+          "tyre",
+          "ugly",
+          "unable"
+        ]
+      },
+      {
+        "batch": 4,
+        "count": 28,
+        "sample": [
+          "warm",
+          "warn",
+          "warning"
+        ]
+      },
+      {
+        "batch": 5,
+        "count": 28,
+        "sample": [
+          "absolute",
+          "academic",
+          "acceptable"
+        ]
+      },
+      {
+        "batch": 6,
+        "count": 26,
+        "sample": [
+          "anniversary",
+          "annual",
+          "anxious"
+        ]
+      }
+    ]
+  },
+  {
+    "day": 15,
+    "totalWords": 166,
+    "firstWord": "bar",
+    "lastWord": "emerge",
+    "batches": [
+      {
+        "batch": 1,
+        "count": 28,
+        "sample": [
+          "bar",
+          "barrier",
+          "basically"
+        ]
+      },
+      {
+        "batch": 2,
+        "count": 28,
+        "sample": [
+          "calculate",
+          "cancel",
+          "cancer"
+        ]
+      },
+      {
+        "batch": 3,
+        "count": 28,
+        "sample": [
+          "commitment",
+          "committee",
+          "commonly"
+        ]
+      },
+      {
+        "batch": 4,
+        "count": 28,
+        "sample": [
+          "convinced",
+          "core",
+          "corporate"
+        ]
+      },
+      {
+        "batch": 5,
+        "count": 28,
+        "sample": [
+          "declare",
+          "decline",
+          "decoration"
+        ]
+      },
+      {
+        "batch": 6,
+        "count": 26,
+        "sample": [
+          "disc",
+          "discipline",
+          "discount"
+        ]
+      }
+    ]
+  },
+  {
+    "day": 16,
+    "totalWords": 166,
+    "firstWord": "emotional",
+    "lastWord": "long-term",
+    "batches": [
+      {
+        "batch": 1,
+        "count": 28,
+        "sample": [
+          "emotional",
+          "emphasis",
+          "emphasize"
+        ]
+      },
+      {
+        "batch": 2,
+        "count": 28,
+        "sample": [
+          "expose",
+          "extend",
+          "extent"
+        ]
+      },
+      {
+        "batch": 3,
+        "count": 28,
+        "sample": [
+          "folding",
+          "following",
+          "forgive"
+        ]
+      },
+      {
+        "batch": 4,
+        "count": 28,
+        "sample": [
+          "handle",
+          "harm",
+          "harmful"
+        ]
+      },
+      {
+        "batch": 5,
+        "count": 28,
+        "sample": [
+          "imply",
+          "impose",
+          "impress"
+        ]
+      },
+      {
+        "batch": 6,
+        "count": 26,
+        "sample": [
+          "investigation",
+          "investment",
+          "issue"
+        ]
+      }
+    ]
+  },
+  {
+    "day": 17,
+    "totalWords": 166,
+    "firstWord": "loose",
+    "lastWord": "reward",
+    "batches": [
+      {
+        "batch": 1,
+        "count": 28,
+        "sample": [
+          "loose",
+          "lord",
+          "low"
+        ]
+      },
+      {
+        "batch": 2,
+        "count": 28,
+        "sample": [
+          "model",
+          "modify",
+          "monitor"
+        ]
+      },
+      {
+        "batch": 3,
+        "count": 28,
+        "sample": [
+          "offensive",
+          "official",
+          "opening"
+        ]
+      },
+      {
+        "batch": 4,
+        "count": 28,
+        "sample": [
+          "phase",
+          "phenomenon",
+          "philosophy"
+        ]
+      },
+      {
+        "batch": 5,
+        "count": 28,
+        "sample": [
+          "privacy",
+          "procedure",
+          "process"
+        ]
+      },
+      {
+        "batch": 6,
+        "count": 26,
+        "sample": [
+          "recall",
+          "recover",
+          "reduction"
+        ]
+      }
+    ]
+  },
+  {
+    "day": 18,
+    "totalWords": 166,
+    "firstWord": "rhythm",
+    "lastWord": "witness",
+    "batches": [
+      {
+        "batch": 1,
+        "count": 28,
+        "sample": [
+          "rhythm",
+          "rid",
+          "root"
+        ]
+      },
+      {
+        "batch": 2,
+        "count": 28,
+        "sample": [
+          "sensitive",
+          "sentence",
+          "sequence"
+        ]
+      },
+      {
+        "batch": 3,
+        "count": 28,
+        "sample": [
+          "solar",
+          "somewhat",
+          "soul"
+        ]
+      },
+      {
+        "batch": 4,
+        "count": 28,
+        "sample": [
+          "struggle",
+          "stuff",
+          "subject"
+        ]
+      },
+      {
+        "batch": 5,
+        "count": 28,
+        "sample": [
+          "tough",
+          "track",
+          "transfer"
+        ]
+      },
+      {
+        "batch": 6,
+        "count": 26,
+        "sample": [
+          "very",
+          "via",
+          "victory"
+        ]
+      }
+    ]
+  },
+  {
+    "day": 19,
+    "totalWords": 166,
+    "firstWord": "worse",
+    "lastWord": "depression",
+    "batches": [
+      {
+        "batch": 1,
+        "count": 28,
+        "sample": [
+          "worse",
+          "worst",
+          "worth"
+        ]
+      },
+      {
+        "batch": 2,
+        "count": 28,
+        "sample": [
+          "ambulance",
+          "amusing",
+          "analyst"
+        ]
+      },
+      {
+        "batch": 3,
+        "count": 28,
+        "sample": [
+          "balanced",
+          "ballet",
+          "balloon"
+        ]
+      },
+      {
+        "batch": 4,
+        "count": 28,
+        "sample": [
+          "carbon",
+          "casual",
+          "cave"
+        ]
+      },
+      {
+        "batch": 5,
+        "count": 28,
+        "sample": [
+          "completion",
+          "compose",
+          "composer"
+        ]
+      },
+      {
+        "batch": 6,
+        "count": 26,
+        "sample": [
+          "corridor",
+          "counter",
+          "coverage"
+        ]
+      }
+    ]
+  },
+  {
+    "day": 20,
+    "totalWords": 166,
+    "firstWord": "derive",
+    "lastWord": "inflation",
+    "batches": [
+      {
+        "batch": 1,
+        "count": 28,
+        "sample": [
+          "derive",
+          "desperately",
+          "destruction"
+        ]
+      },
+      {
+        "batch": 2,
+        "count": 28,
+        "sample": [
+          "dull",
+          "dump",
+          "duration"
+        ]
+      },
+      {
+        "batch": 3,
+        "count": 28,
+        "sample": [
+          "evident",
+          "evolution",
+          "evolve"
+        ]
+      },
+      {
+        "batch": 4,
+        "count": 28,
+        "sample": [
+          "firmly",
+          "flavour",
+          "fond"
+        ]
+      },
+      {
+        "batch": 5,
+        "count": 28,
+        "sample": [
+          "genetic",
+          "genius",
+          "genuine"
+        ]
+      },
+      {
+        "batch": 6,
+        "count": 26,
+        "sample": [
+          "hilarious",
+          "hip",
+          "historian"
+        ]
+      }
+    ]
+  },
+  {
+    "day": 21,
+    "totalWords": 166,
+    "firstWord": "info",
+    "lastWord": "purely",
+    "batches": [
+      {
+        "batch": 1,
+        "count": 28,
+        "sample": [
+          "info",
+          "infrastructure",
+          "inhabitant"
+        ]
+      },
+      {
+        "batch": 2,
+        "count": 28,
+        "sample": [
+          "kit",
+          "ladder",
+          "landing"
+        ]
+      },
+      {
+        "batch": 3,
+        "count": 28,
+        "sample": [
+          "martial",
+          "mate",
+          "mayor"
+        ]
+      },
+      {
+        "batch": 4,
+        "count": 28,
+        "sample": [
+          "navigation",
+          "nearby",
+          "necessity"
+        ]
+      },
+      {
+        "batch": 5,
+        "count": 28,
+        "sample": [
+          "outstanding",
+          "overcome",
+          "overnight"
+        ]
+      },
+      {
+        "batch": 6,
+        "count": 26,
+        "sample": [
+          "precede",
+          "precious",
+          "precise"
+        ]
+      }
+    ]
+  },
+  {
+    "day": 22,
+    "totalWords": 166,
+    "firstWord": "pursuit",
+    "lastWord": "universal",
+    "batches": [
+      {
+        "batch": 1,
+        "count": 28,
+        "sample": [
+          "pursuit",
+          "puzzle",
+          "questionnaire"
+        ]
+      },
+      {
+        "batch": 2,
+        "count": 28,
+        "sample": [
+          "remarkably",
+          "reporting",
+          "resign"
+        ]
+      },
+      {
+        "batch": 3,
+        "count": 28,
+        "sample": [
+          "screening",
+          "seeker",
+          "seminar"
+        ]
+      },
+      {
+        "batch": 4,
+        "count": 28,
+        "sample": [
+          "spite",
+          "spoil",
+          "spokesman"
+        ]
+      },
+      {
+        "batch": 5,
+        "count": 28,
+        "sample": [
+          "suspend",
+          "sustainable",
+          "swallow"
+        ]
+      },
+      {
+        "batch": 6,
+        "count": 26,
+        "sample": [
+          "tissue",
+          "ton",
+          "tonne"
+        ]
+      }
+    ]
+  },
+  {
+    "day": 23,
+    "totalWords": 166,
+    "firstWord": "urgent",
+    "lastWord": "boast",
+    "batches": [
+      {
+        "batch": 1,
+        "count": 28,
+        "sample": [
+          "urgent",
+          "usage",
+          "useless"
+        ]
+      },
+      {
+        "batch": 2,
+        "count": 28,
+        "sample": [
+          "abolish",
+          "abortion",
+          "absence"
+        ]
+      },
+      {
+        "batch": 3,
+        "count": 28,
+        "sample": [
+          "adjacent",
+          "adjustment",
+          "administer"
+        ]
+      },
+      {
+        "batch": 4,
+        "count": 28,
+        "sample": [
+          "allowance",
+          "ally",
+          "aluminium"
+        ]
+      },
+      {
+        "batch": 5,
+        "count": 28,
+        "sample": [
+          "aspiration",
+          "aspire",
+          "assassination"
+        ]
+      },
+      {
+        "batch": 6,
+        "count": 26,
+        "sample": [
+          "bare",
+          "barrel",
+          "bass"
+        ]
+      }
+    ]
+  },
+  {
+    "day": 24,
+    "totalWords": 166,
+    "firstWord": "bonus",
+    "lastWord": "crawl",
+    "batches": [
+      {
+        "batch": 1,
+        "count": 28,
+        "sample": [
+          "bonus",
+          "boom",
+          "bounce"
+        ]
+      },
+      {
+        "batch": 2,
+        "count": 28,
+        "sample": [
+          "carve",
+          "casino",
+          "casualty"
+        ]
+      },
+      {
+        "batch": 3,
+        "count": 28,
+        "sample": [
+          "coalition",
+          "coastal",
+          "cocktail"
+        ]
+      },
+      {
+        "batch": 4,
+        "count": 28,
+        "sample": [
+          "compile",
+          "complement",
+          "complexity"
+        ]
+      },
+      {
+        "batch": 5,
+        "count": 28,
+        "sample": [
+          "consecutive",
+          "consensus",
+          "consent"
+        ]
+      },
+      {
+        "batch": 6,
+        "count": 26,
+        "sample": [
+          "coordinate",
+          "coordination",
+          "coordinator"
+        ]
+      }
+    ]
+  },
+  {
+    "day": 25,
+    "totalWords": 166,
+    "firstWord": "creator",
+    "lastWord": "evolutionary",
+    "batches": [
+      {
+        "batch": 1,
+        "count": 28,
+        "sample": [
+          "creator",
+          "credibility",
+          "credible"
+        ]
+      },
+      {
+        "batch": 2,
+        "count": 28,
+        "sample": [
+          "defect",
+          "defensive",
+          "deficiency"
+        ]
+      },
+      {
+        "batch": 3,
+        "count": 28,
+        "sample": [
+          "detention",
+          "deteriorate",
+          "devastate"
+        ]
+      },
+      {
+        "batch": 4,
+        "count": 28,
+        "sample": [
+          "disposal",
+          "dispose",
+          "dispute"
+        ]
+      },
+      {
+        "batch": 5,
+        "count": 28,
+        "sample": [
+          "eager",
+          "earnings",
+          "ease"
+        ]
+      },
+      {
+        "batch": 6,
+        "count": 26,
+        "sample": [
+          "endorse",
+          "endorsement",
+          "endure"
+        ]
+      }
+    ]
+  },
+  {
+    "day": 26,
+    "totalWords": 166,
+    "firstWord": "exaggerate",
+    "lastWord": "instruct",
+    "batches": [
+      {
+        "batch": 1,
+        "count": 28,
+        "sample": [
+          "exaggerate",
+          "excellence",
+          "exceptional"
+        ]
+      },
+      {
+        "batch": 2,
+        "count": 28,
+        "sample": [
+          "favourable",
+          "feat",
+          "feminist"
+        ]
+      },
+      {
+        "batch": 3,
+        "count": 28,
+        "sample": [
+          "franchise",
+          "frankly",
+          "frustrated"
+        ]
+      },
+      {
+        "batch": 4,
+        "count": 28,
+        "sample": [
+          "grind",
+          "grip",
+          "gross"
+        ]
+      },
+      {
+        "batch": 5,
+        "count": 28,
+        "sample": [
+          "hopeful",
+          "horizon",
+          "horn"
+        ]
+      },
+      {
+        "batch": 6,
+        "count": 26,
+        "sample": [
+          "indicator",
+          "indictment",
+          "indigenous"
+        ]
+      }
+    ]
+  },
+  {
+    "day": 27,
+    "totalWords": 166,
+    "firstWord": "instrumental",
+    "lastWord": "nominee",
+    "batches": [
+      {
+        "batch": 1,
+        "count": 28,
+        "sample": [
+          "instrumental",
+          "insufficient",
+          "insult"
+        ]
+      },
+      {
+        "batch": 2,
+        "count": 28,
+        "sample": [
+          "involvement",
+          "ironic",
+          "ironically"
+        ]
+      },
+      {
+        "batch": 3,
+        "count": 28,
+        "sample": [
+          "legislation",
+          "legislative",
+          "legislature"
+        ]
+      },
+      {
+        "batch": 4,
+        "count": 28,
+        "sample": [
+          "loop",
+          "loyalty",
+          "machinery"
+        ]
+      },
+      {
+        "batch": 5,
+        "count": 28,
+        "sample": [
+          "meditation",
+          "melody",
+          "memo"
+        ]
+      },
+      {
+        "batch": 6,
+        "count": 26,
+        "sample": [
+          "mobility",
+          "mobilize",
+          "moderate"
+        ]
+      }
+    ]
+  },
+  {
+    "day": 28,
+    "totalWords": 166,
+    "firstWord": "nonetheless",
+    "lastWord": "recount",
+    "batches": [
+      {
+        "batch": 1,
+        "count": 28,
+        "sample": [
+          "nonetheless",
+          "non-profit",
+          "nonsense"
+        ]
+      },
+      {
+        "batch": 2,
+        "count": 28,
+        "sample": [
+          "outing",
+          "outlet",
+          "outlook"
+        ]
+      },
+      {
+        "batch": 3,
+        "count": 28,
+        "sample": [
+          "peculiar",
+          "persist",
+          "persistent"
+        ]
+      },
+      {
+        "batch": 4,
+        "count": 28,
+        "sample": [
+          "precision",
+          "predator",
+          "predecessor"
+        ]
+      },
+      {
+        "batch": 5,
+        "count": 28,
+        "sample": [
+          "problematic",
+          "proceedings",
+          "proceeds"
+        ]
+      },
+      {
+        "batch": 6,
+        "count": 26,
+        "sample": [
+          "pump",
+          "punch",
+          "query"
+        ]
+      }
+    ]
+  },
+  {
+    "day": 29,
+    "totalWords": 166,
+    "firstWord": "referendum",
+    "lastWord": "substantial",
+    "batches": [
+      {
+        "batch": 1,
+        "count": 28,
+        "sample": [
+          "referendum",
+          "reflection",
+          "reform"
+        ]
+      },
+      {
+        "batch": 2,
+        "count": 28,
+        "sample": [
+          "reproduce",
+          "reproduction",
+          "republic"
+        ]
+      },
+      {
+        "batch": 3,
+        "count": 28,
+        "sample": [
+          "robust",
+          "rock",
+          "rod"
+        ]
+      },
+      {
+        "batch": 4,
+        "count": 28,
+        "sample": [
+          "separation",
+          "serial",
+          "settlement"
+        ]
+      },
+      {
+        "batch": 5,
+        "count": 28,
+        "sample": [
+          "socialist",
+          "sole",
+          "solely"
+        ]
+      },
+      {
+        "batch": 6,
+        "count": 26,
+        "sample": [
+          "stabilize",
+          "stake",
+          "standing"
+        ]
+      }
+    ]
+  },
+  {
+    "day": 30,
+    "totalWords": 177,
+    "firstWord": "substantially",
+    "lastWord": "sin",
+    "batches": [
+      {
+        "batch": 1,
+        "count": 28,
+        "sample": [
+          "substantially",
+          "substitute",
+          "substitution"
+        ]
+      },
+      {
+        "batch": 2,
+        "count": 28,
+        "sample": [
+          "suspension",
+          "suspicion",
+          "suspicious"
+        ]
+      },
+      {
+        "batch": 3,
+        "count": 28,
+        "sample": [
+          "theoretical",
+          "thereafter",
+          "thereby"
+        ]
+      },
+      {
+        "batch": 4,
+        "count": 28,
+        "sample": [
+          "transformation",
+          "transit",
+          "transmission"
+        ]
+      },
+      {
+        "batch": 5,
+        "count": 28,
+        "sample": [
+          "upcoming",
+          "upgrade",
+          "uphold"
+        ]
+      },
+      {
+        "batch": 6,
+        "count": 37,
+        "sample": [
+          "virtue",
+          "vocal",
+          "vow"
+        ]
+      }
+    ]
+  }
+]
