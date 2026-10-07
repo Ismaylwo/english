@@ -6,69 +6,45 @@
     "titleTj": "Шиносоӣ, одамон ва нақл дар бораи худ",
     "titleEn": "Meeting People & Self",
     "icon": "Users",
-    "descriptionRu": "Приветствия, имя, возраст, внешность, характер, чувства и базовые глаголы общения",
-    "descriptionTj": "Салом додан, ном, синну сол, намуди зоҳирӣ, хислат ва феълҳои асосии муошират",
+    "descriptionRu": "Приветствия, имя, семья, люди, возраст, внешность и базовые глаголы общения",
+    "descriptionTj": "Салом додан, ном, оила, синну сол, намуди зоҳирӣ ва феълҳои асосии муошират",
     "keywords": [
-      "like",
-      "outside",
-      "second",
-      "about",
-      "action",
-      "actor",
-      "actress",
-      "advice",
-      "afraid",
-      "afternoon",
-      "agree",
-      "angry",
-      "boy",
-      "girl",
-      "man",
-      "woman",
-      "friend",
+      "hello",
+      "hi",
       "name",
-      "call",
       "meet",
-      "speak",
-      "talk",
-      "tell",
-      "listen",
-      "hear",
-      "look",
-      "see",
+      "nice",
+      "introduce",
+      "welcome",
       "person",
       "people",
+      "friend",
+      "man",
+      "woman",
+      "boy",
+      "girl",
       "family",
+      "live",
+      "speak",
+      "talk",
+      "call",
       "mother",
       "father",
       "brother",
       "sister",
-      "child",
-      "children",
-      "young",
-      "old",
-      "nice",
-      "happy",
-      "sad",
-      "smile",
-      "laugh",
-      "love",
-      "live",
-      "life",
-      "hello",
       "good",
-      "bad"
+      "glad"
     ],
-    "totalWords": 551,
-    "totalBatches": 23,
+    "totalWords": 500,
+    "totalBatches": 20,
     "batches": [
       {
         "batch": 1,
         "count": 25,
         "sample": [
-          "a an",
-          "like",
-          "outside"
+          "hello",
+          "hi",
+          "name"
         ]
       },
       {
@@ -76,195 +52,170 @@
         "count": 25,
         "sample": [
           "child",
-          "compare",
-          "course"
+          "parent",
+          "son"
         ]
       },
       {
         "batch": 3,
         "count": 25,
         "sample": [
-          "hello",
-          "help",
-          "horse"
+          "born",
+          "birth",
+          "grow"
         ]
       },
       {
         "batch": 4,
         "count": 25,
         "sample": [
-          "often",
-          "old",
-          "people"
+          "raise",
+          "occupy",
+          "hail"
         ]
       },
       {
         "batch": 5,
         "count": 25,
         "sample": [
-          "true",
-          "uncle",
-          "watch"
+          "realize",
+          "suddenly",
+          "adopt"
         ]
       },
       {
         "batch": 6,
         "count": 25,
         "sample": [
-          "designer",
-          "disagree",
-          "downstairs"
+          "revival",
+          "dad",
+          "own"
         ]
       },
       {
         "batch": 7,
         "count": 25,
         "sample": [
-          "look",
-          "lorry",
-          "lovely"
+          "transform",
+          "anonymous",
+          "shatter"
         ]
       },
       {
         "batch": 8,
         "count": 25,
         "sample": [
-          "smile",
-          "soap",
-          "source"
+          "outlet",
+          "effect",
+          "remote"
         ]
       },
       {
         "batch": 9,
         "count": 25,
         "sample": [
-          "clause",
-          "coin",
-          "competitor"
+          "return",
+          "port",
+          "democracy"
         ]
       },
       {
         "batch": 10,
         "count": 25,
         "sample": [
-          "innocent",
-          "judge",
-          "laboratory"
+          "wonderful",
+          "sand",
+          "identical"
         ]
       },
       {
         "batch": 11,
         "count": 25,
         "sample": [
-          "rise",
-          "secondary",
-          "security"
+          "disadvantage",
+          "presence",
+          "allege"
         ]
       },
       {
         "batch": 12,
         "count": 25,
         "sample": [
-          "beg",
-          "border",
-          "but"
+          "govern",
+          "applaud",
+          "bicycle"
         ]
       },
       {
         "batch": 13,
         "count": 25,
         "sample": [
-          "hell",
-          "imagination",
-          "industrial"
+          "separation",
+          "score",
+          "object"
         ]
       },
       {
         "batch": 14,
         "count": 25,
         "sample": [
-          "rush",
-          "seek",
-          "sensitive"
+          "presently",
+          "glorious",
+          "asleep"
         ]
       },
       {
         "batch": 15,
         "count": 25,
         "sample": [
-          "chase",
-          "cliff",
-          "completion"
+          "side",
+          "judge",
+          "gradually"
         ]
       },
       {
         "batch": 16,
         "count": 25,
         "sample": [
-          "info",
-          "installation",
-          "investor"
+          "politician",
+          "fabric",
+          "pioneer"
         ]
       },
       {
         "batch": 17,
         "count": 25,
         "sample": [
-          "scholarship",
-          "seeker",
-          "shortage"
+          "suit",
+          "inhabitant",
+          "outlook"
         ]
       },
       {
         "batch": 18,
         "count": 25,
         "sample": [
-          "bizarre",
-          "bounce",
-          "buck"
+          "pass",
+          "elbow",
+          "loom"
         ]
       },
       {
         "batch": 19,
         "count": 25,
         "sample": [
-          "discharge",
-          "dispute",
-          "divine"
+          "correct",
+          "force",
+          "ambulance"
         ]
       },
       {
         "batch": 20,
         "count": 25,
         "sample": [
-          "intake",
-          "interactive",
-          "intriguing"
-        ]
-      },
-      {
-        "batch": 21,
-        "count": 25,
-        "sample": [
-          "novel",
-          "offspring",
-          "outing"
-        ]
-      },
-      {
-        "batch": 22,
-        "count": 25,
-        "sample": [
-          "seemingly",
-          "sensitivity",
-          "shipping"
-        ]
-      },
-      {
-        "batch": 23,
-        "count": 1,
-        "sample": [
-          "sin"
+          "graduate",
+          "choir",
+          "homeland"
         ]
       }
     ],
@@ -347,241 +298,218 @@
     "index": 2,
     "titleRu": "Путешествия, город и транспорт",
     "titleTj": "Сафар, шаҳр ва нақлиёт",
-    "titleEn": "Travel, City & Transport",
+    "titleEn": "Travel, City & Navigation",
     "icon": "Plane",
-    "descriptionRu": "Аэропорт, билеты, отель, направления («где находится...»), такси, улицы и ориентирование",
-    "descriptionTj": "Фурудгоҳ, чиптаҳо, меҳмонхона, самтҳо, таксӣ, кӯчаҳо ва пайдо кардани роҳ",
+    "descriptionRu": "Аэропорт, билеты, отель, направления, транспорт, улицы и ориентирование",
+    "descriptionTj": "Фурудгоҳ, чиптаҳо, меҳмонхона, самтҳо, нақлиёт ва пайдо кардани роҳ",
     "keywords": [
       "airport",
-      "across",
-      "air",
-      "arrive",
-      "arrival",
-      "depart",
-      "departure",
-      "flight",
       "plane",
+      "airplane",
+      "flight",
+      "fly",
       "ticket",
       "passport",
       "visa",
       "hotel",
       "room",
-      "street",
       "city",
       "town",
+      "street",
       "road",
       "way",
       "direction",
-      "left",
-      "right",
-      "straight",
-      "near",
-      "far",
+      "map",
       "car",
       "bus",
       "train",
-      "taxi",
       "station",
-      "stop",
-      "map",
-      "travel",
-      "trip",
-      "journey",
-      "visit",
-      "tourist",
-      "country",
-      "world"
+      "taxi",
+      "arrive",
+      "arrival",
+      "depart"
     ],
-    "totalWords": 513,
-    "totalBatches": 21,
+    "totalWords": 499,
+    "totalBatches": 20,
     "batches": [
       {
         "batch": 1,
         "count": 25,
         "sample": [
-          "across",
-          "air",
-          "airport"
+          "airport",
+          "plane",
+          "flight"
         ]
       },
       {
         "batch": 2,
         "count": 25,
         "sample": [
-          "dialogue",
-          "dish",
-          "driver"
+          "travel",
+          "trip",
+          "journey"
         ]
       },
       {
         "batch": 3,
         "count": 25,
         "sample": [
-          "next",
-          "not",
-          "oh"
+          "gate",
+          "seat",
+          "passenger"
         ]
       },
       {
         "batch": 4,
         "count": 25,
         "sample": [
-          "terrible",
-          "there",
-          "Thursday"
+          "picture",
+          "transport",
+          "transportation"
         ]
       },
       {
         "batch": 5,
         "count": 25,
         "sample": [
-          "bone",
-          "broken",
-          "businessman"
+          "surprised",
+          "flag",
+          "suffer"
         ]
       },
       {
         "batch": 6,
         "count": 25,
         "sample": [
-          "farming",
-          "finally",
-          "fly"
+          "unacceptable",
+          "experimental",
+          "rebel"
         ]
       },
       {
         "batch": 7,
         "count": 25,
         "sample": [
-          "sign",
-          "skin",
-          "soccer"
+          "auction",
+          "bind",
+          "sword"
         ]
       },
       {
         "batch": 8,
         "count": 25,
         "sample": [
-          "breathing",
-          "captain",
-          "careless"
+          "refuge",
+          "informal",
+          "trade"
         ]
       },
       {
         "batch": 9,
         "count": 25,
         "sample": [
-          "happiness",
-          "historic",
-          "imaginary"
+          "two",
+          "sculpture",
+          "forum"
         ]
       },
       {
         "batch": 10,
         "count": 25,
         "sample": [
-          "risk",
-          "safety",
-          "share"
+          "engineer",
+          "translation",
+          "openly"
         ]
       },
       {
         "batch": 11,
         "count": 25,
         "sample": [
-          "bush",
-          "cable",
-          "chain"
+          "imaginary",
+          "shelter",
+          "carve"
         ]
       },
       {
         "batch": 12,
         "count": 25,
         "sample": [
-          "housing",
-          "impatient",
-          "infection"
+          "permanent",
+          "burst",
+          "it"
         ]
       },
       {
         "batch": 13,
         "count": 25,
         "sample": [
-          "sentence",
-          "shelter",
-          "silk"
+          "supplement",
+          "wild",
+          "reserve"
         ]
       },
       {
         "batch": 14,
         "count": 25,
         "sample": [
-          "clinic",
-          "compose",
-          "conservation"
+          "resemble",
+          "integration",
+          "golf"
         ]
       },
       {
         "batch": 15,
         "count": 25,
         "sample": [
-          "instant",
-          "isolate",
-          "lane"
+          "surprise",
+          "management",
+          "largely"
         ]
       },
       {
         "batch": 16,
         "count": 25,
         "sample": [
-          "steam",
-          "suffering",
-          "sympathetic"
+          "retire",
+          "mosque",
+          "rod"
         ]
       },
       {
         "batch": 17,
         "count": 25,
         "sample": [
-          "buddy",
-          "capability",
-          "cargo"
+          "acceptable",
+          "radiation",
+          "refusal"
         ]
       },
       {
         "batch": 18,
         "count": 25,
         "sample": [
-          "dilemma",
-          "disclose",
-          "disrupt"
+          "ring",
+          "implication",
+          "overwhelm"
         ]
       },
       {
         "batch": 19,
         "count": 25,
         "sample": [
-          "inherent",
-          "inspection",
-          "integral"
+          "monday",
+          "mention",
+          "compulsory"
         ]
       },
       {
         "batch": 20,
-        "count": 25,
+        "count": 24,
         "sample": [
-          "privatization",
-          "productivity",
-          "prosecutor"
-        ]
-      },
-      {
-        "batch": 21,
-        "count": 13,
-        "sample": [
-          "surveillance",
-          "systematic",
-          "terminate"
+          "northern",
+          "dump",
+          "laser"
         ]
       }
     ],
@@ -656,233 +584,218 @@
     "index": 3,
     "titleRu": "Еда, супермаркет и кафе",
     "titleTj": "Ғизо, супермаркет ва қаҳвахона",
-    "titleEn": "Food, Shopping & Cafe",
+    "titleEn": "Food, Shopping & Dining",
     "icon": "ShoppingBag",
-    "descriptionRu": "Супермаркет, покупка продуктов, заказ еды, меню, цены, оплата картой и наличными",
-    "descriptionTj": "Супермаркет, хариди маҳсулот, фармоиши хӯрок, меню, нархҳо ва пардохт",
+    "descriptionRu": "Супермаркет, продукты, кафе, заказ еды, меню, цены и покупки",
+    "descriptionTj": "Супермаркет, маҳсулот, қаҳвахона, фармоиши хӯрок, меню ва харид",
     "keywords": [
-      "add",
-      "bread",
+      "food",
+      "eat",
+      "drink",
       "water",
+      "bread",
       "tea",
       "coffee",
       "milk",
       "sugar",
       "salt",
       "meat",
+      "chicken",
+      "beef",
       "fish",
       "fruit",
       "apple",
+      "banana",
+      "orange",
       "vegetable",
-      "food",
-      "eat",
-      "drink",
-      "cook",
-      "kitchen",
-      "restaurant",
-      "cafe",
-      "menu",
-      "order",
-      "bill",
-      "check",
-      "pay",
-      "price",
-      "cost",
-      "buy",
-      "shop",
-      "store",
-      "market",
-      "supermarket",
-      "bag",
-      "card",
-      "cash",
-      "money",
-      "cheap",
-      "expensive",
-      "fresh",
-      "delicious"
+      "potato",
+      "tomato",
+      "rice",
+      "cheese",
+      "egg",
+      "butter"
     ],
-    "totalWords": 492,
+    "totalWords": 499,
     "totalBatches": 20,
     "batches": [
       {
         "batch": 1,
         "count": 25,
         "sample": [
-          "add",
-          "amazing",
-          "apple"
+          "food",
+          "eat",
+          "drink"
         ]
       },
       {
         "batch": 2,
         "count": 25,
         "sample": [
-          "eat",
-          "eighteen",
-          "exciting"
+          "oil",
+          "soup",
+          "salad"
         ]
       },
       {
         "batch": 3,
         "count": 25,
         "sample": [
-          "pair",
-          "pencil",
-          "piano"
+          "cheap",
+          "expensive",
+          "fresh"
         ]
       },
       {
         "batch": 4,
         "count": 25,
         "sample": [
-          "tooth",
-          "Tuesday",
-          "understand"
+          "stage",
+          "hunger",
+          "newly"
         ]
       },
       {
         "batch": 5,
         "count": 25,
         "sample": [
-          "cook",
-          "cooker",
-          "cross"
+          "purchase",
+          "victory",
+          "convey"
         ]
       },
       {
         "batch": 6,
         "count": 25,
         "sample": [
-          "lift",
-          "loud",
-          "memory"
+          "scenario",
+          "gear",
+          "accident"
         ]
       },
       {
         "batch": 7,
         "count": 25,
         "sample": [
-          "teenage",
-          "throw",
-          "tradition"
+          "delete",
+          "conquer",
+          "anyone"
         ]
       },
       {
         "batch": 8,
         "count": 25,
         "sample": [
-          "determine",
-          "disappointed",
-          "due"
+          "spark",
+          "nowhere",
+          "brief"
         ]
       },
       {
         "batch": 9,
         "count": 25,
         "sample": [
-          "normal",
-          "outdoors",
-          "payment"
+          "chip",
+          "total",
+          "magnificent"
         ]
       },
       {
         "batch": 10,
         "count": 25,
         "sample": [
-          "type",
-          "union",
-          "used"
+          "marry",
+          "broadcast",
+          "skilled"
         ]
       },
       {
         "batch": 11,
         "count": 25,
         "sample": [
-          "dramatic",
-          "emphasize",
-          "entirely"
+          "pin",
+          "venue",
+          "consultation"
         ]
       },
       {
         "batch": 12,
         "count": 25,
         "sample": [
-          "participant",
-          "philosophy",
-          "pose"
+          "shadow",
+          "cooperative",
+          "snake"
         ]
       },
       {
         "batch": 13,
         "count": 25,
         "sample": [
-          "wage",
-          "wildlife",
-          "wrap"
+          "worship",
+          "combine",
+          "surrounding"
         ]
       },
       {
         "batch": 14,
         "count": 25,
         "sample": [
-          "exposure",
-          "forbid",
-          "fraction"
+          "stake",
+          "non-profit",
+          "nut"
         ]
       },
       {
         "batch": 15,
         "count": 25,
         "sample": [
-          "relieved",
-          "retirement",
-          "rose"
+          "use",
+          "ours",
+          "multiple"
         ]
       },
       {
         "batch": 16,
         "count": 25,
         "sample": [
-          "auto",
-          "bare",
-          "bench"
+          "unable",
+          "resign",
+          "substitution"
         ]
       },
       {
         "batch": 17,
         "count": 25,
         "sample": [
-          "denounce",
-          "descend",
-          "devastate"
+          "contemporary",
+          "tag",
+          "slap"
         ]
       },
       {
         "batch": 18,
         "count": 25,
         "sample": [
-          "imprisonment",
-          "indigenous",
-          "inhibit"
+          "violent",
+          "organic",
+          "prosecute"
         ]
       },
       {
         "batch": 19,
         "count": 25,
         "sample": [
-          "petition",
-          "pledge",
-          "preliminary"
+          "skirt",
+          "production",
+          "genetic"
         ]
       },
       {
         "batch": 20,
-        "count": 17,
+        "count": 24,
         "sample": [
-          "strategic",
-          "subsidy",
-          "suck"
+          "shelf",
+          "guideline",
+          "pathway"
         ]
       }
     ],
@@ -957,225 +870,220 @@
   {
     "id": "daily_life",
     "index": 4,
-    "titleRu": "Дом, быт и распорядок дня",
+    "titleRu": "Дом, быт и каждый день",
     "titleTj": "Хона, рӯзгор ва реҷаи рӯз",
     "titleEn": "Home & Daily Routine",
     "icon": "Home",
-    "descriptionRu": "Утро, вечер, квартира, уборка, одежда, распорядок дня и домашние дела",
-    "descriptionTj": "Субҳ, шом, хона, либосҳо, реҷаи рӯз ва корҳои хона",
+    "descriptionRu": "Дом, квартира, уборка, одежда, распорядок дня и бытовые дела",
+    "descriptionTj": "Хона, либос, реҷаи рӯз ва корҳои рӯзгор",
     "keywords": [
       "home",
       "house",
       "apartment",
       "flat",
       "room",
+      "door",
+      "window",
+      "wall",
+      "floor",
+      "roof",
+      "key",
+      "lock",
+      "bedroom",
+      "kitchen",
+      "bathroom",
+      "toilet",
       "bed",
       "sleep",
       "wake",
+      "wake up",
       "morning",
-      "night",
       "evening",
-      "clock",
-      "time",
-      "hour",
-      "minute",
+      "night",
       "day",
-      "week",
-      "month",
-      "year",
-      "wash",
-      "clean",
-      "door",
-      "window",
-      "table",
-      "chair",
-      "clothes",
-      "wear",
-      "shirt",
-      "dress",
-      "shoes"
+      "time"
     ],
-    "totalWords": 478,
+    "totalWords": 499,
     "totalBatches": 20,
     "batches": [
       {
         "batch": 1,
         "count": 25,
         "sample": [
-          "and",
-          "apartment",
-          "area"
+          "home",
+          "house",
+          "apartment"
         ]
       },
       {
         "batch": 2,
         "count": 25,
         "sample": [
-          "event",
-          "exercise",
-          "fast"
+          "watch",
+          "hour",
+          "minute"
         ]
       },
       {
         "batch": 3,
         "count": 25,
         "sample": [
-          "reason",
-          "seventeen",
-          "shirt"
+          "curtain",
+          "blanket",
+          "towel"
         ]
       },
       {
         "batch": 4,
         "count": 25,
         "sample": [
-          "as",
-          "available",
-          "beef"
+          "frequently",
+          "relate",
+          "bring"
         ]
       },
       {
         "batch": 5,
         "count": 25,
         "sample": [
-          "height",
-          "hockey",
-          "home"
+          "aware",
+          "private",
+          "relatively"
         ]
       },
       {
         "batch": 6,
         "count": 25,
         "sample": [
-          "score",
-          "service",
-          "simple"
+          "transfer",
+          "dominant",
+          "exclude"
         ]
       },
       {
         "batch": 7,
         "count": 25,
         "sample": [
-          "combine",
-          "conclude",
-          "consumer"
+          "fortunately",
+          "switch",
+          "miserable"
         ]
       },
       {
         "batch": 8,
         "count": 25,
         "sample": [
-          "lip",
-          "loss",
-          "meanwhile"
+          "toxic",
+          "silver",
+          "defence"
         ]
       },
       {
         "batch": 9,
         "count": 25,
         "sample": [
-          "spring",
-          "stranger",
-          "suitable"
+          "king",
+          "arise",
+          "shocking"
         ]
       },
       {
         "batch": 10,
         "count": 25,
         "sample": [
-          "contest",
-          "courage",
-          "criticism"
+          "professor",
+          "depressing",
+          "activist"
         ]
       },
       {
         "batch": 11,
         "count": 25,
         "sample": [
-          "leadership",
-          "loan",
-          "make"
+          "resource",
+          "cheek",
+          "dilemma"
         ]
       },
       {
         "batch": 12,
         "count": 25,
         "sample": [
-          "status",
-          "strict",
-          "surrounding"
+          "vision",
+          "drain",
+          "you"
         ]
       },
       {
         "batch": 13,
         "count": 25,
         "sample": [
-          "disappoint",
-          "diverse",
-          "dump"
+          "create",
+          "environmental",
+          "assumption"
         ]
       },
       {
         "batch": 14,
         "count": 25,
         "sample": [
-          "monument",
-          "nasty",
-          "novelist"
+          "vice",
+          "probe",
+          "rock"
         ]
       },
       {
         "batch": 15,
         "count": 25,
         "sample": [
-          "usage",
-          "wander",
-          "weekly"
+          "ahead",
+          "prince",
+          "process"
         ]
       },
       {
         "batch": 16,
         "count": 25,
         "sample": [
-          "conceive",
-          "confrontation",
-          "conserve"
+          "chart",
+          "trap",
+          "variable"
         ]
       },
       {
         "batch": 17,
         "count": 25,
         "sample": [
-          "faculty",
-          "flesh",
-          "forthcoming"
+          "emphasize",
+          "acre",
+          "thereby"
         ]
       },
       {
         "batch": 18,
         "count": 25,
         "sample": [
-          "misleading",
-          "morality",
-          "nest"
+          "beat",
+          "so-called",
+          "screw"
         ]
       },
       {
         "batch": 19,
         "count": 25,
         "sample": [
-          "ritual",
-          "v.",
-          "serial"
+          "all",
+          "set",
+          "nutrition"
         ]
       },
       {
         "batch": 20,
-        "count": 3,
+        "count": 24,
         "sample": [
-          "violation",
-          "wholly",
-          "worthwhile"
+          "valuable",
+          "marathon",
+          "rape"
         ]
       }
     ],
@@ -1252,211 +1160,218 @@
     "index": 5,
     "titleRu": "Работа, карьера и бизнес",
     "titleTj": "Кор, касб ва тиҷорат",
-    "titleEn": "Work, Career & Business",
+    "titleEn": "Work, Career & Office",
     "icon": "Briefcase",
-    "descriptionRu": "Офис, профессия, деловые встречи, звонки, проекты, зарплата и карьерные цели",
-    "descriptionTj": "Дафтар, касб, вохӯриҳо, зангҳо, лоиҳаҳо, маош ва ҳадафҳои корӣ",
+    "descriptionRu": "Профессия, офис, начальник, коллеги, проекты, звонки и задачи",
+    "descriptionTj": "Касб, дафтар, роҳбар, ҳамкорон, лоиҳаҳо ва вазифаҳо",
     "keywords": [
       "work",
       "job",
-      "boss",
-      "worker",
+      "career",
       "office",
       "company",
-      "business",
+      "boss",
       "manager",
+      "worker",
+      "employee",
+      "employer",
+      "colleague",
+      "team",
       "meeting",
       "project",
-      "career",
+      "task",
+      "duty",
       "salary",
+      "wage",
       "contract",
       "deal",
       "client",
       "customer",
-      "plan",
-      "task",
-      "team",
-      "professional",
-      "duty",
-      "skill",
-      "goal",
-      "success",
-      "problem",
-      "solve",
-      "decision"
+      "business",
+      "profession",
+      "interview"
     ],
-    "totalWords": 468,
-    "totalBatches": 19,
+    "totalWords": 499,
+    "totalBatches": 20,
     "batches": [
       {
         "batch": 1,
         "count": 25,
         "sample": [
-          "autumn",
-          "bathroom",
-          "beginning"
+          "work",
+          "job",
+          "career"
         ]
       },
       {
         "batch": 2,
         "count": 25,
         "sample": [
-          "join",
-          "know",
-          "letter"
+          "hire",
+          "fire",
+          "resume"
         ]
       },
       {
         "batch": 3,
         "count": 25,
         "sample": [
-          "sixty",
-          "skill",
-          "something"
+          "responsible",
+          "organization",
+          "department"
         ]
       },
       {
         "batch": 4,
         "count": 25,
         "sample": [
-          "decision",
-          "discovery",
-          "drive"
+          "earnings",
+          "processing",
+          "experienced"
         ]
       },
       {
         "batch": 5,
         "count": 25,
         "sample": [
-          "officer",
-          "organize",
-          "particular"
+          "basic",
+          "nor",
+          "academic"
         ]
       },
       {
         "batch": 6,
         "count": 25,
         "sample": [
-          "tie",
-          "unhappy",
-          "valley"
+          "amid",
+          "horizon",
+          "spy"
         ]
       },
       {
         "batch": 7,
         "count": 25,
         "sample": [
-          "development",
-          "dislike",
-          "duty"
+          "governor",
+          "directory",
+          "false"
         ]
       },
       {
         "batch": 8,
         "count": 25,
         "sample": [
-          "operation",
-          "percentage",
-          "planning"
+          "august",
+          "user",
+          "found"
         ]
       },
       {
         "batch": 9,
         "count": 25,
         "sample": [
-          "tyre",
-          "unlike",
-          "various"
+          "quietly",
+          "downwards",
+          "wheat"
         ]
       },
       {
         "batch": 10,
         "count": 25,
         "sample": [
-          "edition",
-          "encounter",
-          "establish"
+          "tie",
+          "hold",
+          "burden"
         ]
       },
       {
         "batch": 11,
         "count": 25,
         "sample": [
-          "prime",
-          "professional",
-          "project"
+          "tube",
+          "envelope",
+          "excellence"
         ]
       },
       {
         "batch": 12,
         "count": 25,
         "sample": [
-          "balanced",
-          "bias",
-          "brick"
+          "challenging",
+          "hierarchy",
+          "couple"
         ]
       },
       {
         "batch": 13,
         "count": 25,
         "sample": [
-          "identical",
-          "index",
-          "ink"
+          "november",
+          "loss",
+          "critically"
         ]
       },
       {
         "batch": 14,
         "count": 25,
         "sample": [
-          "skilled",
-          "spectacular",
-          "spokeswoman"
+          "overcome",
+          "ritual",
+          "absolutely"
         ]
       },
       {
         "batch": 15,
         "count": 25,
         "sample": [
-          "beneath",
-          "blend",
-          "breakdown"
+          "cap",
+          "reservation",
+          "rush"
         ]
       },
       {
         "batch": 16,
         "count": 25,
         "sample": [
-          "dip",
-          "discretion",
-          "distinction"
+          "elderly",
+          "assassination",
+          "describe"
         ]
       },
       {
         "batch": 17,
         "count": 25,
         "sample": [
-          "institutional",
-          "integrity",
-          "interim"
+          "issue",
+          "blast",
+          "area"
         ]
       },
       {
         "batch": 18,
         "count": 25,
         "sample": [
-          "problematic",
-          "projection",
-          "protective"
+          "decrease",
+          "sacrifice",
+          "syndrome"
         ]
       },
       {
         "batch": 19,
-        "count": 18,
+        "count": 25,
         "sample": [
-          "successor",
-          "suicide",
-          "supposedly"
+          "comfortable",
+          "victim",
+          "scandal"
+        ]
+      },
+      {
+        "batch": 20,
+        "count": 24,
+        "sample": [
+          "complex",
+          "publishing",
+          "specification"
         ]
       }
     ],
@@ -1532,232 +1447,218 @@
     "index": 6,
     "titleRu": "Здоровье, тело и самочувствие",
     "titleTj": "Саломатӣ, бадан ва вазъи ҷисмонӣ",
-    "titleEn": "Health, Body & Wellness",
+    "titleEn": "Health, Body & Medical",
     "icon": "Heart",
-    "descriptionRu": "Части тела, симптомы, самочувствие, аптека, визит к врачу и здоровый образ жизни",
-    "descriptionTj": "Узвҳои бадан, аломатҳо, дорухона, муроҷиат ба табиб ва тарзи ҳаёти солим",
+    "descriptionRu": "Части тела, симптомы, самочувствие, аптека, врач и лекарства",
+    "descriptionTj": "Узвҳои бадан, аломатҳо, дорухона, табиб ва доруҳо",
     "keywords": [
       "health",
       "healthy",
+      "sick",
+      "ill",
+      "illness",
+      "disease",
       "body",
       "head",
       "eye",
-      "hand",
-      "foot",
-      "leg",
+      "ear",
+      "nose",
+      "mouth",
+      "tooth",
+      "teeth",
+      "throat",
+      "neck",
+      "shoulder",
+      "chest",
+      "back",
+      "stomach",
       "arm",
-      "heart",
-      "pain",
-      "hurt",
-      "sick",
-      "ill",
-      "doctor",
-      "hospital",
-      "medicine",
-      "drug",
-      "pharmacy",
-      "pill",
-      "fever",
-      "cold",
-      "cough",
-      "feel",
-      "tired",
-      "energy",
-      "rest",
-      "sleep",
-      "fit",
-      "care"
+      "hand",
+      "finger",
+      "leg",
+      "foot"
     ],
-    "totalWords": 519,
-    "totalBatches": 21,
+    "totalWords": 499,
+    "totalBatches": 20,
     "batches": [
       {
         "batch": 1,
         "count": 25,
         "sample": [
-          "above",
-          "again",
-          "animal"
+          "health",
+          "healthy",
+          "sick"
         ]
       },
       {
         "batch": 2,
         "count": 25,
         "sample": [
-          "favourite",
-          "feeling",
-          "fine"
+          "skin",
+          "blood",
+          "heart"
         ]
       },
       {
         "batch": 3,
         "count": 25,
         "sample": [
-          "o’clock",
-          "one",
-          "other"
+          "diet",
+          "weight",
+          "tired"
         ]
       },
       {
         "batch": 4,
         "count": 25,
         "sample": [
-          "word",
-          "yellow",
-          "ability"
+          "competence",
+          "confine",
+          "constraint"
         ]
       },
       {
         "batch": 5,
         "count": 25,
         "sample": [
-          "enormous",
-          "exact",
-          "factor"
+          "productivity",
+          "relevance",
+          "transparency"
         ]
       },
       {
         "batch": 6,
         "count": 25,
         "sample": [
-          "ocean",
-          "ourselves",
-          "pain"
+          "property",
+          "reality",
+          "responsibility"
         ]
       },
       {
         "batch": 7,
         "count": 25,
         "sample": [
-          "web",
-          "winner",
-          "access"
+          "thumb",
+          "uncertainty",
+          "accountability"
         ]
       },
       {
         "batch": 8,
         "count": 25,
         "sample": [
-          "equally",
-          "expected",
-          "face"
+          "healthcare",
+          "promising",
+          "reporting"
         ]
       },
       {
         "batch": 9,
         "count": 25,
         "sample": [
-          "now",
-          "organized",
-          "painful"
+          "precision",
+          "prescribe",
+          "reconstruction"
         ]
       },
       {
         "batch": 10,
         "count": 25,
         "sample": [
-          "tip",
-          "transport",
-          "ugly"
+          "intensity",
+          "limb",
+          "prevalence"
         ]
       },
       {
         "batch": 11,
         "count": 25,
         "sample": [
-          "deliberate",
-          "depth",
-          "discipline"
+          "twist",
+          "big",
+          "few"
         ]
       },
       {
         "batch": 12,
         "count": 25,
         "sample": [
-          "lean",
-          "long-term",
-          "mass"
+          "donation",
+          "mainland",
+          "major"
         ]
       },
       {
         "batch": 13,
         "count": 25,
         "sample": [
-          "steel",
-          "structure",
-          "suspect"
+          "someone",
+          "qualify",
+          "forecast"
         ]
       },
       {
         "batch": 14,
         "count": 25,
         "sample": [
-          "discourage",
-          "divorce",
-          "economics"
+          "strengthen",
+          "supportive",
+          "climb"
         ]
       },
       {
         "batch": 15,
         "count": 25,
         "sample": [
-          "memorable",
-          "mortgage",
-          "nursing"
+          "competitor",
+          "sudden",
+          "tale"
         ]
       },
       {
         "batch": 16,
         "count": 25,
         "sample": [
-          "terrorism",
-          "timing",
-          "transportation"
+          "inch",
+          "commence",
+          "island"
         ]
       },
       {
         "batch": 17,
         "count": 25,
         "sample": [
-          "combat",
-          "compassion",
-          "compliance"
+          "philosophy",
+          "contemplate",
+          "fill"
         ]
       },
       {
         "batch": 18,
         "count": 25,
         "sample": [
-          "enterprise",
-          "establishment",
-          "exclusive"
+          "former",
+          "brutal",
+          "warrant"
         ]
       },
       {
         "batch": 19,
         "count": 25,
         "sample": [
-          "ironic",
-          "kidnap",
-          "legacy"
+          "hall",
+          "consideration",
+          "worm"
         ]
       },
       {
         "batch": 20,
-        "count": 25,
+        "count": 24,
         "sample": [
-          "premium",
-          "presume",
-          "proceedings"
-        ]
-      },
-      {
-        "batch": 21,
-        "count": 19,
-        "sample": [
-          "strive",
-          "substitute",
-          "suite"
+          "divide",
+          "trait",
+          "timely"
         ]
       }
     ],
@@ -1831,225 +1732,219 @@
     "id": "leisure",
     "index": 7,
     "titleRu": "Хобби, спорт и отдых",
-    "titleTj": "Маҳфилҳо, варзиш ва истироҳат",
-    "titleEn": "Hobbies, Sport & Leisure",
+    "titleTj": "Истироҳат, варзиш ва маҳфилҳо",
+    "titleEn": "Hobbies, Sports & Leisure",
     "icon": "Trophy",
-    "descriptionRu": "Спортзал, футбол, музыка, кино, природа, погода, выходные и путешествия на природу",
-    "descriptionTj": "Толори варзишӣ, футбол, мусиқӣ, синамо, табиат, боду ҳаво ва истироҳат",
+    "descriptionRu": "Выходные, спорт, тренировки, кино, музыка, книги и увлечения",
+    "descriptionTj": "Рӯзҳои истироҳат, варзиш, машқ, синамо, мусиқӣ ва маҳфилҳо",
     "keywords": [
-      "sport",
-      "play",
-      "game",
-      "ball",
-      "football",
-      "gym",
-      "run",
-      "walk",
-      "swim",
-      "music",
-      "song",
-      "sing",
-      "movie",
-      "film",
-      "cinema",
-      "book",
       "hobby",
-      "holiday",
+      "leisure",
+      "free",
       "weekend",
+      "holiday",
+      "vacation",
+      "rest",
       "relax",
-      "nature",
-      "sun",
-      "rain",
-      "snow",
-      "wind",
-      "weather",
-      "park",
-      "tree",
-      "mountain",
-      "sea",
-      "summer"
+      "game",
+      "play",
+      "sport",
+      "sports",
+      "football",
+      "soccer",
+      "basketball",
+      "tennis",
+      "swimming",
+      "swim",
+      "pool",
+      "running",
+      "run",
+      "gym",
+      "fitness",
+      "exercise",
+      "workout"
     ],
-    "totalWords": 491,
+    "totalWords": 499,
     "totalBatches": 20,
     "batches": [
       {
         "batch": 1,
         "count": 25,
         "sample": [
-          "ago",
-          "another",
-          "baby"
+          "hobby",
+          "leisure",
+          "free"
         ]
       },
       {
         "batch": 2,
         "count": 25,
         "sample": [
-          "however",
-          "improve",
-          "introduce"
+          "match",
+          "player",
+          "win"
         ]
       },
       {
         "batch": 3,
         "count": 25,
         "sample": [
-          "sea",
-          "sheep",
-          "similar"
+          "draw",
+          "drawing",
+          "fun"
         ]
       },
       {
         "batch": 4,
         "count": 25,
         "sample": [
-          "why",
-          "yes",
-          "able"
+          "sailing",
+          "count",
+          "gambling"
         ]
       },
       {
         "batch": 5,
         "count": 25,
         "sample": [
-          "exactly",
-          "factory",
-          "fiction"
+          "consist",
+          "rarely",
+          "council"
         ]
       },
       {
         "batch": 6,
         "count": 25,
         "sample": [
-          "platform",
-          "promise",
-          "queen"
+          "circulate",
+          "magical",
+          "tobacco"
         ]
       },
       {
         "batch": 7,
         "count": 25,
         "sample": [
-          "wind",
-          "accommodation",
-          "age"
+          "miner",
+          "gaze",
+          "pound"
         ]
       },
       {
         "batch": 8,
         "count": 25,
         "sample": [
-          "fighting",
-          "force",
-          "fry"
+          "eighteen",
+          "basis",
+          "mistake"
         ]
       },
       {
         "batch": 9,
         "count": 25,
         "sample": [
-          "prove",
-          "quotation",
-          "reference"
+          "thin",
+          "insist",
+          "beam"
         ]
       },
       {
         "batch": 10,
         "count": 25,
         "sample": [
-          "will",
-          "accuse",
-          "affair"
+          "bury",
+          "outer",
+          "correction"
         ]
       },
       {
         "batch": 11,
         "count": 25,
         "sample": [
-          "faith",
-          "file",
-          "folding"
+          "being",
+          "hypothesis",
+          "indictment"
         ]
       },
       {
         "batch": 12,
         "count": 25,
         "sample": [
-          "pursue",
-          "recall",
-          "relief"
+          "inevitably",
+          "peasant",
+          "region"
         ]
       },
       {
         "batch": 13,
         "count": 25,
         "sample": [
-          "attachment",
-          "ballet",
-          "balloon"
+          "actually",
+          "tin",
+          "integrate"
         ]
       },
       {
         "batch": 14,
         "count": 25,
         "sample": [
-          "gorgeous",
-          "historian",
-          "immigration"
+          "accordingly",
+          "verse",
+          "episode"
         ]
       },
       {
         "batch": 15,
         "count": 25,
         "sample": [
-          "sexy",
-          "speculate",
-          "sporting"
+          "damage",
+          "absolute",
+          "accommodate"
         ]
       },
       {
         "batch": 16,
         "count": 25,
         "sample": [
-          "battlefield",
-          "betray",
-          "blessing"
+          "pension",
+          "declaration",
+          "television"
         ]
       },
       {
         "batch": 17,
         "count": 25,
         "sample": [
-          "diplomatic",
-          "dismissal",
-          "distort"
+          "stare",
+          "descend",
+          "piece"
         ]
       },
       {
         "batch": 18,
         "count": 25,
         "sample": [
-          "injustice",
-          "instrumental",
-          "intensify"
+          "minor",
+          "correspondent",
+          "seed"
         ]
       },
       {
         "batch": 19,
         "count": 25,
         "sample": [
-          "prescribe",
-          "prevail",
-          "proceeds"
+          "noise",
+          "estimate",
+          "backdrop"
         ]
       },
       {
         "batch": 20,
-        "count": 16,
+        "count": 24,
         "sample": [
-          "supreme",
-          "swing",
-          "tempt"
+          "loan",
+          "alliance",
+          "blog"
         ]
       }
     ],
@@ -2111,290 +2006,226 @@
     }
   },
   {
-    "id": "communication",
+    "id": "tech",
     "index": 8,
     "titleRu": "Технологии, связь и интернет",
-    "titleTj": "Технологияҳо, алоқа ва интернет",
-    "titleEn": "Tech & Digital Life",
+    "titleTj": "Технология, интернет ва алоқа",
+    "titleEn": "Tech, Gadgets & Digital",
     "icon": "Smartphone",
-    "descriptionRu": "Смартфон, интернет, социальные сети, сообщения, звонки и цифровая жизнь",
-    "descriptionTj": "Смартфон, интернет, шабакаҳои иҷтимоӣ, паёмҳо ва ҳаёти рақамӣ",
+    "descriptionRu": "Телефон, компьютер, интернет, приложения, сообщения и социальные сети",
+    "descriptionTj": "Телефон, компютер, интернет, барномаҳо ва шабакаҳои иҷтимоӣ",
     "keywords": [
-      "phone",
-      "mobile",
-      "call",
-      "message",
-      "text",
-      "email",
-      "internet",
-      "online",
-      "website",
-      "app",
       "computer",
+      "laptop",
+      "pc",
+      "phone",
+      "smartphone",
+      "mobile",
       "screen",
-      "send",
-      "receive",
-      "photo",
-      "video",
-      "post",
-      "social",
-      "media",
-      "connect",
-      "wifi",
-      "data",
-      "download",
-      "upload",
+      "keyboard",
+      "mouse",
+      "internet",
+      "web",
+      "website",
+      "online",
+      "offline",
       "digital",
+      "network",
+      "wifi",
+      "connection",
+      "connect",
+      "app",
+      "software",
+      "program",
       "device",
-      "battery"
+      "gadget",
+      "charger"
     ],
-    "totalWords": 512,
-    "totalBatches": 21,
+    "totalWords": 499,
+    "totalBatches": 20,
     "batches": [
       {
         "batch": 1,
         "count": 25,
         "sample": [
-          "answer",
-          "art",
-          "beautiful"
+          "computer",
+          "laptop",
+          "phone"
         ]
       },
       {
         "batch": 2,
         "count": 25,
         "sample": [
-          "July",
-          "late",
-          "lunch"
+          "download",
+          "install",
+          "update"
         ]
       },
       {
         "batch": 3,
         "count": 25,
         "sample": [
-          "thirty",
-          "toilet",
-          "twice"
+          "notice",
+          "glove",
+          "electronics"
         ]
       },
       {
         "batch": 4,
         "count": 25,
         "sample": [
-          "communicate",
-          "connect",
-          "connected"
+          "yell",
+          "telephone",
+          "print"
         ]
       },
       {
         "batch": 5,
         "count": 25,
         "sample": [
-          "instruction",
-          "involve",
-          "kill"
+          "distinguish",
+          "collaborate",
+          "differentiate"
         ]
       },
       {
         "batch": 6,
         "count": 25,
         "sample": [
-          "route",
-          "sale",
-          "secret"
+          "dense",
+          "philosopher",
+          "build"
         ]
       },
       {
         "batch": 7,
         "count": 25,
         "sample": [
-          "attach",
-          "balance",
-          "battery"
+          "scare",
+          "kingdom",
+          "thousand"
         ]
       },
       {
         "batch": 8,
         "count": 25,
         "sample": [
-          "forever",
-          "fur",
-          "giant"
+          "nothing",
+          "determine",
+          "rhythm"
         ]
       },
       {
         "batch": 9,
         "count": 25,
         "sample": [
-          "pull",
-          "quote",
-          "reflect"
+          "bend",
+          "permit",
+          "conscience"
         ]
       },
       {
         "batch": 10,
         "count": 25,
         "sample": [
-          "acknowledge",
-          "afterwards",
-          "angle"
+          "development",
+          "slide",
+          "ego"
         ]
       },
       {
         "batch": 11,
         "count": 25,
         "sample": [
-          "dishonest",
-          "dominate",
-          "elect"
+          "defeat",
+          "norm",
+          "memoir"
         ]
       },
       {
         "batch": 12,
         "count": 25,
         "sample": [
-          "permanent",
-          "plain",
-          "power"
+          "optimistic",
+          "recount",
+          "truck"
         ]
       },
       {
         "batch": 13,
         "count": 25,
         "sample": [
-          "whereas",
-          "witness",
-          "abstract"
+          "crowd",
+          "bacteria",
+          "ongoing"
         ]
       },
       {
         "batch": 14,
         "count": 25,
         "sample": [
-          "ethic",
-          "exhibit",
-          "fabulous"
+          "benchmark",
+          "elephant",
+          "invest"
         ]
       },
       {
         "batch": 15,
         "count": 25,
         "sample": [
-          "primarily",
-          "prompt",
-          "puzzle"
+          "embarrassing",
+          "but",
+          "basket"
         ]
       },
       {
         "batch": 16,
         "count": 25,
         "sample": [
-          "academy",
-          "accumulation",
-          "adhere"
+          "shade",
+          "enthusiast",
+          "belong"
         ]
       },
       {
         "batch": 17,
         "count": 25,
         "sample": [
-          "clarity",
-          "cognitive",
-          "commentary"
+          "accountant",
+          "expenditure",
+          "thing"
         ]
       },
       {
         "batch": 18,
         "count": 25,
         "sample": [
-          "empower",
-          "enforce",
-          "entitle"
+          "rapid",
+          "divert",
+          "touch"
         ]
       },
       {
         "batch": 19,
         "count": 25,
         "sample": [
-          "limb",
-          "long-standing",
-          "mainland"
+          "soldier",
+          "intense",
+          "complication"
         ]
       },
       {
         "batch": 20,
-        "count": 25,
+        "count": 24,
         "sample": [
-          "provincial",
-          "radar",
-          "readily"
-        ]
-      },
-      {
-        "batch": 21,
-        "count": 12,
-        "sample": [
-          "texture",
-          "thrilled",
-          "top"
+          "position",
+          "cautious",
+          "have"
         ]
       }
     ],
-    "monologue": {
-      "titleEn": "Staying Connected in the Digital World",
-      "titleRu": "Связь и общение в цифровом мире",
-      "titleTj": "Алоқа ва муошират дар ҷаҳони рақамӣ",
-      "sentences": [
-        {
-          "en": "Modern smartphones make communication instant across the whole world.",
-          "ru": "Современные смартфоны делают общение мгновенным по всему миру.",
-          "tj": "Смартфонҳои муосир муоширатро дар саросари ҷаҳон фаврӣ мегардонанд.",
-          "highlightWords": [
-            "phone",
-            "world"
-          ]
-        },
-        {
-          "en": "I send daily text messages and photos to my family and friends.",
-          "ru": "Я каждый день отправляю текстовые сообщения и фотографии родным и друзьям.",
-          "tj": "Ман ҳар рӯз ба оила ва дӯстонам паёмҳои матнӣ ва аксҳо мефиристам.",
-          "highlightWords": [
-            "send",
-            "message",
-            "family",
-            "friend"
-          ]
-        },
-        {
-          "en": "If an urgent issue appears, I make a direct phone call immediately.",
-          "ru": "Если появляется срочный вопрос, я сразу звоню напрямую.",
-          "tj": "Агар масъалаи фаврӣ пеш ояд, ман фавран занги мустақим мезанам.",
-          "highlightWords": [
-            "call",
-            "phone"
-          ]
-        },
-        {
-          "en": "The internet provides unlimited access to knowledge and online education.",
-          "ru": "Интернет даёт неограниченный доступ к знаниям и онлайн-образованию.",
-          "tj": "Интернет дастрасии бемаҳдудро ба дониш ва таҳсили онлайн фароҳам меорад.",
-          "highlightWords": [
-            "internet",
-            "online"
-          ]
-        },
-        {
-          "en": "Technology connects people, but real face-to-face talks are still precious.",
-          "ru": "Технологии объединяют людей, но живое живое общение по-прежнему бесценно.",
-          "tj": "Технологияҳо одамонро мепайванданд, аммо сӯҳбатҳои рӯ ба рӯ то ҳол бебаҳоянд.",
-          "highlightWords": [
-            "people",
-            "talk"
-          ]
-        }
-      ]
-    }
+    "monologue": null
   },
   {
     "id": "emotions",
@@ -2403,220 +2234,216 @@
     "titleTj": "Эҳсосот, хислат ва муносибатҳо",
     "titleEn": "Emotions & Relationships",
     "icon": "Sparkles",
-    "descriptionRu": "Настроение, выражение согласия и несогласия, черты характера, дружба и чувства",
-    "descriptionTj": "Кайфият, розӣ шудан ва рад кардан, хислатҳои инсонӣ, дӯстӣ ва муносибатҳо",
+    "descriptionRu": "Чувства, настроение, черты характера, дружба, доверие и мысли",
+    "descriptionTj": "Эҳсосот, кайфият, хислатҳои инсонӣ ва боварӣ",
     "keywords": [
       "feel",
       "feeling",
       "emotion",
+      "mood",
       "happy",
+      "happiness",
+      "joy",
+      "smile",
+      "laugh",
       "sad",
+      "cry",
       "angry",
+      "anger",
+      "upset",
       "afraid",
       "fear",
-      "proud",
-      "calm",
+      "scared",
+      "worry",
       "nervous",
-      "honest",
-      "kind",
-      "polite",
-      "rude",
-      "funny",
-      "serious",
-      "friendship",
-      "trust",
-      "respect",
-      "opinion",
-      "believe",
-      "think",
-      "hope",
-      "wish",
-      "dream",
-      "sorry",
-      "please",
-      "thank"
+      "calm",
+      "proud",
+      "love",
+      "like",
+      "hate",
+      "hope"
     ],
-    "totalWords": 489,
+    "totalWords": 499,
     "totalBatches": 20,
     "batches": [
       {
         "batch": 1,
         "count": 25,
         "sample": [
-          "activity",
-          "anyone",
-          "article"
+          "feel",
+          "feeling",
+          "emotion"
         ]
       },
       {
         "batch": 2,
         "count": 25,
         "sample": [
-          "it",
-          "June",
-          "kind"
+          "wish",
+          "dream",
+          "trust"
         ]
       },
       {
         "batch": 3,
         "count": 25,
         "sample": [
-          "take",
-          "thank",
-          "thanks"
+          "agree",
+          "disagree",
+          "opinion"
         ]
       },
       {
         "batch": 4,
         "count": 25,
         "sample": [
-          "community",
-          "contain",
-          "couple"
+          "sentiment",
+          "sensible",
+          "silly"
         ]
       },
       {
         "batch": 5,
         "count": 25,
         "sample": [
-          "lock",
-          "major",
-          "may"
+          "pride",
+          "abuse",
+          "battlefield"
         ]
       },
       {
         "batch": 6,
         "count": 25,
         "sample": [
-          "strategy",
-          "suppose",
-          "thin"
+          "sympathy",
+          "bold",
+          "amateur"
         ]
       },
       {
         "batch": 7,
         "count": 25,
         "sample": [
-          "cover",
-          "cut",
-          "deliver"
+          "unfold",
+          "notably",
+          "celebrity"
         ]
       },
       {
         "batch": 8,
         "count": 25,
         "sample": [
-          "local",
-          "mall",
-          "mild"
+          "somebody",
+          "hardly",
+          "title"
         ]
       },
       {
         "batch": 9,
         "count": 25,
         "sample": [
-          "sex",
-          "shy",
-          "slice"
+          "direct",
+          "solar",
+          "detain"
         ]
       },
       {
         "batch": 10,
         "count": 25,
         "sample": [
-          "cast",
-          "circumstance",
-          "command"
+          "horrible",
+          "assure",
+          "grind"
         ]
       },
       {
         "batch": 11,
         "count": 25,
         "sample": [
-          "income",
-          "insist",
-          "interpret"
+          "flame",
+          "romance",
+          "plead"
         ]
       },
       {
         "batch": 12,
         "count": 25,
         "sample": [
-          "shallow",
-          "significant",
-          "solar"
+          "speculation",
+          "socialist",
+          "ceremony"
         ]
       },
       {
         "batch": 13,
         "count": 25,
         "sample": [
-          "commander",
-          "confess",
-          "consumption"
+          "gold",
+          "debate",
+          "spokesperson"
         ]
       },
       {
         "batch": 14,
         "count": 25,
         "sample": [
-          "invade",
-          "kit",
-          "magnificent"
+          "contempt",
+          "natural",
+          "planning"
         ]
       },
       {
         "batch": 15,
         "count": 25,
         "sample": [
-          "tendency",
-          "tonne",
-          "tribe"
+          "fixed",
+          "corporate",
+          "consequently"
         ]
       },
       {
         "batch": 16,
         "count": 25,
         "sample": [
-          "coincide",
-          "commentator",
-          "compensate"
+          "wise",
+          "infamous",
+          "dentist"
         ]
       },
       {
         "batch": 17,
         "count": 25,
         "sample": [
-          "enforcement",
-          "entity",
-          "evoke"
+          "clip",
+          "identification",
+          "although"
         ]
       },
       {
         "batch": 18,
         "count": 25,
         "sample": [
-          "leak",
-          "lesser",
-          "linear"
+          "threaten",
+          "flaw",
+          "aggressive"
         ]
       },
       {
         "batch": 19,
         "count": 25,
         "sample": [
-          "realization",
-          "referendum",
-          "rehabilitation"
+          "apart",
+          "potential",
+          "depict"
         ]
       },
       {
         "batch": 20,
-        "count": 14,
+        "count": 24,
         "sample": [
-          "theatrical",
-          "thrive",
-          "torture"
+          "session",
+          "defensive",
+          "pepper"
         ]
       }
     ],
@@ -2678,219 +2505,218 @@
     "index": 10,
     "titleRu": "Общество, образование и мир",
     "titleTj": "Ҷомеа, маориф ва ҷаҳон",
-    "titleEn": "Society, Education & World",
+    "titleEn": "Society, Nature & World",
     "icon": "Globe",
-    "descriptionRu": "Образование, университет, правила, закон, культура, история и глобальные идеи",
-    "descriptionTj": "Таҳсил, донишгоҳ, қоидаҳо, қонун, фарҳанг ва андешаҳои ҷаҳонӣ",
+    "descriptionRu": "Природа, погода, мир, общество, правила, законы, школа и образование",
+    "descriptionTj": "Табиат, обу ҳаво, ҷаҳон, ҷомеа, мактаб ва маориф",
     "keywords": [
-      "school",
-      "study",
-      "learn",
-      "student",
-      "teacher",
-      "university",
-      "college",
-      "knowledge",
-      "science",
-      "history",
-      "culture",
-      "law",
-      "rule",
-      "government",
-      "society",
-      "public",
-      "country",
-      "nation",
       "world",
-      "peace",
-      "war",
-      "future",
-      "past",
-      "present",
-      "idea",
-      "truth"
+      "earth",
+      "nature",
+      "environment",
+      "tree",
+      "forest",
+      "river",
+      "sea",
+      "ocean",
+      "lake",
+      "mountain",
+      "sky",
+      "sun",
+      "moon",
+      "star",
+      "weather",
+      "rain",
+      "snow",
+      "wind",
+      "cloud",
+      "warm",
+      "cold",
+      "hot",
+      "storm",
+      "season"
     ],
-    "totalWords": 478,
+    "totalWords": 499,
     "totalBatches": 20,
     "batches": [
       {
         "batch": 1,
         "count": 25,
         "sample": [
-          "anything",
-          "artist",
-          "become"
+          "world",
+          "earth",
+          "nature"
         ]
       },
       {
         "batch": 2,
         "count": 25,
         "sample": [
-          "just",
-          "learn",
-          "lion"
+          "spring",
+          "summer",
+          "autumn"
         ]
       },
       {
         "batch": 3,
         "count": 25,
         "sample": [
-          "them",
-          "three",
-          "tomorrow"
+          "lesson",
+          "class",
+          "exam"
         ]
       },
       {
         "batch": 4,
         "count": 25,
         "sample": [
-          "compete",
-          "context",
-          "crazy"
+          "educated",
+          "historical",
+          "humorous"
         ]
       },
       {
         "batch": 5,
         "count": 25,
         "sample": [
-          "learning",
-          "lend",
-          "male"
+          "legal",
+          "recommendation",
+          "track"
         ]
       },
       {
         "batch": 6,
         "count": 25,
         "sample": [
-          "star",
-          "stress",
-          "sure"
+          "surge",
+          "purple",
+          "advertisement"
         ]
       },
       {
         "batch": 7,
         "count": 25,
         "sample": [
-          "drop",
-          "edge",
-          "embarrassed"
+          "wind",
+          "provincial",
+          "item"
         ]
       },
       {
         "batch": 8,
         "count": 25,
         "sample": [
-          "poet",
-          "port",
-          "prayer"
+          "author",
+          "native",
+          "anticipate"
         ]
       },
       {
         "batch": 9,
         "count": 25,
         "sample": [
-          "unemployed",
-          "upon",
-          "violent"
+          "local",
+          "adequate",
+          "favourable"
         ]
       },
       {
         "batch": 10,
         "count": 25,
         "sample": [
-          "desperate",
-          "display",
-          "dozen"
+          "note",
+          "dealer",
+          "lobby"
         ]
       },
       {
         "batch": 11,
         "count": 25,
         "sample": [
-          "opposition",
-          "package",
-          "perspective"
+          "investment",
+          "tragedy",
+          "residence"
         ]
       },
       {
         "batch": 12,
         "count": 25,
         "sample": [
-          "vary",
-          "vital",
-          "whisper"
+          "wrist",
+          "top",
+          "element"
         ]
       },
       {
         "batch": 13,
         "count": 25,
         "sample": [
-          "evaluation",
-          "expansion",
-          "fake"
+          "metal",
+          "impose",
+          "absent"
         ]
       },
       {
         "batch": 14,
         "count": 25,
         "sample": [
-          "probability",
-          "protein",
-          "publicity"
+          "dissolve",
+          "scientist",
+          "soil"
         ]
       },
       {
         "batch": 15,
         "count": 25,
         "sample": [
-          "alike",
-          "amateur",
-          "arguably"
+          "hang",
+          "draft",
+          "entrepreneur"
         ]
       },
       {
         "batch": 16,
         "count": 25,
         "sample": [
-          "dam",
-          "deed",
-          "delicate"
+          "civilization",
+          "march",
+          "kill"
         ]
       },
       {
         "batch": 17,
         "count": 25,
         "sample": [
-          "harmony",
-          "hint",
-          "humanity"
+          "evolve",
+          "liberation",
+          "discover"
         ]
       },
       {
         "batch": 18,
         "count": 25,
         "sample": [
-          "notorious",
-          "offering",
-          "outbreak"
+          "basement",
+          "incur",
+          "citizen"
         ]
       },
       {
         "batch": 19,
         "count": 25,
         "sample": [
-          "sensation",
-          "sheer",
-          "sketch"
+          "definite",
+          "slip",
+          "explicitly"
         ]
       },
       {
         "batch": 20,
-        "count": 3,
+        "count": 24,
         "sample": [
-          "warrior",
-          "whatsoever",
-          "wit"
+          "via",
+          "escalate",
+          "tv"
         ]
       }
     ],

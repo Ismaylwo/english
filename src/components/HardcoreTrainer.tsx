@@ -8,16 +8,12 @@ import {
   CheckCircle2, 
   Zap, 
   AlertTriangle,
-  Send
+  Send,
+  RotateCcw
 } from 'lucide-react';
 import { WordItem, WordProgress, UserSettings } from '@/types/vocab';
 import { soundFx } from '@/lib/soundFx';
 import { speechService } from '@/lib/speech';
-
-interface TrainerQueueItem {
-  word: WordItem;
-  currentLevel: number;
-}
 
 interface HardcoreTrainerProps {
   day: number;
@@ -29,15 +25,6 @@ interface HardcoreTrainerProps {
   onRecordResult: (wordId: number, isCorrect: boolean) => WordProgress;
   onBackToDashboard: () => void;
   onFinishBatch: (stats: { totalTested: number; mistakes: number; masteredWords: number }) => void;
-}
-
-function shuffleArray<T>(array: T[]): T[] {
-  const arr = [...array];
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-  }
-  return arr;
 }
 
 export function normalizeAnswer(text: string): string {
@@ -94,40 +81,26 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
   onBackToDashboard,
   onFinishBatch,
 }) => {
-  const strictTarget = settings.strictLevel || 2;
-
-  const [queue, setQueue] = useState<TrainerQueueItem[]>(() => {
-    const shuffled = shuffleArray(words);
-    return shuffled.map(w => {
-      const prog = progressMap[w.id];
-      const lvl = prog ? prog.masteryLevel : 0;
-      return {
-        word: w,
-        currentLevel: prog?.isMastered ? strictTarget : lvl,
-      };
-    });
-  });
-
+  // Active queue of words to be tested
+  const [activeList, setActiveList] = useState<WordItem[]>(() => words);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isReviewPhase, setIsReviewPhase] = useState(false);
+  const [mistakesList, setMistakesList] = useState<WordItem[]>([]);
+
   const [userInput, setUserInput] = useState('');
   const [inputStatus, setInputStatus] = useState<'idle' | 'success' | 'error' | 'correction'>('idle');
   const [combo, setCombo] = useState(0);
   const [sessionMistakes, setSessionMistakes] = useState(0);
   const [sessionTotalAnswers, setSessionTotalAnswers] = useState(0);
-  const [masteredCount, setMasteredCount] = useState(() => {
-    return words.filter(w => progressMap[w.id]?.isMastered).length;
-  });
 
   const inputRef = useRef<HTMLInputElement>(null);
-
-  const currentItem = queue[currentIndex] || null;
-  const currentWord = currentItem?.word || null;
+  const currentWord = activeList[currentIndex] || null;
 
   useEffect(() => {
     if (inputRef.current) {
       inputRef.current.focus();
     }
-  }, [currentIndex, inputStatus]);
+  }, [currentIndex, inputStatus, isReviewPhase]);
 
   const speakCurrent = (text?: string) => {
     const toSpeak = text || currentWord?.en;
@@ -136,16 +109,41 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
     }
   };
 
+  const advanceNextCard = (nextMistakes = mistakesList) => {
+    if (currentIndex + 1 < activeList.length) {
+      setCurrentIndex(prev => prev + 1);
+      setInputStatus('idle');
+      setUserInput('');
+    } else {
+      // Reached end of current active list
+      if (!isReviewPhase && nextMistakes.length > 0) {
+        // Move to review phase for words with mistakes
+        setIsReviewPhase(true);
+        setActiveList([...nextMistakes]);
+        setMistakesList([]);
+        setCurrentIndex(0);
+        setInputStatus('idle');
+        setUserInput('');
+      } else {
+        // Entire batch finished!
+        onFinishBatch({
+          totalTested: sessionTotalAnswers + 1,
+          mistakes: sessionMistakes,
+          masteredWords: words.length,
+        });
+      }
+    }
+  };
+
   const handleSubmit = (e?: React.FormEvent) => {
     if (e) e.preventDefault();
     if (!currentWord || !userInput.trim()) return;
 
     if (inputStatus === 'correction') {
+      // User is typing the correct answer to reinforce memory
       if (isAnswerCorrect(userInput, currentWord)) {
         soundFx.playSuccess();
-        setInputStatus('idle');
-        setUserInput('');
-        advanceToNext();
+        advanceNextCard();
       } else {
         soundFx.playError();
         soundFx.triggerHaptic('error');
@@ -165,28 +163,12 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
         speakCurrent();
       }
 
-      const updatedProgress = onRecordResult(currentWord.id, true);
-      const newLvl = updatedProgress.masteryLevel;
-
-      if (updatedProgress.isMastered && !progressMap[currentWord.id]?.isMastered) {
-        soundFx.playMastered();
-        setMasteredCount(prev => prev + 1);
-      }
-
+      onRecordResult(currentWord.id, true);
       setInputStatus('success');
 
-      const updatedQueue = [...queue];
-      updatedQueue[currentIndex] = {
-        ...updatedQueue[currentIndex],
-        currentLevel: newLvl,
-      };
-
       setTimeout(() => {
-        setInputStatus('idle');
-        setUserInput('');
-        setQueue(updatedQueue);
-        advanceToNext(updatedQueue);
-      }, 500);
+        advanceNextCard();
+      }, 400);
 
     } else {
       soundFx.playError();
@@ -199,24 +181,12 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
 
       setInputStatus('correction');
 
-      const updatedQueue = [...queue];
-      updatedQueue[currentIndex] = {
-        ...updatedQueue[currentIndex],
-        currentLevel: 0,
-      };
-
-      const remainingCount = updatedQueue.length - (currentIndex + 1);
-      const offset = Math.min(
-        remainingCount,
-        Math.max(2, Math.floor(Math.random() * 4) + 2)
-      );
-      const insertIndex = currentIndex + 1 + offset;
-      updatedQueue.splice(insertIndex, 0, {
-        word: currentWord,
-        currentLevel: 0,
-      });
-
-      setQueue(updatedQueue);
+      // Add to mistakes list for repetition if not already present
+      let updatedMistakes = mistakesList;
+      if (!mistakesList.some(w => w.id === currentWord.id)) {
+        updatedMistakes = [...mistakesList, currentWord];
+        setMistakesList(updatedMistakes);
+      }
     }
   };
 
@@ -232,54 +202,10 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
     setInputStatus('correction');
     setUserInput('');
 
-    const updatedQueue = [...queue];
-    updatedQueue[currentIndex] = {
-      ...updatedQueue[currentIndex],
-      currentLevel: 0,
-    };
-    const remainingCount = updatedQueue.length - (currentIndex + 1);
-    const offset = Math.min(
-      remainingCount,
-      Math.max(2, Math.floor(Math.random() * 4) + 2)
-    );
-    const insertIndex = currentIndex + 1 + offset;
-    updatedQueue.splice(insertIndex, 0, {
-      word: currentWord,
-      currentLevel: 0,
-    });
-    setQueue(updatedQueue);
-  };
-
-  const advanceToNext = (latestQueue = queue) => {
-    const remainingUnmastered = latestQueue.filter(item => item.currentLevel < strictTarget);
-
-    if (remainingUnmastered.length === 0) {
-      onFinishBatch({
-        totalTested: sessionTotalAnswers + 1,
-        mistakes: sessionMistakes,
-        masteredWords: words.length,
-      });
-      return;
-    }
-
-    let nextIdx = currentIndex + 1;
-    while (nextIdx < latestQueue.length && latestQueue[nextIdx].currentLevel >= strictTarget) {
-      nextIdx++;
-    }
-
-    if (nextIdx >= latestQueue.length) {
-      const firstUnmastered = latestQueue.findIndex(item => item.currentLevel < strictTarget);
-      if (firstUnmastered !== -1) {
-        setCurrentIndex(firstUnmastered);
-      } else {
-        onFinishBatch({
-          totalTested: sessionTotalAnswers,
-          mistakes: sessionMistakes,
-          masteredWords: words.length,
-        });
-      }
-    } else {
-      setCurrentIndex(nextIdx);
+    let updatedMistakes = mistakesList;
+    if (!mistakesList.some(w => w.id === currentWord.id)) {
+      updatedMistakes = [...mistakesList, currentWord];
+      setMistakesList(updatedMistakes);
     }
   };
 
@@ -288,7 +214,7 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
       <div className="flex flex-col items-center justify-center p-8 text-center min-h-[60vh]">
         <CheckCircle2 className="w-12 h-12 text-emerald-400 mb-3" />
         <h2 className="text-xl font-bold text-white mb-2">Блок завершен</h2>
-        <p className="text-slate-400 mb-6 text-sm">Все слова в этом блоке успешно выучены.</p>
+        <p className="text-slate-400 mb-6 text-sm">Все слова в этом блоке успешно пройдены.</p>
         <button
           onClick={onBackToDashboard}
           className="px-5 py-2.5 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold text-sm transition-colors"
@@ -299,12 +225,9 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
     );
   }
 
-  const totalInBatch = words.length;
-  const masteredInBatch = words.filter(w => {
-    const qItem = queue.find(q => q.word.id === w.id);
-    return qItem && qItem.currentLevel >= strictTarget;
-  }).length;
-  const progressPercent = Math.round((masteredInBatch / totalInBatch) * 100);
+  const totalInActive = activeList.length;
+  const currentStep = currentIndex + 1;
+  const progressPercent = Math.round(((currentIndex) / totalInActive) * 100);
 
   return (
     <div className="w-full max-w-xl mx-auto px-4 py-6 flex flex-col min-h-[calc(100vh-65px)] justify-between">
@@ -326,24 +249,31 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
                 <span>{combo} подряд</span>
               </div>
             )}
-            <div className="text-xs font-medium text-slate-400 px-2.5 py-1 rounded-lg bg-white/[0.04] border border-white/[0.08]">
-              {categoryTitle ? `${categoryTitle} • Блок ${batch}` : day > 0 ? `День ${day} • Блок ${batch}` : 'Повторение ошибок'}
+            <div className="text-xs font-medium text-slate-300 px-2.5 py-1 rounded-lg bg-white/[0.04] border border-white/[0.08]">
+              {categoryTitle ? `${categoryTitle} • Блок ${batch}` : day > 0 ? `День ${day} • Блок ${batch}` : 'Тренировка'}
             </div>
           </div>
         </div>
 
-        {/* Minimal Progress Bar */}
+        {/* Clear Step-by-Step Progress Bar */}
         <div className="mb-6">
           <div className="flex justify-between items-center text-xs text-slate-400 mb-1.5">
             <span>
-              Освоено: <strong className="text-white font-medium">{masteredInBatch}</strong> из {totalInBatch}
+              {isReviewPhase ? (
+                <span className="text-amber-300 font-medium">Закрепление ошибок: </span>
+              ) : (
+                <span>Слово: </span>
+              )}
+              <strong className="text-white font-medium">{currentStep}</strong> из {totalInActive}
             </span>
-            <span className="font-mono text-slate-400">{progressPercent}%</span>
+            <span className="font-mono text-slate-400">
+              {Math.min(100, Math.round((currentStep / totalInActive) * 100))}%
+            </span>
           </div>
-          <div className="w-full h-1 bg-white/[0.08] rounded-full overflow-hidden">
+          <div className="w-full h-1.5 bg-white/[0.08] rounded-full overflow-hidden">
             <div
-              className="h-full bg-sky-400 rounded-full transition-all duration-300"
-              style={{ width: `${progressPercent}%` }}
+              className={`h-full rounded-full transition-all duration-300 ${isReviewPhase ? 'bg-amber-400' : 'bg-sky-400'}`}
+              style={{ width: `${Math.max(4, Math.round((currentStep / totalInActive) * 100))}%` }}
             />
           </div>
         </div>
@@ -361,19 +291,9 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
           {/* Card Meta Row */}
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-1.5">
-              <span className="text-[11px] font-medium text-slate-400 mr-1">
-                Уровень:
+              <span className="text-[11px] font-medium text-slate-400">
+                {isReviewPhase ? 'Повторный ввод' : `Карточка ${currentStep} / ${totalInActive}`}
               </span>
-              {[...Array(strictTarget)].map((_, i) => (
-                <div
-                  key={i}
-                  className={`w-2.5 h-2.5 rounded-full transition-colors ${
-                    i < (currentItem?.currentLevel || 0)
-                      ? 'bg-emerald-400'
-                      : 'bg-white/[0.12]'
-                  }`}
-                />
-              ))}
             </div>
 
             <button
@@ -448,68 +368,55 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
                 placeholder={
                   inputStatus === 'correction' 
                     ? `Наберите "${currentWord.en}"` 
-                    : 'Введите английское слово'
+                    : "Введите перевод на английском..."
                 }
-                autoComplete="off"
-                autoCorrect="off"
                 autoCapitalize="none"
-                spellCheck={false}
-                disabled={inputStatus === 'success'}
-                className={`w-full py-3.5 px-4 text-center text-xl sm:text-2xl font-semibold tracking-normal rounded-xl studio-input transition-all ${
+                autoCorrect="off"
+                autoComplete="off"
+                spellCheck="false"
+                className={`w-full py-3.5 px-4 rounded-xl text-base font-mono tracking-wide placeholder:text-slate-500 focus:outline-none transition-colors border ${
                   inputStatus === 'correction'
-                    ? 'border-rose-500 text-rose-200'
+                    ? 'bg-rose-950/20 border-rose-500/40 text-rose-100 focus:border-rose-400'
                     : inputStatus === 'success'
-                    ? 'border-emerald-500 text-emerald-300'
-                    : ''
+                    ? 'bg-emerald-950/20 border-emerald-500/40 text-emerald-100'
+                    : 'bg-black/30 border-white/[0.12] text-white focus:border-sky-400'
                 }`}
               />
-              {userInput && inputStatus !== 'success' && (
-                <button
-                  type="button"
-                  onClick={() => setUserInput('')}
-                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300 p-1"
-                >
-                  ✕
-                </button>
-              )}
-            </div>
-
-            {/* Action Buttons */}
-            <div className="flex items-center gap-2.5 mt-4">
-              {inputStatus !== 'correction' && (
-                <button
-                  type="button"
-                  onClick={handleGiveUp}
-                  className="flex-1 py-3 px-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] text-slate-400 hover:text-slate-200 text-xs font-medium border border-white/[0.08] transition-colors flex items-center justify-center gap-1.5"
-                >
-                  <HelpCircle className="w-3.5 h-3.5" />
-                  <span>Показать ответ</span>
-                </button>
-              )}
 
               <button
                 type="submit"
-                disabled={!userInput.trim() || inputStatus === 'success'}
-                className={`flex-1 py-3 px-4 rounded-xl font-medium text-sm transition-colors flex items-center justify-center gap-2 ${
-                  inputStatus === 'correction'
-                    ? 'bg-rose-500 hover:bg-rose-400 text-white'
-                    : userInput.trim()
-                    ? 'bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold'
-                    : 'bg-white/[0.04] text-slate-500 cursor-not-allowed border border-white/[0.06]'
-                }`}
+                disabled={!userInput.trim()}
+                className="absolute right-2 top-2 bottom-2 px-3 rounded-lg bg-sky-500 hover:bg-sky-400 disabled:opacity-30 disabled:hover:bg-sky-500 text-slate-950 font-semibold text-xs transition-all flex items-center gap-1"
               >
-                <span>{inputStatus === 'correction' ? 'Подтвердить ввод' : 'Проверить ответ'}</span>
-                <Send className="w-3.5 h-3.5" />
+                <span>Enter</span>
+                <Send className="w-3 h-3" />
               </button>
             </div>
           </form>
+
+          {/* Action Row */}
+          <div className="flex items-center justify-between mt-4 pt-3 border-t border-white/[0.06] text-xs">
+            <button
+              type="button"
+              onClick={handleGiveUp}
+              disabled={inputStatus === 'correction'}
+              className="text-slate-400 hover:text-slate-200 transition-colors flex items-center gap-1 disabled:opacity-40"
+            >
+              <HelpCircle className="w-3.5 h-3.5" />
+              <span>Не помню слово</span>
+            </button>
+
+            <span className="text-[11px] text-slate-400 hidden sm:inline">
+              Нажмите <kbd className="px-1 py-0.5 bg-white/[0.06] rounded border border-white/[0.1] font-mono text-[10px]">Enter</kbd> для проверки
+            </span>
+          </div>
         </div>
       </div>
 
-      <div className="mt-6 text-center text-xs text-slate-500">
-        <p>
-          Любая опечатка возвращает слово в очередь. Нажмите Enter для отправки.
-        </p>
+      {/* Bottom stats helper */}
+      <div className="mt-6 flex items-center justify-between text-xs text-slate-400 border-t border-white/[0.06] pt-3">
+        <span>Ошибок в сессии: <strong className="text-rose-400">{sessionMistakes}</strong></span>
+        <span>Текущий комбо: <strong className="text-amber-400">{combo}</strong></span>
       </div>
     </div>
   );
