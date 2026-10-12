@@ -83,8 +83,9 @@ export default function Home() {
   // Start words session for a category and batch -> Begins with Step 1 (Изучение)!
   const handleStartSession = (categoryId: string, batch: number) => {
     const sessionWords = allWords.filter(
-      w => (w.categoryId === categoryId || String(w.day) === categoryId) && 
-           (w.categoryBatch === batch || w.batch === batch)
+      w => w.categoryId === categoryId 
+        ? w.categoryBatch === batch 
+        : (String(w.day) === categoryId && w.batch === batch)
     );
     if (sessionWords.length === 0) return;
 
@@ -140,8 +141,9 @@ export default function Home() {
   // Start sentences session for a category and batch
   const handleStartSentencesSession = (categoryId: string, batch: number) => {
     const sessionWords = allWords.filter(
-      w => (w.categoryId === categoryId || String(w.day) === categoryId) && 
-           (w.categoryBatch === batch || w.batch === batch)
+      w => w.categoryId === categoryId 
+        ? w.categoryBatch === batch 
+        : (String(w.day) === categoryId && w.batch === batch)
     );
     if (sessionWords.length === 0) return;
 
