@@ -28,10 +28,15 @@ interface SentenceTrainerProps {
 }
 
 function shuffleArray<T>(array: T[]): T[] {
+  if (array.length <= 1) return [...array];
   const arr = [...array];
   for (let i = arr.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  if (arr.length > 2 && arr[0] === array[0]) {
+    const swapIdx = 1 + Math.floor(Math.random() * (arr.length - 1));
+    [arr[0], arr[swapIdx]] = [arr[swapIdx], arr[0]];
   }
   return arr;
 }

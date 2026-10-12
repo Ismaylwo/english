@@ -49,6 +49,7 @@ export default function Home() {
     masteredWords?: number;
     isSentencesMode?: boolean;
   } | null>(null);
+  const [sessionNonce, setSessionNonce] = useState(1);
 
   // Initialize storage on client mount
   useEffect(() => {
@@ -100,6 +101,7 @@ export default function Home() {
       activeQueue: sessionWords,
       isRetryMode: false,
     });
+    setSessionNonce(n => n + 1);
     setActiveView('study');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -107,6 +109,7 @@ export default function Home() {
   // Step 1 completed -> transition to Step 2 (Typing)!
   const handleFinishStudy = (wordsToTest: WordItem[]) => {
     if (!currentSession) return;
+    setSessionNonce(n => n + 1);
     setActiveView('trainer');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -115,6 +118,7 @@ export default function Home() {
   const handleNeedReStudy = (failedWords: WordItem[]) => {
     if (!currentSession) return;
     soundFx.triggerHaptic('error');
+    setSessionNonce(n => n + 1);
     setCurrentSession({
       ...currentSession,
       activeQueue: failedWords,
@@ -128,6 +132,7 @@ export default function Home() {
   const handleFinishWordsBatch = (stats: { totalTested: number; mistakes: number; masteredWords: number }) => {
     if (!currentSession) return;
     soundFx.playSuccess();
+    setSessionNonce(n => n + 1);
     // Advance directly to Step 3 (SentenceTrainer) with the batch words!
     setCurrentSession({
       ...currentSession,
@@ -149,6 +154,7 @@ export default function Home() {
 
     const cat = categories.find(c => c.id === categoryId);
 
+    setSessionNonce(n => n + 1);
     setCurrentSession({
       categoryId,
       categoryTitle: cat ? cat.titleRu : undefined,
@@ -327,7 +333,7 @@ export default function Home() {
           />
         ) : activeView === 'study' && currentSession ? (
           <StudyCards
-            key={`study-${currentSession.batch}-${currentSession.isRetryMode ? 'retry' : 'init'}-${currentSession.activeQueue.map(w => w.id).join('-')}`}
+            key={`study-${currentSession.batch}-${currentSession.isRetryMode ? 'retry' : 'init'}-${sessionNonce}`}
             words={currentSession.activeQueue}
             categoryTitle={currentSession.categoryTitle}
             batch={currentSession.batch}
@@ -338,7 +344,7 @@ export default function Home() {
           />
         ) : activeView === 'trainer' && currentSession ? (
           <HardcoreTrainer
-            key={`trainer-${currentSession.batch}-${currentSession.isRetryMode ? 'retry' : 'init'}-${currentSession.activeQueue.map(w => w.id).join('-')}`}
+            key={`trainer-${currentSession.batch}-${currentSession.isRetryMode ? 'retry' : 'init'}-${sessionNonce}`}
             day={currentSession.day}
             batch={currentSession.batch}
             categoryTitle={currentSession.categoryTitle}
@@ -353,7 +359,7 @@ export default function Home() {
           />
         ) : activeView === 'sentences' && currentSession ? (
           <SentenceTrainer
-            key={`sentences-${currentSession.batch}-${currentSession.words.map(w => w.id).join('-')}`}
+            key={`sentences-${currentSession.batch}-${sessionNonce}`}
             day={currentSession.day}
             batch={currentSession.batch}
             categoryTitle={currentSession.categoryTitle}

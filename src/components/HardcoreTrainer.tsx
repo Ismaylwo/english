@@ -73,6 +73,20 @@ export function isAnswerCorrect(input: string, word: WordItem): boolean {
   return false;
 }
 
+export function shuffleArray<T>(array: T[]): T[] {
+  if (array.length <= 1) return [...array];
+  const arr = [...array];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  if (arr.length > 2 && arr[0] === array[0]) {
+    const swapIdx = 1 + Math.floor(Math.random() * (arr.length - 1));
+    [arr[0], arr[swapIdx]] = [arr[swapIdx], arr[0]];
+  }
+  return arr;
+}
+
 export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
   day,
   batch,
@@ -86,8 +100,8 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
   onNeedReStudy,
   onFinishBatch,
 }) => {
-  // Active queue of words to be tested
-  const [activeList, setActiveList] = useState<WordItem[]>(() => words);
+  // Active queue of words to be tested (always randomly shuffled)
+  const [activeList, setActiveList] = useState<WordItem[]>(() => shuffleArray(words));
   const [currentIndex, setCurrentIndex] = useState(0);
   const failedWordsRef = useRef<WordItem[]>([]);
   const [failedCountInRound, setFailedCountInRound] = useState(0);
@@ -101,9 +115,9 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
   const inputRef = useRef<HTMLInputElement>(null);
   const currentWord = activeList[currentIndex] || null;
 
-  // Reset when words prop changes (e.g. when entering retry mode with failed words subset)
+  // Reset and shuffle when words prop changes (e.g. when entering retry mode with failed words subset)
   useEffect(() => {
-    setActiveList(words);
+    setActiveList(shuffleArray(words));
     setCurrentIndex(0);
     failedWordsRef.current = [];
     setFailedCountInRound(0);
