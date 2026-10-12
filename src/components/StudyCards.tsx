@@ -5,12 +5,7 @@ import {
   ArrowLeft, 
   ArrowRight, 
   Volume2, 
-  CheckCircle2, 
-  Sparkles, 
-  RotateCcw,
-  BookOpen,
-  Send,
-  Zap
+  BookOpen
 } from 'lucide-react';
 import { WordItem, UserSettings } from '@/types/vocab';
 import { speechService } from '@/lib/speech';
@@ -70,12 +65,6 @@ export const StudyCards: React.FC<StudyCardsProps> = ({
     }
   };
 
-  const speakExampleSentence = () => {
-    if (currentWord?.example?.en) {
-      speechService.speak(currentWord.example.en, settings.voiceSpeed);
-    }
-  };
-
   const handleNext = () => {
     if (currentIndex + 1 < words.length) {
       setCurrentIndex(prev => prev + 1);
@@ -111,10 +100,10 @@ export const StudyCards: React.FC<StudyCardsProps> = ({
   };
 
   return (
-    <div className="w-full max-w-xl mx-auto px-4 py-6 flex flex-col min-h-[calc(100vh-65px)] justify-between">
+    <div className="w-full max-w-lg mx-auto px-4 py-3 flex flex-col justify-between min-h-[calc(100vh-70px)] sm:min-h-0 sm:py-6">
       <div>
         {/* Navigation Bar */}
-        <div className="flex items-center justify-between gap-2 mb-4">
+        <div className="flex items-center justify-between gap-2 mb-2 sm:mb-3">
           <button
             onClick={onBackToDashboard}
             className="flex items-center gap-1.5 text-xs font-medium text-slate-400 hover:text-white px-2.5 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.08] transition-colors"
@@ -130,7 +119,7 @@ export const StudyCards: React.FC<StudyCardsProps> = ({
                 : 'bg-emerald-500/10 text-emerald-300 border-emerald-500/25'
             }`}>
               <BookOpen className="w-3.5 h-3.5" />
-              <span>{isRetryMode ? 'Повтор неизвестных слов' : 'Шаг 1 • Изучение слов'}</span>
+              <span>{isRetryMode ? `Повтор ошибок (${words.length})` : 'Шаг 1 • Изучение'}</span>
             </div>
             <div className="text-xs font-medium text-slate-400 px-2 py-1 rounded-lg bg-white/[0.04] border border-white/[0.08]">
               {categoryTitle ? `${categoryTitle} • Блок ${batch}` : `Блок ${batch}`}
@@ -139,30 +128,30 @@ export const StudyCards: React.FC<StudyCardsProps> = ({
         </div>
 
         {/* 3-Step Visual Breadcrumbs */}
-        <div className="flex items-center justify-center gap-1.5 sm:gap-2 mb-3 text-[11px] font-medium">
-          <div className={`flex items-center gap-1.5 px-3 py-1 rounded-full border transition-all ${
+        <div className="flex items-center justify-center gap-1.5 sm:gap-2 mb-2.5 text-[11px] font-medium">
+          <div className={`flex items-center gap-1.5 px-3 py-0.5 rounded-full border transition-all ${
             isRetryMode
               ? 'bg-amber-500/15 text-amber-300 border-amber-500/30 font-semibold shadow-sm'
               : 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30 font-semibold shadow-sm'
           }`}>
-            <span className="w-4 h-4 rounded-full bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-[10px] font-bold">1</span>
-            <span>{isRetryMode ? 'Повтор слов' : 'Изучение слов'}</span>
+            <span className="w-3.5 h-3.5 rounded-full bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-[10px] font-bold">1</span>
+            <span>{isRetryMode ? 'Повтор' : 'Изучение'}</span>
           </div>
           <ArrowRight className="w-3 h-3 text-slate-600" />
-          <div className="flex items-center gap-1.5 px-3 py-1 rounded-full border border-white/[0.06] bg-white/[0.02] text-slate-500">
-            <span className="w-4 h-4 rounded-full bg-white/[0.05] text-slate-500 flex items-center justify-center text-[10px] font-bold">2</span>
+          <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border border-white/[0.06] bg-white/[0.02] text-slate-500">
+            <span className="w-3.5 h-3.5 rounded-full bg-white/[0.05] text-slate-500 flex items-center justify-center text-[10px] font-bold">2</span>
             <span>Набор</span>
           </div>
           <ArrowRight className="w-3 h-3 text-slate-600" />
-          <div className="flex items-center gap-1.5 px-3 py-1 rounded-full border border-white/[0.06] bg-white/[0.02] text-slate-500">
-            <span className="w-4 h-4 rounded-full bg-white/[0.05] text-slate-500 flex items-center justify-center text-[10px] font-bold">3</span>
+          <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border border-white/[0.06] bg-white/[0.02] text-slate-500">
+            <span className="w-3.5 h-3.5 rounded-full bg-white/[0.05] text-slate-500 flex items-center justify-center text-[10px] font-bold">3</span>
             <span>Предложения</span>
           </div>
         </div>
 
         {/* Step-by-Step Progress Bar */}
-        <div className="mb-6">
-          <div className="flex justify-between items-center text-xs text-slate-400 mb-1.5">
+        <div className="mb-3 sm:mb-4">
+          <div className="flex justify-between items-center text-xs text-slate-400 mb-1">
             <span>
               Карточка: <strong className="text-white font-medium">{currentIndex + 1}</strong> из {words.length}
             </span>
@@ -176,10 +165,10 @@ export const StudyCards: React.FC<StudyCardsProps> = ({
           </div>
         </div>
 
-        {/* Main Study Card */}
-        <div className="studio-surface rounded-2xl p-6 sm:p-8 border border-white/[0.1] shadow-2xl relative">
+        {/* Compact & Focal Study Card */}
+        <div className="studio-surface rounded-2xl p-5 sm:p-7 border border-white/[0.1] shadow-2xl relative">
           {/* Card Top Meta */}
-          <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-2">
               {renderLevelBadge(currentWord.level)}
               <span className="text-[11px] font-mono text-slate-500">
@@ -189,8 +178,8 @@ export const StudyCards: React.FC<StudyCardsProps> = ({
 
             <button
               onClick={speakCurrentWord}
-              title="Прослушать слово"
-              className="p-2 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] text-sky-400 hover:text-white transition-colors"
+              title="Прослушать произношение"
+              className="p-2 rounded-xl bg-sky-500/10 hover:bg-sky-500/20 text-sky-400 hover:text-white transition-colors border border-sky-500/20"
             >
               <Volume2 className="w-5 h-5" />
             </button>
@@ -198,17 +187,17 @@ export const StudyCards: React.FC<StudyCardsProps> = ({
 
           {/* Focal English Word */}
           <div className="text-center py-4 border-b border-white/[0.06]">
-            <h2 className="text-4xl sm:text-5xl font-black text-white tracking-tight mb-2">
+            <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight mb-2">
               {currentWord.en}
             </h2>
             {currentWord.note && (
-              <p className="text-xs text-slate-400 italic mb-1">
+              <p className="text-xs text-slate-400 italic mb-1.5">
                 ({currentWord.note})
               </p>
             )}
             <button
               onClick={speakCurrentWord}
-              className="inline-flex items-center gap-1.5 text-xs text-sky-400 hover:text-sky-300 mt-1 transition-colors"
+              className="inline-flex items-center gap-1.5 text-xs text-sky-400 hover:text-sky-300 transition-colors"
             >
               <Volume2 className="w-3.5 h-3.5" />
               <span>Прослушать произношение</span>
@@ -216,7 +205,7 @@ export const StudyCards: React.FC<StudyCardsProps> = ({
           </div>
 
           {/* Translations (RU & TJ) */}
-          <div className="py-5 space-y-3 text-center border-b border-white/[0.06]">
+          <div className="py-4 space-y-2.5 text-center">
             <div>
               <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider block mb-0.5">
                 Русский перевод
@@ -227,7 +216,7 @@ export const StudyCards: React.FC<StudyCardsProps> = ({
             </div>
 
             {currentWord.tj && (
-              <div>
+              <div className="pt-2 border-t border-white/[0.04]">
                 <span className="text-[10px] uppercase font-bold text-sky-500/70 tracking-wider block mb-0.5">
                   Тарҷума ба тоҷикӣ
                 </span>
@@ -237,44 +226,11 @@ export const StudyCards: React.FC<StudyCardsProps> = ({
               </div>
             )}
           </div>
-
-          {/* Context Example Sentence */}
-          {currentWord.example && (
-            <div className="pt-4">
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-[11px] font-semibold text-slate-400 flex items-center gap-1">
-                  <Sparkles className="w-3 h-3 text-amber-400" />
-                  <span>Пример в живой речи:</span>
-                </span>
-                <button
-                  onClick={speakExampleSentence}
-                  title="Озвучить фразу целиком"
-                  className="p-1 rounded-lg hover:bg-white/[0.06] text-slate-400 hover:text-white transition-colors"
-                >
-                  <Volume2 className="w-3.5 h-3.5" />
-                </button>
-              </div>
-
-              <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.06]">
-                <p className="text-sm sm:text-base font-serif text-white leading-relaxed mb-1.5">
-                  {currentWord.example.en}
-                </p>
-                <p className="text-xs text-slate-300 mb-0.5">
-                  {currentWord.example.ru}
-                </p>
-                {currentWord.example.tj && (
-                  <p className="text-xs text-sky-300/80">
-                    {currentWord.example.tj}
-                  </p>
-                )}
-              </div>
-            </div>
-          )}
         </div>
       </div>
 
       {/* Navigation Action Buttons */}
-      <div className="mt-6 pt-4 border-t border-white/[0.06] flex items-center gap-3">
+      <div className="mt-4 pt-3 border-t border-white/[0.06] flex items-center gap-3">
         {currentIndex > 0 && (
           <button
             onClick={handlePrev}
