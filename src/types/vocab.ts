@@ -54,6 +54,7 @@ export interface CategorySummary {
   totalBatches: number;
   batches: {
     batch: number;
+    level?: string;
     count: number;
     sample: string[];
   }[];

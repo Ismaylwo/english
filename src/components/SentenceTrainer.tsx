@@ -26,6 +26,15 @@ interface SentenceTrainerProps {
   onFinishSentences: (stats: { totalTested: number; mistakes: number }) => void;
 }
 
+function shuffleArray<T>(array: T[]): T[] {
+  const arr = [...array];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
 export const SentenceTrainer: React.FC<SentenceTrainerProps> = ({
   day,
   batch,
@@ -37,7 +46,7 @@ export const SentenceTrainer: React.FC<SentenceTrainerProps> = ({
 }) => {
   const wordsWithExamples = words.filter(w => w.example && w.example.en);
 
-  const [activeList, setActiveList] = useState<WordItem[]>(() => wordsWithExamples);
+  const [activeList, setActiveList] = useState<WordItem[]>(() => shuffleArray(wordsWithExamples));
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isReviewPhase, setIsReviewPhase] = useState(false);
   const [mistakesList, setMistakesList] = useState<WordItem[]>([]);
@@ -74,7 +83,7 @@ export const SentenceTrainer: React.FC<SentenceTrainerProps> = ({
       // Reached end of current active list
       if (!isReviewPhase && nextMistakes.length > 0) {
         setIsReviewPhase(true);
-        setActiveList([...nextMistakes]);
+        setActiveList(shuffleArray([...nextMistakes]));
         setMistakesList([]);
         setCurrentIndex(0);
         setInputStatus('idle');

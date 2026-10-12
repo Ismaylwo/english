@@ -6,8 +6,8 @@
     "titleTj": "Шиносоӣ, одамон ва нақл дар бораи худ",
     "titleEn": "Meeting People & Self",
     "icon": "Users",
-    "descriptionRu": "Приветствия, имя, семья, люди, возраст, внешность и базовые глаголы общения",
-    "descriptionTj": "Салом додан, ном, оила, синну сол, намуди зоҳирӣ ва феълҳои асосии муошират",
+    "descriptionRu": "Приветствия, имя, семья, люди, возраст, внешность и базовое общение",
+    "descriptionTj": "Салом додан, ном, оила, синну сол, намуди зоҳирӣ ва муошират",
     "keywords": [
       "hello",
       "hi",
@@ -40,6 +40,7 @@
     "batches": [
       {
         "batch": 1,
+        "level": "A1",
         "count": 25,
         "sample": [
           "hello",
@@ -49,173 +50,192 @@
       },
       {
         "batch": 2,
+        "level": "A1",
         "count": 25,
         "sample": [
-          "child",
-          "parent",
-          "son"
+          "son",
+          "daughter",
+          "baby"
         ]
       },
       {
         "batch": 3,
+        "level": "A1",
         "count": 25,
         "sample": [
-          "born",
-          "birth",
-          "grow"
+          "friendly",
+          "quiet",
+          "see"
         ]
       },
       {
         "batch": 4,
+        "level": "A2",
         "count": 25,
         "sample": [
-          "raise",
-          "occupy",
-          "hail"
+          "enough",
+          "sixty",
+          "air"
         ]
       },
       {
         "batch": 5,
+        "level": "A2",
         "count": 25,
         "sample": [
-          "realize",
-          "suddenly",
-          "adopt"
+          "trainer",
+          "communicate",
+          "essay"
         ]
       },
       {
         "batch": 6,
+        "level": "A2",
         "count": 25,
         "sample": [
-          "revival",
-          "dad",
-          "own"
+          "drop",
+          "plastic",
+          "invite"
         ]
       },
       {
         "batch": 7,
+        "level": "B1",
         "count": 25,
         "sample": [
-          "transform",
-          "anonymous",
-          "shatter"
+          "arrange",
+          "blow",
+          "although"
         ]
       },
       {
         "batch": 8,
+        "level": "B1",
         "count": 25,
         "sample": [
-          "outlet",
-          "effect",
-          "remote"
+          "youth",
+          "grain",
+          "relaxed"
         ]
       },
       {
         "batch": 9,
+        "level": "B1",
         "count": 25,
         "sample": [
-          "return",
-          "port",
-          "democracy"
+          "nor",
+          "incredibly",
+          "due"
         ]
       },
       {
         "batch": 10,
+        "level": "B1",
         "count": 25,
         "sample": [
-          "wonderful",
-          "sand",
-          "identical"
+          "measure",
+          "sensible",
+          "edge"
         ]
       },
       {
         "batch": 11,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "disadvantage",
-          "presence",
-          "allege"
+          "conspiracy",
+          "nursing",
+          "undertake"
         ]
       },
       {
         "batch": 12,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "govern",
-          "applaud",
-          "bicycle"
+          "district",
+          "closely",
+          "depression"
         ]
       },
       {
         "batch": 13,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "separation",
-          "score",
-          "object"
+          "amusing",
+          "hollow",
+          "diverse"
         ]
       },
       {
         "batch": 14,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "presently",
-          "glorious",
-          "asleep"
+          "cue",
+          "mistake",
+          "perspective"
         ]
       },
       {
         "batch": 15,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "side",
-          "judge",
-          "gradually"
+          "installation",
+          "whisper",
+          "devote"
         ]
       },
       {
         "batch": 16,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "politician",
-          "fabric",
-          "pioneer"
+          "parental",
+          "shrug",
+          "testify"
         ]
       },
       {
         "batch": 17,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "suit",
-          "inhabitant",
-          "outlook"
+          "inspiration",
+          "sword",
+          "grace"
         ]
       },
       {
         "batch": 18,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "pass",
-          "elbow",
-          "loom"
+          "replacement",
+          "utterly",
+          "probe"
         ]
       },
       {
         "batch": 19,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "correct",
-          "force",
-          "ambulance"
+          "indigenous",
+          "investigator",
+          "conceal"
         ]
       },
       {
         "batch": 20,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "graduate",
-          "choir",
-          "homeland"
+          "rage",
+          "gallon",
+          "feminist"
         ]
       }
     ],
@@ -334,6 +354,7 @@
     "batches": [
       {
         "batch": 1,
+        "level": "A1",
         "count": 25,
         "sample": [
           "airport",
@@ -343,173 +364,192 @@
       },
       {
         "batch": 2,
+        "level": "A1",
         "count": 25,
         "sample": [
-          "travel",
-          "trip",
-          "journey"
+          "far",
+          "stop",
+          "fast"
         ]
       },
       {
         "batch": 3,
+        "level": "A1",
         "count": 25,
         "sample": [
-          "gate",
-          "seat",
-          "passenger"
+          "aunt",
+          "do",
+          "cup"
         ]
       },
       {
         "batch": 4,
+        "level": "A1",
         "count": 25,
         "sample": [
-          "picture",
-          "transport",
-          "transportation"
+          "without",
+          "oh",
+          "east"
         ]
       },
       {
         "batch": 5,
+        "level": "A2",
         "count": 25,
         "sample": [
-          "surprised",
-          "flag",
-          "suffer"
+          "dirty",
+          "quickly",
+          "lesson"
         ]
       },
       {
         "batch": 6,
+        "level": "A2",
         "count": 25,
         "sample": [
-          "unacceptable",
-          "experimental",
-          "rebel"
+          "underground",
+          "dear",
+          "vehicle"
         ]
       },
       {
         "batch": 7,
+        "level": "A2",
         "count": 25,
         "sample": [
-          "auction",
-          "bind",
-          "sword"
+          "queen",
+          "series",
+          "safe"
         ]
       },
       {
         "batch": 8,
+        "level": "A2",
         "count": 25,
         "sample": [
-          "refuge",
-          "informal",
-          "trade"
+          "climate",
+          "monkey",
+          "intelligent"
         ]
       },
       {
         "batch": 9,
+        "level": "B1",
         "count": 25,
         "sample": [
-          "two",
-          "sculpture",
-          "forum"
+          "graduate",
+          "whether",
+          "trade"
         ]
       },
       {
         "batch": 10,
+        "level": "B1",
         "count": 25,
         "sample": [
-          "engineer",
-          "translation",
-          "openly"
+          "attract",
+          "treatment",
+          "tape"
         ]
       },
       {
         "batch": 11,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "imaginary",
-          "shelter",
-          "carve"
+          "promote",
+          "tax",
+          "disappointing"
         ]
       },
       {
         "batch": 12,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "permanent",
-          "burst",
-          "it"
+          "govern",
+          "disappointment",
+          "essentially"
         ]
       },
       {
         "batch": 13,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "supplement",
-          "wild",
-          "reserve"
+          "basically",
+          "permanently",
+          "packet"
         ]
       },
       {
         "batch": 14,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "resemble",
-          "integration",
-          "golf"
+          "martial",
+          "aside",
+          "concrete"
         ]
       },
       {
         "batch": 15,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "surprise",
-          "management",
-          "largely"
+          "suffering",
+          "creature",
+          "rhythm"
         ]
       },
       {
         "batch": 16,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "retire",
-          "mosque",
-          "rod"
+          "myth",
+          "shortage",
+          "abandon"
         ]
       },
       {
         "batch": 17,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "acceptable",
-          "radiation",
-          "refusal"
+          "homeland",
+          "harsh",
+          "statistical"
         ]
       },
       {
         "batch": 18,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "ring",
-          "implication",
-          "overwhelm"
+          "orientation",
+          "suicide",
+          "adolescent"
         ]
       },
       {
         "batch": 19,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "monday",
-          "mention",
-          "compulsory"
+          "regime",
+          "trail",
+          "punch"
         ]
       },
       {
         "batch": 20,
+        "level": "C1",
         "count": 24,
         "sample": [
-          "northern",
-          "dump",
-          "laser"
+          "parameter",
+          "pulse",
+          "courtesy"
         ]
       }
     ],
@@ -620,6 +660,7 @@
     "batches": [
       {
         "batch": 1,
+        "level": "A1",
         "count": 25,
         "sample": [
           "food",
@@ -629,173 +670,192 @@
       },
       {
         "batch": 2,
+        "level": "A1",
         "count": 25,
         "sample": [
-          "oil",
-          "soup",
-          "salad"
+          "cake",
+          "restaurant",
+          "cafe"
         ]
       },
       {
         "batch": 3,
+        "level": "A1",
         "count": 25,
         "sample": [
-          "cheap",
-          "expensive",
-          "fresh"
+          "shopping",
+          "wednesday",
+          "above"
         ]
       },
       {
         "batch": 4,
+        "level": "A1",
         "count": 25,
         "sample": [
-          "stage",
-          "hunger",
-          "newly"
+          "stand",
+          "agree",
+          "somebody"
         ]
       },
       {
         "batch": 5,
+        "level": "A2",
         "count": 25,
         "sample": [
-          "purchase",
-          "victory",
-          "convey"
+          "accident",
+          "argument",
+          "perform"
         ]
       },
       {
         "batch": 6,
+        "level": "A2",
         "count": 25,
         "sample": [
-          "scenario",
-          "gear",
-          "accident"
+          "beat",
+          "department",
+          "pocket"
         ]
       },
       {
         "batch": 7,
+        "level": "B1",
         "count": 25,
         "sample": [
-          "delete",
-          "conquer",
-          "anyone"
+          "attention",
+          "gold",
+          "novel"
         ]
       },
       {
         "batch": 8,
+        "level": "B1",
         "count": 25,
         "sample": [
-          "spark",
-          "nowhere",
-          "brief"
+          "whole",
+          "container",
+          "currency"
         ]
       },
       {
         "batch": 9,
+        "level": "B1",
         "count": 25,
         "sample": [
-          "chip",
-          "total",
-          "magnificent"
+          "frame",
+          "qualification",
+          "entertainment"
         ]
       },
       {
         "batch": 10,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "marry",
-          "broadcast",
-          "skilled"
+          "practical",
+          "keen",
+          "rugby"
         ]
       },
       {
         "batch": 11,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "pin",
-          "venue",
-          "consultation"
+          "random",
+          "transmit",
+          "observation"
         ]
       },
       {
         "batch": 12,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "shadow",
-          "cooperative",
-          "snake"
+          "deck",
+          "administration",
+          "emerge"
         ]
       },
       {
         "batch": 13,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "worship",
-          "combine",
-          "surrounding"
+          "trigger",
+          "spice",
+          "honour"
         ]
       },
       {
         "batch": 14,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "stake",
-          "non-profit",
-          "nut"
+          "reinforce",
+          "tonne",
+          "host"
         ]
       },
       {
         "batch": 15,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "use",
-          "ours",
-          "multiple"
+          "thoroughly",
+          "thorough",
+          "forgive"
         ]
       },
       {
         "batch": 16,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "unable",
-          "resign",
-          "substitution"
+          "crude",
+          "preside",
+          "transmission"
         ]
       },
       {
         "batch": 17,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "contemporary",
-          "tag",
-          "slap"
+          "weaken",
+          "mandatory",
+          "experimental"
         ]
       },
       {
         "batch": 18,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "violent",
-          "organic",
-          "prosecute"
+          "republic",
+          "simulate",
+          "supposedly"
         ]
       },
       {
         "batch": 19,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "skirt",
-          "production",
-          "genetic"
+          "commence",
+          "donor",
+          "dip"
         ]
       },
       {
         "batch": 20,
+        "level": "C1",
         "count": 24,
         "sample": [
-          "shelf",
-          "guideline",
-          "pathway"
+          "terrific",
+          "spouse",
+          "consent"
         ]
       }
     ],
@@ -908,182 +968,202 @@
     "batches": [
       {
         "batch": 1,
+        "level": "A1",
         "count": 25,
         "sample": [
           "home",
-          "house",
-          "apartment"
+          "apartment",
+          "flat"
         ]
       },
       {
         "batch": 2,
+        "level": "A1",
         "count": 25,
         "sample": [
-          "watch",
-          "hour",
-          "minute"
+          "bath",
+          "clean",
+          "clothes"
         ]
       },
       {
         "batch": 3,
+        "level": "A1",
         "count": 25,
         "sample": [
-          "curtain",
-          "blanket",
-          "towel"
+          "shoe",
+          "party",
+          "soon"
         ]
       },
       {
         "batch": 4,
+        "level": "A2",
         "count": 25,
         "sample": [
-          "frequently",
-          "relate",
-          "bring"
+          "exam",
+          "cat",
+          "yellow"
         ]
       },
       {
         "batch": 5,
+        "level": "A2",
         "count": 25,
         "sample": [
-          "aware",
-          "private",
-          "relatively"
+          "predict",
+          "pass",
+          "physical"
         ]
       },
       {
         "batch": 6,
+        "level": "A2",
         "count": 25,
         "sample": [
-          "transfer",
-          "dominant",
-          "exclude"
+          "couple",
+          "gift",
+          "hill"
         ]
       },
       {
         "batch": 7,
+        "level": "B1",
         "count": 25,
         "sample": [
-          "fortunately",
-          "switch",
-          "miserable"
+          "formal",
+          "author",
+          "cigarette"
         ]
       },
       {
         "batch": 8,
+        "level": "B1",
         "count": 25,
         "sample": [
-          "toxic",
-          "silver",
-          "defence"
+          "northern",
+          "weigh",
+          "proceedings"
         ]
       },
       {
         "batch": 9,
+        "level": "B1",
         "count": 25,
         "sample": [
-          "king",
-          "arise",
-          "shocking"
+          "belief",
+          "bubble",
+          "ceiling"
         ]
       },
       {
         "batch": 10,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "professor",
-          "depressing",
-          "activist"
+          "solid",
+          "guilty",
+          "house"
         ]
       },
       {
         "batch": 11,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "resource",
-          "cheek",
-          "dilemma"
+          "frequent",
+          "miserable",
+          "portion"
         ]
       },
       {
         "batch": 12,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "vision",
-          "drain",
-          "you"
+          "unknown",
+          "criticize",
+          "sponsorship"
         ]
       },
       {
         "batch": 13,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "create",
-          "environmental",
-          "assumption"
+          "making",
+          "slave",
+          "cite"
         ]
       },
       {
         "batch": 14,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "vice",
-          "probe",
-          "rock"
+          "probable",
+          "stable",
+          "isolate"
         ]
       },
       {
         "batch": 15,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "ahead",
-          "prince",
-          "process"
+          "expose",
+          "consequently",
+          "ultimately"
         ]
       },
       {
         "batch": 16,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "chart",
-          "trap",
-          "variable"
+          "desktop",
+          "incidence",
+          "partial"
         ]
       },
       {
         "batch": 17,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "emphasize",
-          "acre",
-          "thereby"
+          "rebel",
+          "wit",
+          "mining"
         ]
       },
       {
         "batch": 18,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "beat",
-          "so-called",
-          "screw"
+          "slot",
+          "suspicious",
+          "log"
         ]
       },
       {
         "batch": 19,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "all",
-          "set",
-          "nutrition"
+          "mercy",
+          "interim",
+          "disclosure"
         ]
       },
       {
         "batch": 20,
+        "level": "C1",
         "count": 24,
         "sample": [
-          "valuable",
-          "marathon",
-          "rape"
+          "reassure",
+          "suppress",
+          "craft"
         ]
       }
     ],
@@ -1196,6 +1276,7 @@
     "batches": [
       {
         "batch": 1,
+        "level": "A1",
         "count": 25,
         "sample": [
           "work",
@@ -1205,173 +1286,192 @@
       },
       {
         "batch": 2,
+        "level": "A1",
         "count": 25,
         "sample": [
-          "hire",
-          "fire",
-          "resume"
+          "of",
+          "return",
+          "wonderful"
         ]
       },
       {
         "batch": 3,
+        "level": "A1",
         "count": 25,
         "sample": [
-          "responsible",
-          "organization",
-          "department"
+          "garden",
+          "spend",
+          "style"
         ]
       },
       {
         "batch": 4,
+        "level": "A1",
         "count": 25,
         "sample": [
-          "earnings",
-          "processing",
-          "experienced"
+          "fourteen",
+          "really",
+          "paint"
         ]
       },
       {
         "batch": 5,
+        "level": "A2",
         "count": 25,
         "sample": [
-          "basic",
-          "nor",
-          "academic"
+          "news",
+          "teenager",
+          "october"
         ]
       },
       {
         "batch": 6,
+        "level": "A2",
         "count": 25,
         "sample": [
-          "amid",
-          "horizon",
-          "spy"
+          "architecture",
+          "myself",
+          "palace"
         ]
       },
       {
         "batch": 7,
+        "level": "A2",
         "count": 25,
         "sample": [
-          "governor",
-          "directory",
-          "false"
+          "drama",
+          "certainly",
+          "develop"
         ]
       },
       {
         "batch": 8,
+        "level": "B1",
         "count": 25,
         "sample": [
-          "august",
-          "user",
-          "found"
+          "crime",
+          "compete",
+          "introduction"
         ]
       },
       {
         "batch": 9,
+        "level": "B1",
         "count": 25,
         "sample": [
-          "quietly",
-          "downwards",
-          "wheat"
+          "result",
+          "supply",
+          "chapter"
         ]
       },
       {
         "batch": 10,
+        "level": "B1",
         "count": 25,
         "sample": [
-          "tie",
-          "hold",
-          "burden"
+          "version",
+          "laboratory",
+          "lonely"
         ]
       },
       {
         "batch": 11,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "tube",
-          "envelope",
-          "excellence"
+          "eastern",
+          "organizer",
+          "wonder"
         ]
       },
       {
         "batch": 12,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "challenging",
-          "hierarchy",
-          "couple"
+          "scale",
+          "extend",
+          "enjoyable"
         ]
       },
       {
         "batch": 13,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "november",
-          "loss",
-          "critically"
+          "delight",
+          "modest",
+          "cell"
         ]
       },
       {
         "batch": 14,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "overcome",
-          "ritual",
-          "absolutely"
+          "convenience",
+          "enthusiastic",
+          "confess"
         ]
       },
       {
         "batch": 15,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "cap",
-          "reservation",
-          "rush"
+          "scare",
+          "gang",
+          "bear"
         ]
       },
       {
         "batch": 16,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "elderly",
-          "assassination",
-          "describe"
+          "globalization",
+          "tragedy",
+          "tournament"
         ]
       },
       {
         "batch": 17,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "issue",
-          "blast",
-          "area"
+          "proceeds",
+          "seemingly",
+          "latter"
         ]
       },
       {
         "batch": 18,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "decrease",
-          "sacrifice",
-          "syndrome"
+          "demon",
+          "biography",
+          "tribal"
         ]
       },
       {
         "batch": 19,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "comfortable",
-          "victim",
-          "scandal"
+          "characterize",
+          "attorney",
+          "weed"
         ]
       },
       {
         "batch": 20,
+        "level": "C1",
         "count": 24,
         "sample": [
-          "complex",
-          "publishing",
-          "specification"
+          "representation",
+          "problematic",
+          "undoubtedly"
         ]
       }
     ],
@@ -1483,6 +1583,7 @@
     "batches": [
       {
         "batch": 1,
+        "level": "A1",
         "count": 25,
         "sample": [
           "health",
@@ -1492,173 +1593,192 @@
       },
       {
         "batch": 2,
+        "level": "A2",
         "count": 25,
         "sample": [
-          "skin",
-          "blood",
-          "heart"
+          "much",
+          "activity",
+          "big"
         ]
       },
       {
         "batch": 3,
+        "level": "A2",
         "count": 25,
         "sample": [
-          "diet",
-          "weight",
-          "tired"
+          "tablet",
+          "opportunity",
+          "personality"
         ]
       },
       {
         "batch": 4,
+        "level": "B1",
         "count": 25,
         "sample": [
-          "competence",
-          "confine",
-          "constraint"
+          "chest",
+          "hand",
+          "attraction"
         ]
       },
       {
         "batch": 5,
+        "level": "B1",
         "count": 25,
         "sample": [
-          "productivity",
-          "relevance",
-          "transparency"
+          "identity",
+          "injure",
+          "spread"
         ]
       },
       {
         "batch": 6,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "property",
-          "reality",
-          "responsibility"
+          "stadium",
+          "global",
+          "back"
         ]
       },
       {
         "batch": 7,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "thumb",
-          "uncertainty",
-          "accountability"
+          "creativity",
+          "disagreement",
+          "offender"
         ]
       },
       {
         "batch": 8,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "healthcare",
-          "promising",
-          "reporting"
+          "weird",
+          "fully",
+          "oppose"
         ]
       },
       {
         "batch": 9,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "precision",
-          "prescribe",
-          "reconstruction"
+          "function",
+          "hunting",
+          "aspect"
         ]
       },
       {
         "batch": 10,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "intensity",
-          "limb",
-          "prevalence"
+          "prompt",
+          "saving",
+          "sexy"
         ]
       },
       {
         "batch": 11,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "twist",
-          "big",
-          "few"
+          "rebuild",
+          "database",
+          "silk"
         ]
       },
       {
         "batch": 12,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "donation",
-          "mainland",
-          "major"
+          "awkward",
+          "compose",
+          "deliberate"
         ]
       },
       {
         "batch": 13,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "someone",
-          "qualify",
-          "forecast"
+          "genuinely",
+          "funding",
+          "whoever"
         ]
       },
       {
         "batch": 14,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "strengthen",
-          "supportive",
-          "climb"
+          "assurance",
+          "caution",
+          "confront"
         ]
       },
       {
         "batch": 15,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "competitor",
-          "sudden",
-          "tale"
+          "versus",
+          "congregation",
+          "diagnose"
         ]
       },
       {
         "batch": 16,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "inch",
-          "commence",
-          "island"
+          "stability",
+          "transcript",
+          "turnover"
         ]
       },
       {
         "batch": 17,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "philosophy",
-          "contemplate",
-          "fill"
+          "utilize",
+          "grip",
+          "refuge"
         ]
       },
       {
         "batch": 18,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "former",
-          "brutal",
-          "warrant"
+          "uphold",
+          "drain",
+          "overly"
         ]
       },
       {
         "batch": 19,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "hall",
-          "consideration",
-          "worm"
+          "odds",
+          "exploitation",
+          "condemn"
         ]
       },
       {
         "batch": 20,
+        "level": "C1",
         "count": 24,
         "sample": [
-          "divide",
-          "trait",
-          "timely"
+          "acute",
+          "dumb",
+          "threshold"
         ]
       }
     ],
@@ -1769,182 +1889,202 @@
     "batches": [
       {
         "batch": 1,
+        "level": "A1",
         "count": 25,
         "sample": [
           "hobby",
-          "leisure",
-          "free"
+          "weekend",
+          "holiday"
         ]
       },
       {
         "batch": 2,
+        "level": "A1",
         "count": 25,
         "sample": [
-          "match",
-          "player",
-          "win"
+          "guitar",
+          "piano",
+          "movie"
         ]
       },
       {
         "batch": 3,
+        "level": "A1",
         "count": 25,
         "sample": [
-          "draw",
-          "drawing",
-          "fun"
+          "which",
+          "two",
+          "follow"
         ]
       },
       {
         "batch": 4,
+        "level": "A1",
         "count": 25,
         "sample": [
-          "sailing",
-          "count",
-          "gambling"
+          "thursday",
+          "onion",
+          "personal"
         ]
       },
       {
         "batch": 5,
+        "level": "A2",
         "count": 25,
         "sample": [
-          "consist",
-          "rarely",
-          "council"
+          "forget",
+          "sorry",
+          "ago"
         ]
       },
       {
         "batch": 6,
+        "level": "A2",
         "count": 25,
         "sample": [
-          "circulate",
-          "magical",
-          "tobacco"
+          "athlete",
+          "musician",
+          "runner"
         ]
       },
       {
         "batch": 7,
+        "level": "A2",
         "count": 25,
         "sample": [
-          "miner",
-          "gaze",
-          "pound"
+          "ring",
+          "learning",
+          "pub"
         ]
       },
       {
         "batch": 8,
+        "level": "B1",
         "count": 25,
         "sample": [
-          "eighteen",
-          "basis",
-          "mistake"
+          "hockey",
+          "celebrate",
+          "gas"
         ]
       },
       {
         "batch": 9,
+        "level": "B1",
         "count": 25,
         "sample": [
-          "thin",
-          "insist",
-          "beam"
+          "tongue",
+          "nuclear",
+          "priest"
         ]
       },
       {
         "batch": 10,
+        "level": "B1",
         "count": 25,
         "sample": [
-          "bury",
-          "outer",
-          "correction"
+          "occur",
+          "nail",
+          "aim"
         ]
       },
       {
         "batch": 11,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "being",
-          "hypothesis",
-          "indictment"
+          "educated",
+          "local",
+          "seriously"
         ]
       },
       {
         "batch": 12,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "inevitably",
-          "peasant",
-          "region"
+          "seeker",
+          "make-up",
+          "lens"
         ]
       },
       {
         "batch": 13,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "actually",
-          "tin",
-          "integrate"
+          "surgeon",
+          "specify",
+          "latest"
         ]
       },
       {
         "batch": 14,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "accordingly",
-          "verse",
-          "episode"
+          "useless",
+          "melt",
+          "trait"
         ]
       },
       {
         "batch": 15,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "damage",
-          "absolute",
-          "accommodate"
+          "rapid",
+          "fortunate",
+          "sponsor"
         ]
       },
       {
         "batch": 16,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "pension",
-          "declaration",
-          "television"
+          "consult",
+          "workout",
+          "loop"
         ]
       },
       {
         "batch": 17,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "stare",
-          "descend",
-          "piece"
+          "widow",
+          "integrated",
+          "carriage"
         ]
       },
       {
         "batch": 18,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "minor",
-          "correspondent",
-          "seed"
+          "stabilize",
+          "applicable",
+          "surgical"
         ]
       },
       {
         "batch": 19,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "noise",
-          "estimate",
-          "backdrop"
+          "thrive",
+          "mutual",
+          "magical"
         ]
       },
       {
         "batch": 20,
+        "level": "C1",
         "count": 24,
         "sample": [
-          "loan",
-          "alliance",
-          "blog"
+          "thoughtful",
+          "notably",
+          "convict"
         ]
       }
     ],
@@ -2046,182 +2186,202 @@
     "batches": [
       {
         "batch": 1,
+        "level": "A1",
         "count": 25,
         "sample": [
           "computer",
-          "laptop",
-          "phone"
+          "phone",
+          "mouse"
         ]
       },
       {
         "batch": 2,
+        "level": "A1",
         "count": 25,
         "sample": [
-          "download",
-          "install",
-          "update"
+          "beer",
+          "red",
+          "use"
         ]
       },
       {
         "batch": 3,
+        "level": "A1",
         "count": 25,
         "sample": [
-          "notice",
-          "glove",
-          "electronics"
+          "in",
+          "complete",
+          "nineteen"
         ]
       },
       {
         "batch": 4,
+        "level": "A2",
         "count": 25,
         "sample": [
-          "yell",
-          "telephone",
-          "print"
+          "year",
+          "however",
+          "group"
         ]
       },
       {
         "batch": 5,
+        "level": "A2",
         "count": 25,
         "sample": [
-          "distinguish",
-          "collaborate",
-          "differentiate"
+          "alone",
+          "collect",
+          "movement"
         ]
       },
       {
         "batch": 6,
+        "level": "A2",
         "count": 25,
         "sample": [
-          "dense",
-          "philosopher",
-          "build"
+          "spider",
+          "frog",
+          "joke"
         ]
       },
       {
         "batch": 7,
+        "level": "B1",
         "count": 25,
         "sample": [
-          "scare",
-          "kingdom",
-          "thousand"
+          "connected",
+          "mine",
+          "dentist"
         ]
       },
       {
         "batch": 8,
+        "level": "B1",
         "count": 25,
         "sample": [
-          "nothing",
-          "determine",
-          "rhythm"
+          "convince",
+          "tail",
+          "ugly"
         ]
       },
       {
         "batch": 9,
+        "level": "B1",
         "count": 25,
         "sample": [
-          "bend",
-          "permit",
-          "conscience"
+          "sort",
+          "campus",
+          "careless"
         ]
       },
       {
         "batch": 10,
+        "level": "B1",
         "count": 25,
         "sample": [
-          "development",
-          "slide",
-          "ego"
+          "passion",
+          "ghost",
+          "branch"
         ]
       },
       {
         "batch": 11,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "defeat",
-          "norm",
-          "memoir"
+          "impress",
+          "remarkably",
+          "spectacular"
         ]
       },
       {
         "batch": 12,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "optimistic",
-          "recount",
-          "truck"
+          "ashamed",
+          "completion",
+          "threat"
         ]
       },
       {
         "batch": 13,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "crowd",
-          "bacteria",
-          "ongoing"
+          "tissue",
+          "emission",
+          "emphasize"
         ]
       },
       {
         "batch": 14,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "benchmark",
-          "elephant",
-          "invest"
+          "council",
+          "debt",
+          "potentially"
         ]
       },
       {
         "batch": 15,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "embarrassing",
-          "but",
-          "basket"
+          "approve",
+          "cute",
+          "mineral"
         ]
       },
       {
         "batch": 16,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "shade",
-          "enthusiast",
-          "belong"
+          "facilitate",
+          "grid",
+          "designate"
         ]
       },
       {
         "batch": 17,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "accountant",
-          "expenditure",
-          "thing"
+          "encouraging",
+          "fluid",
+          "faculty"
         ]
       },
       {
         "batch": 18,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "rapid",
-          "divert",
-          "touch"
+          "dilemma",
+          "evolutionary",
+          "minimize"
         ]
       },
       {
         "batch": 19,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "soldier",
-          "intense",
-          "complication"
+          "warrant",
+          "forge",
+          "compensate"
         ]
       },
       {
         "batch": 20,
+        "level": "C1",
         "count": 24,
         "sample": [
-          "position",
-          "cautious",
-          "have"
+          "firearm",
+          "endorse",
+          "execution"
         ]
       }
     ],
@@ -2268,182 +2428,202 @@
     "batches": [
       {
         "batch": 1,
+        "level": "A1",
         "count": 25,
         "sample": [
           "feel",
           "feeling",
-          "emotion"
+          "happy"
         ]
       },
       {
         "batch": 2,
+        "level": "A1",
         "count": 25,
         "sample": [
-          "wish",
-          "dream",
-          "trust"
+          "ice",
+          "cook",
+          "everybody"
         ]
       },
       {
         "batch": 3,
+        "level": "A1",
         "count": 25,
         "sample": [
-          "agree",
-          "disagree",
-          "opinion"
+          "juice",
+          "twelve",
+          "full"
         ]
       },
       {
         "batch": 4,
+        "level": "A2",
         "count": 25,
         "sample": [
-          "sentiment",
-          "sensible",
-          "silly"
+          "cent",
+          "different",
+          "bad"
         ]
       },
       {
         "batch": 5,
+        "level": "A2",
         "count": 25,
         "sample": [
-          "pride",
-          "abuse",
-          "battlefield"
+          "penny",
+          "castle",
+          "lawyer"
         ]
       },
       {
         "batch": 6,
+        "level": "A2",
         "count": 25,
         "sample": [
-          "sympathy",
-          "bold",
-          "amateur"
+          "hers",
+          "image",
+          "journalist"
         ]
       },
       {
         "batch": 7,
+        "level": "B1",
         "count": 25,
         "sample": [
-          "unfold",
-          "notably",
-          "celebrity"
+          "based",
+          "painter",
+          "bright"
         ]
       },
       {
         "batch": 8,
+        "level": "B1",
         "count": 25,
         "sample": [
-          "somebody",
-          "hardly",
-          "title"
+          "sand",
+          "relaxing",
+          "judge"
         ]
       },
       {
         "batch": 9,
+        "level": "B1",
         "count": 25,
         "sample": [
-          "direct",
-          "solar",
-          "detain"
+          "entertain",
+          "coloured",
+          "cap"
         ]
       },
       {
         "batch": 10,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "horrible",
-          "assure",
-          "grind"
+          "neighbourhood",
+          "confuse",
+          "original"
         ]
       },
       {
         "batch": 11,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "flame",
-          "romance",
-          "plead"
+          "insurance",
+          "pride",
+          "dishonest"
         ]
       },
       {
         "batch": 12,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "speculation",
-          "socialist",
-          "ceremony"
+          "automatically",
+          "associate",
+          "inherit"
         ]
       },
       {
         "batch": 13,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "gold",
-          "debate",
-          "spokesperson"
+          "teens",
+          "assumption",
+          "abstract"
         ]
       },
       {
         "batch": 14,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "contempt",
-          "natural",
-          "planning"
+          "consideration",
+          "accurate",
+          "origin"
         ]
       },
       {
         "batch": 15,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "fixed",
-          "corporate",
-          "consequently"
+          "entertaining",
+          "rival",
+          "reasonably"
         ]
       },
       {
         "batch": 16,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "wise",
-          "infamous",
-          "dentist"
+          "beloved",
+          "sentiment",
+          "blend"
         ]
       },
       {
         "batch": 17,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "clip",
-          "identification",
-          "although"
+          "license",
+          "presidential",
+          "privilege"
         ]
       },
       {
         "batch": 18,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "threaten",
-          "flaw",
-          "aggressive"
+          "beast",
+          "mask",
+          "dignity"
         ]
       },
       {
         "batch": 19,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "apart",
-          "potential",
-          "depict"
+          "melody",
+          "contractor",
+          "damaging"
         ]
       },
       {
         "batch": 20,
+        "level": "C1",
         "count": 24,
         "sample": [
-          "session",
-          "defensive",
-          "pepper"
+          "alike",
+          "breed",
+          "dose"
         ]
       }
     ],
@@ -2541,182 +2721,202 @@
     "batches": [
       {
         "batch": 1,
+        "level": "A1",
         "count": 25,
         "sample": [
           "world",
-          "earth",
-          "nature"
+          "tree",
+          "river"
         ]
       },
       {
         "batch": 2,
+        "level": "A1",
         "count": 25,
         "sample": [
-          "spring",
-          "summer",
-          "autumn"
+          "carrot",
+          "teach",
+          "village"
         ]
       },
       {
         "batch": 3,
+        "level": "A2",
         "count": 25,
         "sample": [
-          "lesson",
-          "class",
-          "exam"
+          "twenty",
+          "and",
+          "your"
         ]
       },
       {
         "batch": 4,
+        "level": "A2",
         "count": 25,
         "sample": [
-          "educated",
-          "historical",
-          "humorous"
+          "heat",
+          "recommend",
+          "land"
         ]
       },
       {
         "batch": 5,
+        "level": "A2",
         "count": 25,
         "sample": [
-          "legal",
-          "recommendation",
-          "track"
+          "bottom",
+          "middle",
+          "mostly"
         ]
       },
       {
         "batch": 6,
+        "level": "A2",
         "count": 25,
         "sample": [
-          "surge",
-          "purple",
-          "advertisement"
+          "wedding",
+          "able",
+          "prize"
         ]
       },
       {
         "batch": 7,
+        "level": "B1",
         "count": 25,
         "sample": [
-          "wind",
-          "provincial",
-          "item"
+          "historical",
+          "cultural",
+          "sailor"
         ]
       },
       {
         "batch": 8,
+        "level": "B1",
         "count": 25,
         "sample": [
-          "author",
-          "native",
-          "anticipate"
+          "theory",
+          "combine",
+          "next"
         ]
       },
       {
         "batch": 9,
+        "level": "B1",
         "count": 25,
         "sample": [
-          "local",
-          "adequate",
-          "favourable"
+          "economy",
+          "agreement",
+          "episode"
         ]
       },
       {
         "batch": 10,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "note",
-          "dealer",
-          "lobby"
+          "wind",
+          "spring",
+          "freedom"
         ]
       },
       {
         "batch": 11,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "investment",
-          "tragedy",
-          "residence"
+          "warming",
+          "peer",
+          "fake"
         ]
       },
       {
         "batch": 12,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "wrist",
-          "top",
-          "element"
+          "viewpoint",
+          "fraud",
+          "urgent"
         ]
       },
       {
         "batch": 13,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "metal",
-          "impose",
-          "absent"
+          "ultimate",
+          "screening",
+          "intended"
         ]
       },
       {
         "batch": 14,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "dissolve",
-          "scientist",
-          "soil"
+          "pension",
+          "necessity",
+          "root"
         ]
       },
       {
         "batch": 15,
+        "level": "B2",
         "count": 25,
         "sample": [
-          "hang",
-          "draft",
-          "entrepreneur"
+          "clip",
+          "aggressive",
+          "lyric"
         ]
       },
       {
         "batch": 16,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "civilization",
-          "march",
-          "kill"
+          "morality",
+          "cease",
+          "discrimination"
         ]
       },
       {
         "batch": 17,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "evolve",
-          "liberation",
-          "discover"
+          "capitalism",
+          "bind",
+          "handful"
         ]
       },
       {
         "batch": 18,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "basement",
-          "incur",
-          "citizen"
+          "suck",
+          "array",
+          "vice"
         ]
       },
       {
         "batch": 19,
+        "level": "C1",
         "count": 25,
         "sample": [
-          "definite",
-          "slip",
-          "explicitly"
+          "dual",
+          "raid",
+          "deem"
         ]
       },
       {
         "batch": 20,
+        "level": "C1",
         "count": 24,
         "sample": [
-          "via",
-          "escalate",
-          "tv"
+          "evoke",
+          "referendum",
+          "realm"
         ]
       }
     ],

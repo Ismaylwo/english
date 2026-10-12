@@ -22,7 +22,8 @@ import {
   Trophy,
   Smartphone,
   Sparkles,
-  Globe
+  Globe,
+  Lock
 } from 'lucide-react';
 import { CategorySummary, WordItem, WordProgress, UserStats } from '@/types/vocab';
 
@@ -50,6 +51,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
   onOpenDictionary,
 }) => {
   const [selectedCategoryModal, setSelectedCategoryModal] = useState<CategorySummary | null>(null);
+  const [lockedNotice, setLockedNotice] = useState<string | null>(null);
 
   const totalWords = allWords.length || 4991;
   const masteredCount = Object.values(progressMap).filter(p => p.isMastered).length;
@@ -82,6 +84,27 @@ export const Dashboard: React.FC<DashboardProps> = ({
     }
   }
 
+  // Category lock rule: Topic 1 is always unlocked.
+  // Topic N is unlocked ONLY IF Topic N-1 is 100% completed!
+  const isCategoryUnlocked = (catIndex: number): boolean => {
+    if (catIndex === 1) return true;
+    const prevCat = categories.find(c => c.index === catIndex - 1);
+    if (!prevCat) return true;
+    const prevWords = allWords.filter(w => w.categoryId === prevCat.id);
+    const prevMastered = prevWords.filter(w => progressMap[w.id]?.isMastered).length;
+    return prevWords.length > 0 && prevMastered === prevWords.length;
+  };
+
+  // Batch lock rule: Batch 1 is unlocked.
+  // Batch B is unlocked ONLY IF Batch B-1 is 100% mastered!
+  const isBatchUnlocked = (batchNum: number, catId: string): boolean => {
+    if (batchNum === 1) return true;
+    const catWords = allWords.filter(w => w.categoryId === catId);
+    const prevBatchWords = catWords.filter(w => w.categoryBatch === batchNum - 1);
+    const prevMastered = prevBatchWords.filter(w => progressMap[w.id]?.isMastered).length;
+    return prevBatchWords.length > 0 && prevMastered === prevBatchWords.length;
+  };
+
   const getCategoryIcon = (iconName: string) => {
     switch (iconName) {
       case 'Users': return <Users className="w-5 h-5 text-sky-400" />;
@@ -98,8 +121,54 @@ export const Dashboard: React.FC<DashboardProps> = ({
     }
   };
 
+  const renderLevelBadge = (level?: string) => {
+    switch (level?.toUpperCase()) {
+      case 'A1':
+        return (
+          <span className="px-1.5 py-0.5 rounded text-[10px] font-mono font-semibold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
+            A1 Начальный
+          </span>
+        );
+      case 'A2':
+        return (
+          <span className="px-1.5 py-0.5 rounded text-[10px] font-mono font-semibold bg-sky-500/15 text-sky-400 border border-sky-500/30">
+            A2 Базовый
+          </span>
+        );
+      case 'B1':
+        return (
+          <span className="px-1.5 py-0.5 rounded text-[10px] font-mono font-semibold bg-indigo-500/15 text-indigo-400 border border-indigo-500/30">
+            B1 Средний
+          </span>
+        );
+      case 'B2':
+        return (
+          <span className="px-1.5 py-0.5 rounded text-[10px] font-mono font-semibold bg-purple-500/15 text-purple-400 border border-purple-500/30">
+            B2 Продвинутый
+          </span>
+        );
+      case 'C1':
+        return (
+          <span className="px-1.5 py-0.5 rounded text-[10px] font-mono font-semibold bg-amber-500/15 text-amber-400 border border-amber-500/30">
+            C1 Свободный
+          </span>
+        );
+      default:
+        return null;
+    }
+  };
+
   return (
     <div className="w-full max-w-4xl mx-auto px-4 py-8">
+      {/* Toast Notice for locked items */}
+      {lockedNotice && (
+        <div className="fixed top-20 left-1/2 transform -translate-x-1/2 z-50 px-4 py-2.5 rounded-xl bg-amber-500/90 text-slate-950 font-medium text-xs shadow-xl flex items-center gap-2 animate-fade-in">
+          <Lock className="w-3.5 h-3.5" />
+          <span>{lockedNotice}</span>
+          <button onClick={() => setLockedNotice(null)} className="ml-2 font-bold opacity-60 hover:opacity-100">✕</button>
+        </div>
+      )}
+
       {/* Hero Overview Panel */}
       <div className="studio-surface rounded-2xl p-6 sm:p-8 mb-8 relative">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
@@ -137,13 +206,13 @@ export const Dashboard: React.FC<DashboardProps> = ({
 
             <div>
               <span className="text-xs font-medium text-sky-400 mb-1 block">
-                10 жизненных сфер • 5000 слов
+                10 жизненных сфер • От А1 до В2
               </span>
-              <h1 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-                {masteredCount} <span className="text-slate-400 font-normal text-lg">из {totalWords} слов</span>
+              <h1 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                Освоено {masteredCount} из {totalWords} слов
               </h1>
-              <p className="text-xs sm:text-sm text-slate-400 mt-1">
-                Осталось освоить: <span className="text-slate-200 font-medium">{totalWords - masteredCount} слов</span>
+              <p className="text-xs text-slate-400 mt-1 max-w-md">
+                Последовательное прохождение тем: каждое новое слово открывает предложения и живой финальный монолог.
               </p>
             </div>
           </div>
@@ -163,7 +232,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
             {activeCat && (
               <button
                 onClick={() => onStartSession(activeCat.id, activeBatch)}
-                className="py-3 px-5 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold text-sm transition-colors flex items-center justify-center gap-2"
+                className="py-3 px-5 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold text-sm transition-colors flex items-center justify-center gap-2 shadow-lg shadow-sky-500/20"
               >
                 <Play className="w-4 h-4 fill-current" />
                 <span>Тема {activeCat.index} • Блок {activeBatch}</span>
@@ -201,7 +270,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
       <div className="flex items-center justify-between mb-4">
         <div>
           <h2 className="text-base font-semibold text-white tracking-tight">Путь изучения: 10 сфер жизни</h2>
-          <p className="text-xs text-slate-400">Слова по темам + связный финальный монолог в конце каждой сферы</p>
+          <p className="text-xs text-slate-400">Слова по возрастанию сложности (A1 $\rightarrow$ A2 $\rightarrow$ B1 $\rightarrow$ B2) с защитой перехода</p>
         </div>
         <button
           onClick={onOpenDictionary}
@@ -220,23 +289,40 @@ export const Dashboard: React.FC<DashboardProps> = ({
           const catPct = catWords.length > 0 ? Math.round((catMastered / catWords.length) * 100) : 0;
           const isCompleted = catPct === 100;
           const isCurrent = activeCat && activeCat.id === cat.id;
+          const isUnlocked = isCategoryUnlocked(cat.index);
+
+          const handleCategoryClick = () => {
+            if (!isUnlocked) {
+              const prev = categories.find(c => c.index === cat.index - 1);
+              setLockedNotice(`Тема заблокирована. Сначала завершите Тему ${cat.index - 1}: «${prev?.titleRu}»`);
+              setTimeout(() => setLockedNotice(null), 3500);
+              return;
+            }
+            setSelectedCategoryModal(cat);
+          };
 
           return (
             <div
               key={cat.id}
-              onClick={() => setSelectedCategoryModal(cat)}
-              className={`studio-surface rounded-xl p-4 sm:p-5 cursor-pointer transition-colors border group ${
-                isCompleted
-                  ? 'border-emerald-500/30 bg-emerald-950/10'
+              onClick={handleCategoryClick}
+              className={`studio-surface rounded-xl p-4 sm:p-5 transition-all border group ${
+                !isUnlocked
+                  ? 'opacity-60 cursor-not-allowed border-white/[0.04] bg-white/[0.01]'
+                  : isCompleted
+                  ? 'cursor-pointer border-emerald-500/30 bg-emerald-950/10'
                   : isCurrent
-                  ? 'border-sky-500/40 bg-sky-950/10'
-                  : 'border-white/[0.08] hover:border-white/[0.16]'
+                  ? 'cursor-pointer border-sky-500/40 bg-sky-950/10 shadow-lg shadow-sky-500/5'
+                  : 'cursor-pointer border-white/[0.08] hover:border-white/[0.16]'
               }`}
             >
               <div className="flex items-start justify-between gap-4">
                 <div className="flex items-start gap-3.5">
-                  <div className="p-2 rounded-xl bg-white/[0.04] border border-white/[0.08] flex-shrink-0 mt-0.5">
-                    {getCategoryIcon(cat.icon)}
+                  <div className={`p-2 rounded-xl border flex-shrink-0 mt-0.5 ${
+                    !isUnlocked 
+                      ? 'bg-white/[0.02] border-white/[0.04] text-slate-500' 
+                      : 'bg-white/[0.04] border-white/[0.08]'
+                  }`}>
+                    {!isUnlocked ? <Lock className="w-5 h-5 text-slate-500" /> : getCategoryIcon(cat.icon)}
                   </div>
 
                   <div>
@@ -244,24 +330,34 @@ export const Dashboard: React.FC<DashboardProps> = ({
                       <span className="text-xs font-semibold text-slate-400">
                         Тема {cat.index}
                       </span>
-                      <h3 className="text-base font-semibold text-white tracking-tight group-hover:text-sky-300 transition-colors">
+                      <h3 className={`text-base font-semibold tracking-tight transition-colors ${
+                        !isUnlocked ? 'text-slate-400' : 'text-white group-hover:text-sky-300'
+                      }`}>
                         {cat.titleRu}
                       </h3>
-                      {isCompleted && (
+                      {isCompleted ? (
                         <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                      )}
+                      ) : !isUnlocked ? (
+                        <span className="text-[10px] text-slate-500 px-1.5 py-0.5 rounded bg-white/[0.04] border border-white/[0.06] flex items-center gap-1 font-medium">
+                          <Lock className="w-2.5 h-2.5" /> закрыто
+                        </span>
+                      ) : null}
                     </div>
+
                     <p className="text-xs text-slate-400 mt-1 max-w-xl">
                       {cat.descriptionRu}
                     </p>
+
                     <div className="flex items-center gap-3 mt-2 text-xs text-slate-500">
                       <span>{cat.totalWords} слов</span>
                       <span>•</span>
-                      <span>{cat.totalBatches} блоков</span>
+                      <span>{cat.totalBatches} блоков (A1 $\rightarrow$ B2)</span>
                       {cat.monologue && (
                         <>
                           <span>•</span>
-                          <span className="text-sky-400 font-medium flex items-center gap-1">
+                          <span className={`font-medium flex items-center gap-1 ${
+                            isCompleted ? 'text-emerald-400' : isUnlocked ? 'text-sky-400' : 'text-slate-500'
+                          }`}>
                             <Volume2 className="w-3 h-3" /> Финальный монолог
                           </span>
                         </>
@@ -277,7 +373,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
                   <div className="w-20 sm:w-24 h-1 bg-white/[0.08] rounded-full overflow-hidden mt-2">
                     <div
                       className={`h-full rounded-full transition-all duration-300 ${
-                        isCompleted ? 'bg-emerald-400' : 'bg-sky-400'
+                        isCompleted ? 'bg-emerald-400' : isUnlocked ? 'bg-sky-400' : 'bg-slate-600'
                       }`}
                       style={{ width: `${catPct}%` }}
                     />
@@ -291,7 +387,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
 
       {/* Category Detail Modal */}
       {selectedCategoryModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm animate-fade-in">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-fade-in">
           <div className="studio-surface w-full max-w-md rounded-2xl p-6 border border-white/[0.12] shadow-2xl relative max-h-[85vh] flex flex-col">
             <button
               onClick={() => setSelectedCategoryModal(null)}
@@ -308,48 +404,71 @@ export const Dashboard: React.FC<DashboardProps> = ({
                 {selectedCategoryModal.titleRu}
               </h3>
               <p className="text-xs text-slate-400 mt-1">
-                {selectedCategoryModal.totalWords} слов • {selectedCategoryModal.totalBatches} блоков
+                {selectedCategoryModal.totalWords} слов • {selectedCategoryModal.totalBatches} блоков (по 25 слов)
               </p>
             </div>
 
-            {/* Monologue Shortcut Button */}
-            {selectedCategoryModal.monologue && (
-              <div className="mb-4 p-3 rounded-xl bg-sky-500/10 border border-sky-500/25 flex items-center justify-between gap-3">
-                <div>
-                  <span className="text-[11px] font-semibold text-sky-300 block">
-                    Финальный монолог темы
-                  </span>
-                  <p className="text-xs text-white font-medium truncate max-w-[210px]">
-                    {selectedCategoryModal.monologue.titleEn}
-                  </p>
-                </div>
-                <button
-                  onClick={() => {
-                    const cat = selectedCategoryModal;
-                    setSelectedCategoryModal(null);
-                    onOpenMonologue(cat);
-                  }}
-                  className="py-1.5 px-3 rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold text-xs flex items-center gap-1.5 transition-colors"
-                >
-                  <Volume2 className="w-3.5 h-3.5" />
-                  <span>Открыть</span>
-                </button>
-              </div>
-            )}
+            {/* Monologue Shortcut Button with Lock Protection */}
+            {selectedCategoryModal.monologue && (() => {
+              const catWords = allWords.filter(w => w.categoryId === selectedCategoryModal.id);
+              const catMastered = catWords.filter(w => progressMap[w.id]?.isMastered).length;
+              const isMonologueUnlocked = catWords.length > 0 && catMastered === catWords.length;
 
-            {/* Batches List */}
+              return (
+                <div className={`mb-4 p-3 rounded-xl border flex items-center justify-between gap-3 ${
+                  isMonologueUnlocked
+                    ? 'bg-sky-500/10 border-sky-500/30'
+                    : 'bg-white/[0.02] border-white/[0.06]'
+                }`}>
+                  <div>
+                    <span className={`text-[11px] font-semibold block ${
+                      isMonologueUnlocked ? 'text-sky-300' : 'text-slate-400'
+                    }`}>
+                      Финальный монолог темы
+                    </span>
+                    <p className="text-xs text-white font-medium truncate max-w-[210px]">
+                      {selectedCategoryModal.monologue.titleEn}
+                    </p>
+                  </div>
+
+                  {isMonologueUnlocked ? (
+                    <button
+                      onClick={() => {
+                        const cat = selectedCategoryModal;
+                        setSelectedCategoryModal(null);
+                        onOpenMonologue(cat);
+                      }}
+                      className="py-1.5 px-3 rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold text-xs flex items-center gap-1.5 transition-colors shadow-md"
+                    >
+                      <Volume2 className="w-3.5 h-3.5" />
+                      <span>Слушать</span>
+                    </button>
+                  ) : (
+                    <div className="py-1.5 px-2.5 rounded-lg bg-white/[0.04] text-slate-400 text-[11px] flex items-center gap-1 font-medium">
+                      <Lock className="w-3 h-3 text-slate-500" />
+                      <span>{catMastered}/{catWords.length} слов</span>
+                    </div>
+                  )}
+                </div>
+              );
+            })()}
+
+            {/* Batches List with Step-by-Step Lock */}
             <div className="space-y-2.5 overflow-y-auto flex-1 pr-1">
               {selectedCategoryModal.batches.map((b) => {
                 const catWords = allWords.filter(w => w.categoryId === selectedCategoryModal.id);
                 const bWords = catWords.filter(w => w.categoryBatch === b.batch);
                 const bMastered = bWords.filter(w => progressMap[w.id]?.isMastered).length;
                 const bDone = bMastered === bWords.length && bWords.length > 0;
+                const isUnlocked = isBatchUnlocked(b.batch, selectedCategoryModal.id);
 
                 return (
                   <div
                     key={b.batch}
                     className={`p-3.5 rounded-xl border transition-colors ${
-                      bDone
+                      !isUnlocked
+                        ? 'opacity-50 bg-white/[0.01] border-white/[0.04]'
+                        : bDone
                         ? 'bg-emerald-950/15 border-emerald-500/30'
                         : 'bg-white/[0.02] border-white/[0.08]'
                     }`}
@@ -357,7 +476,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
                     <div className="flex items-center justify-between mb-1.5">
                       <div className="flex items-center gap-2">
                         <span className="font-semibold text-sm text-white">Блок {b.batch}</span>
-                        <span className="text-xs text-slate-400">({b.count} слов)</span>
+                        {renderLevelBadge(b.level)}
                         {bDone && <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />}
                       </div>
                       <span className="text-xs font-mono text-slate-400">
@@ -369,33 +488,40 @@ export const Dashboard: React.FC<DashboardProps> = ({
                       {b.sample.join(', ')}...
                     </p>
 
-                    <div className="grid grid-cols-2 gap-2">
-                      <button
-                        onClick={() => {
-                          const catId = selectedCategoryModal.id;
-                          const batchNum = b.batch;
-                          setSelectedCategoryModal(null);
-                          onStartSession(catId, batchNum);
-                        }}
-                        className="py-2 px-3 rounded-lg bg-sky-500/10 hover:bg-sky-500/15 border border-sky-500/25 text-sky-300 text-xs font-medium flex items-center justify-center gap-1.5 transition-colors"
-                      >
-                        <Play className="w-3 h-3 fill-current" />
-                        <span>1. Слова</span>
-                      </button>
+                    {isUnlocked ? (
+                      <div className="grid grid-cols-2 gap-2">
+                        <button
+                          onClick={() => {
+                            const catId = selectedCategoryModal.id;
+                            const batchNum = b.batch;
+                            setSelectedCategoryModal(null);
+                            onStartSession(catId, batchNum);
+                          }}
+                          className="py-2 px-3 rounded-lg bg-sky-500/10 hover:bg-sky-500/15 border border-sky-500/25 text-sky-300 text-xs font-medium flex items-center justify-center gap-1.5 transition-colors"
+                        >
+                          <Play className="w-3 h-3 fill-current" />
+                          <span>1. Слова</span>
+                        </button>
 
-                      <button
-                        onClick={() => {
-                          const catId = selectedCategoryModal.id;
-                          const batchNum = b.batch;
-                          setSelectedCategoryModal(null);
-                          onStartSentencesSession(catId, batchNum);
-                        }}
-                        className="py-2 px-3 rounded-lg bg-indigo-500/10 hover:bg-indigo-500/15 border border-indigo-500/25 text-indigo-300 text-xs font-medium flex items-center justify-center gap-1.5 transition-colors"
-                      >
-                        <MessageSquareText className="w-3 h-3" />
-                        <span>2. Предложения</span>
-                      </button>
-                    </div>
+                        <button
+                          onClick={() => {
+                            const catId = selectedCategoryModal.id;
+                            const batchNum = b.batch;
+                            setSelectedCategoryModal(null);
+                            onStartSentencesSession(catId, batchNum);
+                          }}
+                          className="py-2 px-3 rounded-lg bg-indigo-500/10 hover:bg-indigo-500/15 border border-indigo-500/25 text-indigo-300 text-xs font-medium flex items-center justify-center gap-1.5 transition-colors"
+                        >
+                          <MessageSquareText className="w-3 h-3" />
+                          <span>2. Предложения</span>
+                        </button>
+                      </div>
+                    ) : (
+                      <div className="py-2 px-3 rounded-lg bg-white/[0.02] border border-white/[0.05] text-slate-500 text-xs flex items-center justify-center gap-1.5">
+                        <Lock className="w-3.5 h-3.5" />
+                        <span>Заблокировано (завершите Блок {b.batch - 1})</span>
+                      </div>
+                    )}
                   </div>
                 );
               })}
