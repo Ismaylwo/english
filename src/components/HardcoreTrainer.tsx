@@ -9,7 +9,8 @@ import {
   Zap, 
   AlertTriangle,
   Send,
-  RotateCcw
+  RotateCcw,
+  ArrowRight
 } from 'lucide-react';
 import { WordItem, WordProgress, UserSettings } from '@/types/vocab';
 import { soundFx } from '@/lib/soundFx';
@@ -20,10 +21,12 @@ interface HardcoreTrainerProps {
   batch: number;
   categoryTitle?: string;
   words: WordItem[];
+  isRetryMode?: boolean;
   progressMap: Record<number, WordProgress>;
   settings: UserSettings;
   onRecordResult: (wordId: number, isCorrect: boolean) => WordProgress;
   onBackToDashboard: () => void;
+  onNeedReStudy?: (failedWords: WordItem[]) => void;
   onFinishBatch: (stats: { totalTested: number; mistakes: number; masteredWords: number }) => void;
 }
 
@@ -75,17 +78,19 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
   batch,
   categoryTitle,
   words,
+  isRetryMode = false,
   progressMap,
   settings,
   onRecordResult,
   onBackToDashboard,
+  onNeedReStudy,
   onFinishBatch,
 }) => {
   // Active queue of words to be tested
   const [activeList, setActiveList] = useState<WordItem[]>(() => words);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isReviewPhase, setIsReviewPhase] = useState(false);
-  const [mistakesList, setMistakesList] = useState<WordItem[]>([]);
+  const failedWordsRef = useRef<WordItem[]>([]);
+  const [failedCountInRound, setFailedCountInRound] = useState(0);
 
   const [userInput, setUserInput] = useState('');
   const [inputStatus, setInputStatus] = useState<'idle' | 'success' | 'error' | 'correction'>('idle');
@@ -96,11 +101,21 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
   const inputRef = useRef<HTMLInputElement>(null);
   const currentWord = activeList[currentIndex] || null;
 
+  // Reset when words prop changes (e.g. when entering retry mode with failed words subset)
+  useEffect(() => {
+    setActiveList(words);
+    setCurrentIndex(0);
+    failedWordsRef.current = [];
+    setFailedCountInRound(0);
+    setUserInput('');
+    setInputStatus('idle');
+  }, [words]);
+
   useEffect(() => {
     if (inputRef.current) {
       inputRef.current.focus();
     }
-  }, [currentIndex, inputStatus, isReviewPhase]);
+  }, [currentIndex, inputStatus]);
 
   const speakCurrent = (text?: string) => {
     const toSpeak = text || currentWord?.en;
@@ -109,23 +124,19 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
     }
   };
 
-  const advanceNextCard = (nextMistakes = mistakesList) => {
+  const advanceNextCard = () => {
     if (currentIndex + 1 < activeList.length) {
       setCurrentIndex(prev => prev + 1);
       setInputStatus('idle');
       setUserInput('');
     } else {
       // Reached end of current active list
-      if (!isReviewPhase && nextMistakes.length > 0) {
-        // Move to review phase for words with mistakes
-        setIsReviewPhase(true);
-        setActiveList([...nextMistakes]);
-        setMistakesList([]);
-        setCurrentIndex(0);
-        setInputStatus('idle');
-        setUserInput('');
+      const failed = failedWordsRef.current;
+      if (failed.length > 0 && onNeedReStudy) {
+        // User had mistakes! Go back to Step 1 with ONLY failed words
+        onNeedReStudy([...failed]);
       } else {
-        // Entire batch finished!
+        // 0 mistakes in this round! Entire batch mastered!
         onFinishBatch({
           totalTested: sessionTotalAnswers + 1,
           mistakes: sessionMistakes,
@@ -181,11 +192,10 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
 
       setInputStatus('correction');
 
-      // Add to mistakes list for repetition if not already present
-      let updatedMistakes = mistakesList;
-      if (!mistakesList.some(w => w.id === currentWord.id)) {
-        updatedMistakes = [...mistakesList, currentWord];
-        setMistakesList(updatedMistakes);
+      // Track failed word for re-study loop
+      if (!failedWordsRef.current.some(w => w.id === currentWord.id)) {
+        failedWordsRef.current.push(currentWord);
+        setFailedCountInRound(failedWordsRef.current.length);
       }
     }
   };
@@ -202,10 +212,10 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
     setInputStatus('correction');
     setUserInput('');
 
-    let updatedMistakes = mistakesList;
-    if (!mistakesList.some(w => w.id === currentWord.id)) {
-      updatedMistakes = [...mistakesList, currentWord];
-      setMistakesList(updatedMistakes);
+    // Track failed word for re-study loop
+    if (!failedWordsRef.current.some(w => w.id === currentWord.id)) {
+      failedWordsRef.current.push(currentWord);
+      setFailedCountInRound(failedWordsRef.current.length);
     }
   };
 
@@ -249,9 +259,39 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
                 <span>{combo} подряд</span>
               </div>
             )}
-            <div className="text-xs font-medium text-slate-300 px-2.5 py-1 rounded-lg bg-white/[0.04] border border-white/[0.08]">
-              {categoryTitle ? `${categoryTitle} • Блок ${batch}` : day > 0 ? `День ${day} • Блок ${batch}` : 'Тренировка'}
+            <div className={`flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-lg border ${
+              isRetryMode
+                ? 'bg-amber-500/10 text-amber-300 border-amber-500/25'
+                : 'bg-sky-500/10 text-sky-300 border-sky-500/25'
+            }`}>
+              <Zap className="w-3.5 h-3.5" />
+              <span>{isRetryMode ? `Шаг 2 • Повторный набор (${totalInActive})` : 'Шаг 2 • Проверка набором'}</span>
             </div>
+            <div className="text-xs font-medium text-slate-400 px-2 py-1 rounded-lg bg-white/[0.04] border border-white/[0.08]">
+              {categoryTitle ? `${categoryTitle} • Блок ${batch}` : `Блок ${batch}`}
+            </div>
+          </div>
+        </div>
+
+        {/* 3-Step Visual Breadcrumbs */}
+        <div className="flex items-center justify-center gap-1.5 sm:gap-2 mb-3 text-[11px] font-medium">
+          <div className="flex items-center gap-1.5 px-3 py-1 rounded-full border border-emerald-500/20 bg-emerald-500/5 text-emerald-400">
+            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+            <span>1. Изучено</span>
+          </div>
+          <ArrowRight className="w-3 h-3 text-slate-600" />
+          <div className={`flex items-center gap-1.5 px-3 py-1 rounded-full border transition-all ${
+            isRetryMode
+              ? 'bg-amber-500/15 text-amber-300 border-amber-500/30 font-semibold shadow-sm'
+              : 'bg-sky-500/15 text-sky-300 border-sky-500/30 font-semibold shadow-sm'
+          }`}>
+            <span className="w-4 h-4 rounded-full bg-sky-500/20 text-sky-300 flex items-center justify-center text-[10px] font-bold">2</span>
+            <span>{isRetryMode ? 'Повторный набор' : 'Набор слов'}</span>
+          </div>
+          <ArrowRight className="w-3 h-3 text-slate-600" />
+          <div className="flex items-center gap-1.5 px-3 py-1 rounded-full border border-white/[0.06] bg-white/[0.02] text-slate-500">
+            <span className="w-4 h-4 rounded-full bg-white/[0.05] text-slate-500 flex items-center justify-center text-[10px] font-bold">3</span>
+            <span>Предложения</span>
           </div>
         </div>
 
@@ -259,8 +299,8 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
         <div className="mb-6">
           <div className="flex justify-between items-center text-xs text-slate-400 mb-1.5">
             <span>
-              {isReviewPhase ? (
-                <span className="text-amber-300 font-medium">Закрепление ошибок: </span>
+              {isRetryMode ? (
+                <span className="text-amber-300 font-medium">Повторный набор ошибки: </span>
               ) : (
                 <span>Слово: </span>
               )}
@@ -272,7 +312,7 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
           </div>
           <div className="w-full h-1.5 bg-white/[0.08] rounded-full overflow-hidden">
             <div
-              className={`h-full rounded-full transition-all duration-300 ${isReviewPhase ? 'bg-amber-400' : 'bg-sky-400'}`}
+              className={`h-full rounded-full transition-all duration-300 ${isRetryMode ? 'bg-amber-400' : 'bg-sky-400'}`}
               style={{ width: `${Math.max(4, Math.round((currentStep / totalInActive) * 100))}%` }}
             />
           </div>
@@ -292,7 +332,7 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-1.5">
               <span className="text-[11px] font-medium text-slate-400">
-                {isReviewPhase ? 'Повторный ввод' : `Карточка ${currentStep} / ${totalInActive}`}
+                {isRetryMode ? 'Повторный ввод ошибки' : `Карточка ${currentStep} / ${totalInActive}`}
               </span>
             </div>
 
@@ -415,7 +455,10 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
 
       {/* Bottom stats helper */}
       <div className="mt-6 flex items-center justify-between text-xs text-slate-400 border-t border-white/[0.06] pt-3">
-        <span>Ошибок в сессии: <strong className="text-rose-400">{sessionMistakes}</strong></span>
+        <span>
+          Ошибок в раунде: <strong className={failedCountInRound > 0 ? "text-rose-400 font-bold" : "text-slate-400"}>{failedCountInRound}</strong>
+          {failedCountInRound > 0 && <span className="text-amber-400/80 ml-1 text-[11px]">(пойдут на повтор к Шагу 1)</span>}
+        </span>
         <span>Текущий комбо: <strong className="text-amber-400">{combo}</strong></span>
       </div>
     </div>

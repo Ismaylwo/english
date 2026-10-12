@@ -22,7 +22,7 @@ const DEFAULT_SETTINGS: UserSettings = {
   autoPronounce: true,
   soundFx: true,
   voiceSpeed: 0.95,
-  strictLevel: 2, // 2 consecutive correct inputs = mastered
+  strictLevel: 1, // 1 error-free cycle = mastered
 };
 
 const DEFAULT_STATS: UserStats = {
@@ -156,6 +156,33 @@ export class StorageManager {
     this.scheduleServerSync();
 
     return updated;
+  }
+
+  public markWordsAsMastered(wordIds: number[]) {
+    const now = new Date().toISOString();
+    let newlyMastered = 0;
+    for (const id of wordIds) {
+      const prev = this.state.progress[id] || {
+        masteryLevel: 0,
+        mistakesCount: 0,
+        correctCount: 0,
+        lastReviewed: now,
+        isMastered: false,
+      };
+      if (!prev.isMastered) {
+        newlyMastered++;
+      }
+      this.state.progress[id] = {
+        ...prev,
+        masteryLevel: Math.max(prev.masteryLevel, 1),
+        lastReviewed: now,
+        isMastered: true,
+      };
+    }
+    this.state.stats.todayMasteredCount += newlyMastered;
+    this.state.stats.lastActiveDate = getTodayKey();
+    this.saveLocal();
+    this.scheduleServerSync();
   }
 
   public updateSettings(newSettings: Partial<UserSettings>) {

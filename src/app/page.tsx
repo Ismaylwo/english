@@ -8,6 +8,7 @@ import { storage } from '@/lib/storage';
 import { soundFx } from '@/lib/soundFx';
 import { Header } from '@/components/Header';
 import { Dashboard } from '@/components/Dashboard';
+import { StudyCards } from '@/components/StudyCards';
 import { HardcoreTrainer } from '@/components/HardcoreTrainer';
 import { SentenceTrainer } from '@/components/SentenceTrainer';
 import { MonologueViewer } from '@/components/MonologueViewer';
@@ -21,7 +22,7 @@ const categories = categoriesData as unknown as CategorySummary[];
 export default function Home() {
   const [isMounted, setIsMounted] = useState(false);
   const [appState, setAppState] = useState<AppStateData | null>(null);
-  const [activeView, setActiveView] = useState<'dashboard' | 'trainer' | 'sentences' | 'monologue'>('dashboard');
+  const [activeView, setActiveView] = useState<'dashboard' | 'study' | 'trainer' | 'sentences' | 'monologue'>('dashboard');
   const [selectedMonologueCategory, setSelectedMonologueCategory] = useState<CategorySummary | null>(null);
   
   // Trainer session parameters
@@ -30,8 +31,9 @@ export default function Home() {
     categoryTitle?: string;
     day: number;
     batch: number;
-    words: WordItem[];
-    isMistakesMode?: boolean;
+    words: WordItem[];           // Full batch of words
+    activeQueue: WordItem[];     // Current words being studied / typed
+    isRetryMode?: boolean;       // True if this is an error retry round
   } | null>(null);
 
   // Modals state
@@ -78,7 +80,7 @@ export default function Home() {
     return res;
   };
 
-  // Start words session for a category and batch
+  // Start words session for a category and batch -> Begins with Step 1 (Изучение)!
   const handleStartSession = (categoryId: string, batch: number) => {
     const sessionWords = allWords.filter(
       w => (w.categoryId === categoryId || String(w.day) === categoryId) && 
@@ -94,9 +96,44 @@ export default function Home() {
       day: cat ? cat.index : Number(categoryId) || 1,
       batch,
       words: sessionWords,
-      isMistakesMode: false,
+      activeQueue: sessionWords,
+      isRetryMode: false,
     });
+    setActiveView('study');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Step 1 completed -> transition to Step 2 (Typing)!
+  const handleFinishStudy = (wordsToTest: WordItem[]) => {
+    if (!currentSession) return;
     setActiveView('trainer');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Step 2 failed words callback -> Loop back to Step 1 for ONLY failed words!
+  const handleNeedReStudy = (failedWords: WordItem[]) => {
+    if (!currentSession) return;
+    soundFx.triggerHaptic('error');
+    setCurrentSession({
+      ...currentSession,
+      activeQueue: failedWords,
+      isRetryMode: true,
+    });
+    setActiveView('study');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Step 2 finished with 0 errors! -> Advance immediately to Step 3 (Sentences)!
+  const handleFinishWordsBatch = (stats: { totalTested: number; mistakes: number; masteredWords: number }) => {
+    if (!currentSession) return;
+    soundFx.playSuccess();
+    // Advance directly to Step 3 (SentenceTrainer) with the batch words!
+    setCurrentSession({
+      ...currentSession,
+      activeQueue: currentSession.words,
+      isRetryMode: false,
+    });
+    setActiveView('sentences');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -116,7 +153,8 @@ export default function Home() {
       day: cat ? cat.index : Number(categoryId) || 1,
       batch,
       words: sessionWords,
-      isMistakesMode: false,
+      activeQueue: sessionWords,
+      isRetryMode: false,
     });
     setActiveView('sentences');
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -139,36 +177,27 @@ export default function Home() {
 
     if (mistakeWords.length === 0) return;
 
+    const reviewWords = mistakeWords.slice(0, 30);
     setCurrentSession({
       categoryId: undefined,
       categoryTitle: 'Повторение ошибок',
       day: 0,
       batch: 0,
-      words: mistakeWords.slice(0, 30),
-      isMistakesMode: true,
+      words: reviewWords,
+      activeQueue: reviewWords,
+      isRetryMode: true,
     });
-    setActiveView('trainer');
+    setActiveView('study');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Words batch completion handler -> prompts transition to sentences!
-  const handleFinishWordsBatch = (stats: { totalTested: number; mistakes: number; masteredWords: number }) => {
-    if (!currentSession) return;
-    setCompletedBatchStats({
-      categoryId: currentSession.categoryId,
-      categoryTitle: currentSession.categoryTitle,
-      day: currentSession.day,
-      batch: currentSession.batch,
-      totalTested: stats.totalTested,
-      mistakes: stats.mistakes,
-      masteredWords: stats.masteredWords,
-      isSentencesMode: false,
-    });
-  };
-
-  // Sentences completion handler
+  // Step 3 (Sentences) completion handler -> marks batch words mastered and triggers summary!
   const handleFinishSentences = (stats: { totalTested: number; mistakes: number }) => {
     if (!currentSession) return;
+    // Mark words as mastered so the next batch unlocks!
+    storage.markWordsAsMastered(currentSession.words.map(w => w.id));
+    setAppState({ ...storage.getState() });
+
     setCompletedBatchStats({
       categoryId: currentSession.categoryId,
       categoryTitle: currentSession.categoryTitle,
@@ -294,20 +323,35 @@ export default function Home() {
             onStartMistakesReview={handleStartMistakesReview}
             onOpenDictionary={() => setShowDictionary(true)}
           />
+        ) : activeView === 'study' && currentSession ? (
+          <StudyCards
+            key={`study-${currentSession.batch}-${currentSession.isRetryMode ? 'retry' : 'init'}-${currentSession.activeQueue.map(w => w.id).join('-')}`}
+            words={currentSession.activeQueue}
+            categoryTitle={currentSession.categoryTitle}
+            batch={currentSession.batch}
+            isRetryMode={currentSession.isRetryMode}
+            settings={appState.settings}
+            onFinishStudy={handleFinishStudy}
+            onBackToDashboard={() => setActiveView('dashboard')}
+          />
         ) : activeView === 'trainer' && currentSession ? (
           <HardcoreTrainer
+            key={`trainer-${currentSession.batch}-${currentSession.isRetryMode ? 'retry' : 'init'}-${currentSession.activeQueue.map(w => w.id).join('-')}`}
             day={currentSession.day}
             batch={currentSession.batch}
             categoryTitle={currentSession.categoryTitle}
-            words={currentSession.words}
+            words={currentSession.activeQueue}
+            isRetryMode={currentSession.isRetryMode}
             progressMap={appState.progress}
             settings={appState.settings}
             onRecordResult={handleRecordResult}
             onBackToDashboard={() => setActiveView('dashboard')}
+            onNeedReStudy={handleNeedReStudy}
             onFinishBatch={handleFinishWordsBatch}
           />
         ) : activeView === 'sentences' && currentSession ? (
           <SentenceTrainer
+            key={`sentences-${currentSession.batch}-${currentSession.words.map(w => w.id).join('-')}`}
             day={currentSession.day}
             batch={currentSession.batch}
             categoryTitle={currentSession.categoryTitle}

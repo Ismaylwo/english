@@ -9,7 +9,8 @@ import {
   Zap, 
   AlertTriangle,
   Send,
-  MessageSquareText
+  MessageSquareText,
+  ArrowRight
 } from 'lucide-react';
 import { WordItem, UserSettings } from '@/types/vocab';
 import { soundFx } from '@/lib/soundFx';
@@ -58,6 +59,17 @@ export const SentenceTrainer: React.FC<SentenceTrainerProps> = ({
   const [sessionTotalAnswers, setSessionTotalAnswers] = useState(0);
 
   const inputRef = useRef<HTMLInputElement>(null);
+
+  // Re-shuffle when words array changes
+  useEffect(() => {
+    const list = words.filter(w => w.example && w.example.en);
+    setActiveList(shuffleArray(list));
+    setCurrentIndex(0);
+    setIsReviewPhase(false);
+    setMistakesList([]);
+    setUserInput('');
+    setInputStatus('idle');
+  }, [words]);
 
   const currentWord = activeList[currentIndex] || null;
   const example = currentWord?.example || null;
@@ -206,8 +218,26 @@ export const SentenceTrainer: React.FC<SentenceTrainerProps> = ({
             )}
             <div className="flex items-center gap-1.5 text-xs font-medium text-indigo-300 px-2.5 py-1 rounded-lg bg-indigo-500/10 border border-indigo-500/20">
               <MessageSquareText className="w-3.5 h-3.5" />
-              <span>{categoryTitle ? `${categoryTitle} • Фразы ${batch}` : `Предложения • Блок ${batch}`}</span>
+              <span>{categoryTitle ? `${categoryTitle} • Шаг 3 • Фразы ${batch}` : `Шаг 3 • Предложения • Блок ${batch}`}</span>
             </div>
+          </div>
+        </div>
+
+        {/* 3-Step Visual Breadcrumbs */}
+        <div className="flex items-center justify-center gap-1.5 sm:gap-2 mb-3 text-[11px] font-medium">
+          <div className="flex items-center gap-1.5 px-3 py-1 rounded-full border border-emerald-500/20 bg-emerald-500/5 text-emerald-400">
+            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+            <span>1. Изучено</span>
+          </div>
+          <ArrowRight className="w-3 h-3 text-slate-600" />
+          <div className="flex items-center gap-1.5 px-3 py-1 rounded-full border border-emerald-500/20 bg-emerald-500/5 text-emerald-400">
+            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+            <span>2. Набрано</span>
+          </div>
+          <ArrowRight className="w-3 h-3 text-slate-600" />
+          <div className="flex items-center gap-1.5 px-3 py-1 rounded-full border bg-indigo-500/15 text-indigo-300 border-indigo-500/30 font-semibold shadow-sm">
+            <span className="w-4 h-4 rounded-full bg-indigo-500/20 text-indigo-300 flex items-center justify-center text-[10px] font-bold">3</span>
+            <span>Предложения</span>
           </div>
         </div>
 

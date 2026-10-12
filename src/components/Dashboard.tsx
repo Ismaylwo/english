@@ -497,10 +497,10 @@ export const Dashboard: React.FC<DashboardProps> = ({
                             setSelectedCategoryModal(null);
                             onStartSession(catId, batchNum);
                           }}
-                          className="py-2 px-3 rounded-lg bg-sky-500/10 hover:bg-sky-500/15 border border-sky-500/25 text-sky-300 text-xs font-medium flex items-center justify-center gap-1.5 transition-colors"
+                          className="py-2 px-3 rounded-lg bg-sky-500/10 hover:bg-sky-500/15 border border-sky-500/25 text-sky-300 text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors"
                         >
                           <Play className="w-3 h-3 fill-current" />
-                          <span>1. Слова</span>
+                          <span>Изучить блок</span>
                         </button>
 
                         <button
@@ -513,7 +513,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
                           className="py-2 px-3 rounded-lg bg-indigo-500/10 hover:bg-indigo-500/15 border border-indigo-500/25 text-indigo-300 text-xs font-medium flex items-center justify-center gap-1.5 transition-colors"
                         >
                           <MessageSquareText className="w-3 h-3" />
-                          <span>2. Предложения</span>
+                          <span>Фразы (Шаг 3)</span>
                         </button>
                       </div>
                     ) : (
