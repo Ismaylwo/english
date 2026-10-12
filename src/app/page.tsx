@@ -296,7 +296,7 @@ export default function Home() {
   );
 
   return (
-    <div className="min-h-screen bg-[#0d1117] text-slate-100 flex flex-col font-sans selection:bg-sky-500/20 selection:text-sky-200">
+    <div className="h-[100dvh] max-h-[100dvh] overflow-hidden bg-[#0d1117] text-slate-100 flex flex-col font-sans selection:bg-sky-500/20 selection:text-sky-200">
       {/* Global Header */}
       <Header
         stats={appState.stats}
@@ -310,7 +310,7 @@ export default function Home() {
       />
 
       {/* Main Content Area */}
-      <main className="flex-1 pb-12">
+      <main className={`flex-1 flex flex-col min-h-0 ${activeView === 'dashboard' ? 'overflow-y-auto pb-12' : 'overflow-hidden justify-center'}`}>
         {activeView === 'dashboard' ? (
           <Dashboard
             categories={categories}

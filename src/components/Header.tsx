@@ -43,26 +43,26 @@ export const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-[#0d1117]/90 backdrop-blur-md border-b border-white/[0.08] px-4 py-3">
+    <header className="sticky top-0 z-40 w-full bg-[#0d1117]/90 backdrop-blur-md border-b border-white/[0.08] px-4 py-2 sm:py-2.5">
       <div className="max-w-4xl mx-auto flex items-center justify-between gap-3">
         {/* Brand / Logo */}
         <button
           onClick={onHomeClick}
-          className="flex items-center gap-3 text-left group transition-opacity active:opacity-75"
+          className="flex items-center gap-2.5 text-left group transition-opacity active:opacity-75"
         >
-          <div className="w-8 h-8 rounded-lg bg-sky-500/15 border border-sky-500/30 flex items-center justify-center text-sky-400 font-bold text-sm tracking-tight">
+          <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-sky-500/15 border border-sky-500/30 flex items-center justify-center text-sky-400 font-bold text-xs sm:text-sm tracking-tight">
             5K
           </div>
           <div>
-            <div className="flex items-center gap-2">
-              <span className="font-semibold text-sm tracking-tight text-white">
+            <div className="flex items-center gap-1.5">
+              <span className="font-semibold text-xs sm:text-sm tracking-tight text-white">
                 Vocab Studio
               </span>
-              <span className="text-[11px] font-medium px-1.5 py-0.2 rounded bg-white/[0.06] text-slate-400 border border-white/[0.06]">
+              <span className="text-[10px] font-medium px-1.5 py-0.2 rounded bg-white/[0.06] text-slate-400 border border-white/[0.06] hidden sm:inline-block">
                 30 дней
               </span>
             </div>
-            <p className="text-[11px] text-slate-400">Спринт 5000 слов</p>
+            <p className="text-[10px] text-slate-400 hidden sm:block">Спринт 5000 слов</p>
           </div>
         </button>
 

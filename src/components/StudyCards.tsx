@@ -100,10 +100,10 @@ export const StudyCards: React.FC<StudyCardsProps> = ({
   };
 
   return (
-    <div className="w-full max-w-lg mx-auto px-4 py-3 flex flex-col justify-between min-h-[calc(100vh-70px)] sm:min-h-0 sm:py-6">
+    <div className="w-full max-w-sm sm:max-w-md mx-auto px-3 sm:px-4 py-2 flex flex-col justify-center flex-1 my-auto">
       <div>
         {/* Navigation Bar */}
-        <div className="flex items-center justify-between gap-2 mb-2 sm:mb-3">
+        <div className="flex items-center justify-between gap-2 mb-1.5 sm:mb-2">
           <button
             onClick={onBackToDashboard}
             className="flex items-center gap-1.5 text-xs font-medium text-slate-400 hover:text-white px-2.5 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.08] transition-colors"
@@ -113,13 +113,13 @@ export const StudyCards: React.FC<StudyCardsProps> = ({
           </button>
 
           <div className="flex items-center gap-2">
-            <div className={`flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-lg border ${
+            <div className={`flex items-center gap-1.5 text-xs font-medium px-2 py-1 rounded-lg border ${
               isRetryMode
                 ? 'bg-amber-500/10 text-amber-300 border-amber-500/25'
                 : 'bg-emerald-500/10 text-emerald-300 border-emerald-500/25'
             }`}>
               <BookOpen className="w-3.5 h-3.5" />
-              <span>{isRetryMode ? `Повтор ошибок (${words.length})` : 'Шаг 1 • Изучение'}</span>
+              <span>{isRetryMode ? `Повтор (${words.length})` : 'Шаг 1 • Изучение'}</span>
             </div>
             <div className="text-xs font-medium text-slate-400 px-2 py-1 rounded-lg bg-white/[0.04] border border-white/[0.08]">
               {categoryTitle ? `${categoryTitle} • Блок ${batch}` : `Блок ${batch}`}
@@ -128,36 +128,36 @@ export const StudyCards: React.FC<StudyCardsProps> = ({
         </div>
 
         {/* 3-Step Visual Breadcrumbs */}
-        <div className="flex items-center justify-center gap-1.5 sm:gap-2 mb-2.5 text-[11px] font-medium">
-          <div className={`flex items-center gap-1.5 px-3 py-0.5 rounded-full border transition-all ${
+        <div className="flex items-center justify-center gap-1 sm:gap-2 mb-1.5 text-[10px] sm:text-[11px] font-medium">
+          <div className={`flex items-center gap-1 px-2.5 py-0.5 rounded-full border transition-all ${
             isRetryMode
               ? 'bg-amber-500/15 text-amber-300 border-amber-500/30 font-semibold shadow-sm'
               : 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30 font-semibold shadow-sm'
           }`}>
-            <span className="w-3.5 h-3.5 rounded-full bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-[10px] font-bold">1</span>
+            <span className="w-3.5 h-3.5 rounded-full bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-[9px] font-bold">1</span>
             <span>{isRetryMode ? 'Повтор' : 'Изучение'}</span>
           </div>
           <ArrowRight className="w-3 h-3 text-slate-600" />
-          <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border border-white/[0.06] bg-white/[0.02] text-slate-500">
-            <span className="w-3.5 h-3.5 rounded-full bg-white/[0.05] text-slate-500 flex items-center justify-center text-[10px] font-bold">2</span>
+          <div className="flex items-center gap-1 px-2 py-0.5 rounded-full border border-white/[0.06] bg-white/[0.02] text-slate-500">
+            <span className="w-3.5 h-3.5 rounded-full bg-white/[0.05] text-slate-500 flex items-center justify-center text-[9px] font-bold">2</span>
             <span>Набор</span>
           </div>
           <ArrowRight className="w-3 h-3 text-slate-600" />
-          <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border border-white/[0.06] bg-white/[0.02] text-slate-500">
-            <span className="w-3.5 h-3.5 rounded-full bg-white/[0.05] text-slate-500 flex items-center justify-center text-[10px] font-bold">3</span>
+          <div className="flex items-center gap-1 px-2 py-0.5 rounded-full border border-white/[0.06] bg-white/[0.02] text-slate-500">
+            <span className="w-3.5 h-3.5 rounded-full bg-white/[0.05] text-slate-500 flex items-center justify-center text-[9px] font-bold">3</span>
             <span>Предложения</span>
           </div>
         </div>
 
         {/* Step-by-Step Progress Bar */}
-        <div className="mb-3 sm:mb-4">
-          <div className="flex justify-between items-center text-xs text-slate-400 mb-1">
+        <div className="mb-2 sm:mb-2.5">
+          <div className="flex justify-between items-center text-[11px] text-slate-400 mb-0.5">
             <span>
               Карточка: <strong className="text-white font-medium">{currentIndex + 1}</strong> из {words.length}
             </span>
             <span className="font-mono text-slate-400">{progressPercent}%</span>
           </div>
-          <div className="w-full h-1.5 bg-white/[0.08] rounded-full overflow-hidden">
+          <div className="w-full h-1 bg-white/[0.08] rounded-full overflow-hidden">
             <div
               className={`h-full rounded-full transition-all duration-300 ${isRetryMode ? 'bg-amber-400' : 'bg-emerald-400'}`}
               style={{ width: `${progressPercent}%` }}
@@ -166,12 +166,12 @@ export const StudyCards: React.FC<StudyCardsProps> = ({
         </div>
 
         {/* Compact & Focal Study Card */}
-        <div className="studio-surface rounded-2xl p-5 sm:p-7 border border-white/[0.1] shadow-2xl relative">
+        <div className="studio-surface rounded-2xl p-4 sm:p-5 border border-white/[0.1] shadow-xl relative">
           {/* Card Top Meta */}
-          <div className="flex items-center justify-between mb-3">
+          <div className="flex items-center justify-between mb-1.5">
             <div className="flex items-center gap-2">
               {renderLevelBadge(currentWord.level)}
-              <span className="text-[11px] font-mono text-slate-500">
+              <span className="text-[10px] font-mono text-slate-500">
                 {currentWord.cleanEn.length} букв
               </span>
             </div>
@@ -179,48 +179,48 @@ export const StudyCards: React.FC<StudyCardsProps> = ({
             <button
               onClick={speakCurrentWord}
               title="Прослушать произношение"
-              className="p-2 rounded-xl bg-sky-500/10 hover:bg-sky-500/20 text-sky-400 hover:text-white transition-colors border border-sky-500/20"
+              className="p-1.5 rounded-lg bg-sky-500/10 hover:bg-sky-500/20 text-sky-400 hover:text-white transition-colors border border-sky-500/20"
             >
-              <Volume2 className="w-5 h-5" />
+              <Volume2 className="w-4 h-4" />
             </button>
           </div>
 
           {/* Focal English Word */}
-          <div className="text-center py-4 border-b border-white/[0.06]">
-            <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight mb-2">
+          <div className="text-center py-2.5 sm:py-3 border-b border-white/[0.06]">
+            <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight mb-1">
               {currentWord.en}
             </h2>
             {currentWord.note && (
-              <p className="text-xs text-slate-400 italic mb-1.5">
+              <p className="text-[11px] text-slate-400 italic mb-1">
                 ({currentWord.note})
               </p>
             )}
             <button
               onClick={speakCurrentWord}
-              className="inline-flex items-center gap-1.5 text-xs text-sky-400 hover:text-sky-300 transition-colors"
+              className="inline-flex items-center gap-1 text-[11px] text-sky-400 hover:text-sky-300 transition-colors"
             >
-              <Volume2 className="w-3.5 h-3.5" />
+              <Volume2 className="w-3 h-3" />
               <span>Прослушать произношение</span>
             </button>
           </div>
 
           {/* Translations (RU & TJ) */}
-          <div className="py-4 space-y-2.5 text-center">
+          <div className="py-2.5 sm:py-3 space-y-1.5 text-center">
             <div>
-              <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider block mb-0.5">
+              <span className="text-[9px] uppercase font-bold text-slate-500 tracking-wider block mb-0.5">
                 Русский перевод
               </span>
-              <p className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+              <p className="text-lg sm:text-2xl font-bold text-white tracking-tight">
                 {currentWord.ru}
               </p>
             </div>
 
             {currentWord.tj && (
-              <div className="pt-2 border-t border-white/[0.04]">
-                <span className="text-[10px] uppercase font-bold text-sky-500/70 tracking-wider block mb-0.5">
+              <div className="pt-1.5 border-t border-white/[0.04]">
+                <span className="text-[9px] uppercase font-bold text-sky-500/70 tracking-wider block mb-0.5">
                   Тарҷума ба тоҷикӣ
                 </span>
-                <p className="text-lg sm:text-xl font-medium text-sky-300">
+                <p className="text-sm sm:text-base font-medium text-sky-300">
                   {currentWord.tj}
                 </p>
               </div>
@@ -230,20 +230,20 @@ export const StudyCards: React.FC<StudyCardsProps> = ({
       </div>
 
       {/* Navigation Action Buttons */}
-      <div className="mt-4 pt-3 border-t border-white/[0.06] flex items-center gap-3">
+      <div className="mt-2.5 pt-2 border-t border-white/[0.06] flex items-center gap-2">
         {currentIndex > 0 && (
           <button
             onClick={handlePrev}
-            className="py-3 px-4 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] text-slate-300 text-xs font-semibold border border-white/[0.08] transition-colors flex items-center gap-1.5"
+            className="py-2.5 px-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] text-slate-300 text-xs font-semibold border border-white/[0.08] transition-colors flex items-center gap-1.5"
           >
-            <ArrowLeft className="w-4 h-4" />
+            <ArrowLeft className="w-3.5 h-3.5" />
             <span>Назад</span>
           </button>
         )}
 
         <button
           onClick={handleNext}
-          className={`flex-1 py-3.5 px-5 rounded-xl font-bold text-sm transition-all flex items-center justify-center gap-2 shadow-lg ${
+          className={`flex-1 py-2.5 sm:py-3 px-4 rounded-xl font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 shadow-lg ${
             currentIndex + 1 === words.length
               ? 'bg-sky-500 hover:bg-sky-400 text-slate-950 shadow-sky-500/25'
               : 'bg-emerald-500 hover:bg-emerald-400 text-slate-950 shadow-emerald-500/25'
@@ -252,12 +252,12 @@ export const StudyCards: React.FC<StudyCardsProps> = ({
           {currentIndex + 1 === words.length ? (
             <>
               <span>{isRetryMode ? 'Перейти к набору ошибок (Шаг 2)' : 'Перейти к проверке набором (Шаг 2)'}</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-3.5 h-3.5" />
             </>
           ) : (
             <>
               <span>Понятно, дальше</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-3.5 h-3.5" />
             </>
           )}
         </button>

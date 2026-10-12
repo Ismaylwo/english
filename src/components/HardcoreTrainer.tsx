@@ -240,10 +240,10 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
   const progressPercent = Math.round(((currentIndex) / totalInActive) * 100);
 
   return (
-    <div className="w-full max-w-xl mx-auto px-4 py-6 flex flex-col min-h-[calc(100vh-65px)] justify-between">
+    <div className="w-full max-w-sm sm:max-w-md mx-auto px-3 sm:px-4 py-2 flex flex-col justify-center flex-1 my-auto">
       <div>
         {/* Navigation Bar */}
-        <div className="flex items-center justify-between gap-2 mb-4">
+        <div className="flex items-center justify-between gap-2 mb-1.5 sm:mb-2">
           <button
             onClick={onBackToDashboard}
             className="flex items-center gap-1.5 text-xs font-medium text-slate-400 hover:text-white px-2.5 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.08] transition-colors"
@@ -254,9 +254,9 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
 
           <div className="flex items-center gap-2">
             {combo > 1 && (
-              <div className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-300 text-xs font-medium">
+              <div className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-300 text-xs font-medium">
                 <Zap className="w-3 h-3 fill-amber-400 text-amber-400" />
-                <span>{combo} подряд</span>
+                <span>{combo}</span>
               </div>
             )}
             <div className={`flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-lg border ${
@@ -265,7 +265,7 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
                 : 'bg-sky-500/10 text-sky-300 border-sky-500/25'
             }`}>
               <Zap className="w-3.5 h-3.5" />
-              <span>{isRetryMode ? `Шаг 2 • Повторный набор (${totalInActive})` : 'Шаг 2 • Проверка набором'}</span>
+              <span>{isRetryMode ? `Шаг 2 • Повтор (${totalInActive})` : 'Шаг 2 • Набор'}</span>
             </div>
             <div className="text-xs font-medium text-slate-400 px-2 py-1 rounded-lg bg-white/[0.04] border border-white/[0.08]">
               {categoryTitle ? `${categoryTitle} • Блок ${batch}` : `Блок ${batch}`}
@@ -274,30 +274,30 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
         </div>
 
         {/* 3-Step Visual Breadcrumbs */}
-        <div className="flex items-center justify-center gap-1.5 sm:gap-2 mb-3 text-[11px] font-medium">
-          <div className="flex items-center gap-1.5 px-3 py-1 rounded-full border border-emerald-500/20 bg-emerald-500/5 text-emerald-400">
+        <div className="flex items-center justify-center gap-1 sm:gap-2 mb-1.5 text-[10px] sm:text-[11px] font-medium">
+          <div className="flex items-center gap-1 px-2.5 py-0.5 rounded-full border border-emerald-500/20 bg-emerald-500/5 text-emerald-400">
             <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
             <span>1. Изучено</span>
           </div>
           <ArrowRight className="w-3 h-3 text-slate-600" />
-          <div className={`flex items-center gap-1.5 px-3 py-1 rounded-full border transition-all ${
+          <div className={`flex items-center gap-1.5 px-3 py-0.5 rounded-full border transition-all ${
             isRetryMode
               ? 'bg-amber-500/15 text-amber-300 border-amber-500/30 font-semibold shadow-sm'
               : 'bg-sky-500/15 text-sky-300 border-sky-500/30 font-semibold shadow-sm'
           }`}>
-            <span className="w-4 h-4 rounded-full bg-sky-500/20 text-sky-300 flex items-center justify-center text-[10px] font-bold">2</span>
+            <span className="w-3.5 h-3.5 rounded-full bg-sky-500/20 text-sky-300 flex items-center justify-center text-[9px] font-bold">2</span>
             <span>{isRetryMode ? 'Повторный набор' : 'Набор слов'}</span>
           </div>
           <ArrowRight className="w-3 h-3 text-slate-600" />
-          <div className="flex items-center gap-1.5 px-3 py-1 rounded-full border border-white/[0.06] bg-white/[0.02] text-slate-500">
-            <span className="w-4 h-4 rounded-full bg-white/[0.05] text-slate-500 flex items-center justify-center text-[10px] font-bold">3</span>
+          <div className="flex items-center gap-1 px-2 py-0.5 rounded-full border border-white/[0.06] bg-white/[0.02] text-slate-500">
+            <span className="w-3.5 h-3.5 rounded-full bg-white/[0.05] text-slate-500 flex items-center justify-center text-[9px] font-bold">3</span>
             <span>Предложения</span>
           </div>
         </div>
 
         {/* Clear Step-by-Step Progress Bar */}
-        <div className="mb-6">
-          <div className="flex justify-between items-center text-xs text-slate-400 mb-1.5">
+        <div className="mb-2 sm:mb-2.5">
+          <div className="flex justify-between items-center text-[11px] text-slate-400 mb-0.5">
             <span>
               {isRetryMode ? (
                 <span className="text-amber-300 font-medium">Повторный набор ошибки: </span>
@@ -310,7 +310,7 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
               {Math.min(100, Math.round((currentStep / totalInActive) * 100))}%
             </span>
           </div>
-          <div className="w-full h-1.5 bg-white/[0.08] rounded-full overflow-hidden">
+          <div className="w-full h-1 bg-white/[0.08] rounded-full overflow-hidden">
             <div
               className={`h-full rounded-full transition-all duration-300 ${isRetryMode ? 'bg-amber-400' : 'bg-sky-400'}`}
               style={{ width: `${Math.max(4, Math.round((currentStep / totalInActive) * 100))}%` }}
@@ -320,7 +320,7 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
 
         {/* Focal Word Card */}
         <div 
-          className={`studio-surface rounded-2xl p-6 sm:p-8 relative transition-colors ${
+          className={`studio-surface rounded-2xl p-4 sm:p-5 relative transition-colors ${
             inputStatus === 'error' || inputStatus === 'correction'
               ? 'border-rose-500/50 animate-micro-shake'
               : inputStatus === 'success'
@@ -329,9 +329,9 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
           }`}
         >
           {/* Card Meta Row */}
-          <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center justify-between mb-1.5">
             <div className="flex items-center gap-1.5">
-              <span className="text-[11px] font-medium text-slate-400">
+              <span className="text-[10px] font-medium text-slate-400">
                 {isRetryMode ? 'Повторный ввод ошибки' : `Карточка ${currentStep} / ${totalInActive}`}
               </span>
             </div>
@@ -339,37 +339,37 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
             <button
               onClick={() => speakCurrent()}
               title="Прослушать произношение"
-              className="p-1.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] text-slate-300 hover:text-white transition-colors"
+              className="p-1 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] text-slate-300 hover:text-white transition-colors"
             >
-              <Volume2 className="w-4 h-4" />
+              <Volume2 className="w-3.5 h-3.5" />
             </button>
           </div>
 
           {/* Focal Subject: Target Word Prompt */}
-          <div className="text-center py-6 sm:py-8">
+          <div className="text-center py-2.5 sm:py-3.5">
             {(settings.language === 'ru' || settings.language === 'both') && (
-              <div className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-2">
+              <div className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-1">
                 {currentWord.ru}
               </div>
             )}
 
             {(settings.language === 'tj' || settings.language === 'both') && (
-              <div className="text-base sm:text-lg text-sky-300/80 font-normal">
+              <div className="text-sm sm:text-base text-sky-300/80 font-normal">
                 {currentWord.tj}
               </div>
             )}
 
-            <div className="flex items-center justify-center gap-2 mt-4 text-xs text-slate-400">
-              <span className="px-2 py-0.5 rounded bg-white/[0.04] border border-white/[0.06] font-mono">
+            <div className="flex items-center justify-center gap-2 mt-2 text-xs text-slate-400">
+              <span className="px-1.5 py-0.2 rounded bg-white/[0.04] border border-white/[0.06] font-mono text-[10px]">
                 {currentWord.cleanEn.length} букв
               </span>
               {currentWord.level && (
-                <span className="px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 font-medium">
+                <span className="px-1.5 py-0.2 rounded bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 text-[10px] font-medium">
                   {currentWord.level}
                 </span>
               )}
               {currentWord.note && (
-                <span className="text-slate-400 italic">
+                <span className="text-slate-400 text-[11px] italic">
                   ({currentWord.note})
                 </span>
               )}
@@ -378,27 +378,27 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
 
           {/* Direct, calm correction guidance */}
           {inputStatus === 'correction' && (
-            <div className="mb-5 p-3.5 rounded-xl bg-rose-500/10 border border-rose-500/20 text-center animate-fade-in">
-              <div className="flex items-center justify-center gap-1.5 text-rose-300 font-medium text-xs mb-1">
-                <AlertTriangle className="w-3.5 h-3.5" />
+            <div className="mb-3 p-2.5 rounded-xl bg-rose-500/10 border border-rose-500/20 text-center animate-fade-in">
+              <div className="flex items-center justify-center gap-1.5 text-rose-300 font-medium text-[11px] mb-0.5">
+                <AlertTriangle className="w-3 h-3" />
                 <span>Правильный ответ:</span>
               </div>
-              <div className="text-xl font-mono font-bold text-white tracking-wide my-1">
+              <div className="text-lg font-mono font-bold text-white tracking-wide my-0.5">
                 {currentWord.en}
               </div>
               {currentWord.accepted && currentWord.accepted.length > 1 && (
-                <p className="text-[11px] text-slate-400 mb-1">
+                <p className="text-[10px] text-slate-400 mb-0.5">
                   (допускается: {currentWord.accepted.slice(0, 3).join(', ')})
                 </p>
               )}
-              <p className="text-xs text-rose-300/80 mt-1">
+              <p className="text-[11px] text-rose-300/80">
                 Наберите слово ниже, чтобы закрепить его:
               </p>
             </div>
           )}
 
           {/* Precise Input Form */}
-          <form onSubmit={handleSubmit} className="mt-2">
+          <form onSubmit={handleSubmit} className="mt-1">
             <div className="relative">
               <input
                 ref={inputRef}
@@ -414,7 +414,7 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
                 autoCorrect="off"
                 autoComplete="off"
                 spellCheck="false"
-                className={`w-full py-3.5 px-4 rounded-xl text-base font-mono tracking-wide placeholder:text-slate-500 focus:outline-none transition-colors border ${
+                className={`w-full py-2.5 sm:py-3 px-3.5 rounded-xl text-sm sm:text-base font-mono tracking-wide placeholder:text-slate-500 focus:outline-none transition-colors border ${
                   inputStatus === 'correction'
                     ? 'bg-rose-950/20 border-rose-500/40 text-rose-100 focus:border-rose-400'
                     : inputStatus === 'success'
@@ -426,7 +426,7 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
               <button
                 type="submit"
                 disabled={!userInput.trim()}
-                className="absolute right-2 top-2 bottom-2 px-3 rounded-lg bg-sky-500 hover:bg-sky-400 disabled:opacity-30 disabled:hover:bg-sky-500 text-slate-950 font-semibold text-xs transition-all flex items-center gap-1"
+                className="absolute right-1.5 top-1.5 bottom-1.5 px-3 rounded-lg bg-sky-500 hover:bg-sky-400 disabled:opacity-30 disabled:hover:bg-sky-500 text-slate-950 font-semibold text-xs transition-all flex items-center gap-1"
               >
                 <span>Enter</span>
                 <Send className="w-3 h-3" />
@@ -435,31 +435,31 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
           </form>
 
           {/* Action Row */}
-          <div className="flex items-center justify-between mt-4 pt-3 border-t border-white/[0.06] text-xs">
+          <div className="flex items-center justify-between mt-2.5 pt-2 border-t border-white/[0.06] text-xs">
             <button
               type="button"
               onClick={handleGiveUp}
               disabled={inputStatus === 'correction'}
-              className="text-slate-400 hover:text-slate-200 transition-colors flex items-center gap-1 disabled:opacity-40"
+              className="text-slate-400 hover:text-slate-200 transition-colors flex items-center gap-1 disabled:opacity-40 text-[11px]"
             >
-              <HelpCircle className="w-3.5 h-3.5" />
+              <HelpCircle className="w-3 h-3" />
               <span>Не помню слово</span>
             </button>
 
-            <span className="text-[11px] text-slate-400 hidden sm:inline">
-              Нажмите <kbd className="px-1 py-0.5 bg-white/[0.06] rounded border border-white/[0.1] font-mono text-[10px]">Enter</kbd> для проверки
+            <span className="text-[10px] text-slate-400 hidden sm:inline">
+              Нажмите <kbd className="px-1 py-0.2 bg-white/[0.06] rounded border border-white/[0.1] font-mono text-[9px]">Enter</kbd>
             </span>
           </div>
         </div>
       </div>
 
       {/* Bottom stats helper */}
-      <div className="mt-6 flex items-center justify-between text-xs text-slate-400 border-t border-white/[0.06] pt-3">
+      <div className="mt-2.5 flex items-center justify-between text-xs text-slate-400 border-t border-white/[0.06] pt-2">
         <span>
           Ошибок в раунде: <strong className={failedCountInRound > 0 ? "text-rose-400 font-bold" : "text-slate-400"}>{failedCountInRound}</strong>
-          {failedCountInRound > 0 && <span className="text-amber-400/80 ml-1 text-[11px]">(пойдут на повтор к Шагу 1)</span>}
+          {failedCountInRound > 0 && <span className="text-amber-400/80 ml-1 text-[10px]">(пойдут на повтор к Шагу 1)</span>}
         </span>
-        <span>Текущий комбо: <strong className="text-amber-400">{combo}</strong></span>
+        <span>Комбо: <strong className="text-amber-400">{combo}</strong></span>
       </div>
     </div>
   );
