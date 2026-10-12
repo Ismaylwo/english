@@ -404,7 +404,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
                 {selectedCategoryModal.titleRu}
               </h3>
               <p className="text-xs text-slate-400 mt-1">
-                {selectedCategoryModal.totalWords} слов • {selectedCategoryModal.totalBatches} блоков (по 25 слов)
+                {selectedCategoryModal.totalWords} слов • {selectedCategoryModal.totalBatches} блоков (по 30 слов)
               </p>
             </div>
 

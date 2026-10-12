@@ -17,15 +17,25 @@ export const DictionaryModal: React.FC<DictionaryModalProps> = ({
   onClose,
 }) => {
   const [search, setSearch] = useState('');
-  const [filterDay, setFilterDay] = useState<number | 'all'>('all');
+  const [filterCategory, setFilterCategory] = useState<string | 'all'>('all');
   const [filterStatus, setFilterStatus] = useState<'all' | 'mastered' | 'mistakes' | 'unlearned'>('all');
   const [limit, setLimit] = useState(40);
+
+  const categoriesList = useMemo(() => {
+    const map = new Map<string, { id: string; title: string; index: number }>();
+    words.forEach(w => {
+      if (w.categoryId && w.categoryTitleRu && !map.has(w.categoryId)) {
+        map.set(w.categoryId, { id: w.categoryId, title: w.categoryTitleRu, index: w.categoryIndex || 0 });
+      }
+    });
+    return Array.from(map.values()).sort((a, b) => a.index - b.index);
+  }, [words]);
 
   const filtered = useMemo(() => {
     const q = search.trim().toLowerCase();
 
     return words.filter((w) => {
-      if (filterDay !== 'all' && w.day !== filterDay) return false;
+      if (filterCategory !== 'all' && w.categoryId !== filterCategory) return false;
 
       const p = progressMap[w.id];
       if (filterStatus === 'mastered' && !p?.isMastered) return false;
@@ -38,7 +48,7 @@ export const DictionaryModal: React.FC<DictionaryModalProps> = ({
       if (w.tj.toLowerCase().includes(q)) return true;
       return false;
     });
-  }, [words, progressMap, search, filterDay, filterStatus]);
+  }, [words, progressMap, search, filterCategory, filterStatus]);
 
   const visibleWords = useMemo(() => filtered.slice(0, limit), [filtered, limit]);
 
@@ -105,14 +115,14 @@ export const DictionaryModal: React.FC<DictionaryModalProps> = ({
             </div>
 
             <select
-              value={filterDay}
-              onChange={(e) => setFilterDay(e.target.value === 'all' ? 'all' : parseInt(e.target.value))}
-              className="bg-[#161b22] border border-white/[0.08] text-slate-300 py-1 px-2.5 rounded-lg text-xs outline-none focus:border-sky-400"
+              value={filterCategory}
+              onChange={(e) => setFilterCategory(e.target.value)}
+              className="bg-[#161b22] border border-white/[0.08] text-slate-300 py-1 px-2.5 rounded-lg text-xs outline-none focus:border-sky-400 max-w-[200px] truncate"
             >
-              <option value="all">Все 30 дней</option>
-              {[...Array(30)].map((_, i) => (
-                <option key={i + 1} value={i + 1}>
-                  День {i + 1}
+              <option value="all">Все 10 тем</option>
+              {categoriesList.map((c) => (
+                <option key={c.id} value={c.id}>
+                  Тема {c.index}: {c.title}
                 </option>
               ))}
             </select>
@@ -153,7 +163,7 @@ export const DictionaryModal: React.FC<DictionaryModalProps> = ({
                         </span>
                       )}
                       <span className="text-[10px] text-slate-500 font-mono">
-                        Д.{w.day}
+                        Т.{w.categoryIndex || 1} • Бл.{w.categoryBatch || 1}
                       </span>
                     </div>
 

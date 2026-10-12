@@ -59,10 +59,10 @@ export const Header: React.FC<HeaderProps> = ({
                 Vocab Studio
               </span>
               <span className="text-[10px] font-medium px-1.5 py-0.2 rounded bg-white/[0.06] text-slate-400 border border-white/[0.06] hidden sm:inline-block">
-                30 дней
+                Блоки по 30 слов
               </span>
             </div>
-            <p className="text-[10px] text-slate-400 hidden sm:block">Спринт 5000 слов</p>
+            <p className="text-[10px] text-slate-400 hidden sm:block">5000 слов • От A1 до B2</p>
           </div>
         </button>
 
