@@ -103,6 +103,8 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
   // Active queue of words to be tested (always randomly shuffled)
   const [activeList, setActiveList] = useState<WordItem[]>(() => shuffleArray(words));
   const [currentIndex, setCurrentIndex] = useState(0);
+  const failedWordsRef = useRef<WordItem[]>([]);
+  const [failedCount, setFailedCount] = useState(0);
 
   const [userInput, setUserInput] = useState('');
   const [inputStatus, setInputStatus] = useState<'idle' | 'success' | 'error' | 'correction'>('idle');
@@ -117,6 +119,8 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
   useEffect(() => {
     setActiveList(shuffleArray(words));
     setCurrentIndex(0);
+    failedWordsRef.current = [];
+    setFailedCount(0);
     setUserInput('');
     setInputStatus('idle');
   }, [words]);
@@ -140,12 +144,19 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
       setInputStatus('idle');
       setUserInput('');
     } else {
-      // Reached end of current active list (all words including re-queued mistakes answered!)
-      onFinishBatch({
-        totalTested: sessionTotalAnswers + 1,
-        mistakes: sessionMistakes,
-        masteredWords: words.length,
-      });
+      // Reached end of current round
+      const failed = failedWordsRef.current;
+      if (failed.length > 0 && onNeedReStudy) {
+        // User had mistakes! Go back to Step 1 to re-study ONLY the failed words!
+        onNeedReStudy([...failed]);
+      } else {
+        // 0 mistakes in this round! Entire batch mastered cleanly!
+        onFinishBatch({
+          totalTested: sessionTotalAnswers + 1,
+          mistakes: sessionMistakes,
+          masteredWords: words.length,
+        });
+      }
     }
   };
 
@@ -195,8 +206,11 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
 
       setInputStatus('correction');
 
-      // Re-queue the failed word at the end so all words in the block are tested and mastered!
-      setActiveList(prev => [...prev, currentWord]);
+      // Track failed word for re-study loop to Step 1
+      if (!failedWordsRef.current.some(w => w.id === currentWord.id)) {
+        failedWordsRef.current.push(currentWord);
+        setFailedCount(failedWordsRef.current.length);
+      }
     }
   };
 
@@ -212,8 +226,11 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
     setInputStatus('correction');
     setUserInput('');
 
-    // Re-queue the failed word at the end so all words in the block are tested and mastered!
-    setActiveList(prev => [...prev, currentWord]);
+    // Track failed word for re-study loop to Step 1
+    if (!failedWordsRef.current.some(w => w.id === currentWord.id)) {
+      failedWordsRef.current.push(currentWord);
+      setFailedCount(failedWordsRef.current.length);
+    }
   };
 
   if (!currentWord) {
@@ -453,8 +470,8 @@ export const HardcoreTrainer: React.FC<HardcoreTrainerProps> = ({
       {/* Bottom stats helper */}
       <div className="mt-2.5 flex items-center justify-between text-xs text-slate-400 border-t border-white/[0.06] pt-2">
         <span>
-          Ошибок: <strong className={sessionMistakes > 0 ? "text-rose-400 font-bold" : "text-slate-400"}>{sessionMistakes}</strong>
-          {sessionMistakes > 0 && <span className="text-amber-400/80 ml-1 text-[10px]">(добавлены в конец)</span>}
+          Ошибок в раунде: <strong className={failedCount > 0 ? "text-rose-400 font-bold" : "text-slate-400"}>{failedCount}</strong>
+          {failedCount > 0 && <span className="text-amber-400/80 ml-1 text-[10px]">(пойдут на повтор к Шагу 1)</span>}
         </span>
         <span>Комбо: <strong className="text-amber-400">{combo}</strong></span>
       </div>
