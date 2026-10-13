@@ -58,6 +58,38 @@ export default function Home() {
     soundFx.setEnabled(initialState.settings.soundFx);
     setIsMounted(true);
 
+    // Restore active session across page reloads on mobile
+    try {
+      const saved = sessionStorage.getItem('vocab_active_session');
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (parsed.categoryId && parsed.batch) {
+          const sessionWords = allWords.filter(
+            w => w.categoryId === parsed.categoryId 
+              ? w.categoryBatch === parsed.batch 
+              : (String(w.day) === parsed.categoryId && w.batch === parsed.batch)
+          );
+          if (sessionWords.length > 0) {
+            const cat = categories.find(c => c.id === parsed.categoryId);
+            setCurrentSession({
+              categoryId: parsed.categoryId,
+              categoryTitle: cat ? cat.titleRu : undefined,
+              day: cat ? cat.index : Number(parsed.categoryId) || 1,
+              batch: parsed.batch,
+              words: sessionWords,
+              activeQueue: sessionWords,
+              isRetryMode: Boolean(parsed.isRetryMode),
+            });
+            if (['study', 'trainer', 'sentences'].includes(parsed.activeView)) {
+              setActiveView(parsed.activeView);
+            }
+          }
+        }
+      }
+    } catch {
+      // Ignored
+    }
+
     // Initial background sync with server
     storage.pullFromServer().then((synced) => {
       if (synced) {
@@ -65,6 +97,25 @@ export default function Home() {
       }
     });
   }, []);
+
+  // Save active session to sessionStorage so page refresh doesn't drop the user out
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    try {
+      if (activeView !== 'dashboard' && currentSession?.categoryId && currentSession?.batch) {
+        sessionStorage.setItem('vocab_active_session', JSON.stringify({
+          categoryId: currentSession.categoryId,
+          batch: currentSession.batch,
+          activeView: activeView,
+          isRetryMode: currentSession.isRetryMode,
+        }));
+      } else {
+        sessionStorage.removeItem('vocab_active_session');
+      }
+    } catch {
+      // Ignored
+    }
+  }, [activeView, currentSession?.categoryId, currentSession?.batch, currentSession?.isRetryMode]);
 
   // Update sound settings when state changes
   useEffect(() => {
@@ -132,6 +183,9 @@ export default function Home() {
   const handleFinishWordsBatch = (stats: { totalTested: number; mistakes: number; masteredWords: number }) => {
     if (!currentSession) return;
     soundFx.playSuccess();
+    // Mark batch words as mastered immediately so progress is never lost even if user reloads!
+    storage.markWordsAsMastered(currentSession.words.map(w => w.id));
+    setAppState({ ...storage.getState() });
     setSessionNonce(n => n + 1);
     // Advance directly to Step 3 (SentenceTrainer) with the batch words!
     setCurrentSession({

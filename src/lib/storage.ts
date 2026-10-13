@@ -62,6 +62,7 @@ export class StorageManager {
         this.state = {
           ...getDefaultState(),
           ...parsed,
+          progress: parsed.progress || {},
           settings: { ...DEFAULT_SETTINGS, ...(parsed.settings || {}) },
           stats: { ...DEFAULT_STATS, ...(parsed.stats || {}) },
         };
@@ -234,18 +235,36 @@ export class StorageManager {
       const res = await fetch(`/api/progress?syncId=${encodeURIComponent(this.state.syncId)}`);
       if (res.ok) {
         const data = await res.json();
-        if (data && data.progress) {
-          // Merge progress (keep higher mastery & timestamp)
-          const mergedProgress = { ...this.state.progress, ...data.progress };
-          this.state.progress = mergedProgress;
-          if (data.stats) {
-            this.state.stats = {
-              ...this.state.stats,
-              streakDays: Math.max(this.state.stats.streakDays, data.stats.streakDays || 1),
-            };
+        // ONLY merge if server actually returned non-empty progress object with keys!
+        if (data && data.progress && typeof data.progress === 'object') {
+          const serverEntries = Object.entries(data.progress as Record<string, WordProgress>);
+          if (serverEntries.length > 0) {
+            const mergedProgress = { ...this.state.progress };
+            for (const [key, p] of serverEntries) {
+              const numKey = Number(key);
+              const local = mergedProgress[numKey];
+              if (!local) {
+                mergedProgress[numKey] = p;
+              } else {
+                mergedProgress[numKey] = {
+                  ...local,
+                  isMastered: local.isMastered || p.isMastered,
+                  masteryLevel: Math.max(local.masteryLevel, p.masteryLevel),
+                  correctCount: Math.max(local.correctCount, p.correctCount),
+                  mistakesCount: Math.max(local.mistakesCount, p.mistakesCount),
+                };
+              }
+            }
+            this.state.progress = mergedProgress;
+            if (data.stats) {
+              this.state.stats = {
+                ...this.state.stats,
+                streakDays: Math.max(this.state.stats.streakDays, data.stats.streakDays || 1),
+              };
+            }
+            this.saveLocal();
+            return true;
           }
-          this.saveLocal();
-          return true;
         }
       }
     } catch {
