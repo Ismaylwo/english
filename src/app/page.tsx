@@ -161,6 +161,11 @@ export default function Home() {
   const handleFinishStudy = (wordsToTest: WordItem[]) => {
     if (!currentSession) return;
     setSessionNonce(n => n + 1);
+    setCurrentSession({
+      ...currentSession,
+      activeQueue: currentSession.words,
+      isRetryMode: false,
+    });
     setActiveView('trainer');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
