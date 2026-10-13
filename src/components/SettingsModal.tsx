@@ -8,7 +8,9 @@ import {
   Upload, 
   Sliders, 
   Check, 
-  Copy
+  Copy,
+  Trash2,
+  AlertTriangle
 } from 'lucide-react';
 import { LanguagePref, UserSettings } from '@/types/vocab';
 import { storage } from '@/lib/storage';
@@ -21,6 +23,7 @@ interface SettingsModalProps {
   onUpdateSettings: (newSettings: Partial<UserSettings>) => void;
   onUpdateSyncId: (newSyncId: string) => void;
   onReloadState: () => void;
+  onResetProgress?: () => Promise<void> | void;
 }
 
 export const SettingsModal: React.FC<SettingsModalProps> = ({
@@ -31,11 +34,14 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
   onUpdateSettings,
   onUpdateSyncId,
   onReloadState,
+  onResetProgress,
 }) => {
   const [syncIdInput, setSyncIdInput] = useState(syncId);
   const [copied, setCopied] = useState(false);
   const [syncLoading, setSyncLoading] = useState(false);
   const [syncMessage, setSyncMessage] = useState('');
+  const [showConfirmReset, setShowConfirmReset] = useState(false);
+  const [resetting, setResetting] = useState(false);
 
   const handleCopySyncId = () => {
     navigator.clipboard.writeText(syncIdInput);
@@ -86,6 +92,22 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
       }
     };
     reader.readAsText(file);
+  };
+
+  const handleExecuteReset = async () => {
+    setResetting(true);
+    try {
+      if (onResetProgress) {
+        await onResetProgress();
+      } else {
+        await storage.resetProgress();
+        onReloadState();
+      }
+      onClose();
+    } finally {
+      setResetting(false);
+      setShowConfirmReset(false);
+    }
   };
 
   return (
@@ -277,6 +299,53 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
               className="hidden"
             />
           </label>
+        </div>
+
+        {/* Section 4: Danger Zone / Reset Progress */}
+        <div className="mt-6 p-4 rounded-xl border border-rose-500/25 bg-rose-500/5">
+          <div className="flex items-center gap-2 mb-1.5 text-rose-400">
+            <AlertTriangle className="w-4 h-4" />
+            <h4 className="text-xs font-bold uppercase tracking-wider">
+              Опасная зона
+            </h4>
+          </div>
+
+          <p className="text-xs text-slate-400 mb-3 leading-relaxed">
+            Сброс обнулит все выученные слова, статистику и ошибки. Блоки заблокируются заново, кроме первого, чтобы вы могли протестировать всё с чистого листа.
+          </p>
+
+          {showConfirmReset ? (
+            <div className="p-3 rounded-lg bg-rose-950/60 border border-rose-500/40 animate-fade-in space-y-2.5">
+              <p className="text-xs font-medium text-rose-200">
+                Вы точно уверены? Все выученные слова будут сброшены до нуля.
+              </p>
+              <div className="flex gap-2">
+                <button
+                  onClick={handleExecuteReset}
+                  disabled={resetting}
+                  className="flex-1 py-2 px-3 rounded-lg bg-rose-600 hover:bg-rose-500 text-white text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors shadow-md"
+                >
+                  <Trash2 className="w-3.5 h-3.5" />
+                  <span>{resetting ? 'Сброс...' : 'Да, сбросить всё'}</span>
+                </button>
+                <button
+                  onClick={() => setShowConfirmReset(false)}
+                  disabled={resetting}
+                  className="py-2 px-3 rounded-lg bg-white/[0.06] hover:bg-white/[0.1] text-slate-300 text-xs font-medium transition-colors"
+                >
+                  Отмена
+                </button>
+              </div>
+            </div>
+          ) : (
+            <button
+              onClick={() => setShowConfirmReset(true)}
+              className="w-full py-2.5 px-3 rounded-lg border border-rose-500/30 hover:border-rose-500/50 bg-rose-500/10 hover:bg-rose-500/20 text-rose-300 text-xs font-semibold flex items-center justify-center gap-2 transition-colors"
+            >
+              <Trash2 className="w-3.5 h-3.5 text-rose-400" />
+              <span>Сбросить весь прогресс обучения</span>
+            </button>
+          )}
         </div>
       </div>
     </div>

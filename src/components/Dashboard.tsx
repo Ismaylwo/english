@@ -37,6 +37,7 @@ interface DashboardProps {
   onOpenMonologue: (category: CategorySummary) => void;
   onStartMistakesReview: () => void;
   onOpenDictionary: () => void;
+  onResetProgress?: () => void;
 }
 
 export const Dashboard: React.FC<DashboardProps> = ({
@@ -49,9 +50,11 @@ export const Dashboard: React.FC<DashboardProps> = ({
   onOpenMonologue,
   onStartMistakesReview,
   onOpenDictionary,
+  onResetProgress,
 }) => {
   const [selectedCategoryModal, setSelectedCategoryModal] = useState<CategorySummary | null>(null);
   const [lockedNotice, setLockedNotice] = useState<string | null>(null);
+  const [showResetConfirm, setShowResetConfirm] = useState(false);
 
   const totalWords = allWords.length || 4991;
   const masteredCount = Object.values(progressMap).filter(p => p.isMastered).length;
@@ -383,6 +386,48 @@ export const Dashboard: React.FC<DashboardProps> = ({
             </div>
           );
         })}
+      </div>
+
+      {/* Footer testing shortcut */}
+      <div className="mt-10 pt-6 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+        <div className="flex items-center gap-2">
+          <span>Словарь: <strong className="text-white">5000 слов</strong></span>
+          <span>•</span>
+          <span>Тем: <strong className="text-white">10</strong></span>
+        </div>
+
+        {onResetProgress && (
+          <div>
+            {showResetConfirm ? (
+              <div className="flex items-center gap-2 p-1.5 px-3 rounded-xl bg-rose-950/60 border border-rose-500/40 animate-fade-in shadow-lg">
+                <span className="text-[11px] text-rose-200">Сбросить прогресс до нуля?</span>
+                <button
+                  onClick={() => {
+                    setShowResetConfirm(false);
+                    onResetProgress();
+                  }}
+                  className="px-2.5 py-1 rounded-lg bg-rose-600 hover:bg-rose-500 text-white font-semibold text-[11px] transition-colors"
+                >
+                  Да, сбросить
+                </button>
+                <button
+                  onClick={() => setShowResetConfirm(false)}
+                  className="px-2 py-1 rounded-lg bg-white/[0.08] hover:bg-white/[0.12] text-slate-300 text-[11px] transition-colors"
+                >
+                  Отмена
+                </button>
+              </div>
+            ) : (
+              <button
+                onClick={() => setShowResetConfirm(true)}
+                className="text-slate-400 hover:text-rose-400 flex items-center gap-1.5 transition-colors py-1.5 px-3 rounded-lg hover:bg-rose-500/10 border border-transparent hover:border-rose-500/20 text-xs"
+              >
+                <RotateCcw className="w-3.5 h-3.5" />
+                <span>Сбросить прогресс для тестирования</span>
+              </button>
+            )}
+          </div>
+        )}
       </div>
 
       {/* Category Detail Modal */}

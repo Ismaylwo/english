@@ -341,6 +341,15 @@ export default function Home() {
     setAppState({ ...storage.getState() });
   };
 
+  const handleResetProgress = async () => {
+    await storage.resetProgress();
+    setAppState({ ...storage.getState() });
+    setCurrentSession(null);
+    setCompletedBatchStats(null);
+    setActiveView('dashboard');
+    setShowSettings(false);
+  };
+
   if (!isMounted || !appState) {
     return (
       <div className="min-h-screen bg-[#0d1117] flex flex-col items-center justify-center text-slate-400">
@@ -389,6 +398,7 @@ export default function Home() {
             onOpenMonologue={handleOpenMonologue}
             onStartMistakesReview={handleStartMistakesReview}
             onOpenDictionary={() => setShowDictionary(true)}
+            onResetProgress={handleResetProgress}
           />
         ) : activeView === 'study' && currentSession ? (
           <StudyCards
@@ -481,6 +491,7 @@ export default function Home() {
           onUpdateSettings={handleUpdateSettings}
           onUpdateSyncId={handleUpdateSyncId}
           onReloadState={handleReloadState}
+          onResetProgress={handleResetProgress}
         />
       )}
 

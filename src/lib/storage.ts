@@ -229,12 +229,45 @@ export class StorageManager {
     }
   }
 
+  public async resetProgress(generateNewId: boolean = false): Promise<void> {
+    if (generateNewId) {
+      this.state.syncId = generateSyncId();
+    }
+    this.state.progress = {};
+    this.state.stats = {
+      ...DEFAULT_STATS,
+      todayDate: getTodayKey(),
+      lastActiveDate: getTodayKey(),
+      streakDays: 1,
+      todayTestedCount: 0,
+      todayMasteredCount: 0,
+    };
+    this.state.updatedAt = new Date().toISOString();
+    this.saveLocal();
+    if (typeof window !== 'undefined') {
+      try {
+        sessionStorage.removeItem('vocab_active_session');
+      } catch {
+        // Ignored
+      }
+    }
+    await this.pushToServer();
+  }
+
   public async pullFromServer(): Promise<boolean> {
     if (typeof window === 'undefined' || !this.state.syncId) return false;
     try {
       const res = await fetch(`/api/progress?syncId=${encodeURIComponent(this.state.syncId)}`);
       if (res.ok) {
         const data = await res.json();
+        // If server data is older than our local data, do not overwrite local state
+        if (data && data.updatedAt && this.state.updatedAt) {
+          const serverTime = new Date(data.updatedAt).getTime();
+          const localTime = new Date(this.state.updatedAt).getTime();
+          if (serverTime < localTime) {
+            return false;
+          }
+        }
         // ONLY merge if server actually returned non-empty progress object with keys!
         if (data && data.progress && typeof data.progress === 'object') {
           const serverEntries = Object.entries(data.progress as Record<string, WordProgress>);
