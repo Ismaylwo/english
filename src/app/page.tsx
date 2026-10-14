@@ -71,13 +71,18 @@ export default function Home() {
           );
           if (sessionWords.length > 0) {
             const cat = categories.find(c => c.id === parsed.categoryId);
+            const queueIds = Array.isArray(parsed.activeQueueIds) ? parsed.activeQueueIds : null;
+            const activeQueue = (queueIds && queueIds.length > 0)
+              ? sessionWords.filter(w => queueIds.includes(w.id))
+              : sessionWords;
+
             setCurrentSession({
               categoryId: parsed.categoryId,
               categoryTitle: cat ? cat.titleRu : undefined,
               day: cat ? cat.index : Number(parsed.categoryId) || 1,
               batch: parsed.batch,
               words: sessionWords,
-              activeQueue: sessionWords,
+              activeQueue: activeQueue.length > 0 ? activeQueue : sessionWords,
               isRetryMode: Boolean(parsed.isRetryMode),
             });
             if (['study', 'trainer', 'sentences'].includes(parsed.activeView)) {
@@ -108,6 +113,7 @@ export default function Home() {
           batch: currentSession.batch,
           activeView: activeView,
           isRetryMode: currentSession.isRetryMode,
+          activeQueueIds: currentSession.activeQueue?.map(w => w.id) || [],
         }));
       } else {
         sessionStorage.removeItem('vocab_active_session');
@@ -115,7 +121,7 @@ export default function Home() {
     } catch {
       // Ignored
     }
-  }, [activeView, currentSession?.categoryId, currentSession?.batch, currentSession?.isRetryMode]);
+  }, [activeView, currentSession?.categoryId, currentSession?.batch, currentSession?.isRetryMode, currentSession?.activeQueue]);
 
   // Update sound settings when state changes
   useEffect(() => {
@@ -161,10 +167,18 @@ export default function Home() {
   const handleFinishStudy = (wordsToTest: WordItem[]) => {
     if (!currentSession) return;
     setSessionNonce(n => n + 1);
+    
+    // If in retry mode (re-studying failed words), test ONLY those failed words!
+    // If initial mode, test the full batch of words.
+    const queueToTest = currentSession.isRetryMode
+      ? (wordsToTest && wordsToTest.length > 0 ? wordsToTest : currentSession.activeQueue)
+      : currentSession.words;
+
     setCurrentSession({
       ...currentSession,
-      activeQueue: currentSession.words,
-      isRetryMode: false,
+      activeQueue: queueToTest,
+      // Retain isRetryMode so Step 2 knows it is testing the retried mistakes
+      isRetryMode: currentSession.isRetryMode,
     });
     setActiveView('trainer');
     window.scrollTo({ top: 0, behavior: 'smooth' });
