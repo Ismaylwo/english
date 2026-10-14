@@ -633,12 +633,12 @@
     "batch": 5,
     "dayIndex": 122,
     "example": {
-      "en": "Can you explain the meaning of this child?",
-      "ru": "Можешь объяснить значение слова \"ребёнок\"?",
-      "tj": "Оё метавонед маънои ин кӯдак-ро фаҳмонед?",
-      "prefix": "Can you explain the meaning of this ",
-      "suffix": "?",
-      "target": "child"
+      "en": "The child is playing happily in the garden.",
+      "ru": "Ребёнок радостно играет в саду.",
+      "tj": "Кӯдак дар боғ шодона бозӣ мекунад.",
+      "prefix": "The ",
+      "target": "child",
+      "suffix": " is playing happily in the garden."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -660,12 +660,12 @@
     "batch": 6,
     "dayIndex": 144,
     "example": {
-      "en": "Can you explain the meaning of this parent?",
-      "ru": "Можешь объяснить значение слова \"родитель\"?",
-      "tj": "Оё метавонед маънои ин падару модар-ро фаҳмонед?",
-      "prefix": "Can you explain the meaning of this ",
-      "suffix": "?",
-      "target": "parent"
+      "en": "He still lives with his parents.",
+      "ru": "Он всё ещё живёт со своими родителями.",
+      "tj": "Вай то ҳол бо волидонаш зиндагӣ мекунад.",
+      "prefix": "He still lives with his ",
+      "target": "parents",
+      "suffix": "."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -687,12 +687,12 @@
     "batch": 4,
     "dayIndex": 99,
     "example": {
-      "en": "This son is very important for us.",
-      "ru": "Этот (-а/-о) сын очень важен для нас.",
-      "tj": "Ин писар барои мо хеле муҳим аст.",
-      "prefix": "This ",
-      "suffix": " is very important for us.",
-      "target": "son"
+      "en": "They have a ten-year-old son.",
+      "ru": "У них есть десятилетний сын.",
+      "tj": "Онҳо як писари даҳсола доранд.",
+      "prefix": "They have a ten-year-old ",
+      "target": "son",
+      "suffix": "."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -714,12 +714,12 @@
     "batch": 6,
     "dayIndex": 163,
     "example": {
-      "en": "We talked about the daughter yesterday.",
-      "ru": "Вчера мы говорили про дочь.",
-      "tj": "Дирӯз мо дар бораи духтар сӯҳбат кардем.",
-      "prefix": "We talked about the ",
-      "suffix": " yesterday.",
-      "target": "daughter"
+      "en": "We have two sons and a daughter.",
+      "ru": "У нас два сына и одна дочь.",
+      "tj": "Мо ду писар ва як духтар дорем.",
+      "prefix": "We have two sons and a ",
+      "target": "daughter",
+      "suffix": "."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -741,12 +741,12 @@
     "batch": 2,
     "dayIndex": 47,
     "example": {
-      "en": "Can you explain the meaning of this baby?",
-      "ru": "Можешь объяснить значение слова \"ребёнок\"?",
-      "tj": "Оё метавонед маънои ин кӯдак-ро фаҳмонед?",
-      "prefix": "Can you explain the meaning of this ",
-      "suffix": "?",
-      "target": "baby"
+      "en": "The baby is sleeping quietly in the room.",
+      "ru": "Малыш тихо спит в комнате.",
+      "tj": "Тифл дар хона ором хобидааст.",
+      "prefix": "The ",
+      "target": "baby",
+      "suffix": " is sleeping quietly in the room."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -768,12 +768,12 @@
     "batch": 3,
     "dayIndex": 72,
     "example": {
-      "en": "Try to miss every day.",
-      "ru": "Старайтесь скучать / пропустить каждый день.",
-      "tj": "Ҳар рӯз кӯшиш кунед, ки ёд кардан / аз даст додан.",
-      "prefix": "Try to ",
-      "suffix": " every day.",
-      "target": "miss"
+      "en": "I miss my family when I am away.",
+      "ru": "Я скучаю по своей семье, когда я далеко.",
+      "tj": "Вақте ки дар дур ҳастам, оилаамро ёд мекунам.",
+      "prefix": "I ",
+      "target": "miss",
+      "suffix": " my family when I am away."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -795,12 +795,12 @@
     "batch": 5,
     "dayIndex": 122,
     "example": {
-      "en": "It seems quite old to me.",
-      "ru": "Это кажется мне вполне старый.",
-      "tj": "Ин ба назари ман хеле кӯҳна / пир менамояд.",
-      "prefix": "It seems quite ",
-      "suffix": " to me.",
-      "target": "old"
+      "en": "How old are you?",
+      "ru": "Сколько тебе лет?",
+      "tj": "Шумо чандсола ҳастед?",
+      "prefix": "How ",
+      "target": "old",
+      "suffix": " are you?"
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -822,12 +822,12 @@
     "batch": 4,
     "dayIndex": 99,
     "example": {
-      "en": "We talked about the from yesterday.",
-      "ru": "Вчера мы говорили про из/от.",
-      "tj": "Дирӯз мо дар бораи аз сӯҳбат кардем.",
-      "prefix": "We talked about the ",
-      "suffix": " yesterday.",
-      "target": "from"
+      "en": "Where are you from originally?",
+      "ru": "Откуда ты родом?",
+      "tj": "Шумо аслан аз куҷоед?",
+      "prefix": "Where are you ",
+      "target": "from",
+      "suffix": " originally?"
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -849,12 +849,12 @@
     "batch": 3,
     "dayIndex": 62,
     "example": {
-      "en": "She did everything very who.",
-      "ru": "Она сделала всё очень кто.",
-      "tj": "Вай ҳама чизро хеле кӣ иҷро кард.",
-      "prefix": "She did everything very ",
-      "suffix": ".",
-      "target": "who"
+      "en": "Who is that person standing by the door?",
+      "ru": "Кто тот человек, стоящий у двери?",
+      "tj": "Он шахсе, ки назди дар истодааст, кист?",
+      "prefix": "",
+      "target": "Who",
+      "suffix": " is that person standing by the door?"
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -876,12 +876,12 @@
     "batch": 3,
     "dayIndex": 57,
     "example": {
-      "en": "Please speak what with us.",
-      "ru": "Пожалуйста, говори что с нами.",
-      "tj": "Лутфан бо мо чӣ гап занед.",
-      "prefix": "Please speak ",
-      "suffix": " with us.",
-      "target": "what"
+      "en": "What is your favorite hobby?",
+      "ru": "Какое твое любимое увлечение?",
+      "tj": "Шуғли дӯстдоштаи ту чист?",
+      "prefix": "",
+      "target": "What",
+      "suffix": " is your favorite hobby?"
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -903,12 +903,12 @@
     "batch": 3,
     "dayIndex": 59,
     "example": {
-      "en": "This where is very important for us.",
-      "ru": "Этот (-а/-о) где очень важен для нас.",
-      "tj": "Ин куҷо барои мо хеле муҳим аст.",
-      "prefix": "This ",
-      "suffix": " is very important for us.",
-      "target": "where"
+      "en": "Where do you work and study?",
+      "ru": "Где ты работаешь и учишься?",
+      "tj": "Ту дар куҷо кор ва таҳсил мекунӣ?",
+      "prefix": "",
+      "target": "Where",
+      "suffix": " do you work and study?"
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -930,12 +930,12 @@
     "batch": 6,
     "dayIndex": 150,
     "example": {
-      "en": "We talked about the how yesterday.",
-      "ru": "Вчера мы говорили про как.",
-      "tj": "Дирӯз мо дар бораи чӣ тавр сӯҳбат кардем.",
-      "prefix": "We talked about the ",
-      "suffix": " yesterday.",
-      "target": "how"
+      "en": "How do you spend your weekends?",
+      "ru": "Как ты проводишь свои выходные?",
+      "tj": "Рӯзҳои истироҳатро чӣ тавр мегузаронӣ?",
+      "prefix": "",
+      "target": "How",
+      "suffix": " do you spend your weekends?"
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -957,12 +957,12 @@
     "batch": 2,
     "dayIndex": 29,
     "example": {
-      "en": "We found a first solution.",
-      "ru": "Мы нашли первый решение.",
-      "tj": "Мо роҳи ҳалли аввалин пайдо кардем.",
-      "prefix": "We found a ",
-      "suffix": " solution.",
-      "target": "first"
+      "en": "This is my first visit to this beautiful city.",
+      "ru": "Это мой первый визит в этот красивый город.",
+      "tj": "Ин аввалин ташрифи ман ба ин шаҳри зебо аст.",
+      "prefix": "This is my ",
+      "target": "first",
+      "suffix": " visit to this beautiful city."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -984,12 +984,12 @@
     "batch": 2,
     "dayIndex": 54,
     "example": {
-      "en": "You need to say carefully.",
-      "ru": "Вам нужно внимательно говорить.",
-      "tj": "Шумо бояд бодиққат гуфтан.",
-      "prefix": "You need to ",
-      "suffix": " carefully.",
-      "target": "say"
+      "en": "What did you say just now?",
+      "ru": "Что ты только что сказал?",
+      "tj": "Ҳозир ту чӣ гуфтӣ?",
+      "prefix": "What did you ",
+      "target": "say",
+      "suffix": " just now?"
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -1011,12 +1011,12 @@
     "batch": 6,
     "dayIndex": 141,
     "example": {
-      "en": "You need to tell carefully.",
-      "ru": "Вам нужно внимательно рассказывать.",
-      "tj": "Шумо бояд бодиққат гуфтан.",
-      "prefix": "You need to ",
-      "suffix": " carefully.",
-      "target": "tell"
+      "en": "Can you tell me more about your family?",
+      "ru": "Можешь рассказать мне больше о своей семье?",
+      "tj": "Метавонӣ дар бораи оилаат бештар нақл кунӣ?",
+      "prefix": "Can you ",
+      "target": "tell",
+      "suffix": " me more about your family?"
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -1038,12 +1038,12 @@
     "batch": 5,
     "dayIndex": 133,
     "example": {
-      "en": "Try to hear every day.",
-      "ru": "Старайтесь слышать каждый день.",
-      "tj": "Ҳар рӯз кӯшиш кунед, ки шунидан.",
-      "prefix": "Try to ",
-      "suffix": " every day.",
-      "target": "hear"
+      "en": "I am very glad to hear your voice.",
+      "ru": "Я очень рад слышать твой голос.",
+      "tj": "Аз шунидани овози ту хеле шодам.",
+      "prefix": "I am very glad to ",
+      "target": "hear",
+      "suffix": " your voice."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -1065,12 +1065,12 @@
     "batch": 2,
     "dayIndex": 40,
     "example": {
-      "en": "You need to listen carefully.",
-      "ru": "Вам нужно внимательно слушать.",
-      "tj": "Шумо бояд бодиққат гӯш кардан.",
-      "prefix": "You need to ",
-      "suffix": " carefully.",
-      "target": "listen"
+      "en": "I like to listen to music in the evening.",
+      "ru": "Мне нравится слушать музыку по вечерам.",
+      "tj": "Ба ман гӯш кардани мусиқӣ бегоҳирӯзӣ писанд аст.",
+      "prefix": "I like to ",
+      "target": "listen",
+      "suffix": " to music in the evening."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -1092,12 +1092,12 @@
     "batch": 2,
     "dayIndex": 41,
     "example": {
-      "en": "Try to ask every day.",
-      "ru": "Старайтесь спрашивать каждый день.",
-      "tj": "Ҳар рӯз кӯшиш кунед, ки пурсидан.",
-      "prefix": "Try to ",
-      "suffix": " every day.",
-      "target": "ask"
+      "en": "Feel free to ask any question.",
+      "ru": "Не стесняйся задать любой вопрос.",
+      "tj": "Бе тарсу ҳарос дилхоҳ саволро бипурс.",
+      "prefix": "Feel free to ",
+      "target": "ask",
+      "suffix": " any question."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -1119,12 +1119,12 @@
     "batch": 1,
     "dayIndex": 28,
     "example": {
-      "en": "We talked about the answer yesterday.",
-      "ru": "Вчера мы говорили про ответ.",
-      "tj": "Дирӯз мо дар бораи ҷавоб сӯҳбат кардем.",
-      "prefix": "We talked about the ",
-      "suffix": " yesterday.",
-      "target": "answer"
+      "en": "He gave a very clear and polite answer.",
+      "ru": "Он дал очень ясный и вежливый ответ.",
+      "tj": "Ӯ ҷавоби хеле равшан ва боодоб дод.",
+      "prefix": "He gave a very clear and polite ",
+      "target": "answer",
+      "suffix": "."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -1146,12 +1146,12 @@
     "batch": 3,
     "dayIndex": 83,
     "example": {
-      "en": "Try to born every day.",
-      "ru": "Старайтесь родиться каждый день.",
-      "tj": "Ҳар рӯз кӯшиш кунед, ки тавлид шудан.",
-      "prefix": "Try to ",
-      "suffix": " every day.",
-      "target": "born"
+      "en": "I was born in a small town.",
+      "ru": "Я родился в небольшом городке.",
+      "tj": "Ман дар як шаҳраки хурд таваллуд шудаам.",
+      "prefix": "I was ",
+      "target": "born",
+      "suffix": " in a small town."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -1173,12 +1173,12 @@
     "batch": 5,
     "dayIndex": 120,
     "example": {
-      "en": "I want to grow today.",
-      "ru": "Я хочу сегодня расти.",
-      "tj": "Ман мехоҳам имрӯз калон шудан.",
-      "prefix": "I want to ",
-      "suffix": " today.",
-      "target": "grow"
+      "en": "Children grow up very quickly.",
+      "ru": "Дети растут очень быстро.",
+      "tj": "Кӯдакон хеле зуд ба воя мерасанд.",
+      "prefix": "Children ",
+      "target": "grow",
+      "suffix": " up very quickly."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -1200,12 +1200,12 @@
     "batch": 6,
     "dayIndex": 154,
     "example": {
-      "en": "Can you explain the meaning of this husband?",
-      "ru": "Можешь объяснить значение слова \"муж\"?",
-      "tj": "Оё метавонед маънои ин шавҳар-ро фаҳмонед?",
-      "prefix": "Can you explain the meaning of this ",
-      "suffix": "?",
-      "target": "husband"
+      "en": "Her husband works as an engineer.",
+      "ru": "Её муж работает инженером.",
+      "tj": "Шавҳараш ба ҳайси муҳандис кор мекунад.",
+      "prefix": "Her ",
+      "target": "husband",
+      "suffix": " works as an engineer."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -1227,12 +1227,12 @@
     "batch": 3,
     "dayIndex": 64,
     "example": {
-      "en": "Can you explain the meaning of this wife?",
-      "ru": "Можешь объяснить значение слова \"жена\"?",
-      "tj": "Оё метавонед маънои ин зани-ро фаҳмонед?",
-      "prefix": "Can you explain the meaning of this ",
-      "suffix": "?",
-      "target": "wife"
+      "en": "His wife is a very kind woman.",
+      "ru": "Его жена — очень добрая женщина.",
+      "tj": "Ҳамсараш зани хеле меҳрубон аст.",
+      "prefix": "His ",
+      "target": "wife",
+      "suffix": " is a very kind woman."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -1254,12 +1254,12 @@
     "batch": 2,
     "dayIndex": 53,
     "example": {
-      "en": "We talked about the married yesterday.",
-      "ru": "Вчера мы говорили про женатый/замужем.",
-      "tj": "Дирӯз мо дар бораи оиладор сӯҳбат кардем.",
-      "prefix": "We talked about the ",
-      "suffix": " yesterday.",
-      "target": "married"
+      "en": "They have been married for five years.",
+      "ru": "Они женаты уже пять лет.",
+      "tj": "Онҳо панҷ сол боз оиладоранд.",
+      "prefix": "They have been ",
+      "target": "married",
+      "suffix": " for five years."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -1281,12 +1281,12 @@
     "batch": 5,
     "dayIndex": 124,
     "example": {
-      "en": "Can you explain the meaning of this hair?",
-      "ru": "Можешь объяснить значение слова \"волосы\"?",
-      "tj": "Оё метавонед маънои ин мӯй-ро фаҳмонед?",
-      "prefix": "Can you explain the meaning of this ",
-      "suffix": "?",
-      "target": "hair"
+      "en": "She has long dark hair and brown eyes.",
+      "ru": "У неё длинные тёмные волосы и карие глаза.",
+      "tj": "Вай мӯйҳои дарози сиёҳ ва чашмони қаҳваранг дорад.",
+      "prefix": "She has long dark ",
+      "target": "hair",
+      "suffix": " and brown eyes."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -1308,12 +1308,12 @@
     "batch": 5,
     "dayIndex": 132,
     "example": {
-      "en": "This is a very tall result.",
-      "ru": "Это очень высокий результат.",
-      "tj": "Ин натиҷаи хеле қадбаланд аст.",
-      "prefix": "This is a very ",
-      "suffix": " result.",
-      "target": "tall"
+      "en": "My older brother is very tall.",
+      "ru": "Мой старший брат очень высокий.",
+      "tj": "Бародари калонии ман хеле қадбаланд аст.",
+      "prefix": "My older brother is very ",
+      "target": "tall",
+      "suffix": "."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -1335,12 +1335,12 @@
     "batch": 3,
     "dayIndex": 74,
     "example": {
-      "en": "We found a short solution.",
-      "ru": "Мы нашли короткий решение.",
-      "tj": "Мо роҳи ҳалли кӯтоҳ пайдо кардем.",
-      "prefix": "We found a ",
-      "suffix": " solution.",
-      "target": "short"
+      "en": "He is a short man with a warm smile.",
+      "ru": "Он невысокий мужчина с тёплой улыбкой.",
+      "tj": "Ӯ марди кӯтоҳқад бо табассуми гарм аст.",
+      "prefix": "He is a ",
+      "target": "short",
+      "suffix": " man with a warm smile."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -1362,12 +1362,12 @@
     "batch": 4,
     "dayIndex": 98,
     "example": {
-      "en": "This is a very friendly result.",
-      "ru": "Это очень дружелюбный результат.",
-      "tj": "Ин натиҷаи хеле дӯстона аст.",
-      "prefix": "This is a very ",
-      "suffix": " result.",
-      "target": "friendly"
+      "en": "Our new neighbors are very friendly people.",
+      "ru": "Наши новые соседи — очень дружелюбные люди.",
+      "tj": "Ҳамсоягони нави мо одамони хеле меҳрубонанд.",
+      "prefix": "Our new neighbors are very ",
+      "target": "friendly",
+      "suffix": " people."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -1389,12 +1389,12 @@
     "batch": 1,
     "dayIndex": 26,
     "example": {
-      "en": "We found a quiet solution.",
-      "ru": "Мы нашли тихий решение.",
-      "tj": "Мо роҳи ҳалли ором пайдо кардем.",
-      "prefix": "We found a ",
-      "suffix": " solution.",
-      "target": "quiet"
+      "en": "He is a quiet and polite student.",
+      "ru": "Он тихий и вежливый студент.",
+      "tj": "Ӯ донишҷӯи ором ва боодоб аст.",
+      "prefix": "He is a ",
+      "target": "quiet",
+      "suffix": " and polite student."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -1416,12 +1416,12 @@
     "batch": 3,
     "dayIndex": 61,
     "example": {
-      "en": "I want to see today.",
-      "ru": "Я хочу сегодня видеть.",
-      "tj": "Ман мехоҳам имрӯз дидан.",
-      "prefix": "I want to ",
-      "suffix": " today.",
-      "target": "see"
+      "en": "It is wonderful to see you here today!",
+      "ru": "Замечательно видеть тебя здесь сегодня!",
+      "tj": "Аз дидани ту имрӯз дар ин ҷо хеле шодам!",
+      "prefix": "It is wonderful to ",
+      "target": "see",
+      "suffix": " you here today!"
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -1443,12 +1443,12 @@
     "batch": 3,
     "dayIndex": 83,
     "example": {
-      "en": "Try to sit every day.",
-      "ru": "Старайтесь сидеть каждый день.",
-      "tj": "Ҳар рӯз кӯшиш кунед, ки нишастан.",
-      "prefix": "Try to ",
-      "suffix": " every day.",
-      "target": "sit"
+      "en": "Please sit down and make yourself at home.",
+      "ru": "Пожалуйста, садись и чувствуй себя как дома.",
+      "tj": "Марҳамат, шинед ва худро мисли дар хона ҳис кунед.",
+      "prefix": "Please ",
+      "target": "sit",
+      "suffix": " down and make yourself at home."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -1470,12 +1470,12 @@
     "batch": 6,
     "dayIndex": 152,
     "example": {
-      "en": "Can you explain the meaning of this cousin?",
-      "ru": "Можешь объяснить значение слова \"двоюродный брат/сестра\"?",
-      "tj": "Оё метавонед маънои ин амакзода / холазода-ро фаҳмонед?",
-      "prefix": "Can you explain the meaning of this ",
-      "suffix": "?",
-      "target": "cousin"
+      "en": "My cousin came to visit us this weekend.",
+      "ru": "Мой двоюродный брат приехал навестить нас на этих выходных.",
+      "tj": "Писарамакам ин рӯзҳои истироҳат ба дидори мо омад.",
+      "prefix": "My ",
+      "target": "cousin",
+      "suffix": " came to visit us this weekend."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -1497,12 +1497,12 @@
     "batch": 2,
     "dayIndex": 36,
     "example": {
-      "en": "We talked about the eight yesterday.",
-      "ru": "Вчера мы говорили про восемь.",
-      "tj": "Дирӯз мо дар бораи ҳашт сӯҳбат кардем.",
-      "prefix": "We talked about the ",
-      "suffix": " yesterday.",
-      "target": "eight"
+      "en": "Our English class begins at eight in the morning.",
+      "ru": "Наш урок английского начинается в восемь утра.",
+      "tj": "Дарси англисии мо соати ҳашти субҳ оғоз мешавад.",
+      "prefix": "Our English class begins at ",
+      "target": "eight",
+      "suffix": " in the morning."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -1524,12 +1524,12 @@
     "batch": 3,
     "dayIndex": 73,
     "example": {
-      "en": "We talked about the birthday yesterday.",
-      "ru": "Вчера мы говорили про день рождения.",
-      "tj": "Дирӯз мо дар бораи рӯзи таваллуд сӯҳбат кардем.",
-      "prefix": "We talked about the ",
-      "suffix": " yesterday.",
-      "target": "birthday"
+      "en": "We are celebrating my friend's birthday tonight.",
+      "ru": "Сегодня вечером мы празднуем день рождения моего друга.",
+      "tj": "Имшаб мо зодрӯзи дӯстамро ҷашн мегирем.",
+      "prefix": "We are celebrating my friend's ",
+      "target": "birthday",
+      "suffix": " tonight."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -1551,12 +1551,12 @@
     "batch": 3,
     "dayIndex": 65,
     "example": {
-      "en": "Can you explain the meaning of this seven?",
-      "ru": "Можешь объяснить значение слова \"семь\"?",
-      "tj": "Оё метавонед маънои ин ҳафт-ро фаҳмонед?",
-      "prefix": "Can you explain the meaning of this ",
-      "suffix": "?",
-      "target": "seven"
+      "en": "There are seven days in a week.",
+      "ru": "В неделе семь дней.",
+      "tj": "Дар як ҳафта ҳафт рӯз ҳаст.",
+      "prefix": "There are ",
+      "target": "seven",
+      "suffix": " days in a week."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -1578,12 +1578,12 @@
     "batch": 2,
     "dayIndex": 29,
     "example": {
-      "en": "You need to understand carefully.",
-      "ru": "Вам нужно внимательно понимать.",
-      "tj": "Шумо бояд бодиққат фаҳмидан.",
-      "prefix": "You need to ",
-      "suffix": " carefully.",
-      "target": "understand"
+      "en": "I understand everything you are saying.",
+      "ru": "Я понимаю всё, что ты говоришь.",
+      "tj": "Ман ҳамаи гуфтаҳои туро мефаҳмам.",
+      "prefix": "I ",
+      "target": "understand",
+      "suffix": " everything you are saying."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -1605,12 +1605,12 @@
     "batch": 2,
     "dayIndex": 38,
     "example": {
-      "en": "This eighty is very important for us.",
-      "ru": "Этот (-а/-о) восемьдесят очень важен для нас.",
-      "tj": "Ин ҳаштод барои мо хеле муҳим аст.",
-      "prefix": "This ",
-      "suffix": " is very important for us.",
-      "target": "eighty"
+      "en": "My grandfather is eighty years old today.",
+      "ru": "Моему дедушке сегодня исполняется восемьдесят лет.",
+      "tj": "Бобоям имрӯз ҳаштосола мешавад.",
+      "prefix": "My grandfather is ",
+      "target": "eighty",
+      "suffix": " years old today."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -1632,12 +1632,12 @@
     "batch": 5,
     "dayIndex": 138,
     "example": {
-      "en": "We talked about the hey yesterday.",
-      "ru": "Вчера мы говорили про привет.",
-      "tj": "Дирӯз мо дар бораи салом сӯҳбат кардем.",
-      "prefix": "We talked about the ",
-      "suffix": " yesterday.",
-      "target": "hey"
+      "en": "Hey, are you free this afternoon?",
+      "ru": "Эй, ты свободен сегодня днём?",
+      "tj": "Эй, ту имрӯз баъд аз зуҳр холӣ ҳастӣ?",
+      "prefix": "",
+      "target": "Hey",
+      "suffix": ", are you free this afternoon?"
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -1659,12 +1659,12 @@
     "batch": 6,
     "dayIndex": 145,
     "example": {
-      "en": "We talked about the conversation yesterday.",
-      "ru": "Вчера мы говорили про разговор.",
-      "tj": "Дирӯз мо дар бораи сӯҳбат сӯҳбат кардем.",
-      "prefix": "We talked about the ",
-      "suffix": " yesterday.",
-      "target": "conversation"
+      "en": "We had a very interesting conversation about travel.",
+      "ru": "У нас был очень интересный разговор о путешествиях.",
+      "tj": "Мо дар бораи сафарҳо як сӯҳбати хеле ҷолиб доштем.",
+      "prefix": "We had a very interesting ",
+      "target": "conversation",
+      "suffix": " about travel."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -1686,12 +1686,12 @@
     "batch": 3,
     "dayIndex": 67,
     "example": {
-      "en": "We talked about the seventy yesterday.",
-      "ru": "Вчера мы говорили про семьдесят.",
-      "tj": "Дирӯз мо дар бораи ҳафтод сӯҳбат кардем.",
-      "prefix": "We talked about the ",
-      "suffix": " yesterday.",
-      "target": "seventy"
+      "en": "About seventy people attended the meeting.",
+      "ru": "Около семидесяти человек присутствовали на встрече.",
+      "tj": "Тақрибан ҳафтод нафар дар вохӯрӣ ширкат доштанд.",
+      "prefix": "About ",
+      "target": "seventy",
+      "suffix": " people attended the meeting."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -1713,12 +1713,12 @@
     "batch": 5,
     "dayIndex": 134,
     "example": {
-      "en": "It seems quite other to me.",
-      "ru": "Это кажется мне вполне другой.",
-      "tj": "Ин ба назари ман хеле дигар менамояд.",
-      "prefix": "It seems quite ",
-      "suffix": " to me.",
-      "target": "other"
+      "en": "Do you have any other questions for me?",
+      "ru": "У тебя есть ко мне другие вопросы?",
+      "tj": "Оё ба ман ягон саволи дигар дорӣ?",
+      "prefix": "Do you have any ",
+      "target": "other",
+      "suffix": " questions for me?"
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -1740,12 +1740,12 @@
     "batch": 1,
     "dayIndex": 27,
     "example": {
-      "en": "This is a very another result.",
-      "ru": "Это очень другой результат.",
-      "tj": "Ин натиҷаи хеле дигар аст.",
-      "prefix": "This is a very ",
-      "suffix": " result.",
-      "target": "another"
+      "en": "Would you like another cup of tea?",
+      "ru": "Хотите ещё одну чашку чая?",
+      "tj": "Боз як пиёла чой мехоҳед?",
+      "prefix": "Would you like ",
+      "target": "another",
+      "suffix": " cup of tea?"
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -1767,12 +1767,12 @@
     "batch": 2,
     "dayIndex": 41,
     "example": {
-      "en": "This is a very else result.",
-      "ru": "Это очень ещё/другой результат.",
-      "tj": "Ин натиҷаи хеле дигар аст.",
-      "prefix": "This is a very ",
-      "suffix": " result.",
-      "target": "else"
+      "en": "Is there anything else I can help you with?",
+      "ru": "Есть ли что-то ещё, с чем я могу вам помочь?",
+      "tj": "Боз ягон чиз ҳаст, ки метавонам ба шумо кӯмак кунам?",
+      "prefix": "Is there anything ",
+      "target": "else",
+      "suffix": " I can help you with?"
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -1794,12 +1794,12 @@
     "batch": 4,
     "dayIndex": 95,
     "example": {
-      "en": "We talked about the neighbour yesterday.",
-      "ru": "Вчера мы говорили про сосед.",
-      "tj": "Дирӯз мо дар бораи ҳамсоя сӯҳбат кардем.",
-      "prefix": "We talked about the ",
-      "suffix": " yesterday.",
-      "target": "neighbour"
+      "en": "Our next-door neighbour is a doctor.",
+      "ru": "Наш сосед по дому — врач.",
+      "tj": "Ҳамсояи паҳлӯии мо табиб аст.",
+      "prefix": "Our next-door ",
+      "target": "neighbour",
+      "suffix": " is a doctor."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -1821,12 +1821,12 @@
     "batch": 6,
     "dayIndex": 158,
     "example": {
-      "en": "Can you explain the meaning of this dad?",
-      "ru": "Можешь объяснить значение слова \"папа\"?",
-      "tj": "Оё метавонед маънои ин падарам / ота-ро фаҳмонед?",
-      "prefix": "Can you explain the meaning of this ",
-      "suffix": "?",
-      "target": "dad"
+      "en": "My dad likes fishing on Sundays.",
+      "ru": "Мой папа любит рыбачить по воскресеньям.",
+      "tj": "Падарам рӯзҳои якшанбе моҳигириро дӯст медорад.",
+      "prefix": "My ",
+      "target": "dad",
+      "suffix": " likes fishing on Sundays."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -1848,12 +1848,12 @@
     "batch": 4,
     "dayIndex": 87,
     "example": {
-      "en": "Can you explain the meaning of this mum?",
-      "ru": "Можешь объяснить значение слова \"мама\"?",
-      "tj": "Оё метавонед маънои ин модар-ро фаҳмонед?",
-      "prefix": "Can you explain the meaning of this ",
-      "suffix": "?",
-      "target": "mum"
+      "en": "My mum bakes delicious pies every weekend.",
+      "ru": "Моя мама печёт вкусные пироги каждые выходные.",
+      "tj": "Модарам ҳар рӯзҳои истироҳат пирожни болаззат мепазад.",
+      "prefix": "My ",
+      "target": "mum",
+      "suffix": " bakes delicious pies every weekend."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -1875,12 +1875,12 @@
     "batch": 5,
     "dayIndex": 131,
     "example": {
-      "en": "Try to take every day.",
-      "ru": "Старайтесь брать каждый день.",
-      "tj": "Ҳар рӯз кӯшиш кунед, ки гирифтан.",
-      "prefix": "Try to ",
-      "suffix": " every day.",
-      "target": "take"
+      "en": "Please take a seat and relax.",
+      "ru": "Пожалуйста, присаживайтесь и отдыхайте.",
+      "tj": "Марҳамат, шинед ва истироҳат кунед.",
+      "prefix": "Please ",
+      "target": "take",
+      "suffix": " a seat and relax."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -1902,12 +1902,12 @@
     "batch": 4,
     "dayIndex": 90,
     "example": {
-      "en": "This break is very important for us.",
-      "ru": "Этот (-а/-о) ломать / перерыв очень важен для нас.",
-      "tj": "Ин шикастан / танаффус барои мо хеле муҳим аст.",
-      "prefix": "This ",
-      "suffix": " is very important for us.",
-      "target": "break"
+      "en": "Let us take a short coffee break.",
+      "ru": "Давайте сделаем небольшой перерыв на кофе.",
+      "tj": "Биёед як танаффуси кӯтоҳи қаҳва кунем.",
+      "prefix": "Let us take a short coffee ",
+      "target": "break",
+      "suffix": "."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -1929,12 +1929,12 @@
     "batch": 6,
     "dayIndex": 157,
     "example": {
-      "en": "I want to think today.",
-      "ru": "Я хочу сегодня думать.",
-      "tj": "Ман мехоҳам имрӯз фикр кардан.",
-      "prefix": "I want to ",
-      "suffix": " today.",
-      "target": "think"
+      "en": "What do you think about this idea?",
+      "ru": "Что ты думаешь об этой идее?",
+      "tj": "Дар бораи ин фикр чӣ фикр мекунӣ?",
+      "prefix": "What do you ",
+      "target": "think",
+      "suffix": " about this idea?"
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -1956,12 +1956,12 @@
     "batch": 6,
     "dayIndex": 141,
     "example": {
-      "en": "Can you explain the meaning of this very?",
-      "ru": "Можешь объяснить значение слова \"очень\"?",
-      "tj": "Оё метавонед маънои ин хеле-ро фаҳмонед?",
-      "prefix": "Can you explain the meaning of this ",
-      "suffix": "?",
-      "target": "very"
+      "en": "She is a very polite and kind girl.",
+      "ru": "Она очень вежливая и добрая девочка.",
+      "tj": "Вай духтари хеле боодоб ва меҳрубон аст.",
+      "prefix": "She is a ",
+      "target": "very",
+      "suffix": " polite and kind girl."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -1983,12 +1983,12 @@
     "batch": 6,
     "dayIndex": 164,
     "example": {
-      "en": "Try to look every day.",
-      "ru": "Старайтесь смотреть каждый день.",
-      "tj": "Ҳар рӯз кӯшиш кунед, ки нигаристан.",
-      "prefix": "Try to ",
-      "suffix": " every day.",
-      "target": "look"
+      "en": "You look great in that new jacket!",
+      "ru": "Ты отлично выглядишь в этой новой куртке!",
+      "tj": "Ту дар ин куртаи нав хеле зебо менамоӣ!",
+      "prefix": "You ",
+      "target": "look",
+      "suffix": " great in that new jacket!"
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -2010,12 +2010,12 @@
     "batch": 1,
     "dayIndex": 15,
     "example": {
-      "en": "Let's meet tomorrow in the afternoon.",
-      "ru": "Давай встретимся завтра после полудня.",
-      "tj": "Биё фардо баъд аз нисфирӯзӣ вохӯрем.",
-      "prefix": "Let's meet tomorrow in the ",
-      "suffix": ".",
-      "target": "afternoon"
+      "en": "I will meet you tomorrow afternoon.",
+      "ru": "Я встречусь с тобой завтра днём.",
+      "tj": "Ман пагоҳ баъд аз зуҳр бо ту вомехӯрам.",
+      "prefix": "I will meet you tomorrow ",
+      "target": "afternoon",
+      "suffix": "."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -2037,12 +2037,12 @@
     "batch": 1,
     "dayIndex": 14,
     "example": {
-      "en": "Try to fall every day.",
-      "ru": "Старайтесь падать каждый день.",
-      "tj": "Ҳар рӯз кӯшиш кунед, ки афтидан.",
-      "prefix": "Try to ",
-      "suffix": " every day.",
-      "target": "fall"
+      "en": "In the fall, the leaves change their color.",
+      "ru": "Осенью листья меняют свой цвет.",
+      "tj": "Дар фасли тирамоҳ баргҳо ранги худро дигар мекунанд.",
+      "prefix": "In the ",
+      "target": "fall",
+      "suffix": ", the leaves change their color."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -2064,12 +2064,12 @@
     "batch": 3,
     "dayIndex": 68,
     "example": {
-      "en": "Can you explain the meaning of this she?",
-      "ru": "Можешь объяснить значение слова \"она\"?",
-      "tj": "Оё метавонед маънои ин ӯ-ро фаҳмонед?",
-      "prefix": "Can you explain the meaning of this ",
-      "suffix": "?",
-      "target": "she"
+      "en": "She is the smartest student in our group.",
+      "ru": "Она самая умная студентка в нашей группе.",
+      "tj": "Вай донотарин донишҷӯ дар гурӯҳи мост.",
+      "prefix": "",
+      "target": "She",
+      "suffix": " is the smartest student in our group."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -2091,12 +2091,12 @@
     "batch": 5,
     "dayIndex": 115,
     "example": {
-      "en": "Can you explain the meaning of this grandparent?",
-      "ru": "Можешь объяснить значение слова \"дедушка/бабушка\"?",
-      "tj": "Оё метавонед маънои ин падаркалон/модаркалон-ро фаҳмонед?",
-      "prefix": "Can you explain the meaning of this ",
-      "suffix": "?",
-      "target": "grandparent"
+      "en": "I visit my grandparents every summer.",
+      "ru": "Я навещаю дедушку и бабушку каждое лето.",
+      "tj": "Ман ҳар тобистон ба дидори бобо ва бибиам меравам.",
+      "prefix": "I visit my ",
+      "target": "grandparents",
+      "suffix": " every summer."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -2145,12 +2145,12 @@
     "batch": 2,
     "dayIndex": 39,
     "example": {
-      "en": "Can you explain the meaning of this sir?",
-      "ru": "Можешь объяснить значение слова \"сэр\"?",
-      "tj": "Оё метавонед маънои ин ҷаноб-ро фаҳмонед?",
-      "prefix": "Can you explain the meaning of this ",
-      "suffix": "?",
-      "target": "sir"
+      "en": "Can I help you with your luggage, sir?",
+      "ru": "Могу я помочь вам с багажом, сэр?",
+      "tj": "Метавонам бо бағоҷатон кӯмак кунам, ҷаноб?",
+      "prefix": "Can I help you with your luggage, ",
+      "target": "sir",
+      "suffix": "?"
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -2172,12 +2172,12 @@
     "batch": 5,
     "dayIndex": 138,
     "example": {
-      "en": "This lady is very important for us.",
-      "ru": "Этот (-а/-о) леди / дама очень важен для нас.",
-      "tj": "Ин хонум барои мо хеле муҳим аст.",
-      "prefix": "This ",
-      "suffix": " is very important for us.",
-      "target": "lady"
+      "en": "An elderly lady asked for directions to the station.",
+      "ru": "Пожилая дама спросила дорогу до вокзала.",
+      "tj": "Як бонуи солхӯрда роҳи вокзалро пурсид.",
+      "prefix": "An elderly ",
+      "target": "lady",
+      "suffix": " asked for directions to the station."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -2199,12 +2199,12 @@
     "batch": 6,
     "dayIndex": 143,
     "example": {
-      "en": "We found a last solution.",
-      "ru": "Мы нашли последний решение.",
-      "tj": "Мо роҳи ҳалли охирин пайдо кардем.",
-      "prefix": "We found a ",
-      "suffix": " solution.",
-      "target": "last"
+      "en": "What was your last job?",
+      "ru": "Какая была твоя последняя работа?",
+      "tj": "Охирин кори ту чӣ буд?",
+      "prefix": "What was your ",
+      "target": "last",
+      "suffix": " job?"
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -2226,12 +2226,12 @@
     "batch": 1,
     "dayIndex": 5,
     "example": {
-      "en": "We talked about the birth yesterday.",
-      "ru": "Вчера мы говорили про рождение.",
-      "tj": "Дирӯз мо дар бораи таваллуд сӯҳбат кардем.",
-      "prefix": "We talked about the ",
-      "suffix": " yesterday.",
-      "target": "birth"
+      "en": "Please write your date and place of birth.",
+      "ru": "Пожалуйста, напишите дату и место своего рождения.",
+      "tj": "Лутфан сана ва ҷои таваллуди худро нависед.",
+      "prefix": "Please write your date and place of ",
+      "target": "birth",
+      "suffix": "."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -2253,12 +2253,12 @@
     "batch": 2,
     "dayIndex": 38,
     "example": {
-      "en": "It seems quite single to me.",
-      "ru": "Это кажется мне вполне один / одинокий.",
-      "tj": "Ин ба назари ман хеле як / танҳо менамояд.",
-      "prefix": "It seems quite ",
-      "suffix": " to me.",
-      "target": "single"
+      "en": "He is currently single and focused on his career.",
+      "ru": "Сейчас он холост и сосредоточен на карьере.",
+      "tj": "Ҳоло ӯ муҷаррад аст ва диққаташро ба касбаш равона кардааст.",
+      "prefix": "He is currently ",
+      "target": "single",
+      "suffix": " and focused on his career."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -2280,12 +2280,12 @@
     "batch": 3,
     "dayIndex": 65,
     "example": {
-      "en": "Try to guest every day.",
-      "ru": "Старайтесь гость каждый день.",
-      "tj": "Ҳар рӯз кӯшиш кунед, ки меҳмон.",
-      "prefix": "Try to ",
-      "suffix": " every day.",
-      "target": "guest"
+      "en": "We welcomed every guest with warm tea.",
+      "ru": "Мы встретили каждого гостя тёплым чаем.",
+      "tj": "Мо ҳар як меҳмонро бо чойи гарм пешвоз гирифтем.",
+      "prefix": "We welcomed every ",
+      "target": "guest",
+      "suffix": " with warm tea."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -2307,12 +2307,12 @@
     "batch": 4,
     "dayIndex": 89,
     "example": {
-      "en": "Try to rise every day.",
-      "ru": "Старайтесь подниматься каждый день.",
-      "tj": "Ҳар рӯз кӯшиш кунед, ки боло рафтан.",
-      "prefix": "Try to ",
-      "suffix": " every day.",
-      "target": "rise"
+      "en": "The sun begins to rise early in summer.",
+      "ru": "Летом солнце начинает вставать рано.",
+      "tj": "Дар тобистон офтоб барвақт тулӯъ мекунад.",
+      "prefix": "The sun begins to ",
+      "target": "rise",
+      "suffix": " early in summer."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -2334,12 +2334,12 @@
     "batch": 5,
     "dayIndex": 130,
     "example": {
-      "en": "Try to raise every day.",
-      "ru": "Старайтесь поднимать каждый день.",
-      "tj": "Ҳар рӯз кӯшиш кунед, ки боло бурдан.",
-      "prefix": "Try to ",
-      "suffix": " every day.",
-      "target": "raise"
+      "en": "Please raise your hand if you have a question.",
+      "ru": "Пожалуйста, поднимите руку, если у вас есть вопрос.",
+      "tj": "Агар савол дошта бошед, лутфан дастатонро бардоред.",
+      "prefix": "Please ",
+      "target": "raise",
+      "suffix": " your hand if you have a question."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -2361,12 +2361,12 @@
     "batch": 5,
     "dayIndex": 139,
     "example": {
-      "en": "Try to arrangement every day.",
-      "ru": "Старайтесь договорённость каждый день.",
-      "tj": "Ҳар рӯз кӯшиш кунед, ки мувофиқа.",
-      "prefix": "Try to ",
-      "suffix": " every day.",
-      "target": "arrangement"
+      "en": "We made an arrangement to meet at the cafe.",
+      "ru": "Мы договорились встретиться в кафе.",
+      "tj": "Мо қарор додем, ки дар қаҳвахона вохӯрем.",
+      "prefix": "We made an ",
+      "target": "arrangement",
+      "suffix": " to meet at the cafe."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -2388,12 +2388,12 @@
     "batch": 5,
     "dayIndex": 113,
     "example": {
-      "en": "We talked about the detective yesterday.",
-      "ru": "Вчера мы говорили про детектив.",
-      "tj": "Дирӯз мо дар бораи ҷосус сӯҳбат кардем.",
-      "prefix": "We talked about the ",
-      "suffix": " yesterday.",
-      "target": "detective"
+      "en": "The detective asked several questions about the incident.",
+      "ru": "Детектив задал несколько вопросов о происшествии.",
+      "tj": "Муфаттиш дар бораи ҳодиса якчанд савол дод.",
+      "prefix": "The ",
+      "target": "detective",
+      "suffix": " asked several questions about the incident."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -2415,12 +2415,12 @@
     "batch": 1,
     "dayIndex": 14,
     "example": {
-      "en": "We talked about the borrow yesterday.",
-      "ru": "Вчера мы говорили про брать взаймы.",
-      "tj": "Дирӯз мо дар бораи қарз гирифтан сӯҳбат кардем.",
-      "prefix": "We talked about the ",
-      "suffix": " yesterday.",
-      "target": "borrow"
+      "en": "Can I borrow your pen for a moment?",
+      "ru": "Могу я одолжить вашу ручку на минутку?",
+      "tj": "Метавонам қалами шуморо як лаҳза гирам?",
+      "prefix": "Can I ",
+      "target": "borrow",
+      "suffix": " your pen for a moment?"
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -2442,12 +2442,12 @@
     "batch": 5,
     "dayIndex": 133,
     "example": {
-      "en": "Try to realize every day.",
-      "ru": "Старайтесь понимать / осознавать каждый день.",
-      "tj": "Ҳар рӯз кӯшиш кунед, ки дарк кардан.",
-      "prefix": "Try to ",
-      "suffix": " every day.",
-      "target": "realize"
+      "en": "I suddenly realized that I forgot my keys.",
+      "ru": "Я вдруг осознал, что забыл свои ключи.",
+      "tj": "Ман ногаҳон фаҳмидам, ки калидҳоямро фаромӯш кардаам.",
+      "prefix": "I suddenly ",
+      "target": "realized",
+      "suffix": " that I forgot my keys."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -2469,12 +2469,12 @@
     "batch": 4,
     "dayIndex": 87,
     "example": {
-      "en": "Can you explain the meaning of this suddenly?",
-      "ru": "Можешь объяснить значение слова \"вдруг\"?",
-      "tj": "Оё метавонед маънои ин ногаҳон-ро фаҳмонед?",
-      "prefix": "Can you explain the meaning of this ",
-      "suffix": "?",
-      "target": "suddenly"
+      "en": "Suddenly, the lights went out in the room.",
+      "ru": "Внезапно в комнате погас свет.",
+      "tj": "Ногаҳон дар хона чароғ хомӯш шуд.",
+      "prefix": "",
+      "target": "Suddenly",
+      "suffix": ", the lights went out in the room."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -2496,12 +2496,12 @@
     "batch": 1,
     "dayIndex": 20,
     "example": {
-      "en": "We found a female solution.",
-      "ru": "Мы нашли женщина / женский решение.",
-      "tj": "Мо роҳи ҳалли зан / занона пайдо кардем.",
-      "prefix": "We found a ",
-      "suffix": " solution.",
-      "target": "female"
+      "en": "She is the first female manager in our company.",
+      "ru": "Она первая женщина-руководитель в нашей компании.",
+      "tj": "Вай аввалин роҳбари зан дар ширкати мост.",
+      "prefix": "She is the first ",
+      "target": "female",
+      "suffix": " manager in our company."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -2523,12 +2523,12 @@
     "batch": 5,
     "dayIndex": 117,
     "example": {
-      "en": "Can you explain the meaning of this differently?",
-      "ru": "Можешь объяснить значение слова \"по-другому\"?",
-      "tj": "Оё метавонед маънои ин ба дигар тарз-ро фаҳмонед?",
-      "prefix": "Can you explain the meaning of this ",
-      "suffix": "?",
-      "target": "differently"
+      "en": "Everyone thinks differently about this problem.",
+      "ru": "Каждый думает об этой проблеме по-разному.",
+      "tj": "Ҳар кас дар бораи ин мушкилот гуногун фикр мекунад.",
+      "prefix": "Everyone thinks ",
+      "target": "differently",
+      "suffix": " about this problem."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -2550,12 +2550,12 @@
     "batch": 3,
     "dayIndex": 66,
     "example": {
-      "en": "I want to own today.",
-      "ru": "Я хочу сегодня свой / владеть.",
-      "tj": "Ман мехоҳам имрӯз худ / доштан.",
-      "prefix": "I want to ",
-      "suffix": " today.",
-      "target": "own"
+      "en": "He wants to start his own small business.",
+      "ru": "Он хочет открыть свой собственный малый бизнес.",
+      "tj": "Ӯ мехоҳад тиҷорати хурди шахсии худро оғоз кунад.",
+      "prefix": "He wants to start his ",
+      "target": "own",
+      "suffix": " small business."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -2577,12 +2577,12 @@
     "batch": 4,
     "dayIndex": 95,
     "example": {
-      "en": "You need to accept carefully.",
-      "ru": "Вам нужно внимательно принимать.",
-      "tj": "Шумо бояд бодиққат қабул кардан.",
-      "prefix": "You need to ",
-      "suffix": " carefully.",
-      "target": "accept"
+      "en": "I am happy to accept your invitation.",
+      "ru": "Я с радостью принимаю ваше приглашение.",
+      "tj": "Ман бо хурсандӣ даъвати шуморо қабул мекунам.",
+      "prefix": "I am happy to ",
+      "target": "accept",
+      "suffix": " your invitation."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -2604,12 +2604,12 @@
     "batch": 6,
     "dayIndex": 149,
     "example": {
-      "en": "I want to employ today.",
-      "ru": "Я хочу сегодня нанимать.",
-      "tj": "Ман мехоҳам имрӯз кор фармоидан.",
-      "prefix": "I want to ",
-      "suffix": " today.",
-      "target": "employ"
+      "en": "The company will employ ten new specialists this month.",
+      "ru": "В этом месяце компания наймет десять новых специалистов.",
+      "tj": "Ширкат ин моҳ даҳ мутахассиси навро ба кор қабул мекунад.",
+      "prefix": "The company will ",
+      "target": "employ",
+      "suffix": " ten new specialists this month."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -2631,12 +2631,12 @@
     "batch": 3,
     "dayIndex": 63,
     "example": {
-      "en": "You need to greet carefully.",
-      "ru": "Вам нужно внимательно приветствовать.",
-      "tj": "Шумо бояд бодиққат истиқбол кардан.",
-      "prefix": "You need to ",
-      "suffix": " carefully.",
-      "target": "greet"
+      "en": "They always greet their neighbors warmly.",
+      "ru": "Они всегда тепло приветствуют своих соседей.",
+      "tj": "Онҳо ҳамеша ҳамсоягони худро гарм пешвоз мегиранд.",
+      "prefix": "They always ",
+      "target": "greet",
+      "suffix": " their neighbors warmly."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -2658,12 +2658,12 @@
     "batch": 4,
     "dayIndex": 93,
     "example": {
-      "en": "This human is very important for us.",
-      "ru": "Этот (-а/-о) человек очень важен для нас.",
-      "tj": "Ин инсон барои мо хеле муҳим аст.",
-      "prefix": "This ",
-      "suffix": " is very important for us.",
-      "target": "human"
+      "en": "Kindness is a very important human quality.",
+      "ru": "Доброта — очень важное человеческое качество.",
+      "tj": "Меҳрубонӣ хислати хеле муҳими инсонист.",
+      "prefix": "Kindness is a very important ",
+      "target": "human",
+      "suffix": " quality."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -2685,12 +2685,12 @@
     "batch": 1,
     "dayIndex": 8,
     "example": {
-      "en": "This male is very important for us.",
-      "ru": "Этот (-а/-о) мужчина очень важен для нас.",
-      "tj": "Ин мард барои мо хеле муҳим аст.",
-      "prefix": "This ",
-      "suffix": " is very important for us.",
-      "target": "male"
+      "en": "Most of the workers in this team are male.",
+      "ru": "Большинство работников в этой команде — мужчины.",
+      "tj": "Аксари кормандони ин даста мардонанд.",
+      "prefix": "Most of the workers in this team are ",
+      "target": "male",
+      "suffix": "."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -2712,12 +2712,12 @@
     "batch": 6,
     "dayIndex": 142,
     "example": {
-      "en": "Can you explain the meaning of this assistant?",
-      "ru": "Можешь объяснить значение слова \"ассистент\"?",
-      "tj": "Оё метавонед маънои ин ёрдамчӣ-ро фаҳмонед?",
-      "prefix": "Can you explain the meaning of this ",
-      "suffix": "?",
-      "target": "assistant"
+      "en": "My assistant will help you fill out the form.",
+      "ru": "Мой ассистент поможет вам заполнить анкету.",
+      "tj": "Ёрдамчии ман ба шумо барои пур кардани варақа кӯмак мекунад.",
+      "prefix": "My ",
+      "target": "assistant",
+      "suffix": " will help you fill out the form."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -2739,12 +2739,12 @@
     "batch": 1,
     "dayIndex": 28,
     "example": {
-      "en": "This shall is very important for us.",
-      "ru": "Этот (-а/-о) должен очень важен для нас.",
-      "tj": "Ин бояд барои мо хеле муҳим аст.",
-      "prefix": "This ",
-      "suffix": " is very important for us.",
-      "target": "shall"
+      "en": "Shall we go for a walk in the park?",
+      "ru": "Пойдём прогуляемся в парке?",
+      "tj": "Биёед дар боғ каме сайругашт кунем?",
+      "prefix": "",
+      "target": "Shall",
+      "suffix": " we go for a walk in the park?"
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -2766,12 +2766,12 @@
     "batch": 6,
     "dayIndex": 147,
     "example": {
-      "en": "It seems quite attractive to me.",
-      "ru": "Это кажется мне вполне привлекательный.",
-      "tj": "Ин ба назари ман хеле ҷолиб менамояд.",
-      "prefix": "It seems quite ",
-      "suffix": " to me.",
-      "target": "attractive"
+      "en": "She has an attractive and confident personality.",
+      "ru": "Она привлекательная и уверенная в себе личность.",
+      "tj": "Вай шахси ҷолиб ва ба худ боварӣ дорад.",
+      "prefix": "She has an ",
+      "target": "attractive",
+      "suffix": " and confident personality."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -2793,12 +2793,12 @@
     "batch": 6,
     "dayIndex": 154,
     "example": {
-      "en": "This engine is very important for us.",
-      "ru": "Этот (-а/-о) двигатель очень важен для нас.",
-      "tj": "Ин муҳаррик барои мо хеле муҳим аст.",
-      "prefix": "This ",
-      "suffix": " is very important for us.",
-      "target": "engine"
+      "en": "The car engine started with a quiet sound.",
+      "ru": "Двигатель машины завёлся с тихим звуком.",
+      "tj": "Муҳаррики мошин бо садои ором ба кор даромад.",
+      "prefix": "The car ",
+      "target": "engine",
+      "suffix": " started with a quiet sound."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -2820,12 +2820,12 @@
     "batch": 5,
     "dayIndex": 140,
     "example": {
-      "en": "It seems quite united to me.",
-      "ru": "Это кажется мне вполне объединённый.",
-      "tj": "Ин ба назари ман хеле муттаҳид менамояд.",
-      "prefix": "It seems quite ",
-      "suffix": " to me.",
-      "target": "united"
+      "en": "Our team remained united and solved the problem.",
+      "ru": "Наша команда осталась сплочённой и решила проблему.",
+      "tj": "Дастаи мо муттаҳид монд ва мушкилотро ҳал кард.",
+      "prefix": "Our team remained ",
+      "target": "united",
+      "suffix": " and solved the problem."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -2847,12 +2847,12 @@
     "batch": 2,
     "dayIndex": 42,
     "example": {
-      "en": "You need to feed carefully.",
-      "ru": "Вам нужно внимательно кормить.",
-      "tj": "Шумо бояд бодиққат ғизо додан.",
-      "prefix": "You need to ",
-      "suffix": " carefully.",
-      "target": "feed"
+      "en": "Do not forget to feed the cat in the morning.",
+      "ru": "Не забудь покормить кота утром.",
+      "tj": "Фаромӯш накун, ки пагоҳӣ ба гурба хӯрок диҳӣ.",
+      "prefix": "Do not forget to ",
+      "target": "feed",
+      "suffix": " the cat in the morning."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -2874,12 +2874,12 @@
     "batch": 5,
     "dayIndex": 125,
     "example": {
-      "en": "We talked about the tradition yesterday.",
-      "ru": "Вчера мы говорили про традиция.",
-      "tj": "Дирӯз мо дар бораи анъана сӯҳбат кардем.",
-      "prefix": "We talked about the ",
-      "suffix": " yesterday.",
-      "target": "tradition"
+      "en": "It is an old family tradition to have dinner together.",
+      "ru": "Это старая семейная традиция — ужинать вместе.",
+      "tj": "Ин як анъанаи деринаи оилавист, ки якҷоя шом хӯранд.",
+      "prefix": "It is an old family ",
+      "target": "tradition",
+      "suffix": " to have dinner together."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -2901,12 +2901,12 @@
     "batch": 2,
     "dayIndex": 38,
     "example": {
-      "en": "Try to focus every day.",
-      "ru": "Старайтесь фокусироваться каждый день.",
-      "tj": "Ҳар рӯз кӯшиш кунед, ки тамаркуз кардан.",
+      "en": "Try to focus on learning new vocabulary every day.",
+      "ru": "Старайся фокусироваться на изучении новых слов каждый день.",
+      "tj": "Кӯшиш кун ҳар рӯз диққати худро ба омӯзиши калимаҳои нав равона созӣ.",
       "prefix": "Try to ",
-      "suffix": " every day.",
-      "target": "focus"
+      "target": "focus",
+      "suffix": " on learning new vocabulary every day."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -2928,12 +2928,12 @@
     "batch": 2,
     "dayIndex": 53,
     "example": {
-      "en": "This nut is very important for us.",
-      "ru": "Этот (-а/-о) орех очень важен для нас.",
-      "tj": "Ин чормағз барои мо хеле муҳим аст.",
-      "prefix": "This ",
-      "suffix": " is very important for us.",
-      "target": "nut"
+      "en": "Walnuts and almonds are very healthy nuts.",
+      "ru": "Грецкие орехи и миндаль — очень полезные орехи.",
+      "tj": "Чормағз ва бодом чормағзҳои хеле фоиданоканд.",
+      "prefix": "Walnuts and almonds are very healthy ",
+      "target": "nuts",
+      "suffix": "."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -2955,12 +2955,12 @@
     "batch": 4,
     "dayIndex": 89,
     "example": {
-      "en": "We talked about the suggestion yesterday.",
-      "ru": "Вчера мы говорили про предложение.",
-      "tj": "Дирӯз мо дар бораи пешниҳод сӯҳбат кардем.",
-      "prefix": "We talked about the ",
-      "suffix": " yesterday.",
-      "target": "suggestion"
+      "en": "Thank you for your helpful suggestion.",
+      "ru": "Спасибо за ваше полезное предложение.",
+      "tj": "Барои пешниҳоди муфидатон ташаккур.",
+      "prefix": "Thank you for your helpful ",
+      "target": "suggestion",
+      "suffix": "."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -2982,12 +2982,12 @@
     "batch": 4,
     "dayIndex": 98,
     "example": {
-      "en": "Can you explain the meaning of this immediately?",
-      "ru": "Можешь объяснить значение слова \"сразу\"?",
-      "tj": "Оё метавонед маънои ин фавран-ро фаҳмонед?",
-      "prefix": "Can you explain the meaning of this ",
-      "suffix": "?",
-      "target": "immediately"
+      "en": "Please call me immediately when you arrive.",
+      "ru": "Пожалуйста, позвони мне сразу, как только приедешь.",
+      "tj": "Лутфан ҳамин ки расидӣ, фавран ба ман занг зан.",
+      "prefix": "Please call me ",
+      "target": "immediately",
+      "suffix": " when you arrive."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -3009,12 +3009,12 @@
     "batch": 5,
     "dayIndex": 131,
     "example": {
-      "en": "We talked about the truck yesterday.",
-      "ru": "Вчера мы говорили про грузовик.",
-      "tj": "Дирӯз мо дар бораи мошини боркаш сӯҳбат кардем.",
-      "prefix": "We talked about the ",
-      "suffix": " yesterday.",
-      "target": "truck"
+      "en": "A large truck delivered the furniture to our house.",
+      "ru": "Большой грузовик доставил мебель к нашему дому.",
+      "tj": "Як мошини калони боркаш мебелро ба хонаи мо овард.",
+      "prefix": "A large ",
+      "target": "truck",
+      "suffix": " delivered the furniture to our house."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -3036,12 +3036,12 @@
     "batch": 6,
     "dayIndex": 151,
     "example": {
-      "en": "Try to replace every day.",
-      "ru": "Старайтесь заменять каждый день.",
-      "tj": "Ҳар рӯз кӯшиш кунед, ки иваз кардан.",
-      "prefix": "Try to ",
-      "suffix": " every day.",
-      "target": "replace"
+      "en": "We need to replace the old batteries in the remote.",
+      "ru": "Нам нужно заменить старые батарейки в пульте.",
+      "tj": "Мо бояд батареяҳои кӯҳнаро дар пулт иваз кунем.",
+      "prefix": "We need to ",
+      "target": "replace",
+      "suffix": " the old batteries in the remote."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -3063,12 +3063,12 @@
     "batch": 2,
     "dayIndex": 33,
     "example": {
-      "en": "Can you explain the meaning of this side?",
-      "ru": "Можешь объяснить значение слова \"сторона\"?",
-      "tj": "Оё метавонед маънои ин тараф-ро фаҳмонед?",
-      "prefix": "Can you explain the meaning of this ",
-      "suffix": "?",
-      "target": "side"
+      "en": "Sit by my side and let us talk.",
+      "ru": "Сядь рядом со мной, и давай поговорим.",
+      "tj": "Дар паҳлӯи ман шин ва биё сӯҳбат кунем.",
+      "prefix": "Sit by my ",
+      "target": "side",
+      "suffix": " and let us talk."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -3090,12 +3090,12 @@
     "batch": 5,
     "dayIndex": 135,
     "example": {
-      "en": "This since is very important for us.",
-      "ru": "Этот (-а/-о) с / поскольку очень важен для нас.",
-      "tj": "Ин аз он ки / азбаски барои мо хеле муҳим аст.",
-      "prefix": "This ",
-      "suffix": " is very important for us.",
-      "target": "since"
+      "en": "I have known him since our school days.",
+      "ru": "Я знаю его со школьных времён.",
+      "tj": "Ман ӯро аз замони мактабхонӣ мешиносам.",
+      "prefix": "I have known him ",
+      "target": "since",
+      "suffix": " our school days."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -3117,12 +3117,12 @@
     "batch": 2,
     "dayIndex": 55,
     "example": {
-      "en": "This is a very social result.",
-      "ru": "Это очень социальный результат.",
-      "tj": "Ин натиҷаи хеле иҷтимоӣ аст.",
-      "prefix": "This is a very ",
-      "suffix": " result.",
-      "target": "social"
+      "en": "He is very active on social media.",
+      "ru": "Он очень активен в социальных сетях.",
+      "tj": "Ӯ дар шабакаҳои иҷтимоӣ хеле фаъол аст.",
+      "prefix": "He is very active on ",
+      "target": "social",
+      "suffix": " media."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -3144,12 +3144,12 @@
     "batch": 6,
     "dayIndex": 152,
     "example": {
-      "en": "Can you explain the meaning of this lecture?",
-      "ru": "Можешь объяснить значение слова \"лекция\"?",
-      "tj": "Оё метавонед маънои ин лексия-ро фаҳмонед?",
-      "prefix": "Can you explain the meaning of this ",
-      "suffix": "?",
-      "target": "lecture"
+      "en": "The professor gave an inspiring lecture on history.",
+      "ru": "Профессор прочитал вдохновляющую лекцию по истории.",
+      "tj": "Профессор дар бораи таърих як лексияи илҳомбахш хонд.",
+      "prefix": "The professor gave an inspiring ",
+      "target": "lecture",
+      "suffix": " on history."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -3171,12 +3171,12 @@
     "batch": 3,
     "dayIndex": 57,
     "example": {
-      "en": "This god is very important for us.",
-      "ru": "Этот (-а/-о) бог очень важен для нас.",
-      "tj": "Ин худо барои мо хеле муҳим аст.",
-      "prefix": "This ",
-      "suffix": " is very important for us.",
-      "target": "god"
+      "en": "They thanked God for their family's health.",
+      "ru": "Они поблагодарили Бога за здоровье своей семьи.",
+      "tj": "Онҳо Худоро барои саломатии оилаашон шукр гуфтанд.",
+      "prefix": "They thanked ",
+      "target": "God",
+      "suffix": " for their family's health."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -3198,12 +3198,12 @@
     "batch": 2,
     "dayIndex": 46,
     "example": {
-      "en": "We found a noisy solution.",
-      "ru": "Мы нашли шумный решение.",
-      "tj": "Мо роҳи ҳалли пурсадо пайдо кардем.",
-      "prefix": "We found a ",
-      "suffix": " solution.",
-      "target": "noisy"
+      "en": "The cafe was too noisy for a quiet conversation.",
+      "ru": "В кафе было слишком шумно для спокойного разговора.",
+      "tj": "Дар қаҳвахона барои сӯҳбати ором хеле пурғавғо буд.",
+      "prefix": "The cafe was too ",
+      "target": "noisy",
+      "suffix": " for a quiet conversation."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -3225,12 +3225,12 @@
     "batch": 2,
     "dayIndex": 35,
     "example": {
-      "en": "This motorcycle is very important for us.",
-      "ru": "Этот (-а/-о) мотоцикл очень важен для нас.",
-      "tj": "Ин мотосикл барои мо хеле муҳим аст.",
-      "prefix": "This ",
-      "suffix": " is very important for us.",
-      "target": "motorcycle"
+      "en": "He rides his motorcycle to work every summer.",
+      "ru": "Каждое лето он ездит на работу на мотоцикле.",
+      "tj": "Ҳар тобистон ӯ бо мотосикли худ ба кор меравад.",
+      "prefix": "He rides his ",
+      "target": "motorcycle",
+      "suffix": " to work every summer."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -3252,12 +3252,12 @@
     "batch": 6,
     "dayIndex": 155,
     "example": {
-      "en": "We talked about the engineer yesterday.",
-      "ru": "Вчера мы говорили про инженер.",
-      "tj": "Дирӯз мо дар бораи муҳандис сӯҳбат кардем.",
-      "prefix": "We talked about the ",
-      "suffix": " yesterday.",
-      "target": "engineer"
+      "en": "My cousin works as a software engineer.",
+      "ru": "Мой двоюродный брат работает инженером-программистом.",
+      "tj": "Писарамакам ҳамчун муҳандиси барномасоз кор мекунад.",
+      "prefix": "My cousin works as a software ",
+      "target": "engineer",
+      "suffix": "."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -3279,12 +3279,12 @@
     "batch": 6,
     "dayIndex": 150,
     "example": {
-      "en": "I want to remove today.",
-      "ru": "Я хочу сегодня убирать.",
-      "tj": "Ман мехоҳам имрӯз дур кардан.",
-      "prefix": "I want to ",
-      "suffix": " today.",
-      "target": "remove"
+      "en": "Please remove your shoes before entering the home.",
+      "ru": "Пожалуйста, снимите обувь перед входом в дом.",
+      "tj": "Лутфан пеш аз ворид шудан ба хона пойафзоли худро кашед.",
+      "prefix": "Please ",
+      "target": "remove",
+      "suffix": " your shoes before entering the home."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -3306,12 +3306,12 @@
     "batch": 1,
     "dayIndex": 9,
     "example": {
-      "en": "I want to manage today.",
-      "ru": "Я хочу сегодня управлять.",
-      "tj": "Ман мехоҳам имрӯз идора кардан.",
-      "prefix": "I want to ",
-      "suffix": " today.",
-      "target": "manage"
+      "en": "She manages a team of twenty people.",
+      "ru": "Она руководит командой из двадцати человек.",
+      "tj": "Вай дастаи бистнафараро роҳбарӣ мекунад.",
+      "prefix": "She ",
+      "target": "manages",
+      "suffix": " a team of twenty people."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -3333,12 +3333,12 @@
     "batch": 5,
     "dayIndex": 126,
     "example": {
-      "en": "We talked about the question yesterday.",
-      "ru": "Вчера мы говорили про вопрос.",
-      "tj": "Дирӯз мо дар бораи савол сӯҳбат кардем.",
-      "prefix": "We talked about the ",
-      "suffix": " yesterday.",
-      "target": "question"
+      "en": "Can I ask you a quick question about this topic?",
+      "ru": "Могу я задать вам быстрый вопрос по этой теме?",
+      "tj": "Метавонам дар ин мавзӯъ аз шумо як саволи кӯтоҳ бипурсам?",
+      "prefix": "Can I ask you a quick ",
+      "target": "question",
+      "suffix": " about this topic?"
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -3360,12 +3360,12 @@
     "batch": 5,
     "dayIndex": 136,
     "example": {
-      "en": "This unfortunately is very important for us.",
-      "ru": "Этот (-а/-о) к сожалению очень важен для нас.",
-      "tj": "Ин мутаассифона барои мо хеле муҳим аст.",
-      "prefix": "This ",
-      "suffix": " is very important for us.",
-      "target": "unfortunately"
+      "en": "Unfortunately, I will not be able to attend the party.",
+      "ru": "К сожалению, я не смогу прийти на вечеринку.",
+      "tj": "Мутаассифона, ман наметавонам ба ҷашн биёям.",
+      "prefix": "",
+      "target": "Unfortunately",
+      "suffix": ", I will not be able to attend the party."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -3387,12 +3387,12 @@
     "batch": 6,
     "dayIndex": 145,
     "example": {
-      "en": "Try to attend every day.",
-      "ru": "Старайтесь посещать каждый день.",
-      "tj": "Ҳар рӯз кӯшиш кунед, ки иштирок кардан.",
-      "prefix": "Try to ",
-      "suffix": " every day.",
-      "target": "attend"
+      "en": "Did you attend the meeting yesterday?",
+      "ru": "Ты присутствовал на встрече вчера?",
+      "tj": "Оё дирӯз дар вохӯрӣ ширкат доштӣ?",
+      "prefix": "Did you ",
+      "target": "attend",
+      "suffix": " the meeting yesterday?"
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -3414,12 +3414,12 @@
     "batch": 5,
     "dayIndex": 134,
     "example": {
-      "en": "This architecture is very important for us.",
-      "ru": "Этот (-а/-о) архитектура очень важен для нас.",
-      "tj": "Ин меъмористӣ барои мо хеле муҳим аст.",
-      "prefix": "This ",
-      "suffix": " is very important for us.",
-      "target": "architecture"
+      "en": "The old city is famous for its beautiful architecture.",
+      "ru": "Старый город славится своей красивой архитектурой.",
+      "tj": "Шаҳри кӯҳна бо меъмории зебои худ машҳур аст.",
+      "prefix": "The old city is famous for its beautiful ",
+      "target": "architecture",
+      "suffix": "."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -3441,12 +3441,12 @@
     "batch": 4,
     "dayIndex": 88,
     "example": {
-      "en": "I want to ring today.",
-      "ru": "Я хочу сегодня кольцо / звонить.",
-      "tj": "Ман мехоҳам имрӯз ангуштар / занг задан.",
-      "prefix": "I want to ",
-      "suffix": " today.",
-      "target": "ring"
+      "en": "He gave her a gold ring for their anniversary.",
+      "ru": "Он подарил ей золотое кольцо на годовщину.",
+      "tj": "Ӯ ба муносибати солгард ба вай як ангуштарини тиллоӣ дод.",
+      "prefix": "He gave her a gold ",
+      "target": "ring",
+      "suffix": " for their anniversary."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -3468,12 +3468,12 @@
     "batch": 5,
     "dayIndex": 133,
     "example": {
-      "en": "We talked about the king yesterday.",
-      "ru": "Вчера мы говорили про король.",
-      "tj": "Дирӯз мо дар бораи подшоҳ сӯҳбат кардем.",
-      "prefix": "We talked about the ",
-      "suffix": " yesterday.",
-      "target": "king"
+      "en": "The king ruled the country with wisdom and justice.",
+      "ru": "Король правил страной с мудростью и справедливостью.",
+      "tj": "Подшоҳ кишварро бо ҳикмат ва адолат идора мекард.",
+      "prefix": "The ",
+      "target": "king",
+      "suffix": " ruled the country with wisdom and justice."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -3495,12 +3495,12 @@
     "batch": 5,
     "dayIndex": 114,
     "example": {
-      "en": "Try to develop every day.",
-      "ru": "Старайтесь развивать каждый день.",
-      "tj": "Ҳар рӯз кӯшиш кунед, ки инкишоф додан.",
-      "prefix": "Try to ",
-      "suffix": " every day.",
-      "target": "develop"
+      "en": "We want to develop our speaking skills.",
+      "ru": "Мы хотим развивать свои разговорные навыки.",
+      "tj": "Мо мехоҳем маҳорати гуфтугӯии худро инкишоф диҳем.",
+      "prefix": "We want to ",
+      "target": "develop",
+      "suffix": " our speaking skills."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -3522,12 +3522,12 @@
     "batch": 6,
     "dayIndex": 143,
     "example": {
-      "en": "You need to recycle carefully.",
-      "ru": "Вам нужно внимательно перерабатывать.",
-      "tj": "Шумо бояд бодиққат дубора коркард кардан.",
-      "prefix": "You need to ",
-      "suffix": " carefully.",
-      "target": "recycle"
+      "en": "It is important to recycle plastic and paper.",
+      "ru": "Важно перерабатывать пластик и бумагу.",
+      "tj": "Муҳим аст, ки пластик ва коғазро аз нав коркард кунем.",
+      "prefix": "It is important to ",
+      "target": "recycle",
+      "suffix": " plastic and paper."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -3549,12 +3549,12 @@
     "batch": 5,
     "dayIndex": 130,
     "example": {
-      "en": "I want to jump today.",
-      "ru": "Я хочу сегодня прыгать.",
-      "tj": "Ман мехоҳам имрӯз ҷаҳидан.",
-      "prefix": "I want to ",
-      "suffix": " today.",
-      "target": "jump"
+      "en": "The excited children jumped with joy.",
+      "ru": "Взволнованные дети прыгали от радости.",
+      "tj": "Кӯдакони шод аз хурсандӣ ҷаҳиданд.",
+      "prefix": "The excited children ",
+      "target": "jumped",
+      "suffix": " with joy."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -3576,12 +3576,12 @@
     "batch": 6,
     "dayIndex": 160,
     "example": {
-      "en": "Can you explain the meaning of this review?",
-      "ru": "Можешь объяснить значение слова \"отзыв / пересмотр\"?",
-      "tj": "Оё метавонед маънои ин баррасӣ-ро фаҳмонед?",
-      "prefix": "Can you explain the meaning of this ",
-      "suffix": "?",
-      "target": "review"
+      "en": "Let us review what we learned today.",
+      "ru": "Давайте повторим то, что мы выучили сегодня.",
+      "tj": "Биёед он чиро, ки имрӯз омӯхтем, такрор кунем.",
+      "prefix": "Let us ",
+      "target": "review",
+      "suffix": " what we learned today."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -3603,12 +3603,12 @@
     "batch": 3,
     "dayIndex": 80,
     "example": {
-      "en": "We talked about the context yesterday.",
-      "ru": "Вчера мы говорили про контекст.",
-      "tj": "Дирӯз мо дар бораи контекст сӯҳбат кардем.",
-      "prefix": "We talked about the ",
-      "suffix": " yesterday.",
-      "target": "context"
+      "en": "Always learn new words in a clear context.",
+      "ru": "Всегда учите новые слова в понятном контексте.",
+      "tj": "Ҳамеша калимаҳои навро дар контексти равшан омӯзед.",
+      "prefix": "Always learn new words in a clear ",
+      "target": "context",
+      "suffix": "."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -3630,12 +3630,12 @@
     "batch": 1,
     "dayIndex": 9,
     "example": {
-      "en": "This yours is very important for us.",
-      "ru": "Этот (-а/-о) твой / ваш очень важен для нас.",
-      "tj": "Ин ту / шумо барои мо хеле муҳим аст.",
-      "prefix": "This ",
-      "suffix": " is very important for us.",
-      "target": "yours"
+      "en": "Is this black backpack yours or your brother's?",
+      "ru": "Этот чёрный рюкзак твой или твоего брата?",
+      "tj": "Ин ҷузвдони сиёҳ аз они туст ё аз бародарат?",
+      "prefix": "Is this black backpack ",
+      "target": "yours",
+      "suffix": " or your brother's?"
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -3657,12 +3657,12 @@
     "batch": 6,
     "dayIndex": 150,
     "example": {
-      "en": "It seems quite available to me.",
-      "ru": "Это кажется мне вполне доступный.",
-      "tj": "Ин ба назари ман хеле дастрас менамояд.",
-      "prefix": "It seems quite ",
-      "suffix": " to me.",
-      "target": "available"
+      "en": "Is the manager available right now?",
+      "ru": "Менеджер сейчас свободен?",
+      "tj": "Оё мудир ҳозир дастрас аст?",
+      "prefix": "Is the manager ",
+      "target": "available",
+      "suffix": " right now?"
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -3684,12 +3684,12 @@
     "batch": 3,
     "dayIndex": 68,
     "example": {
-      "en": "Can you explain the meaning of this guy?",
-      "ru": "Можешь объяснить значение слова \"парень\"?",
-      "tj": "Оё метавонед маънои ин писар-ро фаҳмонед?",
-      "prefix": "Can you explain the meaning of this ",
-      "suffix": "?",
-      "target": "guy"
+      "en": "He is a really nice and polite guy.",
+      "ru": "Он действительно хороший и вежливый парень.",
+      "tj": "Ӯ воқеан як ҷавони хуб ва боодоб аст.",
+      "prefix": "He is a really nice and polite ",
+      "target": "guy",
+      "suffix": "."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -3711,12 +3711,12 @@
     "batch": 3,
     "dayIndex": 73,
     "example": {
-      "en": "We talked about the repair yesterday.",
-      "ru": "Вчера мы говорили про ремонт.",
-      "tj": "Дирӯз мо дар бораи таъмир сӯҳбат кардем.",
-      "prefix": "We talked about the ",
-      "suffix": " yesterday.",
-      "target": "repair"
+      "en": "Can you repair my laptop screen?",
+      "ru": "Вы можете починить экран моего ноутбука?",
+      "tj": "Шумо метавонед экрани ноутбуки маро таъмир кунед?",
+      "prefix": "Can you ",
+      "target": "repair",
+      "suffix": " my laptop screen?"
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -3738,12 +3738,12 @@
     "batch": 5,
     "dayIndex": 124,
     "example": {
-      "en": "She did everything very quantity.",
-      "ru": "Она сделала всё очень количество.",
-      "tj": "Вай ҳама чизро хеле миқдор иҷро кард.",
-      "prefix": "She did everything very ",
-      "suffix": ".",
-      "target": "quantity"
+      "en": "Focus on quality rather than quantity.",
+      "ru": "Сосредоточьтесь на качестве, а не на количестве.",
+      "tj": "Диққати худро бештар ба сифат равона кунед, на ба миқдор.",
+      "prefix": "Focus on quality rather than ",
+      "target": "quantity",
+      "suffix": "."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -3765,12 +3765,12 @@
     "batch": 2,
     "dayIndex": 36,
     "example": {
-      "en": "We talked about the movement yesterday.",
-      "ru": "Вчера мы говорили про движение.",
-      "tj": "Дирӯз мо дар бораи ҳаракат сӯҳбат кардем.",
-      "prefix": "We talked about the ",
-      "suffix": " yesterday.",
-      "target": "movement"
+      "en": "Regular physical movement is great for your health.",
+      "ru": "Регулярное движение отлично подходит для здоровья.",
+      "tj": "Ҳаракати мунтазам барои саломатӣ хеле муфид аст.",
+      "prefix": "Regular physical ",
+      "target": "movement",
+      "suffix": " is great for your health."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -3792,12 +3792,12 @@
     "batch": 1,
     "dayIndex": 14,
     "example": {
-      "en": "This material is very important for us.",
-      "ru": "Этот (-а/-о) материал очень важен для нас.",
-      "tj": "Ин мавод барои мо хеле муҳим аст.",
-      "prefix": "This ",
-      "suffix": " is very important for us.",
-      "target": "material"
+      "en": "This shirt is made of pure cotton material.",
+      "ru": "Эта рубашка сделана из чистого хлопкового материала.",
+      "tj": "Ин курта аз маводи холиси пахтагӣ сохта шудааст.",
+      "prefix": "This shirt is made of pure cotton ",
+      "target": "material",
+      "suffix": "."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -3819,12 +3819,12 @@
     "batch": 4,
     "dayIndex": 101,
     "example": {
-      "en": "Can you explain the meaning of this including?",
-      "ru": "Можешь объяснить значение слова \"включая\"?",
-      "tj": "Оё метавонед маънои ин аз ҷумла-ро фаҳмонед?",
-      "prefix": "Can you explain the meaning of this ",
-      "suffix": "?",
-      "target": "including"
+      "en": "Everyone came to the dinner, including my uncle.",
+      "ru": "Все пришли на ужин, включая моего дядю.",
+      "tj": "Ҳама ба хӯроки шом омаданд, аз ҷумла амакам.",
+      "prefix": "Everyone came to the dinner, ",
+      "target": "including",
+      "suffix": " my uncle."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -3846,12 +3846,12 @@
     "batch": 5,
     "dayIndex": 116,
     "example": {
-      "en": "You need to produce carefully.",
-      "ru": "Вам нужно внимательно производить.",
-      "tj": "Шумо бояд бодиққат истеҳсол кардан.",
-      "prefix": "You need to ",
-      "suffix": " carefully.",
-      "target": "produce"
+      "en": "Local farms produce fresh fruits and vegetables.",
+      "ru": "Местные фермы производят свежие фрукты и овощи.",
+      "tj": "Хоҷагиҳои маҳаллӣ меваю сабзавоти тару тоза истеҳсол мекунанд.",
+      "prefix": "Local farms ",
+      "target": "produce",
+      "suffix": " fresh fruits and vegetables."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -3873,12 +3873,12 @@
     "batch": 4,
     "dayIndex": 111,
     "example": {
-      "en": "We found a thin solution.",
-      "ru": "Мы нашли тонкий решение.",
-      "tj": "Мо роҳи ҳалли борик пайдо кардем.",
-      "prefix": "We found a ",
-      "suffix": " solution.",
-      "target": "thin"
+      "en": "She wore a thin jacket because the evening was warm.",
+      "ru": "Она надела тонкую куртку, потому что вечер был тёплым.",
+      "tj": "Вай як куртаи тунук пӯшид, чунки бегоҳӣ гарм буд.",
+      "prefix": "She wore a ",
+      "target": "thin",
+      "suffix": " jacket because the evening was warm."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -3900,12 +3900,12 @@
     "batch": 6,
     "dayIndex": 152,
     "example": {
-      "en": "This is a very awful result.",
-      "ru": "Это очень ужасный результат.",
-      "tj": "Ин натиҷаи хеле даҳшатнок аст.",
-      "prefix": "This is a very ",
-      "suffix": " result.",
-      "target": "awful"
+      "en": "The traffic was awful during rush hour.",
+      "ru": "Пробки в час пик были ужасными.",
+      "tj": "Ҳаракати нақлиёт дар соати авҷи корӣ хеле даҳшатнок буд.",
+      "prefix": "The traffic was ",
+      "target": "awful",
+      "suffix": " during rush hour."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -3927,12 +3927,12 @@
     "batch": 4,
     "dayIndex": 86,
     "example": {
-      "en": "I want to copy today.",
-      "ru": "Я хочу сегодня копировать.",
-      "tj": "Ман мехоҳам имрӯз нусха бардоштан.",
-      "prefix": "I want to ",
-      "suffix": " today.",
-      "target": "copy"
+      "en": "Can you please make a copy of this passport?",
+      "ru": "Можете сделать копию этого паспорта, пожалуйста?",
+      "tj": "Лутфан метавонед аз ин шиноснома нусхабардорӣ кунед?",
+      "prefix": "Can you please make a ",
+      "target": "copy",
+      "suffix": " of this passport?"
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -3954,12 +3954,12 @@
     "batch": 5,
     "dayIndex": 135,
     "example": {
-      "en": "Can you explain the meaning of this understanding?",
-      "ru": "Можешь объяснить значение слова \"понимание\"?",
-      "tj": "Оё метавонед маънои ин фаҳмиш-ро фаҳмонед?",
-      "prefix": "Can you explain the meaning of this ",
-      "suffix": "?",
-      "target": "understanding"
+      "en": "Thank you for your patience and understanding.",
+      "ru": "Спасибо за ваше терпение и понимание.",
+      "tj": "Барои сабр ва фаҳмиши шумо ташаккур.",
+      "prefix": "Thank you for your patience and ",
+      "target": "understanding",
+      "suffix": "."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -3981,12 +3981,12 @@
     "batch": 1,
     "dayIndex": 13,
     "example": {
-      "en": "Try to marry every day.",
-      "ru": "Старайтесь жениться каждый день.",
-      "tj": "Ҳар рӯз кӯшиш кунед, ки издивоҷ кардан.",
-      "prefix": "Try to ",
-      "suffix": " every day.",
-      "target": "marry"
+      "en": "They decided to marry next spring.",
+      "ru": "Они решили пожениться следующей весной.",
+      "tj": "Онҳо қарор доданд, ки баҳори оянда оиладор шаванд.",
+      "prefix": "They decided to ",
+      "target": "marry",
+      "suffix": " next spring."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -4008,12 +4008,12 @@
     "batch": 5,
     "dayIndex": 131,
     "example": {
-      "en": "This rather is very important for us.",
-      "ru": "Этот (-а/-о) скорее очень важен для нас.",
-      "tj": "Ин беҳтараш барои мо хеле муҳим аст.",
-      "prefix": "This ",
-      "suffix": " is very important for us.",
-      "target": "rather"
+      "en": "I would rather drink hot tea than cold juice.",
+      "ru": "Я бы лучше выпил горячий чай, чем холодный сок.",
+      "tj": "Ман беҳтараш чойи гарм менӯшам, на шарбати хунук.",
+      "prefix": "I would ",
+      "target": "rather",
+      "suffix": " drink hot tea than cold juice."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -4035,12 +4035,12 @@
     "batch": 5,
     "dayIndex": 122,
     "example": {
-      "en": "This is a very ancient result.",
-      "ru": "Это очень древний результат.",
-      "tj": "Ин натиҷаи хеле қадимӣ аст.",
-      "prefix": "This is a very ",
-      "suffix": " result.",
-      "target": "ancient"
+      "en": "We visited an ancient fortress in the mountains.",
+      "ru": "Мы посетили древнюю крепость в горах.",
+      "tj": "Мо ба як қалъаи қадима дар кӯҳҳо ташриф овардем.",
+      "prefix": "We visited an ",
+      "target": "ancient",
+      "suffix": " fortress in the mountains."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -4062,12 +4062,12 @@
     "batch": 4,
     "dayIndex": 104,
     "example": {
-      "en": "We talked about the technology yesterday.",
-      "ru": "Вчера мы говорили про технология.",
-      "tj": "Дирӯз мо дар бораи технология сӯҳбат кардем.",
-      "prefix": "We talked about the ",
-      "suffix": " yesterday.",
-      "target": "technology"
+      "en": "Modern technology helps us stay in touch with friends.",
+      "ru": "Современные технологии помогают нам оставаться на связи с друзьями.",
+      "tj": "Технологияи муосир ба мо кӯмак мекунад, ки бо дӯстон дар тамос бошем.",
+      "prefix": "Modern ",
+      "target": "technology",
+      "suffix": " helps us stay in touch with friends."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -4089,12 +4089,12 @@
     "batch": 3,
     "dayIndex": 69,
     "example": {
-      "en": "We talked about the painter yesterday.",
-      "ru": "Вчера мы говорили про художник.",
-      "tj": "Дирӯз мо дар бораи рассом сӯҳбат кардем.",
-      "prefix": "We talked about the ",
-      "suffix": " yesterday.",
-      "target": "painter"
+      "en": "My uncle is a talented painter who loves creating portraits.",
+      "ru": "Мой дядя — талантливый художник, который любит писать портреты.",
+      "tj": "Амаки ман рассоми боистеъдод аст, ки кашидани портретҳоро дӯст медорад.",
+      "prefix": "My uncle is a talented ",
+      "target": "painter",
+      "suffix": " who loves creating portraits."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -4116,12 +4116,12 @@
     "batch": 6,
     "dayIndex": 163,
     "example": {
-      "en": "Can you explain the meaning of this behaviour?",
-      "ru": "Можешь объяснить значение слова \"поведение\"?",
-      "tj": "Оё метавонед маънои ин рафтор-ро фаҳмонед?",
-      "prefix": "Can you explain the meaning of this ",
-      "suffix": "?",
-      "target": "behaviour"
+      "en": "Polite behaviour is always appreciated by everyone.",
+      "ru": "Вежливое поведение всегда ценится всеми.",
+      "tj": "Рафтори боодоб ҳамеша аз ҷониби ҳама қадр карда мешавад.",
+      "prefix": "Polite ",
+      "target": "behaviour",
+      "suffix": " is always appreciated by everyone."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -4143,12 +4143,12 @@
     "batch": 2,
     "dayIndex": 47,
     "example": {
-      "en": "Can you explain the meaning of this race?",
-      "ru": "Можешь объяснить значение слова \"гонка / раса\"?",
-      "tj": "Оё метавонед маънои ин пойга / нажод-ро фаҳмонед?",
-      "prefix": "Can you explain the meaning of this ",
-      "suffix": "?",
-      "target": "race"
+      "en": "He won the running race at our school.",
+      "ru": "Он выиграл забег в нашей школе.",
+      "tj": "Ӯ дар мусобиқаи дави мактаби мо ғолиб шуд.",
+      "prefix": "He won the running ",
+      "target": "race",
+      "suffix": " at our school."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -4170,12 +4170,12 @@
     "batch": 3,
     "dayIndex": 58,
     "example": {
-      "en": "Can you explain the meaning of this onto?",
-      "ru": "Можешь объяснить значение слова \"на\"?",
-      "tj": "Оё метавонед маънои ин ба рӯи-ро фаҳмонед?",
-      "prefix": "Can you explain the meaning of this ",
-      "suffix": "?",
-      "target": "onto"
+      "en": "The cat jumped onto the table.",
+      "ru": "Кошка запрыгнула на стол.",
+      "tj": "Гурба ба болои миз ҷаҳид.",
+      "prefix": "The cat jumped ",
+      "target": "onto",
+      "suffix": " the table."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -4197,12 +4197,12 @@
     "batch": 6,
     "dayIndex": 152,
     "example": {
-      "en": "We talked about the ending yesterday.",
-      "ru": "Вчера мы говорили про окончание.",
-      "tj": "Дирӯз мо дар бораи анҷом сӯҳбат кардем.",
-      "prefix": "We talked about the ",
-      "suffix": " yesterday.",
-      "target": "ending"
+      "en": "The film had a very emotional and happy ending.",
+      "ru": "У фильма был очень эмоциональный и счастливый конец.",
+      "tj": "Филм анҷоми хеле эҳсосотӣ ва хушбахтона дошт.",
+      "prefix": "The film had a very emotional and happy ",
+      "target": "ending",
+      "suffix": "."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -4224,12 +4224,12 @@
     "batch": 2,
     "dayIndex": 51,
     "example": {
-      "en": "You need to fix carefully.",
-      "ru": "Вам нужно внимательно чинить.",
-      "tj": "Шумо бояд бодиққат таъмир кардан.",
-      "prefix": "You need to ",
-      "suffix": " carefully.",
-      "target": "fix"
+      "en": "Can you help me fix this broken chair?",
+      "ru": "Можешь помочь мне починить этот сломанный стул?",
+      "tj": "Метавонӣ ба ман кӯмак кунӣ, ки ин курсии шикастаро таъмир кунам?",
+      "prefix": "Can you help me ",
+      "target": "fix",
+      "suffix": " this broken chair?"
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -4251,12 +4251,12 @@
     "batch": 4,
     "dayIndex": 111,
     "example": {
-      "en": "Can you explain the meaning of this designer?",
-      "ru": "Можешь объяснить значение слова \"дизайнер\"?",
-      "tj": "Оё метавонед маънои ин тарроҳ-ро фаҳмонед?",
-      "prefix": "Can you explain the meaning of this ",
-      "suffix": "?",
-      "target": "designer"
+      "en": "She works as a graphic designer for a fashion magazine.",
+      "ru": "Она работает графическим дизайнером в модном журнале.",
+      "tj": "Вай ба ҳайси дизайнери графикӣ дар маҷаллаи мӯд кор мекунад.",
+      "prefix": "She works as a graphic ",
+      "target": "designer",
+      "suffix": " for a fashion magazine."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -4278,12 +4278,12 @@
     "batch": 4,
     "dayIndex": 102,
     "example": {
-      "en": "She did everything very advantage.",
-      "ru": "Она сделала всё очень преимущество.",
-      "tj": "Вай ҳама чизро хеле афзалият иҷро кард.",
-      "prefix": "She did everything very ",
-      "suffix": ".",
-      "target": "advantage"
+      "en": "Knowing languages gives you a great advantage in life.",
+      "ru": "Знание языков даёт вам большое преимущество в жизни.",
+      "tj": "Донистани забонҳо ба шумо дар зиндагӣ бартарии калон медиҳад.",
+      "prefix": "Knowing languages gives you a great ",
+      "target": "advantage",
+      "suffix": " in life."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -4305,12 +4305,12 @@
     "batch": 5,
     "dayIndex": 139,
     "example": {
-      "en": "I am very glad to meet you.",
-      "ru": "Я очень рад познакомиться с тобой.",
-      "tj": "Ман хеле шодам, ки бо шумо шинос шудам.",
-      "prefix": "I am very ",
-      "suffix": " to meet you.",
-      "target": "glad"
+      "en": "I am so glad you could join us today.",
+      "ru": "Я так рад, что ты смог присоединиться к нам сегодня.",
+      "tj": "Ман хеле шодам, ки имрӯз тавонистӣ ба мо ҳамроҳ шавӣ.",
+      "prefix": "I am so ",
+      "target": "glad",
+      "suffix": " you could join us today."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -4332,12 +4332,12 @@
     "batch": 4,
     "dayIndex": 109,
     "example": {
-      "en": "We found a young solution.",
-      "ru": "Мы нашли молодой решение.",
-      "tj": "Мо роҳи ҳалли ҷавон пайдо кардем.",
-      "prefix": "We found a ",
-      "suffix": " solution.",
-      "target": "young"
+      "en": "She is a young and energetic teacher.",
+      "ru": "Она молодая и энергичная учительница.",
+      "tj": "Вай муаллимаи ҷавон ва боғайрат аст.",
+      "prefix": "She is a ",
+      "target": "young",
+      "suffix": " and energetic teacher."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -4359,12 +4359,12 @@
     "batch": 1,
     "dayIndex": 23,
     "example": {
-      "en": "Can you explain the meaning of this age?",
-      "ru": "Можешь объяснить значение слова \"возраст\"?",
-      "tj": "Оё метавонед маънои ин синну сол-ро фаҳмонед?",
-      "prefix": "Can you explain the meaning of this ",
-      "suffix": "?",
-      "target": "age"
+      "en": "At what age did you learn to ride a bike?",
+      "ru": "В каком возрасте ты научился кататься на велосипеде?",
+      "tj": "Дар кадом синну сол ту велосипедсавориро омӯхтӣ?",
+      "prefix": "At what ",
+      "target": "age",
+      "suffix": " did you learn to ride a bike?"
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -4386,12 +4386,12 @@
     "batch": 3,
     "dayIndex": 62,
     "example": {
-      "en": "Can you explain the meaning of this relative?",
-      "ru": "Можешь объяснить значение слова \"родственник\"?",
-      "tj": "Оё метавонед маънои ин хешу табор-ро фаҳмонед?",
-      "prefix": "Can you explain the meaning of this ",
-      "suffix": "?",
-      "target": "relative"
+      "en": "We invited all our close relatives to the dinner.",
+      "ru": "Мы пригласили всех наших близких родственников на ужин.",
+      "tj": "Мо ҳама хешовандони наздики худро ба хӯроки шом даъват кардем.",
+      "prefix": "We invited all our close ",
+      "target": "relatives",
+      "suffix": " to the dinner."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -4413,12 +4413,12 @@
     "batch": 6,
     "dayIndex": 162,
     "example": {
-      "en": "This stranger is very important for us.",
-      "ru": "Этот (-а/-о) незнакомец очень важен для нас.",
-      "tj": "Ин бегона барои мо хеле муҳим аст.",
-      "prefix": "This ",
-      "suffix": " is very important for us.",
-      "target": "stranger"
+      "en": "A polite stranger helped me carry my heavy suitcase.",
+      "ru": "Вежливый незнакомец помог мне донести тяжёлый чемодан.",
+      "tj": "Як ношиноси боодоб ба ман кӯмак кард, ки ҷомадони вазнинамро бардорам.",
+      "prefix": "A polite ",
+      "target": "stranger",
+      "suffix": " helped me carry my heavy suitcase."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -4440,12 +4440,12 @@
     "batch": 4,
     "dayIndex": 96,
     "example": {
-      "en": "I want to face today.",
-      "ru": "Я хочу сегодня лицо / сталкиваться.",
-      "tj": "Ман мехоҳам имрӯз рӯй / рӯ ба рӯ шудан.",
-      "prefix": "I want to ",
-      "suffix": " today.",
-      "target": "face"
+      "en": "He had a warm and friendly smile on his face.",
+      "ru": "На его лице была тёплая и дружелюбная улыбка.",
+      "tj": "Дар рӯи ӯ табассуми гарм ва меҳрубонона буд.",
+      "prefix": "He had a warm and friendly smile on his ",
+      "target": "face",
+      "suffix": "."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -4467,12 +4467,12 @@
     "batch": 5,
     "dayIndex": 115,
     "example": {
-      "en": "Please speak childhood with us.",
-      "ru": "Пожалуйста, говори детство с нами.",
-      "tj": "Лутфан бо мо кӯдакӣ гап занед.",
-      "prefix": "Please speak ",
-      "suffix": " with us.",
-      "target": "childhood"
+      "en": "I have many wonderful memories from my childhood.",
+      "ru": "У меня много прекрасных воспоминаний из детства.",
+      "tj": "Ман аз давраи кӯдакиам хотираҳои бисёри хуб дорам.",
+      "prefix": "I have many wonderful memories from my ",
+      "target": "childhood",
+      "suffix": "."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -4496,12 +4496,12 @@
     "batch": 5,
     "dayIndex": 117,
     "example": {
-      "en": "We found a old-fashioned solution.",
-      "ru": "Мы нашли старомодный решение.",
-      "tj": "Мо роҳи ҳалли кӯҳнашуда пайдо кардем.",
-      "prefix": "We found a ",
-      "suffix": " solution.",
-      "target": "old-fashioned"
+      "en": "My grandfather has an old-fashioned pocket watch.",
+      "ru": "У моего дедушки есть старомодные карманные часы.",
+      "tj": "Бобоям як соати кисагии қадима дорад.",
+      "prefix": "My grandfather has an ",
+      "target": "old-fashioned",
+      "suffix": " pocket watch."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -4523,12 +4523,12 @@
     "batch": 1,
     "dayIndex": 9,
     "example": {
-      "en": "This prediction is very important for us.",
-      "ru": "Этот (-а/-о) предсказание очень важен для нас.",
-      "tj": "Ин пешгӯӣ барои мо хеле муҳим аст.",
-      "prefix": "This ",
-      "suffix": " is very important for us.",
-      "target": "prediction"
+      "en": "His prediction about the weather turned out to be correct.",
+      "ru": "Его прогноз погоды оказался верным.",
+      "tj": "Пешгӯии ӯ дар бораи боду ҳаво дуруст баромад.",
+      "prefix": "His ",
+      "target": "prediction",
+      "suffix": " about the weather turned out to be correct."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -4550,12 +4550,12 @@
     "batch": 4,
     "dayIndex": 109,
     "example": {
-      "en": "I want to charge today.",
-      "ru": "Я хочу сегодня заряд / взимать.",
-      "tj": "Ман мехоҳам имрӯз заряд / ситонидан.",
-      "prefix": "I want to ",
-      "suffix": " today.",
-      "target": "charge"
+      "en": "Do not forget to charge your phone before leaving.",
+      "ru": "Не забудь зарядить телефон перед выходом.",
+      "tj": "Пеш аз баромадан фаромӯш накун, ки телефонатро пур кунӣ.",
+      "prefix": "Do not forget to ",
+      "target": "charge",
+      "suffix": " your phone before leaving."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -4577,12 +4577,12 @@
     "batch": 6,
     "dayIndex": 151,
     "example": {
-      "en": "It seems quite spoken to me.",
-      "ru": "Это кажется мне вполне разговорный.",
-      "tj": "Ин ба назари ман хеле гуфтугӯӣ менамояд.",
-      "prefix": "It seems quite ",
-      "suffix": " to me.",
-      "target": "spoken"
+      "en": "English is spoken in many countries around the world.",
+      "ru": "На английском говорят во многих странах мира.",
+      "tj": "Бо забони англисӣ дар бисёр кишварҳои ҷаҳон гап мезананд.",
+      "prefix": "English is ",
+      "target": "spoken",
+      "suffix": " in many countries around the world."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -4604,12 +4604,12 @@
     "batch": 2,
     "dayIndex": 39,
     "example": {
-      "en": "It seems quite dressed to me.",
-      "ru": "Это кажется мне вполне одетый.",
-      "tj": "Ин ба назари ман хеле пӯшида менамояд.",
-      "prefix": "It seems quite ",
-      "suffix": " to me.",
-      "target": "dressed"
+      "en": "She was dressed in a beautiful blue coat.",
+      "ru": "Она была одета в красивое синее пальто.",
+      "tj": "Вай дар як палтои зебои кабуд либос пӯшида буд.",
+      "prefix": "She was ",
+      "target": "dressed",
+      "suffix": " in a beautiful blue coat."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -4631,12 +4631,12 @@
     "batch": 1,
     "dayIndex": 24,
     "example": {
-      "en": "This aged is very important for us.",
-      "ru": "Этот (-а/-о) в возрасте очень важен для нас.",
-      "tj": "Ин синнадор барои мо хеле муҳим аст.",
-      "prefix": "This ",
-      "suffix": " is very important for us.",
-      "target": "aged"
+      "en": "The workshop is for teenagers aged fourteen to eighteen.",
+      "ru": "Семинар предназначен для подростков в возрасте от четырнадцати до восемнадцати лет.",
+      "tj": "Семинар барои наврасони синни чордаҳ то ҳаждаҳсола пешбинӣ шудааст.",
+      "prefix": "The workshop is for teenagers ",
+      "target": "aged",
+      "suffix": " fourteen to eighteen."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -4658,12 +4658,12 @@
     "batch": 2,
     "dayIndex": 46,
     "example": {
-      "en": "We talked about the appointment yesterday.",
-      "ru": "Вчера мы говорили про встреча / запись.",
-      "tj": "Дирӯз мо дар бораи мулоқот / сабт сӯҳбат кардем.",
-      "prefix": "We talked about the ",
-      "suffix": " yesterday.",
-      "target": "appointment"
+      "en": "I have a doctor's appointment tomorrow morning.",
+      "ru": "У меня запись к врачу завтра утром.",
+      "tj": "Ман пагоҳ субҳ ба қабули духтур сабт шудаам.",
+      "prefix": "I have a doctor's ",
+      "target": "appointment",
+      "suffix": " tomorrow morning."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -4685,12 +4685,12 @@
     "batch": 4,
     "dayIndex": 98,
     "example": {
-      "en": "This is a very familiar result.",
-      "ru": "Это очень знакомый результат.",
-      "tj": "Ин натиҷаи хеле шинос аст.",
-      "prefix": "This is a very ",
-      "suffix": " result.",
-      "target": "familiar"
+      "en": "Her face looked very familiar to me.",
+      "ru": "Её лицо показалось мне очень знакомым.",
+      "tj": "Рӯи ӯ ба назарам хеле шинос тофт.",
+      "prefix": "Her face looked very ",
+      "target": "familiar",
+      "suffix": " to me."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -4712,12 +4712,12 @@
     "batch": 5,
     "dayIndex": 126,
     "example": {
-      "en": "You need to shoot carefully.",
-      "ru": "Вам нужно внимательно стрелять / снимать.",
-      "tj": "Шумо бояд бодиққат тир холидан / сабт кардан.",
-      "prefix": "You need to ",
-      "suffix": " carefully.",
-      "target": "shoot"
+      "en": "They decided to shoot a short movie about their city.",
+      "ru": "Они решили снять короткий фильм о своём городе.",
+      "tj": "Онҳо қарор доданд, ки дар бораи шаҳрашон як филми кӯтоҳ ба навор гиранд.",
+      "prefix": "They decided to ",
+      "target": "shoot",
+      "suffix": " a short movie about their city."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -4739,12 +4739,12 @@
     "batch": 4,
     "dayIndex": 110,
     "example": {
-      "en": "This youth is very important for us.",
-      "ru": "Этот (-а/-о) молодёжь очень важен для нас.",
-      "tj": "Ин ҷавонон барои мо хеле муҳим аст.",
-      "prefix": "This ",
-      "suffix": " is very important for us.",
-      "target": "youth"
+      "en": "The center organizes sports activities for local youth.",
+      "ru": "Центр организует спортивные мероприятия для местной молодёжи.",
+      "tj": "Марказ барои ҷавонони маҳаллӣ чорабиниҳои варзишӣ ташкил мекунад.",
+      "prefix": "The center organizes sports activities for local ",
+      "target": "youth",
+      "suffix": "."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -4766,12 +4766,12 @@
     "batch": 2,
     "dayIndex": 49,
     "example": {
-      "en": "I want to arrest today.",
-      "ru": "Я хочу сегодня арестовывать.",
-      "tj": "Ман мехоҳам имрӯз боздошт кардан.",
-      "prefix": "I want to ",
-      "suffix": " today.",
-      "target": "arrest"
+      "en": "The police arrived quickly to arrest the thief.",
+      "ru": "Полиция быстро приехала, чтобы арестовать вора.",
+      "tj": "Полис барои боздошт кардани дузд зуд ҳозир шуд.",
+      "prefix": "The police arrived quickly to ",
+      "target": "arrest",
+      "suffix": " the thief."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -4793,12 +4793,12 @@
     "batch": 5,
     "dayIndex": 133,
     "example": {
-      "en": "Please speak similarly with us.",
-      "ru": "Пожалуйста, говори подобно с нами.",
-      "tj": "Лутфан бо мо ба ҳамин монанд гап занед.",
-      "prefix": "Please speak ",
-      "suffix": " with us.",
-      "target": "similarly"
+      "en": "My brother thinks similarly about this situation.",
+      "ru": "Мой брат думает похожим образом об этой ситуации.",
+      "tj": "Бародарам дар бораи ин вазъият ба ҳамин монанд фикр мекунад.",
+      "prefix": "My brother thinks ",
+      "target": "similarly",
+      "suffix": " about this situation."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -4820,12 +4820,12 @@
     "batch": 3,
     "dayIndex": 66,
     "example": {
-      "en": "Can you explain the meaning of this location?",
-      "ru": "Можешь объяснить значение слова \"локация\"?",
-      "tj": "Оё метавонед маънои ин макон-ро фаҳмонед?",
-      "prefix": "Can you explain the meaning of this ",
-      "suffix": "?",
-      "target": "location"
+      "en": "The hotel is in a very convenient location.",
+      "ru": "Отель находится в очень удобном месте.",
+      "tj": "Меҳмонхона дар як макони хеле мусоид ҷойгир аст.",
+      "prefix": "The hotel is in a very convenient ",
+      "target": "location",
+      "suffix": "."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -4847,12 +4847,12 @@
     "batch": 2,
     "dayIndex": 30,
     "example": {
-      "en": "Try to investigate every day.",
-      "ru": "Старайтесь расследовать каждый день.",
-      "tj": "Ҳар рӯз кӯшиш кунед, ки таҳқиқ кардан.",
-      "prefix": "Try to ",
-      "suffix": " every day.",
-      "target": "investigate"
+      "en": "Officers will investigate the cause of the accident.",
+      "ru": "Сотрудники расследуют причину аварии.",
+      "tj": "Кормандон сабаби садамаро тафтиш мекунанд.",
+      "prefix": "Officers will ",
+      "target": "investigate",
+      "suffix": " the cause of the accident."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -4874,12 +4874,12 @@
     "batch": 4,
     "dayIndex": 95,
     "example": {
-      "en": "We talked about the narrative yesterday.",
-      "ru": "Вчера мы говорили про повествование.",
-      "tj": "Дирӯз мо дар бораи ривоят сӯҳбат кардем.",
-      "prefix": "We talked about the ",
-      "suffix": " yesterday.",
-      "target": "narrative"
+      "en": "The book tells a fascinating narrative of travel.",
+      "ru": "Книга повествует об увлекательной истории путешествий.",
+      "tj": "Китоб як ҳикояи ҷолиби сафарро нақл мекунад.",
+      "prefix": "The book tells a fascinating ",
+      "target": "narrative",
+      "suffix": " of travel."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -4901,12 +4901,12 @@
     "batch": 4,
     "dayIndex": 111,
     "example": {
-      "en": "This is a very sensible result.",
-      "ru": "Это очень разумный результат.",
-      "tj": "Ин натиҷаи хеле оқилона аст.",
-      "prefix": "This is a very ",
-      "suffix": " result.",
-      "target": "sensible"
+      "en": "It is sensible to save money for emergencies.",
+      "ru": "Разумно откладывать деньги на непредвиденные случаи.",
+      "tj": "Барои ҳолатҳои фавқулодда пасандоз кардани пул оқилона аст.",
+      "prefix": "It is ",
+      "target": "sensible",
+      "suffix": " to save money for emergencies."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -4928,12 +4928,12 @@
     "batch": 5,
     "dayIndex": 119,
     "example": {
-      "en": "We talked about the operation yesterday.",
-      "ru": "Вчера мы говорили про операция.",
-      "tj": "Дирӯз мо дар бораи амалиёт сӯҳбат кардем.",
-      "prefix": "We talked about the ",
-      "suffix": " yesterday.",
-      "target": "operation"
+      "en": "The doctor said the operation was successful.",
+      "ru": "Врач сказал, что операция прошла успешно.",
+      "tj": "Духтур гуфт, ки ҷарроҳӣ бомуваффақият гузашт.",
+      "prefix": "The doctor said the ",
+      "target": "operation",
+      "suffix": " was successful."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -4955,12 +4955,12 @@
     "batch": 6,
     "dayIndex": 144,
     "example": {
-      "en": "I want to graduate today.",
-      "ru": "Я хочу сегодня выпускаться.",
-      "tj": "Ман мехоҳам имрӯз хатм кардан.",
-      "prefix": "I want to ",
-      "suffix": " today.",
-      "target": "graduate"
+      "en": "She will graduate from university next summer.",
+      "ru": "Она закончит университет следующим летом.",
+      "tj": "Вай тобистони оянда донишгоҳро хатм мекунад.",
+      "prefix": "She will ",
+      "target": "graduate",
+      "suffix": " from university next summer."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -4982,12 +4982,12 @@
     "batch": 1,
     "dayIndex": 21,
     "example": {
-      "en": "Try to influence every day.",
-      "ru": "Старайтесь влиять каждый день.",
-      "tj": "Ҳар рӯз кӯшиш кунед, ки таъсир кардан.",
-      "prefix": "Try to ",
-      "suffix": " every day.",
-      "target": "influence"
+      "en": "Good books have a positive influence on children.",
+      "ru": "Хорошие книги оказывают положительное влияние на детей.",
+      "tj": "Китобҳои хуб ба кӯдакон таъсири мусбат мерасонанд.",
+      "prefix": "Good books have a positive ",
+      "target": "influence",
+      "suffix": " on children."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -5009,12 +5009,12 @@
     "batch": 3,
     "dayIndex": 76,
     "example": {
-      "en": "This marketing is very important for us.",
-      "ru": "Этот (-а/-о) маркетинг очень важен для нас.",
-      "tj": "Ин маркетинг барои мо хеле муҳим аст.",
-      "prefix": "This ",
-      "suffix": " is very important for us.",
-      "target": "marketing"
+      "en": "He works in online marketing for a tech startup.",
+      "ru": "Он работает в интернет-маркетинге в технологическом стартапе.",
+      "tj": "Ӯ дар як стартапи технологӣ дар бахши маркетинги интернетӣ кор мекунад.",
+      "prefix": "He works in online ",
+      "target": "marketing",
+      "suffix": " for a tech startup."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -5036,12 +5036,12 @@
     "batch": 1,
     "dayIndex": 19,
     "example": {
-      "en": "Can you explain the meaning of this tape?",
-      "ru": "Можешь объяснить значение слова \"лента\"?",
-      "tj": "Оё метавонед маънои ин навор-ро фаҳмонед?",
-      "prefix": "Can you explain the meaning of this ",
-      "suffix": "?",
-      "target": "tape"
+      "en": "Use some strong tape to seal the box securely.",
+      "ru": "Используйте прочную клейкую ленту, чтобы надёжно запечатать коробку.",
+      "tj": "Барои маҳкам бастани қуттӣ лентаи мустаҳкамро истифода баред.",
+      "prefix": "Use some strong ",
+      "target": "tape",
+      "suffix": " to seal the box securely."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -5063,12 +5063,12 @@
     "batch": 5,
     "dayIndex": 118,
     "example": {
-      "en": "It seems quite clear to me.",
-      "ru": "Это кажется мне вполне ясный.",
-      "tj": "Ин ба назари ман хеле равшан менамояд.",
-      "prefix": "It seems quite ",
-      "suffix": " to me.",
-      "target": "clear"
+      "en": "His explanation was very clear and easy to understand.",
+      "ru": "Его объяснение было очень ясным и понятным.",
+      "tj": "Фаҳмондадиҳии ӯ хеле равшан ва фаҳмо буд.",
+      "prefix": "His explanation was very ",
+      "target": "clear",
+      "suffix": " and easy to understand."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -5090,12 +5090,12 @@
     "batch": 5,
     "dayIndex": 131,
     "example": {
-      "en": "We found a silly solution.",
-      "ru": "Мы нашли глупый решение.",
-      "tj": "Мо роҳи ҳалли аҳмақ пайдо кардем.",
-      "prefix": "We found a ",
-      "suffix": " solution.",
-      "target": "silly"
+      "en": "Do not worry about making a silly mistake.",
+      "ru": "Не переживай из-за глупой ошибки.",
+      "tj": "Барои як хатои бемаънӣ хавотир нашав.",
+      "prefix": "Do not worry about making a ",
+      "target": "silly",
+      "suffix": " mistake."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -5117,12 +5117,12 @@
     "batch": 4,
     "dayIndex": 104,
     "example": {
-      "en": "Try to scan every day.",
-      "ru": "Старайтесь сканировать каждый день.",
-      "tj": "Ҳар рӯз кӯшиш кунед, ки скан кардан.",
-      "prefix": "Try to ",
-      "suffix": " every day.",
-      "target": "scan"
+      "en": "Please scan the document and send it by email.",
+      "ru": "Пожалуйста, отсканируйте документ и отправьте его по электронной почте.",
+      "tj": "Лутфан ҳуҷҷатро скан кунед ва тавассути почтаи электронӣ фиристед.",
+      "prefix": "Please ",
+      "target": "scan",
+      "suffix": " the document and send it by email."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -5144,12 +5144,12 @@
     "batch": 6,
     "dayIndex": 152,
     "example": {
-      "en": "Can you explain the meaning of this container?",
-      "ru": "Можешь объяснить значение слова \"контейнер\"?",
-      "tj": "Оё метавонед маънои ин контейнер-ро фаҳмонед?",
-      "prefix": "Can you explain the meaning of this ",
-      "suffix": "?",
-      "target": "container"
+      "en": "Store the fresh food in an airtight container.",
+      "ru": "Храните свежие продукты в герметичном контейнере.",
+      "tj": "Маҳсулоти тозаро дар зарфи маҳкам нигоҳ доред.",
+      "prefix": "Store the fresh food in an airtight ",
+      "target": "container",
+      "suffix": "."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -5171,12 +5171,12 @@
     "batch": 3,
     "dayIndex": 69,
     "example": {
-      "en": "We talked about the engineering yesterday.",
-      "ru": "Вчера мы говорили про инженерия.",
-      "tj": "Дирӯз мо дар бораи муҳандисӣ сӯҳбат кардем.",
-      "prefix": "We talked about the ",
-      "suffix": " yesterday.",
-      "target": "engineering"
+      "en": "He studies civil engineering at the national university.",
+      "ru": "Он изучает гражданское строительство в национальном университете.",
+      "tj": "Ӯ дар донишгоҳи миллӣ сохтмони шаҳрвандиро меомӯзад.",
+      "prefix": "He studies civil ",
+      "target": "engineering",
+      "suffix": " at the national university."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -5198,12 +5198,12 @@
     "batch": 3,
     "dayIndex": 76,
     "example": {
-      "en": "We found a valuable solution.",
-      "ru": "Мы нашли ценный решение.",
-      "tj": "Мо роҳи ҳалли қиматбаҳо пайдо кардем.",
-      "prefix": "We found a ",
-      "suffix": " solution.",
-      "target": "valuable"
+      "en": "Time is our most valuable resource.",
+      "ru": "Время — наш самый ценный ресурс.",
+      "tj": "Вақт гаронбаҳотарин сарвати мост.",
+      "prefix": "Time is our most ",
+      "target": "valuable",
+      "suffix": " resource."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -5225,12 +5225,12 @@
     "batch": 3,
     "dayIndex": 64,
     "example": {
-      "en": "We talked about the balance yesterday.",
-      "ru": "Вчера мы говорили про баланс.",
-      "tj": "Дирӯз мо дар бораи тавозун сӯҳбат кардем.",
-      "prefix": "We talked about the ",
-      "suffix": " yesterday.",
-      "target": "balance"
+      "en": "It is important to keep a balance between work and life.",
+      "ru": "Важно сохранять баланс между работой и личной жизнью.",
+      "tj": "Муҳим аст, ки байни кор ва ҳаёти шахсӣ мувозинат нигоҳ дошта шавад.",
+      "prefix": "It is important to keep a ",
+      "target": "balance",
+      "suffix": " between work and life."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -5252,12 +5252,12 @@
     "batch": 6,
     "dayIndex": 149,
     "example": {
-      "en": "Try to consume every day.",
-      "ru": "Старайтесь потреблять каждый день.",
-      "tj": "Ҳар рӯз кӯшиш кунед, ки истеъмол кардан.",
-      "prefix": "Try to ",
-      "suffix": " every day.",
-      "target": "consume"
+      "en": "Athletes consume plenty of water every day.",
+      "ru": "Спортсмены потребляют много воды каждый день.",
+      "tj": "Варзишгарон ҳар рӯз оби зиёд истеъмол мекунанд.",
+      "prefix": "Athletes ",
+      "target": "consume",
+      "suffix": " plenty of water every day."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -5279,12 +5279,12 @@
     "batch": 3,
     "dayIndex": 70,
     "example": {
-      "en": "This is a very mad result.",
-      "ru": "Это очень безумный результат.",
-      "tj": "Ин натиҷаи хеле девона аст.",
-      "prefix": "This is a very ",
-      "suffix": " result.",
-      "target": "mad"
+      "en": "Please do not be mad at me for being late.",
+      "ru": "Пожалуйста, не сердись на меня за опоздание.",
+      "tj": "Лутфан барои дер омаданам аз ман хафа нашав.",
+      "prefix": "Please do not be ",
+      "target": "mad",
+      "suffix": " at me for being late."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -5306,12 +5306,12 @@
     "batch": 5,
     "dayIndex": 131,
     "example": {
-      "en": "We talked about the pan yesterday.",
-      "ru": "Вчера мы говорили про кастрюля.",
-      "tj": "Дирӯз мо дар бораи дег сӯҳбат кардем.",
-      "prefix": "We talked about the ",
-      "suffix": " yesterday.",
-      "target": "pan"
+      "en": "Heat the olive oil in a frying pan.",
+      "ru": "Разогрейте оливковое масло на сковороде.",
+      "tj": "Равғани зайтунро дар тоба гарм кунед.",
+      "prefix": "Heat the olive oil in a frying ",
+      "target": "pan",
+      "suffix": "."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -5333,12 +5333,12 @@
     "batch": 2,
     "dayIndex": 35,
     "example": {
-      "en": "Try to prove every day.",
-      "ru": "Старайтесь доказывать каждый день.",
-      "tj": "Ҳар рӯз кӯшиш кунед, ки исбот кардан.",
-      "prefix": "Try to ",
-      "suffix": " every day.",
-      "target": "prove"
+      "en": "Hard work will prove your dedication to the team.",
+      "ru": "Упорный труд докажет вашу преданность команде.",
+      "tj": "Меҳнати сахт содиқии шуморо ба даста исбот мекунад.",
+      "prefix": "Hard work will ",
+      "target": "prove",
+      "suffix": " your dedication to the team."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -5360,12 +5360,12 @@
     "batch": 2,
     "dayIndex": 40,
     "example": {
-      "en": "She did everything very killing.",
-      "ru": "Она сделала всё очень убийство.",
-      "tj": "Вай ҳама чизро хеле куштор иҷро кард.",
-      "prefix": "She did everything very ",
-      "suffix": ".",
-      "target": "killing"
+      "en": "The police launched an investigation into the killing.",
+      "ru": "Полиция начала расследование убийства.",
+      "tj": "Полис тафтиши кушторро оғоз кард.",
+      "prefix": "The police launched an investigation into the ",
+      "target": "killing",
+      "suffix": "."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -5387,12 +5387,12 @@
     "batch": 2,
     "dayIndex": 44,
     "example": {
-      "en": "Try to quit every day.",
-      "ru": "Старайтесь бросить/ уйти каждый день.",
-      "tj": "Ҳар рӯз кӯшиш кунед, ки тарк кардан.",
-      "prefix": "Try to ",
-      "suffix": " every day.",
-      "target": "quit"
+      "en": "He decided to quit smoking for his health.",
+      "ru": "Он решил бросить курить ради своего здоровья.",
+      "tj": "Ӯ барои саломатиаш қарор дод, ки сигоркаширо партояд.",
+      "prefix": "He decided to ",
+      "target": "quit",
+      "suffix": " smoking for his health."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -5414,12 +5414,12 @@
     "batch": 5,
     "dayIndex": 137,
     "example": {
-      "en": "Can you explain the meaning of this slice?",
-      "ru": "Можешь объяснить значение слова \"ломтик\"?",
-      "tj": "Оё метавонед маънои ин бурида-ро фаҳмонед?",
-      "prefix": "Can you explain the meaning of this ",
-      "suffix": "?",
-      "target": "slice"
+      "en": "Would you like a slice of homemade cake?",
+      "ru": "Хотите кусочек домашнего пирога?",
+      "tj": "Як пора пирожни хонагӣ мехоҳед?",
+      "prefix": "Would you like a ",
+      "target": "slice",
+      "suffix": " of homemade cake?"
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -5441,12 +5441,12 @@
     "batch": 4,
     "dayIndex": 106,
     "example": {
-      "en": "Can you explain the meaning of this fence?",
-      "ru": "Можешь объяснить значение слова \"забор\"?",
-      "tj": "Оё метавонед маънои ин девор-ро фаҳмонед?",
-      "prefix": "Can you explain the meaning of this ",
-      "suffix": "?",
-      "target": "fence"
+      "en": "There is a wooden fence around their garden.",
+      "ru": "Вокруг их сада стоит деревянный забор.",
+      "tj": "Дар гирди боғи онҳо девори чӯбӣ ҳаст.",
+      "prefix": "There is a wooden ",
+      "target": "fence",
+      "suffix": " around their garden."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -5468,12 +5468,12 @@
     "batch": 4,
     "dayIndex": 95,
     "example": {
-      "en": "We found a rough solution.",
-      "ru": "Мы нашли грубый решение.",
-      "tj": "Мо роҳи ҳалли ноҳамвор пайдо кардем.",
-      "prefix": "We found a ",
-      "suffix": " solution.",
-      "target": "rough"
+      "en": "The sea was very rough during the storm.",
+      "ru": "Море было очень неспокойным во время шторма.",
+      "tj": "Дар вақти тӯфон баҳр хеле ноором буд.",
+      "prefix": "The sea was very ",
+      "target": "rough",
+      "suffix": " during the storm."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -5495,12 +5495,12 @@
     "batch": 3,
     "dayIndex": 59,
     "example": {
-      "en": "This element is very important for us.",
-      "ru": "Этот (-а/-о) элемент очень важен для нас.",
-      "tj": "Ин унсур барои мо хеле муҳим аст.",
-      "prefix": "This ",
-      "suffix": " is very important for us.",
-      "target": "element"
+      "en": "Trust is a key element of any strong friendship.",
+      "ru": "Доверие — ключевой элемент любой крепкой дружбы.",
+      "tj": "Боварӣ унсури калидии ҳар як дӯстии қавист.",
+      "prefix": "Trust is a key ",
+      "target": "element",
+      "suffix": " of any strong friendship."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -5522,12 +5522,12 @@
     "batch": 6,
     "dayIndex": 146,
     "example": {
-      "en": "We talked about the pin yesterday.",
-      "ru": "Вчера мы говорили про булавка.",
-      "tj": "Дирӯз мо дар бораи игна сӯҳбат кардем.",
-      "prefix": "We talked about the ",
-      "suffix": " yesterday.",
-      "target": "pin"
+      "en": "She attached the notice to the board with a pin.",
+      "ru": "Она прикрепила объявление к доске булавкой.",
+      "tj": "Вай эълонро бо як сӯзан ба тахта часпонд.",
+      "prefix": "She attached the notice to the board with a ",
+      "target": "pin",
+      "suffix": "."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -5549,12 +5549,12 @@
     "batch": 4,
     "dayIndex": 98,
     "example": {
-      "en": "She did everything very naturally.",
-      "ru": "Она сделала всё очень естественно.",
-      "tj": "Вай ҳама чизро хеле табиӣ иҷро кард.",
-      "prefix": "She did everything very ",
-      "suffix": ".",
-      "target": "naturally"
+      "en": "Children learn languages naturally through play.",
+      "ru": "Дети учат языки естественно через игру.",
+      "tj": "Кӯдакон забонҳоро ба таври табиӣ тавассути бозӣ меомӯзанд.",
+      "prefix": "Children learn languages ",
+      "target": "naturally",
+      "suffix": " through play."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -5576,12 +5576,12 @@
     "batch": 3,
     "dayIndex": 64,
     "example": {
-      "en": "She did everything very locate.",
-      "ru": "Она сделала всё очень определять место.",
-      "tj": "Вай ҳама чизро хеле ҷойгир кардан иҷро кард.",
-      "prefix": "She did everything very ",
-      "suffix": ".",
-      "target": "locate"
+      "en": "Use the map on your phone to locate the pharmacy.",
+      "ru": "Используйте карту в телефоне, чтобы найти аптеку.",
+      "tj": "Барои пайдо кардани дорухона харитаи телефони худро истифода баред.",
+      "prefix": "Use the map on your phone to ",
+      "target": "locate",
+      "suffix": " the pharmacy."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -5603,12 +5603,12 @@
     "batch": 4,
     "dayIndex": 95,
     "example": {
-      "en": "This whenever is very important for us.",
-      "ru": "Этот (-а/-о) когда бы ни очень важен для нас.",
-      "tj": "Ин ҳар вақт барои мо хеле муҳим аст.",
-      "prefix": "This ",
-      "suffix": " is very important for us.",
-      "target": "whenever"
+      "en": "You can call me whenever you need advice.",
+      "ru": "Ты можешь звонить мне всякий раз, когда тебе нужен совет.",
+      "tj": "Ҳар вақте ки ба маслиҳат ниёз дорӣ, метавонӣ ба ман занг занӣ.",
+      "prefix": "You can call me ",
+      "target": "whenever",
+      "suffix": " you need advice."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -5630,12 +5630,12 @@
     "batch": 5,
     "dayIndex": 127,
     "example": {
-      "en": "It seems quite shy to me.",
-      "ru": "Это кажется мне вполне стеснительный.",
-      "tj": "Ин ба назари ман хеле шармгин менамояд.",
-      "prefix": "It seems quite ",
-      "suffix": " to me.",
-      "target": "shy"
+      "en": "He was very shy when meeting new people.",
+      "ru": "Он был очень застенчивым при знакомстве с новыми людьми.",
+      "tj": "Ҳангоми шиносоӣ бо одамони нав ӯ хеле шармгин буд.",
+      "prefix": "He was very ",
+      "target": "shy",
+      "suffix": " when meeting new people."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -5657,12 +5657,12 @@
     "batch": 5,
     "dayIndex": 121,
     "example": {
-      "en": "This organizer is very important for us.",
-      "ru": "Этот (-а/-о) организатор очень важен для нас.",
-      "tj": "Ин ташкилкунанда барои мо хеле муҳим аст.",
-      "prefix": "This ",
-      "suffix": " is very important for us.",
-      "target": "organizer"
+      "en": "The event organizer did a fantastic job.",
+      "ru": "Организатор мероприятия проделал потрясающую работу.",
+      "tj": "Ташкилотчии чорабинӣ кори олиҷаноберо анҷом дод.",
+      "prefix": "The event ",
+      "target": "organizer",
+      "suffix": " did a fantastic job."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -13464,12 +13464,12 @@
     "batch": 3,
     "dayIndex": 70,
     "example": {
-      "en": "Try to say every day.",
-      "ru": "Старайтесь говорить каждый день.",
-      "tj": "Ҳар рӯз кӯшиш кунед, ки гуфтан.",
-      "prefix": "Try to ",
-      "suffix": " every day.",
-      "target": "say"
+      "en": "What did you say just now?",
+      "ru": "Что ты только что сказал?",
+      "tj": "Ҳозир ту чӣ гуфтӣ?",
+      "prefix": "What did you ",
+      "target": "say",
+      "suffix": " just now?"
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -13491,12 +13491,12 @@
     "batch": 4,
     "dayIndex": 94,
     "example": {
-      "en": "Try to shoot every day.",
-      "ru": "Старайтесь стрелять каждый день.",
-      "tj": "Ҳар рӯз кӯшиш кунед, ки тир парондан.",
-      "prefix": "Try to ",
-      "suffix": " every day.",
-      "target": "shoot"
+      "en": "They decided to shoot a short movie about their city.",
+      "ru": "Они решили снять короткий фильм о своём городе.",
+      "tj": "Онҳо қарор доданд, ки дар бораи шаҳрашон як филми кӯтоҳ ба навор гиранд.",
+      "prefix": "They decided to ",
+      "target": "shoot",
+      "suffix": " a short movie about their city."
     },
     "categoryId": "meeting",
     "categoryIndex": 1,
@@ -98030,12 +98030,12 @@
     "batch": 6,
     "dayIndex": 162,
     "example": {
-      "en": "She did everything very ring.",
-      "ru": "Она сделала всё очень звонить / кольцо.",
-      "tj": "Вай ҳама чизро хеле занг задан / ангуштарин иҷро кард.",
-      "prefix": "She did everything very ",
-      "suffix": ".",
-      "target": "ring"
+      "en": "He gave her a gold ring for their anniversary.",
+      "ru": "Он подарил ей золотое кольцо на годовщину.",
+      "tj": "Ӯ ба муносибати солгард ба вай як ангуштарини тиллоӣ дод.",
+      "prefix": "He gave her a gold ",
+      "target": "ring",
+      "suffix": " for their anniversary."
     },
     "categoryId": "tech",
     "categoryIndex": 8,
@@ -110641,12 +110641,12 @@
     "batch": 5,
     "dayIndex": 128,
     "example": {
-      "en": "This race is very important for us.",
-      "ru": "Этот (-а/-о) гонка / раса очень важен для нас.",
-      "tj": "Ин пойга / нажод барои мо хеле муҳим аст.",
-      "prefix": "This ",
-      "suffix": " is very important for us.",
-      "target": "race"
+      "en": "He won the running race at our school.",
+      "ru": "Он выиграл забег в нашей школе.",
+      "tj": "Ӯ дар мусобиқаи дави мактаби мо ғолиб шуд.",
+      "prefix": "He won the running ",
+      "target": "race",
+      "suffix": " at our school."
     },
     "categoryId": "emotions",
     "categoryIndex": 9,

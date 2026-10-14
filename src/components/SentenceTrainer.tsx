@@ -217,13 +217,47 @@ export const SentenceTrainer: React.FC<SentenceTrainerProps> = ({
 
           {/* Focal Sentence Display with Highlighted Word */}
           <div className="text-center py-2 sm:py-4">
-            <div className="text-base sm:text-lg md:text-xl font-medium text-slate-100 leading-relaxed tracking-wide">
-              <span>{example.prefix}</span>
-              <span className="inline-block px-2 py-0.5 mx-1 font-bold rounded-lg bg-sky-500/20 text-sky-300 border border-sky-500/40 shadow-sm">
-                {example.target || currentWord.cleanEn}
-              </span>
-              <span>{example.suffix}</span>
-            </div>
+            {(() => {
+              if (example.prefix !== undefined && example.suffix !== undefined && (example.prefix || example.suffix)) {
+                return (
+                  <div className="text-base sm:text-lg md:text-xl font-medium text-slate-100 leading-relaxed tracking-wide">
+                    <span>{example.prefix}</span>
+                    <span className="inline-block px-2 py-0.5 mx-1 font-bold rounded-lg bg-sky-500/20 text-sky-300 border border-sky-500/40 shadow-sm">
+                      {example.target || currentWord.cleanEn}
+                    </span>
+                    <span>{example.suffix}</span>
+                  </div>
+                );
+              }
+
+              // Dynamic highlight fallback inside example.en
+              const en = example.en || '';
+              const wordToFind = currentWord.cleanEn || '';
+              const escaped = wordToFind.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+              const regex = new RegExp(`\\b(${escaped}[a-z]*)\\b`, 'i');
+              const match = en.match(regex);
+
+              if (match && match.index !== undefined) {
+                const before = en.slice(0, match.index);
+                const matched = match[0];
+                const after = en.slice(match.index + matched.length);
+                return (
+                  <div className="text-base sm:text-lg md:text-xl font-medium text-slate-100 leading-relaxed tracking-wide">
+                    <span>{before}</span>
+                    <span className="inline-block px-2 py-0.5 mx-1 font-bold rounded-lg bg-sky-500/20 text-sky-300 border border-sky-500/40 shadow-sm">
+                      {matched}
+                    </span>
+                    <span>{after}</span>
+                  </div>
+                );
+              }
+
+              return (
+                <div className="text-base sm:text-lg md:text-xl font-medium text-slate-100 leading-relaxed tracking-wide">
+                  {en}
+                </div>
+              );
+            })()}
 
             {/* Context Translations */}
             <div className="space-y-1.5 mt-4 pt-3 border-t border-white/[0.06]">
